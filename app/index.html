@@ -15,30 +15,14 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="maskdAppApp">
+  <body ng-app="ms">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">maskdApp</h3>
-      </div>
-
-      <div ng-view=""></div>
-
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-      <md-button>
-        Button
-      </md-button>
+      <div data-ng-view=""></div>
     </div>
 
 
@@ -97,7 +81,7 @@
         <script src="scripts/pages/home/app.js"></script>
         <script src="scripts/pages/home/home_controller.js"></script>
 
-        <script src="scripts/pages/app.js"></script>>
+        <script src="scripts/pages/app.js"></script>
 
         <script src="scripts/app.js"></script>
         <script src="scripts/templates.js"></script>

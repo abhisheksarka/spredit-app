@@ -52,7 +52,7 @@ module.exports = function (grunt) {
         files: ['Gruntfile.js']
       },
       html: {
-        files: ['<%= yeoman.app %>/scripts/{components,sections}/{,*/}*.html'],
+        files: ['<%= yeoman.app %>/scripts/{components,pages}/{,*/}*.html'],
         tasks: ['ngtemplates']
       },
       livereload: {
@@ -392,8 +392,8 @@ module.exports = function (grunt) {
 
     // angular templates task
     ngtemplates:  {
-      kd: {
-        src: [ 'app/scripts/components/{,*/}*.html', 'app/scripts/sections/{,*/}*.html' ],
+      ms: {
+        src: [ 'app/scripts/components/{,*/}*.html', 'app/scripts/pages/{,*/}*.html' ],
         dest: 'app/scripts/templates.js'
       }
     }
