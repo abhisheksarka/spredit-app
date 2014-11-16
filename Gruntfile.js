@@ -51,6 +51,10 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
+      html: {
+        files: ['<%= yeoman.app %>/scripts/{components,sections}/{,*/}*.html'],
+        tasks: ['ngtemplates']
+      },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -384,6 +388,14 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    // angular templates task
+    ngtemplates:  {
+      kd: {
+        src: [ 'app/scripts/components/{,*/}*.html', 'app/scripts/sections/{,*/}*.html' ],
+        dest: 'app/scripts/templates.js'
+      }
     }
   });
 
@@ -434,8 +446,11 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
+    'ngtemplates',
     'newer:jshint',
     'test',
     'build'
   ]);
+
+  grunt.loadNpmTasks('grunt-angular-templates');
 };

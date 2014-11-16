@@ -1,1 +1,4 @@
-angular.module("ms.pages", [ ]);
+angular.module("ms.pages", [ 
+  "ms.pages.index", 
+  "ms.pages.home" 
+]);

@@ -9,12 +9,16 @@
  * Main module of the application.
  */
 angular
-  .module('maskd', [
+  .module('ms', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ngMaterial'
+    'ngMaterial',
+
+    // application modules
+    'ms.components',
+    'ms.pages'
   ]);
