@@ -1,0 +1,25 @@
+body#page-index {
+  background: #333;
+  color: white;
+  .fb-sign-in {
+    padding: 8px;
+  }
+  .brand-name { 
+    font-size: 128px;
+    font-weight: 100;
+    margin-bottom: 10px;
+  }
+  .brand-tagline {
+    margin-top: -15px;
+    opacity: 0.4;
+    font-weight: 400;
+    margin-bottom: 50px;
+  }
+  img.brand-responsive{
+    width: 100%;
+    margin-top: 80px;
+  }
+  md-button.fb-sign-in {
+    padding: 8px;
+  }
+}
