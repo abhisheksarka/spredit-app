@@ -7,7 +7,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/pages/index/template.html',
-    "<h1>Index</h1>"
+    "<div class=\"row\">\n" +
+    "  <div class=\"col-md-6\">\n" +
+    "    <h1>Hello</h1>\n" +
+    "  </div>\n" +
+    "  <div class=\"col-md-6\"></div>\n" +
+    "</div>"
   );
 
 }]);

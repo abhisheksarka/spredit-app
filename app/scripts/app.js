@@ -17,7 +17,6 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngMaterial',
-
     // application modules
     'ms.components',
     'ms.pages'
