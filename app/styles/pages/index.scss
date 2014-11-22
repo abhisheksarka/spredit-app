@@ -14,10 +14,13 @@ body#page-index {
   .fb-sign-in {
     padding: 15px;
   }
+  .logo{
+    margin-top: 80px;
+  }
   .brand-name { 
     font-size: 50px;
-    margin-top: 100px;
     margin-bottom: 10px;
+    margin-top: 50px;
     font-weight: 700;
     font-family: 'Nunito', sans-serif !important;
     text-shadow: 0px 0px 5px rgba(0,0,0,0.3);
@@ -26,7 +29,7 @@ body#page-index {
     margin-top: -15px;
     opacity: 0.6;
     font-weight: 400;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
   }
   img.brand-responsive{
     width: 100%;
