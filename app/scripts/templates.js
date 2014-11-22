@@ -14,7 +14,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <img src=\"../images/logo_128.png\"/>\n" +
     "    </div>\n" +
     "    <h1 class=\"brand-name\">Maskd</h1>\n" +
-    "    <h2 class=\"brand-tagline\">When the world around you goes anonymous</h2>\n" +
+    "    <h2 class=\"brand-tagline\">Share with friends, ask questions or tag friends, <br>anonymously...</h2>\n" +
     "    <button class=\"btn btn-warning fb-sign-in\">Sign in with facebook</button>\n" +
     "  </div>\n" +
     "</div>\n"
