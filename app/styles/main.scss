@@ -1,14 +1,14 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,300,400);
+@import url(http://fonts.googleapis.com/css?family=Nunito:700);
+
+@import './themes/bootswatch/_variables';
+
 // bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
 // endbower
+@import './themes/bootswatch/_bootswatch';
+
 @import 'overrides';
 @import './pages/index';
-
-.ms-text-center {
-  text-align: center;
-}
-.ms-text-right {
-  text-align: right;
-}
-.ms-text-muted {
-  color: #b7b7b7;
-}
