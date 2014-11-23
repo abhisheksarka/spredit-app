@@ -20,7 +20,8 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container" data-ng-if="masterCtrl.initialized">
+    {{masterCtrl.appInitialized}}
+    <div class="container" data-ng-if="masterCtrl.appInitialized">
       <div data-ng-view></div>
     </div>
     

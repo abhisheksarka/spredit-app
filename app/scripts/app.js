@@ -18,6 +18,7 @@ angular
     'ngTouch',
     
     // application modules
+    'ms.core',
     'ms.components',
     'ms.pages'
   ]);
