@@ -1,1 +1,3 @@
-angular.module("ms.components", [ ]);
+angular.module("ms.components", [ 
+  "ms.components.fbLogIn"
+]);

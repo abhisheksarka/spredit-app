@@ -1,6 +1,13 @@
 angular.module('ms').run(['$templateCache', function($templateCache) {
   'use strict';
 
+  $templateCache.put('app/scripts/components/fb_log_in/template.html',
+    "<span>\n" +
+    "  <button class=\"btn btn-warning fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
+    "</span>"
+  );
+
+
   $templateCache.put('app/scripts/pages/home/template.html',
     "<h1>Home</h1>"
   );
@@ -15,7 +22,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "    <h1 class=\"brand-name\">Maskd</h1>\n" +
     "    <h2 class=\"brand-tagline\">Share with friends, ask questions or tag them, <br>anonymously...</h2>\n" +
-    "    <button class=\"btn btn-warning fb-sign-in\">Sign in with facebook</button>\n" +
+    "    <ms-fb-log-in data-app-id=\"masterCtrl.fbAppId\"></ms-fb-log-in>\n" +
     "  </div>\n" +
     "</div>\n"
   );
