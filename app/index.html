@@ -20,7 +20,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
+    <div class="container" data-ng-if="masterCtrl.initialized">
       <div data-ng-view></div>
     </div>
     
@@ -69,6 +69,12 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/global_config.js"></script>
+        <script src="scripts/core/api/app.js"></script>
+        <script src="scripts/core/api/init_model.js"></script>
+        <script src="scripts/core/app.js"></script>
+
+
         <script src="scripts/components/app.js"></script>
 
         <script src="scripts/pages/index/app.js"></script>
