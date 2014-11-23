@@ -1,3 +1,3 @@
 angular.module("ms.components", [ 
-  "ms.components.fbLogIn"
+  "ms.components.fbSdk"
 ]);

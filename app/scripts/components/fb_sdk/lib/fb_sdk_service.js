@@ -1,5 +1,5 @@
 (function(){
-  var module = angular.module("ms.components.fbLogIn");
+  var module = angular.module("ms.components.fbSdk.lib");
   module.factory("FbSdkService", [ "$window", function($window) {
     var Resource = function() { };
         proto = Resource.prototype;
@@ -13,14 +13,15 @@
       });
     }; 
     
-    Resource.loginStatus = function() {
-
+    Resource.loginStatus = function() { };
+    
+    Resource.me = function(callback) {
+      FB.api('/me', callback);
     };
-
+    
     Resource.login = function() {
       var self = this,
           connectedCallback = unauthorizedCallback = unknownCallback = angular.noop;
-      
       FB.login(function(response) {
         if (response.status == 'connected') {
           connectedCallback(response);
@@ -32,22 +33,18 @@
       }, {
         scope: $window.ms.config.FB_PERMISSIONS_SCOPE
       });
-
       self.connected = function(callback) {
         connectedCallback = callback;
         return self;
       };
-      
       self.unauthorized = function(callback) {
         unknownCallback = callback;
         return self;
       };
-      
       self.unknown = function(callback) {
         unknownCallback = callback
         return self;
       };
-
       return self;
     };   
 

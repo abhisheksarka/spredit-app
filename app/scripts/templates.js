@@ -1,7 +1,7 @@
 angular.module('ms').run(['$templateCache', function($templateCache) {
   'use strict';
 
-  $templateCache.put('app/scripts/components/fb_log_in/template.html',
+  $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
     "  <button class=\"btn btn-warning fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
     "</span>"

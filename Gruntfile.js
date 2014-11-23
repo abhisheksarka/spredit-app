@@ -431,7 +431,7 @@ module.exports = function (grunt) {
     // angular templates task
     ngtemplates:  {
       ms: {
-        src: [ 'app/scripts/components/{,*/}*.html', 'app/scripts/pages/{,*/}*.html' ],
+        src: [ 'app/scripts/components/{,*/}{,*/}*.html', 'app/scripts/pages/{,*/}{,*/}*.html' ],
         dest: 'app/scripts/templates.js'
       }
     }
