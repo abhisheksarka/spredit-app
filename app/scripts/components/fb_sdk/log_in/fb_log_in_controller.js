@@ -6,11 +6,11 @@
     };
     function login() {
       FbSdkService.login().connected(function(response){
-        
+        $scope.connected({response: response});
       }).unauthorized(function(response){
-
-      }).unknown(function(){
-
+        $scope.unauthorized({response: response});
+      }).unknown(function(response){
+        $scope.unknown({response: response})
       });
     };
     init();

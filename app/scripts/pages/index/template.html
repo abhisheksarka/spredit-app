@@ -6,6 +6,9 @@
     </div>
     <h1 class="brand-name">Maskd</h1>
     <h2 class="brand-tagline">Share with friends, ask questions or tag them, <br>anonymously...</h2>
-    <ms-fb-log-in data-app-id="masterCtrl.fbAppId"></ms-fb-log-in>
+    <ms-fb-log-in 
+      data-connected="connected(response)" 
+      data-unauthorized="unauthorized(response)" 
+      data-unknown="unknown(response)"></ms-fb-log-in>
   </div>
 </div>

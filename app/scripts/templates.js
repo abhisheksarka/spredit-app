@@ -22,7 +22,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "    <h1 class=\"brand-name\">Maskd</h1>\n" +
     "    <h2 class=\"brand-tagline\">Share with friends, ask questions or tag them, <br>anonymously...</h2>\n" +
-    "    <ms-fb-log-in data-app-id=\"masterCtrl.fbAppId\"></ms-fb-log-in>\n" +
+    "    <ms-fb-log-in \n" +
+    "      data-connected=\"connected(response)\" \n" +
+    "      data-unauthorized=\"unauthorized(response)\" \n" +
+    "      data-unknown=\"unknown(response)\"></ms-fb-log-in>\n" +
     "  </div>\n" +
     "</div>\n"
   );

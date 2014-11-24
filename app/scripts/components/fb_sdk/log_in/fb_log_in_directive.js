@@ -3,7 +3,9 @@
   app.directive("msFbLogIn", [function(){
     return{
       scope: { 
-        appId: "="
+        connected: "&",
+        unauthorized: "&",
+        unknown: "&"
       },
       replace: true,
       templateUrl: "app/scripts/components/fb_sdk/log_in/template.html",
