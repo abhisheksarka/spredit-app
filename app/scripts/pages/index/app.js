@@ -1,1 +1,3 @@
-angular.module("ms.pages.index", [ ]);
+angular.module("ms.pages.index", [ 
+  "ms.core.api"
+]);
