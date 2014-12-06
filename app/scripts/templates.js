@@ -21,11 +21,17 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <img src=\"../images/logo_128.png\"/>\n" +
     "    </div>\n" +
     "    <h1 class=\"brand-name\">Maskd</h1>\n" +
-    "    <h2 class=\"brand-tagline\">Share with friends, ask questions or tag them, <br>anonymously...</h2>\n" +
+    "    <h2 class=\"brand-tagline\">\n" +
+    "      Share with friends, ask questions or tag them, <br>anonymously...\n" +
+    "    </h2>\n" +
     "    <ms-fb-log-in \n" +
     "      data-connected=\"connected(response)\" \n" +
     "      data-unauthorized=\"unauthorized(response)\" \n" +
     "      data-unknown=\"unknown(response)\"></ms-fb-log-in>\n" +
+    "\n" +
+    "    <p class=\"quote\">\n" +
+    "      <i>Man is least himself when talks in his own person. Give him a mask, and he will tell you the truth <br>- Oscar Wilde</i>\n" +
+    "    </p>  \n" +
     "  </div>\n" +
     "</div>\n"
   );
