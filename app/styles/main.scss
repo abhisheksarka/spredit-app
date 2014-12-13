@@ -12,7 +12,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 
 @import './lib/mixins';
-@import 'overrides';
+@import './lib/overrides';
+
+@import './components/icons';
+@import './components/navbar';
 @import './pages/index';
 
 .logo{

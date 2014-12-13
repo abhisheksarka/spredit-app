@@ -1,5 +1,5 @@
 (function() {
-  function Controller($scope){
+  function Controller($scope, Session){
     function init() {
       $scope.masterCtrl.setBodyId('page-home');
     };
@@ -7,6 +7,7 @@
   };
   angular.module('ms.pages.home').controller('HomeController', [
     '$scope',
+    'SessionModel',
     Controller
   ]);
 }());

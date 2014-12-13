@@ -1,0 +1,11 @@
+.logo-tiny {
+  display: inline-block;
+  background: $brand-danger;
+  @include ms-border-radius(100px);
+  height: 50px;
+  width: 50px;
+  padding: 8px;
+  img {
+    width: 131%
+  }
+}

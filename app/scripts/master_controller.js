@@ -1,8 +1,7 @@
 (function() {
-  var app = angular.module("ms");
-  app.controller("MasterController", 
-  [ "$scope", "InitModel", "$q", "$window", function($scope, Init, $q, $window){
+  function Controller($scope, Init, Session, $q, $window, $rootScope){
     function init(){
+      // some shared states
       $scope.masterCtrl = {
         setBodyId: function(bodyId) {
           this.bodyId = bodyId;
@@ -12,6 +11,11 @@
         },
         config: $window.ms.config
       };
+
+      // check current session
+      $rootScope.$on('$routeChangeStart', function(event){
+        $scope.masterCtrl.currentSession = Session.isSignedIn();
+      }); 
       bootstrapApp();
     };
 
@@ -34,6 +38,16 @@
     };
 
     init();
-
-  }]);
+  };
+  
+  angular.module('ms')
+  .controller('MasterController', [ 
+    '$scope', 
+    'InitModel',
+    'SessionModel', 
+    '$q', 
+    '$window', 
+    '$rootScope',
+    Controller
+  ]);
 }());

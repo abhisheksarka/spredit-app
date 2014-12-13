@@ -8,8 +8,24 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('app/scripts/components/nav_bar/template.html',
+    "<nav class=\"navbar navbar-default\" role=\"navigation\" data-ng-if=\"display\">\n" +
+    "  <div class=\"container\">\n" +
+    "    <div class=\"navbar-header\">\n" +
+    "      <a class=\"navbar-brand\" href=\"/#home\">\n" +
+    "        <span class=\"logo-tiny\">\n" +
+    "          <img src=\"images/logo_white_40.png\"/>\n" +
+    "        </span>\n" +
+    "        <span>maskd</span>\n" +
+    "      </a>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</nav>"
+  );
+
+
   $templateCache.put('app/scripts/pages/home/template.html',
-    "<h1>Home</h1>"
+    ""
   );
 
 

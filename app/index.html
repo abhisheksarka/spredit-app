@@ -15,13 +15,17 @@
     <!-- endbuild -->
   </head>
   <body ng-app="ms" data-ng-controller="MasterController" id="{{masterCtrl.bodyId}}">
+    <div id="fb-root"></div>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container" data-ng-if="masterCtrl.config.APP_INIT">
-      <div data-ng-view></div>
+    <div data-ng-if="masterCtrl.config.APP_INIT">
+      <div ms-nav-bar display="masterCtrl.currentSession"></div>
+      <div class="container">  
+        <div data-ng-view></div>
+      </div>
     </div>
     
 
@@ -36,16 +40,7 @@
     </script>
     
     <!-- Facebook login SDK -->
-    <script>
-      // Load the SDK asynchronously
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
+    <script src="//connect.facebook.net/en_US/all.js"></script>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -94,6 +89,8 @@
         <script src="scripts/components/fb_sdk/app.js"></script>
 
         <script src="scripts/components/nav_bar/app.js"></script>
+        <script src="scripts/components/nav_bar/nav_bar_controller.js"></script>
+        <script src="scripts/components/nav_bar/nav_bar_directive.js"></script>
         
         <script src="scripts/components/app.js"></script>
 

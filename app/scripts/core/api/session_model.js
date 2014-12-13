@@ -1,13 +1,14 @@
 (function(){
-  function Factory($resource, $q){
+  function Factory($resource, $q, $window){
     var Resource = $resource(
                     ms.apiFor('/sessions'),
                     { }
                   ),
         res = Resource,
-        proto = res.prototype,
-        currentToken = null,
-        currentUser = null;
+        proto = res.prototype;
+
+        res.currentToken = null;
+        res.currentUser = null;
 
     //
     // Instance methods and class methods go here
@@ -16,13 +17,14 @@
       var defer = $q.defer();
       res.save(authResponse).$promise.then(function(response){
         // set the current token
-        res.setCurrentToken({
+        res.currentToken = {
           id: response.id,
           value: response.value
-        });
+        };
 
         // set the current user
-        res.setCurrentUser(response.jw_tokenable);
+        res.currentUser = response.jw_tokenable;
+
         // resolve the promise
         defer.resolve(response);
       }, function(){
@@ -32,33 +34,16 @@
     };
 
     res.signOut = function() {
-
     };
     
     res.isSignedIn = function() {
-      return res.getCurrentUser() ? true : false;
-    };
-
-    res.setCurrentToken = function(token) {
-      currentToken = token;
-    };
-
-    res.getCurrentToken = function() {
-      return currentToken;
-    };
-
-    res.setCurrentUser = function(user) {
-      currentUser = user;
-    };
-
-    res.getCurrentUser = function() {
-      return currentUser;
+      return res.currentUser ? true : false;
     };
 
     return res;
   };
 
   angular.module('ms.core.api')
-  .factory('SessionModel', ['$resource', '$q', Factory]);
+  .factory('SessionModel', ['$resource', '$q', '$window', Factory]);
 
 }());
