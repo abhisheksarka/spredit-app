@@ -1,6 +1,12 @@
 (function() {
-  var app = angular.module("ms.pages.home");
-  app.controller("HomeController", [ "$scope", function($scope){
-    
-  }]);
+  function Controller($scope){
+    function init() {
+      $scope.masterCtrl.setBodyId('page-home');
+    };
+    init();
+  };
+  angular.module('ms.pages.home').controller('HomeController', [
+    '$scope',
+    Controller
+  ]);
 }());

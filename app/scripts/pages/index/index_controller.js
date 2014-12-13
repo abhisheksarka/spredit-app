@@ -1,5 +1,5 @@
 (function() {
-  function Controller($scope, Session){
+  function Controller($scope, Session, $location){
     function init() {
       $scope.masterCtrl.setBodyId('page-index');
       $scope.connected = connected;
@@ -8,7 +8,10 @@
     };
 
     function connected(response) {
-      Session.save(response.authResponse);
+      Session.signIn(response.authResponse)
+      .then(function(){
+        $location.path('/home');
+      });
     };
     
     function unauthorized(response) {
@@ -22,6 +25,7 @@
   angular.module('ms.pages.index').controller('IndexController', [
     '$scope',
     'SessionModel', 
+    '$location',
     Controller
   ]);
 }());
