@@ -1,7 +1,6 @@
 body#page-index {
-  background: #333;
-  background-image: url('../images/landing_page_cover.jpeg');
   background-size: 100%;
+  background-image: url('../images/landing_page_cover.jpg');
   color: white;
   #bg-backdrop {
     position:fixed;
@@ -9,7 +8,7 @@ body#page-index {
     bottom: 0px;
     right: 0px;
     left: 0px;
-    background-image: url('../images/bg_pattern.png');
+    background: rgba(0,0,0,0.8);
   }
   .fb-sign-in {
     padding: 15px;
@@ -23,7 +22,6 @@ body#page-index {
     margin-top: 50px;
     font-weight: 700;
     font-family: 'Nunito', sans-serif !important;
-    text-shadow: 0px 0px 5px rgba(0,0,0,0.3);
   }
   .brand-tagline {
     opacity: 0.6;
