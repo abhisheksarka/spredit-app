@@ -14,9 +14,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"navbar-header\">\n" +
     "      <a class=\"navbar-brand\" href=\"#home\">\n" +
     "        <span class=\"logo-tiny\">\n" +
-    "          <img src=\"images/logo_white_40.png\"/>\n" +
+    "          <img src=\"images/logo_40.png\"/>\n" +
     "        </span>\n" +
-    "        <span>maskd</span>\n" +
+    "        <span>strikr</span>\n" +
     "      </a>\n" +
     "    </div>\n" +
     "  </div>\n" +
@@ -38,8 +38,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "    <h1 class=\"brand-name\">Strikr</h1>\n" +
     "    <h2 class=\"brand-tagline\">\n" +
-    "      Listen to conversations, <br> Participate or share them with your friends and the world \n" +
+    "      Listen to, participate or share conversations<br>about events and topics that interest you.\n" +
     "    </h2>\n" +
+    "    <br><br>\n" +
     "    <ms-fb-log-in \n" +
     "      data-connected=\"connected(response)\" \n" +
     "      data-unauthorized=\"unauthorized(response)\" \n" +
