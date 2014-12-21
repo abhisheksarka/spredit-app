@@ -1,6 +1,22 @@
 angular.module('ms').run(['$templateCache', function($templateCache) {
   'use strict';
 
+  $templateCache.put('app/scripts/components/conversation/create_box/modal_template.html',
+    "<ms-create-box></ms-create-box>"
+  );
+
+
+  $templateCache.put('app/scripts/components/conversation/create_box/template.html',
+    "<div class=\"ms-create-box\">\n" +
+    "  <input type=\"text\" class=\"form-control\" placeholder=\"Conversation title\"/>\n" +
+    "  <br>\n" +
+    "  <textarea class=\"form-control\" placeholder=\"Optional description\"/></textarea>\n" +
+    "  <br>\n" +
+    "  <button class=\"btn btn-default btn-sm\">Strike it!</button>\n" +
+    "</div>"
+  );
+
+
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
     "  <button class=\"btn btn-success fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
@@ -41,13 +57,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      Listen to, participate or share conversations<br>about events and topics that interest you.\n" +
     "    </h2>\n" +
     "    <br><br>\n" +
-    "    <ms-fb-log-in \n" +
+    "    <span ms-fb-log-in \n" +
     "      data-connected=\"connected(response)\" \n" +
     "      data-unauthorized=\"unauthorized(response)\" \n" +
-    "      data-unknown=\"unknown(response)\"></ms-fb-log-in>\n" +
+    "      data-unknown=\"unknown(response)\"></span>\n" +
     "\n" +
-    "    <p class=\"quote\">\n" +
-    "          </p>  \n" +
+    "    <p class=\"quote\"></p>  \n" +
     "  </div>\n" +
     "</div>\n"
   );

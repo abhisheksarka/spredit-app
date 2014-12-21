@@ -4,6 +4,10 @@ body {
   color: #333;
 }
 
+textarea {
+  resize: none !important;
+}
+
 .btn:focus, .btn:active:focus, .btn.active:focus {
   outline: none !important;
 }
@@ -36,5 +40,23 @@ nav.navbar {
   }
   &:active {
     color: rgb(21,21,21);
+  }
+}
+
+input.form-control, textarea.form-control {
+  @include ms-border-radius(2px);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 8px 0px;
+  &:hover {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  &:active {
+    border-top: none;
+    border-left: none;
+    border-right: none;
   }
 }

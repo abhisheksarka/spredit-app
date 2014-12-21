@@ -1,1 +1,1 @@
-angular.module("ms.components.navBar", [ ]);
+angular.module('ms.components.navBar', [ ]);
