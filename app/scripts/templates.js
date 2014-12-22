@@ -2,17 +2,18 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('app/scripts/components/conversation/create_box/modal_template.html',
-    "<ms-create-box></ms-create-box>"
+    "<div class=\"modal-body\">\n" +
+    "  <h3 class=\"modal-title\">Start a conversation</h3>\n" +
+    "  <span ms-create-box></span>\n" +
+    "</div>"
   );
 
 
   $templateCache.put('app/scripts/components/conversation/create_box/template.html',
     "<div class=\"ms-create-box\">\n" +
-    "  <input type=\"text\" class=\"form-control\" placeholder=\"Conversation title\"/>\n" +
+    "  <input type=\"text\" class=\"form-control conversation-title\" placeholder=\"Title\"/>\n" +
     "  <br>\n" +
-    "  <textarea class=\"form-control\" placeholder=\"Optional description\"/></textarea>\n" +
-    "  <br>\n" +
-    "  <button class=\"btn btn-default btn-sm\">Strike it!</button>\n" +
+    "  <button class=\"btn\">Strike</button>\n" +
     "</div>"
   );
 
@@ -41,7 +42,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/pages/home/template.html',
-    ""
+    "<button class=\"btn btn-default\" data-ng-click=\"open()\">Open</button>"
   );
 
 
