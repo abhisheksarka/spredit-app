@@ -3,9 +3,11 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/conversation/create_box/modal_template.html',
     "<div class=\"modal-header\">\n" +
-    "  <h3 class=\"modal-title\">Start a conversation</h3>\n" +
+    "  <h3 class=\"modal-title\">Strike a Conversation</h3>\n" +
+    "  <span class=\"text-muted\">Choose any event or topic that interests you..</span>\n" +
     "</div>\n" +
     "<div class=\"modal-body\">\n" +
+    "  <br>\n" +
     "  <span ms-create-box></span>\n" +
     "</div>"
   );
@@ -16,7 +18,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <input type=\"text\" class=\"form-control conversation-title\" placeholder=\"Title\"/>\n" +
     "  <br>\n" +
     "  <div>\n" +
-    "    <button class=\"btn btn-success btn-sm\">Strike</button>\n" +
+    "    <button class=\"btn btn-success btn-sm\">Done</button>\n" +
     "  </div>\n" +
     "</div>"
   );

@@ -8,5 +8,8 @@
   .ms-create-box {
     @include ms-box-shadow(0px, 0px, 0px, rgba(0,0,0,0));
     padding: 0px;
+    input.conversation-title {
+      font-size: 18px;
+    }
   }
 }
