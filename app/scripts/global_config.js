@@ -4,6 +4,7 @@ var ms = {
 
 ms.config.ROOT_API_URL = "/api/v1";
 ms.config.APP_INIT = false;
+ms.config.JW_TOKEN = null;
 
 ms.config.FB_API_KEY = "";
 ms.config.FB_PERMISSIONS_SCOPE = "";
