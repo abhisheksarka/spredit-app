@@ -2,7 +2,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('app/scripts/components/conversation/create_box/modal_template.html',
-    "<div class=\"modal-header\">\n" +
+    "<div class=\"modal-header text-center\">\n" +
     "  <h3 class=\"modal-title\">Strike a Conversation</h3>\n" +
     "  <span class=\"text-muted\">Choose any event or topic that interests you..</span>\n" +
     "</div>\n" +
@@ -15,6 +15,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/conversation/create_box/template.html',
     "<div class=\"ms-create-box\">\n" +
+    "  <div class=\"text-center\">\n" +
+    "    <div ms-spinner></div>\n" +
+    "  </div>\n" +
     "  <form name=\"newConversationForm\" data-ng-submit=\"createConversation()\">\n" +
     "    <div class=\"form-group\" novalidate>\n" +
     "      <input type=\"text\" class=\"form-control conversation-title\" placeholder=\"Title\" ng-model=\"conversation.title\" ng-required=\"true\"/>\n" +
@@ -27,11 +30,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </select>\n" +
     "    </div>\n" +
     "    <br>\n" +
-    "    <div>\n" +
+    "    <div class=\"text-center\">\n" +
     "      <button class=\"btn btn-success btn-sm\" ng-disabled=\"newConversationForm.$invalid\">Done</button>\n" +
     "    </div>\n" +
     "  </form>\n" +
-    "  <div ms-spinner></div>\n" +
     "</div>"
   );
 

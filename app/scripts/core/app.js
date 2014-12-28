@@ -1,3 +1,4 @@
-angular.module("ms.core", [ 
-  "ms.core.api"
+angular.module('ms.core', [ 
+  'ms.core.api',
+  'ms.core.servces'
 ]);

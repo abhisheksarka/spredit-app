@@ -1,13 +1,19 @@
 (function(){
-  function Controller($scope, Conversation, Category){
+  function Controller($scope, Conversation, Category, StateHandler){
     function init() {
       $scope.categories = Category.query();
       $scope.conversation = new Conversation();
       $scope.createConversation = createConversation;
+      $scope.state = StateHandler.getInstance();
     };
 
     function createConversation() {
-      $scope.conversation.$save();
+      $scope.state.initiate();
+      $scope.conversation.$save().then(function() {
+        $scope.state.success();
+      }, function() {
+        $scope.state.error();
+      });
     };
 
     init();
@@ -18,6 +24,7 @@
     '$scope',
     'ConversationModel',
     'CategoryModel',
+    'StateHandlerService',
     Controller 
   ]);
 }());

@@ -1,4 +1,7 @@
 <div class="ms-create-box">
+  <div class="text-center">
+    <div ms-spinner></div>
+  </div>
   <form name="newConversationForm" data-ng-submit="createConversation()">
     <div class="form-group" novalidate>
       <input type="text" class="form-control conversation-title" placeholder="Title" ng-model="conversation.title" ng-required="true"/>
@@ -11,9 +14,8 @@
       </select>
     </div>
     <br>
-    <div>
+    <div class="text-center">
       <button class="btn btn-success btn-sm" ng-disabled="newConversationForm.$invalid">Done</button>
     </div>
   </form>
-  <div ms-spinner></div>
 </div>
