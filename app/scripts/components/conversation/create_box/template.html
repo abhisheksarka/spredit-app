@@ -1,8 +1,8 @@
 <div class="ms-create-box">
-  <div class="text-center">
+  <div class="text-center" ng-if="state.isWorking">
     <div ms-spinner></div>
   </div>
-  <form name="newConversationForm" data-ng-submit="createConversation()">
+  <form name="newConversationForm" data-ng-submit="createConversation()" ng-if="!state.isWorking">
     <div class="form-group" novalidate>
       <input type="text" class="form-control conversation-title" placeholder="Title" ng-model="conversation.title" ng-required="true"/>
     </div>

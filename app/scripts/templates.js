@@ -15,10 +15,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/conversation/create_box/template.html',
     "<div class=\"ms-create-box\">\n" +
-    "  <div class=\"text-center\">\n" +
+    "  <div class=\"text-center\" ng-if=\"state.isWorking\">\n" +
     "    <div ms-spinner></div>\n" +
     "  </div>\n" +
-    "  <form name=\"newConversationForm\" data-ng-submit=\"createConversation()\">\n" +
+    "  <form name=\"newConversationForm\" data-ng-submit=\"createConversation()\" ng-if=\"!state.isWorking\">\n" +
     "    <div class=\"form-group\" novalidate>\n" +
     "      <input type=\"text\" class=\"form-control conversation-title\" placeholder=\"Title\" ng-model=\"conversation.title\" ng-required=\"true\"/>\n" +
     "    </div>\n" +

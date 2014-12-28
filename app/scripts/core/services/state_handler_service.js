@@ -130,7 +130,9 @@
 
     return Handler;
   };
-  angular.factory('StateHandlerService', [
+  
+  angular.module('ms.core.services')
+  .factory('StateHandlerService', [
     '$window',
     '$rootScope',
     Factory

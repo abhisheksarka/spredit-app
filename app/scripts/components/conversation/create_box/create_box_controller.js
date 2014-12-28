@@ -2,19 +2,25 @@
   function Controller($scope, Conversation, Category, StateHandler){
     function init() {
       $scope.categories = Category.query();
-      $scope.conversation = new Conversation();
       $scope.createConversation = createConversation;
       $scope.state = StateHandler.getInstance();
+      reset();
     };
 
     function createConversation() {
+      var c = angular.copy($scope.conversation);
       $scope.state.initiate();
-      $scope.conversation.$save().then(function() {
+      c.$save().then(function() {
         $scope.state.success();
+        reset();
       }, function() {
         $scope.state.error();
       });
     };
+
+    function reset() {
+      $scope.conversation = new Conversation();
+    }
 
     init();
   };
