@@ -3,6 +3,7 @@
     function init() {
       
     };
+    init();
   };
 
   angular.module('ms.components.conversation.createBox')

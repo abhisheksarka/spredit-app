@@ -41,5 +41,5 @@ angular
   angular.module('ms')
   .config(['$httpProvider', function($httpProvider) {
     $httpProvider.interceptors.push(['$injector', addTokenToHeader]);
-  }])
+  }]);
 }());
