@@ -2,7 +2,14 @@
   function Controller($scope, Conversation, Category){
     function init() {
       $scope.categories = Category.query();
+      $scope.conversation = new Conversation();
+      $scope.createConversation = createConversation;
     };
+
+    function createConversation() {
+      $scope.conversation.$save();
+    };
+
     init();
   };
 

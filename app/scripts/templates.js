@@ -15,11 +15,22 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/conversation/create_box/template.html',
     "<div class=\"ms-create-box\">\n" +
-    "  <input type=\"text\" class=\"form-control conversation-title\" placeholder=\"Title\"/>\n" +
-    "  <br>\n" +
-    "  <div>\n" +
-    "    <button class=\"btn btn-success btn-sm\">Done</button>\n" +
-    "  </div>\n" +
+    "  <form name=\"newConversationForm\" data-ng-submit=\"createConversation()\">\n" +
+    "    <div class=\"form-group\" novalidate>\n" +
+    "      <input type=\"text\" class=\"form-control conversation-title\" placeholder=\"Title\" ng-model=\"conversation.title\" ng-required=\"true\"/>\n" +
+    "    </div>\n" +
+    "    <div class=\"form-group\">\n" +
+    "      <select class=\"form-control\" \n" +
+    "              ng-options=\"category.id as category.name group by category.grouping for category in categories\" \n" +
+    "              ng-model=\"conversation.category_id\" data-ng-required=\"true\">\n" +
+    "        <option disabled=\"true\" selected=\"true\" value='' class=\"placeholder\" default>Select a Category</option>\n" +
+    "      </select>\n" +
+    "    </div>\n" +
+    "    <br>\n" +
+    "    <div>\n" +
+    "      <button class=\"btn btn-success btn-sm\" ng-disabled=\"newConversationForm.$invalid\">Done</button>\n" +
+    "    </div>\n" +
+    "  </form>\n" +
     "</div>"
   );
 

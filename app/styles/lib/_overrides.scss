@@ -54,7 +54,9 @@ nav.navbar {
   }
 }
 
-input.form-control, textarea.form-control {
+input.form-control, 
+textarea.form-control, 
+select.form-control {
   @include ms-border-radius(2px);
   border-top: none;
   border-left: none;
@@ -73,6 +75,8 @@ input.form-control, textarea.form-control {
   &:focus {
   }
   border-width: 1px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 .modal-header {
   border-bottom: 0px;

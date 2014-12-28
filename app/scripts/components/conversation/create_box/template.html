@@ -1,7 +1,18 @@
 <div class="ms-create-box">
-  <input type="text" class="form-control conversation-title" placeholder="Title"/>
-  <br>
-  <div>
-    <button class="btn btn-success btn-sm">Done</button>
-  </div>
+  <form name="newConversationForm" data-ng-submit="createConversation()">
+    <div class="form-group" novalidate>
+      <input type="text" class="form-control conversation-title" placeholder="Title" ng-model="conversation.title" ng-required="true"/>
+    </div>
+    <div class="form-group">
+      <select class="form-control" 
+              ng-options="category.id as category.name group by category.grouping for category in categories" 
+              ng-model="conversation.category.id" data-ng-required="true">
+        <option disabled="true" selected="true" value='' class="placeholder" default>Select a Category</option>
+      </select>
+    </div>
+    <br>
+    <div>
+      <button class="btn btn-success btn-sm" ng-disabled="newConversationForm.$invalid">Done</button>
+    </div>
+  </form>
 </div>
