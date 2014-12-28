@@ -22,7 +22,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"form-group\">\n" +
     "      <select class=\"form-control\" \n" +
     "              ng-options=\"category.id as category.name group by category.grouping for category in categories\" \n" +
-    "              ng-model=\"conversation.category_id\" data-ng-required=\"true\">\n" +
+    "              ng-model=\"conversation.category.id\" data-ng-required=\"true\">\n" +
     "        <option disabled=\"true\" selected=\"true\" value='' class=\"placeholder\" default>Select a Category</option>\n" +
     "      </select>\n" +
     "    </div>\n" +
@@ -31,6 +31,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <button class=\"btn btn-success btn-sm\" ng-disabled=\"newConversationForm.$invalid\">Done</button>\n" +
     "    </div>\n" +
     "  </form>\n" +
+    "  <div ms-spinner></div>\n" +
     "</div>"
   );
 
@@ -55,6 +56,14 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "  </div>\n" +
     "</nav>"
+  );
+
+
+  $templateCache.put('app/scripts/components/spinner/template.html',
+    "<div class=\"ms-spinner\">\n" +
+    "  <div class=\"ms-double-bounce-one\"></div>\n" +
+    "  <div class=\"ms-double-bounce-two\"></div>\n" +
+    "</div>"
   );
 
 
