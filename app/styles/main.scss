@@ -1,12 +1,12 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700,300,400);
 @import url(http://fonts.googleapis.com/css?family=Nunito:700);
 
 @import './themes/bootswatch/_variables';
 
 // bower:scss
+$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+@import "jQuery.mmenu/src/scss/jquery.mmenu.scss";
 // endbower
 @import './themes/bootswatch/_bootswatch';
 
@@ -19,13 +19,13 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import './components/spinner';
 @import './components/icons';
 @import './components/navbar';
+@import './components/side_nav';
 @import './components/conversation_create_box';
 
 @import './pages/index';
 
 .logo{
   padding: 10px;
-  background: white;
   img {
     width: 100%;
     height: 100%;
@@ -35,6 +35,5 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 .logo-128{
   width: 128px;
-  padding: 20px;
   height: 128px;
 }

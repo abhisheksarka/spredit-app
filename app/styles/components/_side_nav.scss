@@ -1,0 +1,43 @@
+// bower:scss
+@import "jQuery.mmenu/src/scss/jquery.mmenu";
+@import "jQuery.mmenu/src/scss/inc/variables";
+// endbower
+@include mm_sizing("", 0.8, 140px, 300px);
+
+@media all and (min-width: $screen-md) {
+  body {
+    padding-left: 300px !important;
+  }
+  .mm-menu {
+    width: 300px !important;
+  }
+} 
+
+.mm-menu {
+  background: rgb(31,31,31);
+  color: whitesmoke;
+  display: inline-block;
+  width: 100%;
+  a {
+    color: whitesmoke;
+  }
+  .side-nav-header{
+    display: block;
+    height: 63px;
+    width: 100%; 
+  }
+  .navbar-brand {
+    margin-top: -19px;
+    font-size: 22px;
+    &:hover {
+      color: white;
+    }
+    &:focus {
+      color: white;
+    }
+    &:active {
+      color: white;
+    }
+  }
+}
+

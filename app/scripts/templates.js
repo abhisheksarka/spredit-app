@@ -48,14 +48,27 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/nav_bar/template.html',
     "<nav class=\"navbar navbar-default\" role=\"navigation\" data-ng-if=\"display\">\n" +
     "  <div class=\"container\">\n" +
-    "    <div class=\"navbar-header\">\n" +
-    "      <a class=\"navbar-brand\" href=\"#home\">\n" +
-    "        <span class=\"logo-tiny\">\n" +
-    "          <img src=\"images/logo_40.png\"/>\n" +
-    "        </span>\n" +
-    "        <span>strikr</span>\n" +
-    "      </a>\n" +
-    "    </div>\n" +
+    "    <ul class=\"nav navbar-nav\">\n" +
+    "      <li>\n" +
+    "        <a class=\"visible-xs visible-sm\" ng-click=\"toggleSideNav()\">\n" +
+    "          <span class=\"glyphicon glyphicon-align-justify\"></span>\n" +
+    "        </a>\n" +
+    "      </li>\n" +
+    "    </ul>\n" +
+    "  </div>\n" +
+    "</nav>"
+  );
+
+
+  $templateCache.put('app/scripts/components/side_nav/template.html',
+    "<nav id=\"side-nav\">\n" +
+    "  <div class=\"side-nav-header\">\n" +
+    "    <a class=\"navbar-brand\" href=\"#home\">\n" +
+    "      <span class=\"logo-tiny\">\n" +
+    "        <img src=\"images/logo_40.png\"/>\n" +
+    "      </span>\n" +
+    "      <span>strikr</span>\n" +
+    "    </a>\n" +
     "  </div>\n" +
     "</nav>"
   );
@@ -70,7 +83,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/pages/home/template.html',
-    "<button class=\"btn btn-default\" data-ng-click=\"open()\">Open</button>"
+    "<!-- <button class=\"btn btn-default\" data-ng-click=\"open()\">Open</button> -->"
   );
 
 

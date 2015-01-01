@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
+    <link rel="stylesheet" href="bower_components/jQuery.mmenu/src/css/extensions/jquery.mmenu.widescreen.css" media="all and (min-width: 992px)" />
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
@@ -15,22 +16,19 @@
     <!-- endbuild -->
   </head>
   <body ng-app="ms" data-ng-controller="MasterController" id="{{masterCtrl.bodyId}}">
-    <div id="fb-root"></div>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+    <div ms-side-nav data-ng-if="masterCtrl.currentSession"></div>
+    <div>
+      <div id="fb-root"></div>
+      <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="rainbow-dash">
-      <div class="color-section bg-success"></div>
-      <div class="color-section bg-warning"></div>
-      <div class="color-section bg-danger"></div>
-      <div class="color-section bg-info"></div>    
-    </div>
-    <div data-ng-if="masterCtrl.config.APP_INIT">
-      <div ms-nav-bar display="masterCtrl.currentSession"></div>
-      <div class="container">  
-        <div data-ng-view></div>
+      <!-- Add your site or application content here -->
+      <div data-ng-if="masterCtrl.config.APP_INIT">
+        <div ms-nav-bar display="masterCtrl.currentSession"></div>
+        <div class="container">  
+          <div data-ng-view></div>
+        </div>
       </div>
     </div>
     
@@ -78,6 +76,7 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/jQuery.mmenu/src/js/jquery.mmenu.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -108,6 +107,11 @@
         <script src="scripts/components/nav_bar/app.js"></script>
         <script src="scripts/components/nav_bar/nav_bar_controller.js"></script>
         <script src="scripts/components/nav_bar/nav_bar_directive.js"></script>
+
+        <script src="scripts/components/side_nav/app.js"></script>
+        <script src="scripts/components/side_nav/side_nav_controller.js"></script>
+        <script src="scripts/components/side_nav/side_nav_service.js"></script>
+        <script src="scripts/components/side_nav/side_nav_directive.js"></script>
 
 
         <script src="scripts/components/conversation/create_box/app.js"></script>
