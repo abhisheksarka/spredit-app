@@ -20,8 +20,15 @@
           });
         }());
 
-        // open the nav
-        SideNavService.open();
+        angular.element(window).resize(setOpen);
+        function setOpen() {
+          if (window.matchMedia('(min-width: 992px)').matches) {
+            if(!SideNavService.isOpen) {
+              SideNavService.open();
+            } 
+          };
+        };
+        setOpen();
       }
     }; 
   };
