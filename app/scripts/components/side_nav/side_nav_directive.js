@@ -7,7 +7,10 @@
       templateUrl: 'app/scripts/components/side_nav/template.html',
       controller: 'SideNavController',
       link: function($scope, $element, $attributes) {
-        $element.mmenu({});
+        $element.mmenu({
+          header: true,
+          add: false
+        });
         SideNavService.el = $element;
 
         // listen to events and set indicator on the service accordingly

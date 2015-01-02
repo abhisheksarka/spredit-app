@@ -1,19 +1,19 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700,300,400);
 @import url(http://fonts.googleapis.com/css?family=Nunito:700);
-
 @import './themes/bootswatch/_variables';
 
-// bower:scss
-$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
-@import "jQuery.mmenu/src/scss/jquery.mmenu.scss";
-// endbower
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+@import "../bower_components/jQuery.mmenu/src/scss/jquery.mmenu";
+@import "../bower_components/jQuery.mmenu/src/scss/addons/jquery.mmenu.header";
 @import './themes/bootswatch/_bootswatch';
+
+
 
 
 @import './lib/mixins';
 @import './lib/overrides';
-
 
 @import './components/commons';
 @import './components/spinner';

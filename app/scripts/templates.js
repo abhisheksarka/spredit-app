@@ -62,14 +62,19 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/side_nav/template.html',
     "<nav id=\"side-nav\">\n" +
-    "  <div class=\"side-nav-header\">\n" +
+    "  <!-- <div class=\"mm-header\">\n" +
     "    <a class=\"navbar-brand\" href=\"#home\">\n" +
     "      <span class=\"logo-tiny\">\n" +
     "        <img src=\"images/logo_40.png\"/>\n" +
     "      </span>\n" +
     "      <span>strikr</span>\n" +
     "    </a>\n" +
-    "  </div>\n" +
+    "  </div> -->\n" +
+    "  <ul>\n" +
+    "    <li>\n" +
+    "      <a href=\"#\">New Conversation</a>\n" +
+    "    </li>    \n" +
+    "  </ul>\n" +
     "</nav>"
   );
 

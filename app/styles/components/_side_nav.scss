@@ -1,7 +1,6 @@
-// bower:scss
 @import "jQuery.mmenu/src/scss/jquery.mmenu";
 @import "jQuery.mmenu/src/scss/inc/variables";
-// endbower
+
 @include mm_sizing("", 0.8, 140px, 300px);
 
 @media all and (min-width: $screen-md) {
@@ -29,9 +28,10 @@
     border-bottom: rgb(0,0,0);
   }
   .navbar-brand {
-    margin-top: -19px;
+    margin-top: -8px;
     font-size: 22px;
     opacity: 0.8;
+    padding: 0.5px 0px 20.5px;
     &:hover {
       color: white;
       opacity: 0.9;
