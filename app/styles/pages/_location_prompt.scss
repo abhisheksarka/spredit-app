@@ -1,8 +1,18 @@
 body#page-location-prompt {
   text-align: center;
   padding-left: 0px !important;
-  background: lighten(#333, 10%);
+  background: $brand-deep-purple;
   color: white;
+  a {
+    color: white;
+    font-weight: bold;  
+    &:hover {
+      color: white;
+    }
+    &:active {
+      color: white;
+    }
+  }
   .logo {
     margin-top: 10px;
     margin-bottom: 40px;
