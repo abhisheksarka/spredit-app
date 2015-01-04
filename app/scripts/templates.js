@@ -121,7 +121,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "    <h1 ng-bind=\"currentUser.name\">\n" +
     "    </h1>\n" +
-    "    <p ng-bind=\"currentUser.email\"></p>\n" +
+    "    <p ng-bind=\"currentUser.email\" class=\"text-muted\"></p>\n" +
     "  </div>\n" +
     "  <br>\n" +
     "  <div class=\"ms-card location-box\">\n" +
