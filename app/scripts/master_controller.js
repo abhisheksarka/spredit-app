@@ -1,5 +1,5 @@
 (function() {
-  function Controller($scope, Init, Session, $q, $window, $rootScope){
+  function Controller($scope, Init, Session, Location, $q, $window, $rootScope){
     function init(){
       // some shared states
       $scope.masterCtrl = {
@@ -14,7 +14,13 @@
 
       // check current session
       $rootScope.$on('$routeChangeStart', function(event){
+        var c = Session.currentUser, l;
+        if(c) {
+          l = c.location;
+        };
+
         $scope.masterCtrl.currentSession = Session.isSignedIn();
+        $scope.masterCtrl.isLocationPresent = new Location(l).isValid();
       }); 
       bootstrapApp();
     };
@@ -45,6 +51,7 @@
     '$scope', 
     'InitModel',
     'SessionModel', 
+    'LocationModel',
     '$q', 
     '$window', 
     '$rootScope',

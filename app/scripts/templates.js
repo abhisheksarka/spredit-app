@@ -40,7 +40,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
-    "  <button class=\"btn btn-info fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
+    "  <button class=\"btn btn-success fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
     "</span>"
   );
 
@@ -107,6 +107,11 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <p class=\"quote\"></p>  \n" +
     "  </div>\n" +
     "</div>\n"
+  );
+
+
+  $templateCache.put('app/scripts/pages/location_prompt/template.html',
+    "<div>location prompt</div>"
   );
 
 }]);

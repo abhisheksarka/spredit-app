@@ -16,7 +16,7 @@
     <!-- endbuild -->
   </head>
   <body ng-app="ms" data-ng-controller="MasterController" id="{{masterCtrl.bodyId}}">
-    <div ms-side-nav data-ng-if="masterCtrl.currentSession"></div>
+    <div ms-side-nav data-ng-if="masterCtrl.currentSession && masterCtrl.isLocationPresent"></div>
     <div>
       <div id="fb-root"></div>
       <!--[if lt IE 7]>
@@ -90,8 +90,7 @@
         <script src="scripts/core/api/app.js"></script>
         <script src="scripts/core/api/init_model.js"></script>
         <script src="scripts/core/api/session_model.js"></script>
-        <script src="scripts/core/api/conversation_model.js"></script>
-        <script src="scripts/core/api/category_model.js"></script>
+        <script src="scripts/core/api/location_model.js"></script>
         <script src="scripts/core/app.js"></script>
 
         <script src="scripts/components/spinner/app.js"></script>
@@ -130,6 +129,9 @@
 
         <script src="scripts/pages/home/app.js"></script>
         <script src="scripts/pages/home/home_controller.js"></script>
+
+        <script src="scripts/pages/location_prompt/app.js"></script>
+        <script src="scripts/pages/location_prompt/location_prompt_controller.js"></script>
 
         <script src="scripts/pages/app.js"></script>
 
