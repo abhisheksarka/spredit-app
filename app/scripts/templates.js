@@ -40,7 +40,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
-    "  <button class=\"btn btn-success fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
+    "  <button class=\"btn btn-info fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
     "</span>"
   );
 
@@ -96,7 +96,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "    <h1 class=\"brand-name\">Spredit</h1>\n" +
     "    <h2 class=\"brand-tagline\">\n" +
-    "      The new way to spread information around the world..<br>It's faster and better\n" +
+    "      The new way to spread information <br>around the world..<br>\n" +
     "    </h2>\n" +
     "    <br><br>\n" +
     "    <span ms-fb-log-in \n" +
