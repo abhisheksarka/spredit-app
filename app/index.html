@@ -25,7 +25,7 @@
 
       <!-- Add your site or application content here -->
       <div data-ng-if="masterCtrl.config.APP_INIT">
-        <div ms-nav-bar display="masterCtrl.currentSession"></div>
+        <div ms-nav-bar display="masterCtrl.currentSession && masterCtrl.isLocationPresent"></div>
         <div class="container">  
           <div data-ng-view></div>
         </div>

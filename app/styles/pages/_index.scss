@@ -2,15 +2,8 @@ body#page-index {
   background-size: 100%;
   background-image: url('../images/landing_page_cover.jpg');
   padding-left: 0px !important;
+  background-color: #333;
   color: white;
-  #bg-backdrop {
-    position:fixed;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    background: rgba(0,0,0,0.7);
-  }
   .fb-sign-in {
     padding: 15px;
   }

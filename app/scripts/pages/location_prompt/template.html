@@ -1,1 +1,28 @@
-<div>location prompt</div>
+<div class="container">
+  <a class="logo logo-40" href="/">
+    <span class="glyphicon glyphicon-send"></span>
+  </a>
+  <div class="ms-card">
+    <div class="ms-thumbnail">
+      <img ng-src="{{currentUser.profile_picture}}"/>
+    </div>
+    <h3>
+      <strong ng-bind="currentUser.name"></strong>
+      <small class="text-muted" ng-bind="currentUser.email"></small>
+    </h3>
+  </div>
+  <br>
+  <div class="ms-card">
+    <h3>
+      Hi, It's great to see you here :)
+    </h3>
+    <img src="../images/compass_128.png" class="location-aware-icon"/>
+    <p>
+      <a href="/">Spredit</a> is a location aware app, which means to proceed furthur you need to give us permission to access your current location.
+    </p>
+    <br>
+    <button class="btn btn-info">Grant permission</button>
+    <br><br>
+  </div>
+  <br>
+</div>

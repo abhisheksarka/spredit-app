@@ -111,7 +111,34 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/pages/location_prompt/template.html',
-    "<div>location prompt</div>"
+    "<div class=\"container\">\n" +
+    "  <a class=\"logo logo-40\" href=\"/\">\n" +
+    "    <span class=\"glyphicon glyphicon-send\"></span>\n" +
+    "  </a>\n" +
+    "  <div class=\"ms-card\">\n" +
+    "    <div class=\"ms-thumbnail\">\n" +
+    "      <img ng-src=\"{{currentUser.profile_picture}}\"/>\n" +
+    "    </div>\n" +
+    "    <h3>\n" +
+    "      <strong ng-bind=\"currentUser.name\"></strong>\n" +
+    "      <small class=\"text-muted\" ng-bind=\"currentUser.email\"></small>\n" +
+    "    </h3>\n" +
+    "  </div>\n" +
+    "  <br>\n" +
+    "  <div class=\"ms-card\">\n" +
+    "    <h3>\n" +
+    "      Hi, It's great to see you here :)\n" +
+    "    </h3>\n" +
+    "    <img src=\"../images/compass_128.png\" class=\"location-aware-icon\"/>\n" +
+    "    <p>\n" +
+    "      <a href=\"/\">Spredit</a> is a location aware app, which means to proceed furthur you need to give us permission to access your current location.\n" +
+    "    </p>\n" +
+    "    <br>\n" +
+    "    <button class=\"btn btn-info\">Grant permission</button>\n" +
+    "    <br><br>\n" +
+    "  </div>\n" +
+    "  <br>\n" +
+    "</div>"
   );
 
 }]);

@@ -8,9 +8,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "../bower_components/jQuery.mmenu/src/scss/addons/jquery.mmenu.header";
 @import './themes/bootswatch/_bootswatch';
 
-
-
-
+@import './lib/variables';
 @import './lib/mixins';
 @import './lib/overrides';
 
@@ -22,11 +20,25 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import './components/conversation_create_box';
 
 @import './pages/index';
+@import './pages/location_prompt';
+@import './pages/home';
 
 .logo{
   display: inline-block;
   @include ms-border-radius(1000px);
 }
+a.logo {
+  color: inherit;
+  &:hover {
+    color: inherit;
+  }
+  &:active {
+    color: inherit;
+  }
+}
 .logo-128{
   font-size: 128px;
+}
+.logo-40{
+  font-size: 40px;
 }
