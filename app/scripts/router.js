@@ -1,20 +1,21 @@
 angular.module('ms')
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/home', {
-    templateUrl: 'app/scripts/pages/home/template.html',
-    controller: 'HomeController'
-  })
-  .when('/index', {
+  $routeProvider
+  .when('/', {
     templateUrl: 'app/scripts/pages/index/template.html',
     controller: 'IndexController'
+  })
+  .when('/home', {
+    templateUrl: 'app/scripts/pages/home/template.html',
+    controller: 'HomeController'
   })
   .when('/location_prompt', {
     templateUrl: 'app/scripts/pages/location_prompt/template.html',
     controller: 'LocationPromptController'
   })
   .otherwise({
-    redirectTo: '/index',
+    redirectTo: '/',
   });
 }])
 
@@ -30,10 +31,10 @@ angular.module('ms')
   $rootScope.$on('$routeChangeStart', function(event){
     if(!Session.isSignedIn()){
       event.preventDefault();
-      $location.path('/index');
+      $location.path('/');
     } else {
       // restrict the sign in path after logging in
-      if($location.path() == '/index'){
+      if($location.path() == '/'){
         $location.path('/home');
       };
       // if the user does not have a valid location
