@@ -62,17 +62,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/side_nav/template.html',
     "<nav id=\"side-nav\">\n" +
-    "  <!-- <div class=\"mm-header\">\n" +
-    "    <a class=\"navbar-brand\" href=\"#home\">\n" +
-    "      <span class=\"logo-tiny\">\n" +
-    "        <img src=\"images/logo_40.png\"/>\n" +
-    "      </span>\n" +
-    "      <span>strikr</span>\n" +
-    "    </a>\n" +
-    "  </div> -->\n" +
     "  <ul>\n" +
     "    <li>\n" +
-    "      <a href=\"#\">New Conversation</a>\n" +
+    "      <a class=\"link-major\" data-ng-click=\"openCreateBox()\">\n" +
+    "        <span class=\"glyphicon glyphicon-plus glyphicon-ring-wrap\"></span> \n" +
+    "        <span>New Conversation</span>\n" +
+    "      </a>\n" +
     "    </li>    \n" +
     "  </ul>\n" +
     "</nav>"
@@ -97,11 +92,11 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<div class=\"row\">\n" +
     "  <div class=\"col-md-12 text-center\">\n" +
     "    <div class=\"logo logo-128\">\n" +
-    "      <img src=\"../images/logo_128.png\"/>\n" +
+    "      <span class=\"glyphicon glyphicon-send\"></span>\n" +
     "    </div>\n" +
-    "    <h1 class=\"brand-name\">Strikr</h1>\n" +
+    "    <h1 class=\"brand-name\">Spredit</h1>\n" +
     "    <h2 class=\"brand-tagline\">\n" +
-    "      Listen to, participate or share conversations<br>about events and topics that interest you.\n" +
+    "      The new way to spread information around the world..<br>It's faster and better\n" +
     "    </h2>\n" +
     "    <br><br>\n" +
     "    <span ms-fb-log-in \n" +

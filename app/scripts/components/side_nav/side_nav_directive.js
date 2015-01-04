@@ -8,8 +8,9 @@
       controller: 'SideNavController',
       link: function($scope, $element, $attributes) {
         $element.mmenu({
-          header: true,
-          add: false
+          header: {
+            add: false
+          }
         });
         SideNavService.el = $element;
 

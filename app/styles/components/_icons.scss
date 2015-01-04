@@ -8,3 +8,8 @@
     width: 100%
   }
 }
+.glyphicon-ring-wrap {
+  padding: 9px;
+  @include ms-border-radius(1000px);
+  border: 2px solid;
+}
