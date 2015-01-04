@@ -112,7 +112,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/pages/location_prompt/template.html',
     "<div class=\"container\">\n" +
-    "  <a class=\"logo logo-40\" href=\"#/\">\n" +
+    "  <a class=\"logo logo-25\" href=\"#/\">\n" +
     "    <span class=\"glyphicon glyphicon-send\"></span>\n" +
     "  </a>\n" +
     "  <div class=\"ms-card user-info\">\n" +

@@ -29,6 +29,9 @@ body#page-location-prompt {
     h1.name {
       font-size: 50px;
     }
+    .text-muted {
+      opacity: 0.5;
+    }
   }
   .ms-card.location-box {
     background: rgba(0,0,0,0.1);
