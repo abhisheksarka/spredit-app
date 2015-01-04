@@ -129,7 +129,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      Hi, It's great to see you here :)\n" +
     "    </h3>\n" +
     "    <img src=\"../images/map_128.png\" class=\"location-aware-icon\"/>\n" +
-    "    <p class=\"text-muted\">\n" +
+    "    <p>\n" +
     "      <a href=\"#/\">Spredit</a> is a location aware app, which means to proceed furthur you need to give us permission to access your current location.\n" +
     "    </p>\n" +
     "    <br>\n" +
