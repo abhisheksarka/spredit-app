@@ -45,6 +45,20 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('app/scripts/components/locator/template.html',
+    "<span class=\"text-center\">\n" +
+    "  <div ng-if=\"reqState.isWorking\">\n" +
+    "    <div ms-spinner></div>\n" +
+    "    <p><small class=\"text-muted\">Finding you, please wait...</small></p>\n" +
+    "  </div>\n" +
+    "  <div data-ng-if=\"reqState.isError\">\n" +
+    "    <p><small class=\"text-danger\">Bummer! Unable to geolocate you right now.</small></p>\n" +
+    "  </div>\n" +
+    "  <button class=\"btn btn-info\" ng-bind=\"label\" ng-click=\"geolocate()\" ng-if=\"!reqState.isWorking\"></button>\n" +
+    "</span>"
+  );
+
+
   $templateCache.put('app/scripts/components/nav_bar/template.html',
     "<nav class=\"navbar navbar-default\" role=\"navigation\" data-ng-if=\"display\">\n" +
     "  <div class=\"container\">\n" +
@@ -75,10 +89,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/components/spinner/template.html',
-    "<div class=\"ms-spinner\">\n" +
-    "  <div class=\"ms-double-bounce-one\"></div>\n" +
-    "  <div class=\"ms-double-bounce-two\"></div>\n" +
-    "</div>"
+    "<span class=\"ms-spinner\">\n" +
+    "  <span class=\"ms-double-bounce-one\"></span>\n" +
+    "  <span class=\"ms-double-bounce-two\"></span>\n" +
+    "</span>"
   );
 
 
@@ -126,15 +140,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  </div>\n" +
     "  <br>\n" +
     "  <div class=\"ms-card location-box\">\n" +
-    "    <h3>\n" +
-    "      Hi, It's great to see you here :)\n" +
-    "    </h3>\n" +
     "    <img src=\"../images/map_128.png\" class=\"location-aware-icon\"/>\n" +
     "    <p>\n" +
     "      <a href=\"#/\">Spredit</a> is a location aware app, which means to proceed furthur you need to give us permission to access your current location.\n" +
     "    </p>\n" +
     "    <br>\n" +
-    "    <button class=\"btn btn-info\">Grant permission</button>\n" +
+    "    <span ms-locator success-callback=\"redirectToHome(response)\"></span>\n" +
     "    <br><br>\n" +
     "  </div>\n" +
     "  <br>\n" +

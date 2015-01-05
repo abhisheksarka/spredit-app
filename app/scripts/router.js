@@ -41,7 +41,11 @@ angular.module('ms')
       // redirect the user to the location prompt
       if(!new Location(Session.currentUser.location).isValid()) {
         $location.path('/location_prompt')
-      };
+      } else {
+        if($location.path() == '/location_prompt') {
+          $location.path('/home');
+        }
+      }
     };
   }); 
 }]);

@@ -3,5 +3,6 @@ angular.module('ms.components', [
   'ms.components.navBar',
   'ms.components.sideNav',
   'ms.components.conversation',
-  'ms.components.spinner'
+  'ms.components.spinner',
+  'ms.components.locator'
 ]);

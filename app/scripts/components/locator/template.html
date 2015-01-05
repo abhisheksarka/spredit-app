@@ -1,0 +1,10 @@
+<span class="text-center">
+  <div ng-if="reqState.isWorking">
+    <div ms-spinner></div>
+    <p><small class="text-muted">Finding you, please wait...</small></p>
+  </div>
+  <div data-ng-if="reqState.isError">
+    <p><small class="text-danger">Bummer! Unable to geolocate you right now.</small></p>
+  </div>
+  <button class="btn btn-info" ng-bind="label" ng-click="geolocate()" ng-if="!reqState.isWorking"></button>
+</span>
