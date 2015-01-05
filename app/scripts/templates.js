@@ -134,7 +134,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <a href=\"#/\">Spredit</a> is a location aware app, which means to proceed furthur you need to give us permission to access your current location.\n" +
     "    </p>\n" +
     "    <br>\n" +
-    "    <button class=\"btn btn-default\">Grant permission</button>\n" +
+    "    <button class=\"btn btn-info\">Grant permission</button>\n" +
     "    <br><br>\n" +
     "  </div>\n" +
     "  <br>\n" +
