@@ -119,8 +119,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"ms-thumbnail\">\n" +
     "      <img ng-src=\"{{currentUser.profile_picture}}\"/>\n" +
     "    </div>\n" +
-    "    <h1 ng-bind=\"currentUser.name\">\n" +
-    "    </h1>\n" +
+    "    <h3>\n" +
+    "      <strong ng-bind=\"currentUser.name\"></strong>\n" +
+    "    </h3>\n" +
     "    <p ng-bind=\"currentUser.email\" class=\"text-muted\"></p>\n" +
     "  </div>\n" +
     "  <br>\n" +
