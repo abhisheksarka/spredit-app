@@ -2,6 +2,7 @@
   function Controller($scope, Session, CreateBoxModalService, SideNavService){
     function init() {
       $scope.openCreateBox = openCreateBox;
+      $scope.currentUser = Session.currentUser;
     };
     
     function openCreateBox() {

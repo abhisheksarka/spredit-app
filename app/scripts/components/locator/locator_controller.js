@@ -2,6 +2,8 @@
   function Controller($scope, $location, Location, Session, StateHandler){
     function init() {
       $scope.label = $scope.label || 'Share Location'; 
+      $scope.btnClass = $scope.btnClass || 'info';
+      
       $scope.successCallback = $scope.successCallback || angular.noop;
       $scope.errorCallback = $scope.errorCallback || angular.noop;
 

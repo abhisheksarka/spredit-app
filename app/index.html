@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery.ui.slider.css" />
     <link rel="stylesheet" href="bower_components/jQuery.mmenu/src/css/extensions/jquery.mmenu.widescreen.css" media="all and (min-width: 992px)" />
     <!-- bower:css -->
     <!-- endbower -->
@@ -77,10 +78,13 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/jQuery.mmenu/src/js/jquery.mmenu.min.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="bower_components/angular-ui-slider/src/slider.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
         <!-- vendors -->
         <script src="bower_components/jQuery.mmenu/src/js/addons/jquery.mmenu.header.js"></script>
+        <script src="bower_components/jquery-ui/ui/jquery.ui.slider.js"></script>
         <!-- vendors --> 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/global_config.js"></script>
@@ -97,6 +101,10 @@
         <script src="scripts/components/spinner/spinner_controller.js"></script>
         <script src="scripts/components/spinner/spinner_directive.js"></script>
 
+        <script src="scripts/components/locator/slider/app.js"></script>
+        <script src="scripts/components/locator/slider/locator_slider_controller.js"></script>
+        <script src="scripts/components/locator/slider/locator_slider_directive.js"></script>
+        
         <script src="scripts/components/locator/app.js"></script>
         <script src="scripts/components/locator/locator_controller.js"></script>
         <script src="scripts/components/locator/locator_directive.js"></script>
@@ -135,6 +143,9 @@
 
         <script src="scripts/pages/location_prompt/app.js"></script>
         <script src="scripts/pages/location_prompt/location_prompt_controller.js"></script>
+
+        <script src="scripts/pages/current_location/app.js"></script>
+        <script src="scripts/pages/current_location/current_location_controller.js"></script>
 
         <script src="scripts/pages/app.js"></script>
 

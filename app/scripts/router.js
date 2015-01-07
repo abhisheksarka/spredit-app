@@ -14,6 +14,10 @@ angular.module('ms')
     templateUrl: 'app/scripts/pages/location_prompt/template.html',
     controller: 'LocationPromptController'
   })
+  .when('/current_location', {
+    templateUrl: 'app/scripts/pages/current_location/template.html',
+    controller: 'CurrentLocationController'
+  })
   .otherwise({
     redirectTo: '/',
   });

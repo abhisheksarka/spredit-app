@@ -13,6 +13,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import './lib/overrides';
 
 @import './components/commons';
+@import './components/locator_slider';
 @import './components/spinner';
 @import './components/icons';
 @import './components/navbar';
@@ -22,6 +23,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import './pages/index';
 @import './pages/location_prompt';
 @import './pages/home';
+@import './pages/current_location';
 
 .logo{
   display: inline-block;

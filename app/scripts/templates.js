@@ -40,8 +40,19 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
-    "  <button class=\"btn btn-success fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
+    "  <button class=\"btn btn-info fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
     "</span>"
+  );
+
+
+  $templateCache.put('app/scripts/components/locator/slider/template.html',
+    "<div class=\"text-center locator-slider\">\n" +
+    "  <h1 class=\"location-radius text-muted\" data-ng-bind=\"slider.value\"></h1>\n" +
+    "  <div ui-slider=\"slider.options\" min=\"1\" max=\"30\" data-ng-model=\"slider.value\"></div>\n" +
+    "  <p data-ng-bind=\"location.address\" class=\"address\"></p>\n" +
+    "  <br>\n" +
+    "  <div ms-locator label=\"'Refresh'\" btn-class=\"'success'\"></div>\n" +
+    "</div>"
   );
 
 
@@ -54,7 +65,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <div data-ng-if=\"reqState.isError\">\n" +
     "    <p><small class=\"text-danger\">Bummer! Unable to geolocate you right now.</small></p>\n" +
     "  </div>\n" +
-    "  <button class=\"btn btn-info\" ng-bind=\"label\" ng-click=\"geolocate()\" ng-if=\"!reqState.isWorking\"></button>\n" +
+    "  <button class=\"btn btn-{{btnClass}}\" ng-bind=\"label\" ng-click=\"geolocate()\" ng-if=\"!reqState.isWorking\"></button>\n" +
     "</span>"
   );
 
@@ -77,10 +88,28 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/side_nav/template.html',
     "<nav id=\"side-nav\">\n" +
     "  <ul>\n" +
+    "    <li class=\"mm-selected\">\n" +
+    "      <a class=\"link-major\" href=\"/#home\">\n" +
+    "        <span class=\"glyphicon glyphicon-home\"></span> \n" +
+    "        <span>Home</span>\n" +
+    "      </a>\n" +
+    "    </li> \n" +
     "    <li>\n" +
-    "      <a class=\"link-major\" data-ng-click=\"openCreateBox()\">\n" +
-    "        <span class=\"glyphicon glyphicon-plus glyphicon-ring-wrap\"></span> \n" +
-    "        <span>New Conversation</span>\n" +
+    "      <a class=\"link-major\">\n" +
+    "        <span class=\"glyphicon glyphicon-user\"></span> \n" +
+    "        <span>Me</span>\n" +
+    "      </a>\n" +
+    "    </li>\n" +
+    "    <li>\n" +
+    "      <a class=\"link-major\">\n" +
+    "        <span class=\"glyphicon glyphicon-globe\"></span> \n" +
+    "        <span>Notification</span>\n" +
+    "      </a>\n" +
+    "    </li> \n" +
+    "    <li>\n" +
+    "      <a class=\"link-major\" href=\"/#current_location\">\n" +
+    "        <span class=\"glyphicon glyphicon-map-marker\"></span> \n" +
+    "        <span>Current Location</span>\n" +
     "      </a>\n" +
     "    </li>    \n" +
     "  </ul>\n" +
@@ -93,6 +122,13 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <span class=\"ms-double-bounce-one\"></span>\n" +
     "  <span class=\"ms-double-bounce-two\"></span>\n" +
     "</span>"
+  );
+
+
+  $templateCache.put('app/scripts/pages/current_location/template.html',
+    "<div>\n" +
+    "  <div ms-locator-slider></div>\n" +
+    "</div>"
   );
 
 

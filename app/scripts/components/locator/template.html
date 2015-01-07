@@ -6,5 +6,5 @@
   <div data-ng-if="reqState.isError">
     <p><small class="text-danger">Bummer! Unable to geolocate you right now.</small></p>
   </div>
-  <button class="btn btn-info" ng-bind="label" ng-click="geolocate()" ng-if="!reqState.isWorking"></button>
+  <button class="btn btn-{{btnClass}}" ng-bind="label" ng-click="geolocate()" ng-if="!reqState.isWorking"></button>
 </span>

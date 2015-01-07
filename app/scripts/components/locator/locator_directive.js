@@ -5,7 +5,8 @@
       scope: { 
         successCallback: '&',
         errorCallback: '&',
-        label: '=?'
+        label: '=',
+        btnClass: '='
       },
       replace: true,
       templateUrl: 'app/scripts/components/locator/template.html',
