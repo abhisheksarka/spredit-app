@@ -1,13 +1,20 @@
 (function(){
-  function Controller($scope, $location, Location, Session, StateHandler){
+  function Controller($scope, $location, Session, StateHandler){
     function init() {
-      $scope.location = Session.currentUser.location;  
+      var c = Session.currentUser;
+      $scope.location = c.location;
+      $scope.locationConfig = c.location_configuration;
+
       $scope.slider = {
         options: {
-          range: 'min'
-        },
-        value: 15
+          range: 'min',
+          stop: sliderStop,
+        }
       }   
+    };
+
+    function sliderStop() {
+      $scope.locationConfig.$update();
     };
 
     init();
@@ -17,7 +24,6 @@
   .controller('LocatorSliderController', [
     '$scope', 
     '$location', 
-    'LocationModel', 
     'SessionModel',
     'StateHandlerService',
     Controller 

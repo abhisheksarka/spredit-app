@@ -18,6 +18,7 @@ angular
     'ngTouch',
     'ui.bootstrap',
     'ui.slider',
+    'uiGmapgoogle-maps',
     
     // application modules
     'ms.core',

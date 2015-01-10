@@ -18,13 +18,10 @@
     };
 
     function geolocated(position) {
-      var c = Session.currentUser,
-          l = c.location || { },
-          location = new Location(angular.extend({ id: l.id }, buildParams(position.coords)));
-      
+      var c = Session.currentUser;
+      angular.extend(c.location, buildParams(position.coords));
       // after geolocation is complete save or update the existing data for the user    
-      location.$saveOrUpdate().then(function(response){
-        c.location = response;
+      c.location.$saveOrUpdate().then(function(response){
         $scope.reqState.success();
 
         // fire the callback so the client of the directive can handle it accordingly 

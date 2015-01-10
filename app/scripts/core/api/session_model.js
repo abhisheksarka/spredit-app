@@ -1,5 +1,5 @@
 (function(){
-  function Factory($resource, $q, $window){
+  function Factory($resource, $q, $window, User){
     var Resource = $resource(
                     ms.apiFor('/sessions'),
                     { }
@@ -23,7 +23,7 @@
         };
 
         // set the current user
-        res.currentUser = response.jw_tokenable;
+        res.currentUser = User.getInstance(response.jw_tokenable);
 
         // resolve the promise
         defer.resolve(response);
@@ -44,6 +44,12 @@
   };
 
   angular.module('ms.core.api')
-  .factory('SessionModel', ['$resource', '$q', '$window', Factory]);
+  .factory('SessionModel', [
+    '$resource', 
+    '$q', 
+    '$window', 
+    'UserModel',
+    Factory
+  ]);
 
 }());

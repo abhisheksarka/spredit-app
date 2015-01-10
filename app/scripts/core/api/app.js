@@ -1,1 +1,3 @@
-angular.module("ms.core.api", [ "ngResource" ]);
+angular.module("ms.core.api", [ 
+  "ngResource"
+]);

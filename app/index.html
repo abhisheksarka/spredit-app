@@ -46,6 +46,8 @@
     
     <!-- Facebook login SDK -->
     <script src="//connect.facebook.net/en_US/all.js"></script>
+    <!-- Maps API -->
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -80,6 +82,8 @@
     <script src="bower_components/jQuery.mmenu/src/js/jquery.mmenu.min.js"></script>
     <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
     <script src="bower_components/angular-ui-slider/src/slider.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
         <!-- vendors -->
@@ -95,6 +99,8 @@
         <script src="scripts/core/api/init_model.js"></script>
         <script src="scripts/core/api/session_model.js"></script>
         <script src="scripts/core/api/location_model.js"></script>
+        <script src="scripts/core/api/config_location_model.js"></script>
+        <script src="scripts/core/api/user_model.js"></script>
         <script src="scripts/core/app.js"></script>
 
         <script src="scripts/components/spinner/app.js"></script>
@@ -104,6 +110,10 @@
         <script src="scripts/components/locator/slider/app.js"></script>
         <script src="scripts/components/locator/slider/locator_slider_controller.js"></script>
         <script src="scripts/components/locator/slider/locator_slider_directive.js"></script>
+
+        <script src="scripts/components/locator/map/app.js"></script>
+        <script src="scripts/components/locator/map/locator_map_controller.js"></script>
+        <script src="scripts/components/locator/map/locator_map_directive.js"></script>
         
         <script src="scripts/components/locator/app.js"></script>
         <script src="scripts/components/locator/locator_controller.js"></script>

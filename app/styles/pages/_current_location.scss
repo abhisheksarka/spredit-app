@@ -1,29 +1,18 @@
 body#page-current-location {
-  background: white;
-  /*
-  .text-muted {
-    color: rgba(255,255,255,0.7);
-  }*/
+  background: rgb(245,245,245);
   .locator-slider {
     max-width: 650px;
     margin-left: auto;
     margin-right: auto;
-    /*
-    .location-radius {
-      color: white !important;
-    }
-    .address {
-      color: rgba(255,255,255,0.7);  
-    }
-    .ui-slider {
-      background: rgba(255,255,255,0.5);
-      .ui-slider-range {
-        background: white;
-      }
-      .ui-slider-handle {
-        background: white;
-      } 
-    }
-    */
   }
+  .ms-double-bounce-one, .ms-double-bounce-two {
+    background: #333;
+  }
+  .ms-card {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+  }
+  .angular-google-map-container { height: 250px; }
 }

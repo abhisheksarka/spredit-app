@@ -45,13 +45,19 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('app/scripts/components/locator/map/template.html',
+    "<ui-gmap-google-map center='map.center' zoom='map.zoom' draggable=\"map.draggable\" options=\"map.options\">\n" +
+    "  <ui-gmap-marker coords=\"location\" idkey=\"location.id\">\n" +
+    "  </ui-gmap-marker>\n" +
+    "</ui-gmap-google-map>"
+  );
+
+
   $templateCache.put('app/scripts/components/locator/slider/template.html',
     "<div class=\"text-center locator-slider\">\n" +
-    "  <h1 class=\"location-radius text-muted\" data-ng-bind=\"slider.value\"></h1>\n" +
-    "  <div ui-slider=\"slider.options\" min=\"1\" max=\"30\" data-ng-model=\"slider.value\"></div>\n" +
+    "  <h1 class=\"location-radius\" data-ng-bind=\"locationConfig.radius\"></h1>\n" +
+    "  <div ui-slider=\"slider.options\" min=\"5\" max=\"30\" data-ng-model=\"locationConfig.radius\"></div>\n" +
     "  <p data-ng-bind=\"location.address\" class=\"address\"></p>\n" +
-    "  <br>\n" +
-    "  <div ms-locator label=\"'Refresh'\" btn-class=\"'success'\"></div>\n" +
     "</div>"
   );
 
@@ -126,8 +132,14 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/pages/current_location/template.html',
-    "<div>\n" +
+    "<div class=\"text-center\">\n" +
     "  <div ms-locator-slider></div>\n" +
+    "  <br>\n" +
+    "  <div class=\"ms-card\">\n" +
+    "    <div ms-locator-map></div>\n" +
+    "  </div>\n" +
+    "  <br>\n" +
+    "  <div ms-locator label=\"'Refresh'\" btn-class=\"'danger'\"></div>\n" +
     "</div>"
   );
 
