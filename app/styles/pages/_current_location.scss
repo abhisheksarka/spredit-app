@@ -6,6 +6,7 @@ body#page-current-location {
     padding-top: 30px;
     padding-bottom: 100px;
     margin-bottom: -100px;
+    border-bottom: 2px solid darken($brand-info, 12%);
     .location-radius {
       color: white;
     }
