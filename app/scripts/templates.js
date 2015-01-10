@@ -83,9 +83,14 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<nav class=\"navbar navbar-default\" role=\"navigation\" data-ng-if=\"display\">\n" +
     "  <div class=\"container\">\n" +
     "    <ul class=\"nav navbar-nav\">\n" +
-    "      <li>\n" +
-    "        <a class=\"visible-xs visible-sm\" ng-click=\"toggleSideNav()\">\n" +
+    "      <li class=\"visible-xs visible-sm\">\n" +
+    "        <a ng-click=\"toggleSideNav()\">\n" +
     "          <span class=\"glyphicon glyphicon-align-justify\"></span>\n" +
+    "        </a>\n" +
+    "      </li>\n" +
+    "      <li class=\"hidden-xs hidden-sm\">\n" +
+    "        <a>\n" +
+    "          <span class=\"glyphicon glyphicon-send\"></span>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
@@ -112,7 +117,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <li>\n" +
     "      <a class=\"link-major\">\n" +
     "        <span class=\"glyphicon glyphicon-globe\"></span> \n" +
-    "        <span>Notification</span>\n" +
+    "        <span>Notifications</span>\n" +
     "      </a>\n" +
     "    </li> \n" +
     "    <li>\n" +
@@ -120,7 +125,19 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        <span class=\"glyphicon glyphicon-map-marker\"></span> \n" +
     "        <span>Current Location</span>\n" +
     "      </a>\n" +
-    "    </li>    \n" +
+    "    </li> \n" +
+    "    <li>\n" +
+    "      <a class=\"link-major\">\n" +
+    "        <span class=\"glyphicon glyphicon-cog\"></span> \n" +
+    "        <span>Settings</span>\n" +
+    "      </a>\n" +
+    "    </li>\n" +
+    "    <li>\n" +
+    "      <a class=\"link-major\">\n" +
+    "        <span class=\"glyphicon glyphicon-off\"></span> \n" +
+    "        <span>Logout</span>\n" +
+    "      </a>\n" +
+    "    </li>   \n" +
     "  </ul>\n" +
     "</nav>"
   );
@@ -136,7 +153,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/pages/current_location/template.html',
     "<div class=\"text-center\">\n" +
-    "  <div class=\"slider-section\">\n" +
+    "  <div class=\"slider-section section-top\">\n" +
     "    <div class=\"container\">\n" +
     "      <div ms-locator-slider></div>\n" +
     "      <br>\n" +

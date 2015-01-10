@@ -1,12 +1,12 @@
 body#page-current-location {
   background: rgb(245,245,245);
   .slider-section {
-    background: $brand-info;
+    background: $brand-warning;
     margin-top: -20px;
     padding-top: 30px;
     padding-bottom: 100px;
     margin-bottom: -100px;
-    border-bottom: 2px solid darken($brand-info, 12%);
+    border-bottom: 2px solid darken($brand-warning, 12%);
     .location-radius {
       color: white;
     }
