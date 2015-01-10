@@ -44,11 +44,11 @@ nav.navbar {
   height: 63px;
   @include ms-border-radius(0px);
   color: rgb(21,21,21); 
-  @include ms-box-shadow(0, 0, 0px, rgba(0,0,0,0));
-  background: transparent;
+  @include ms-box-shadow(0, 0, 10px, rgba(0,0,0,0.3));
+  background: white;
   .navbar-nav > li > a {
     font-size: 22px;
-    color: rgb(51,51,51);
+    color: $gray;
     &:hover {
       color: rgb(21,21,21);
     }

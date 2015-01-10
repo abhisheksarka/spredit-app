@@ -1,5 +1,8 @@
 <div class="text-center locator-slider">
-  <h1 class="location-radius" data-ng-bind="locationConfig.radius"></h1>
+  <h1 class="location-radius">
+    <span data-ng-bind="locationConfig.radius"></span>
+  </h1>
+  <p class="unit">KM</p>
   <div ui-slider="slider.options" min="5" max="30" data-ng-model="locationConfig.radius"></div>
   <p data-ng-bind="location.address" class="address"></p>
 </div>

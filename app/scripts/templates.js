@@ -46,7 +46,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/components/locator/map/template.html',
-    "<ui-gmap-google-map center='map.center' zoom='map.zoom' draggable=\"map.draggable\" options=\"map.options\">\n" +
+    "<ui-gmap-google-map center='map.center' zoom='map.zoom' draggable=\"map.draggable\" options=\"map.options\" refresh=\"map.refresh\">\n" +
     "  <ui-gmap-marker coords=\"location\" idkey=\"location.id\">\n" +
     "  </ui-gmap-marker>\n" +
     "</ui-gmap-google-map>"
@@ -55,7 +55,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/locator/slider/template.html',
     "<div class=\"text-center locator-slider\">\n" +
-    "  <h1 class=\"location-radius\" data-ng-bind=\"locationConfig.radius\"></h1>\n" +
+    "  <h1 class=\"location-radius\">\n" +
+    "    <span data-ng-bind=\"locationConfig.radius\"></span>\n" +
+    "  </h1>\n" +
+    "  <p class=\"unit\">KM</p>\n" +
     "  <div ui-slider=\"slider.options\" min=\"5\" max=\"30\" data-ng-model=\"locationConfig.radius\"></div>\n" +
     "  <p data-ng-bind=\"location.address\" class=\"address\"></p>\n" +
     "</div>"
@@ -133,13 +136,21 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/pages/current_location/template.html',
     "<div class=\"text-center\">\n" +
-    "  <div ms-locator-slider></div>\n" +
-    "  <br>\n" +
-    "  <div class=\"ms-card\">\n" +
-    "    <div ms-locator-map></div>\n" +
+    "  <div class=\"slider-section\">\n" +
+    "    <div class=\"container\">\n" +
+    "      <div ms-locator-slider></div>\n" +
+    "      <br>\n" +
+    "    </div>\n" +
     "  </div>\n" +
-    "  <br>\n" +
-    "  <div ms-locator label=\"'Refresh'\" btn-class=\"'danger'\"></div>\n" +
+    "  <div class=\"map-section\">\n" +
+    "    <div class=\"container\">\n" +
+    "      <div class=\"ms-card\">\n" +
+    "        <div ms-locator-map></div>\n" +
+    "      </div>\n" +
+    "      <br>\n" +
+    "      <div ms-locator label=\"'Refresh'\" btn-class=\"'danger'\"></div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
     "</div>"
   );
 
