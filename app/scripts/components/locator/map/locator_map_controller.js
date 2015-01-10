@@ -12,7 +12,6 @@
         refresh: false
       };   
       setCoords();
-      console.log($scope.map)
     };
 
     function setCoords() {
