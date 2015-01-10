@@ -12,6 +12,7 @@
         refresh: false
       };   
       setCoords();
+      console.log($scope.map)
     };
 
     function setCoords() {
@@ -20,8 +21,6 @@
 
       center.latitude = location.latitude;
       center.longitude = location.longitude;
-      
-      $scope.map.refresh = true;
     };
 
     $scope.$watch(function(){
@@ -29,6 +28,7 @@
     }, function(nv, ov){
       if(nv != ov){
         setCoords();
+        $scope.map.refresh = false;
       } else {
         $scope.map.refresh = false;
       }
