@@ -1,0 +1,12 @@
+<div class="post-creator text-center" style="max-width: 500px;margin-left:auto;margin-right:auto;">
+  <form name="newPostFrom">
+    <textarea placeholder="Spread something to the people near you" 
+              class="form-control" 
+              ng-model="post.postable.content"
+              name="content"
+              ng-required="true">
+    </textarea>
+    <br>
+    <input type="button" class="btn btn-info btn-sm" value="Spread it" ng-disabled="newPostForm.$invalid" ng-click="createPost()"/>
+  </form>
+</div>

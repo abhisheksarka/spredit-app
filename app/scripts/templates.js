@@ -1,43 +1,6 @@
 angular.module('ms').run(['$templateCache', function($templateCache) {
   'use strict';
 
-  $templateCache.put('app/scripts/components/conversation/create_box/modal_template.html',
-    "<div class=\"modal-header text-center\">\n" +
-    "  <h3 class=\"modal-title\">Strike a Conversation</h3>\n" +
-    "  <span class=\"text-muted\">Choose any event or topic that interests you..</span>\n" +
-    "</div>\n" +
-    "<div class=\"modal-body\">\n" +
-    "  <br>\n" +
-    "  <span ms-create-box></span>\n" +
-    "</div>"
-  );
-
-
-  $templateCache.put('app/scripts/components/conversation/create_box/template.html',
-    "<div class=\"ms-create-box\">\n" +
-    "  <div class=\"text-center\" ng-if=\"state.isWorking\">\n" +
-    "    <div ms-spinner></div>\n" +
-    "  </div>\n" +
-    "  <form name=\"newConversationForm\" data-ng-submit=\"createConversation()\" ng-if=\"!state.isWorking\">\n" +
-    "    <div class=\"form-group\" novalidate>\n" +
-    "      <input type=\"text\" class=\"form-control conversation-title\" placeholder=\"Title\" ng-model=\"conversation.title\" ng-required=\"true\"/>\n" +
-    "    </div>\n" +
-    "    <div class=\"form-group\">\n" +
-    "      <select class=\"form-control\" \n" +
-    "              ng-options=\"category.id as category.name group by category.grouping for category in categories\" \n" +
-    "              ng-model=\"conversation.category.id\" data-ng-required=\"true\">\n" +
-    "        <option disabled=\"true\" selected=\"true\" value='' class=\"placeholder\" default>Select a Category</option>\n" +
-    "      </select>\n" +
-    "    </div>\n" +
-    "    <br>\n" +
-    "    <div class=\"text-center\">\n" +
-    "      <button class=\"btn btn-success btn-sm\" ng-disabled=\"newConversationForm.$invalid\">Done</button>\n" +
-    "    </div>\n" +
-    "  </form>\n" +
-    "</div>"
-  );
-
-
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
     "  <button class=\"btn btn-info fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
@@ -96,6 +59,22 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </ul>\n" +
     "  </div>\n" +
     "</nav>"
+  );
+
+
+  $templateCache.put('app/scripts/components/post/creator/template.html',
+    "<div class=\"post-creator text-center\" style=\"max-width: 500px;margin-left:auto;margin-right:auto;\">\n" +
+    "  <form name=\"newPostFrom\">\n" +
+    "    <textarea placeholder=\"Spread something to the people near you\" \n" +
+    "              class=\"form-control\" \n" +
+    "              ng-model=\"post.postable.content\"\n" +
+    "              name=\"content\"\n" +
+    "              ng-required=\"true\">\n" +
+    "    </textarea>\n" +
+    "    <br>\n" +
+    "    <input type=\"button\" class=\"btn btn-info btn-sm\" value=\"Spread it\" ng-disabled=\"newPostForm.$invalid\" ng-click=\"createPost()\"/>\n" +
+    "  </form>\n" +
+    "</div>"
   );
 
 
@@ -173,7 +152,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/pages/home/template.html',
-    "<!-- <button class=\"btn btn-default\" data-ng-click=\"open()\">Open</button> -->"
+    "<div ms-post-creator></div>"
   );
 
 

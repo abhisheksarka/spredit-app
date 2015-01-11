@@ -87,7 +87,7 @@ nav.navbar {
 input.form-control, 
 textarea.form-control, 
 select.form-control {
-  @include ms-border-radius(2px);
+  @include ms-border-radius(0px);
   border-top: none;
   border-left: none;
   border-right: none;
@@ -101,12 +101,17 @@ select.form-control {
     border-top: none;
     border-left: none;
     border-right: none;
+    border-bottom: 1px solid #333;
   }
   &:focus {
+    border-bottom: 1px solid #333;
   }
   border-width: 1px;
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+input.form-control, textarea.form-control {
+  background: transparent; 
 }
 .modal-header {
   border-bottom: 0px;

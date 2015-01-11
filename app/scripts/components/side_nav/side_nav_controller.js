@@ -1,14 +1,9 @@
 (function(){
-  function Controller($scope, Session, CreateBoxModalService, SideNavService){
+  function Controller($scope, Session, SideNavService){
     function init() {
-      $scope.openCreateBox = openCreateBox;
       $scope.currentUser = Session.currentUser;
     };
-    
-    function openCreateBox() {
-      CreateBoxModalService.open();
-    };
-
+  
     init();
   };
 
@@ -16,7 +11,6 @@
   .controller('SideNavController', [
     '$scope',  
     'SessionModel',
-    'CreateBoxModalService',
     'SideNavService',
     Controller 
   ]);
