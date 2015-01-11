@@ -1,8 +1,15 @@
 (function(){
-  function Controller($scope, Session, SideNavService){
+  function Controller($scope, Session, SideNavService, PostCreatorModalService){
+    
     function init() {
       $scope.toggleSideNav = toggleSideNav;
+      $scope.openPostCreator = openPostCreator;
     };
+
+    function openPostCreator() {
+      PostCreatorModalService.open();
+    };
+
     function toggleSideNav() {
       SideNavService.toggle();
     };
@@ -15,6 +22,7 @@
     '$scope',  
     'SessionModel',
     'SideNavService',
+    'PostCreatorModalService',
     Controller 
   ]);
 }());

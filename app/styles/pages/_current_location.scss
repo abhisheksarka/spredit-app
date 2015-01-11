@@ -1,23 +1,13 @@
 body#page-current-location {
-  background: rgb(245,245,245);
   .slider-section {
-    background: $brand-warning;
-    margin-top: -20px;
-    padding-top: 30px;
-    padding-bottom: 100px;
-    margin-bottom: -100px;
-    border-bottom: 2px solid darken($brand-warning, 12%);
-    .location-radius {
-      color: white;
-    }
     .ui-slider-range, .ui-slider-handle {
-      background: white;
+      background: $brand-success;
     }
     .ui-slider {
-      background: rgba(255,255,255, 0.5);
+      background: lightgray;
     }
     .address, .unit {
-      color: rgba(255,255,255, 0.7);
+      
     }
   }
   .locator-slider {

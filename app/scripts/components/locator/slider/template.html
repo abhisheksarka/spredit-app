@@ -2,7 +2,7 @@
   <h1 class="location-radius">
     <span data-ng-bind="locationConfig.radius"></span>
   </h1>
-  <p class="unit">KM</p>
+  <p class="unit text-muted">KM</p>
   <div ui-slider="slider.options" min="5" max="30" data-ng-model="locationConfig.radius"></div>
-  <p data-ng-bind="location.address" class="address"></p>
+  <p data-ng-bind="location.address" class="address text-muted"></p>
 </div>

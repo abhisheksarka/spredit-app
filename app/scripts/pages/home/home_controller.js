@@ -1,6 +1,7 @@
 (function() {
   function Controller($scope, Session){
     function init() {
+      $scope.currentUser = Session.currentUser;
       $scope.masterCtrl.setBodyId('page-home');
     };
     init();

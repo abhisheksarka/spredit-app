@@ -21,9 +21,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <h1 class=\"location-radius\">\n" +
     "    <span data-ng-bind=\"locationConfig.radius\"></span>\n" +
     "  </h1>\n" +
-    "  <p class=\"unit\">KM</p>\n" +
+    "  <p class=\"unit text-muted\">KM</p>\n" +
     "  <div ui-slider=\"slider.options\" min=\"5\" max=\"30\" data-ng-model=\"locationConfig.radius\"></div>\n" +
-    "  <p data-ng-bind=\"location.address\" class=\"address\"></p>\n" +
+    "  <p data-ng-bind=\"location.address\" class=\"address text-muted\"></p>\n" +
     "</div>"
   );
 
@@ -52,7 +52,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </a>\n" +
     "      </li>\n" +
     "      <li class=\"hidden-xs hidden-sm\">\n" +
-    "        <a>\n" +
+    "        <a ng-click=\"openPostCreator()\">\n" +
     "          <span class=\"glyphicon glyphicon-send\"></span>\n" +
     "        </a>\n" +
     "      </li>\n" +
@@ -62,10 +62,31 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('app/scripts/components/post/actions/template.html',
+    "<small>\n" +
+    "  <span>\n" +
+    "    <a>\n" +
+    "      <span class=\"glyphicon glyphicon-comment text-success\"></span>&nbsp;Comments\n" +
+    "      &nbsp;&nbsp;\n" +
+    "    </a>\n" +
+    "    <a>\n" +
+    "      <span class=\"glyphicon glyphicon-send text-warning\"></span>&nbsp;Spreads\n" +
+    "      &nbsp;&nbsp;\n" +
+    "    </a>\n" +
+    "  </span>\n" +
+    "  <span class=\"pull-right\">\n" +
+    "    <a>\n" +
+    "      <span class=\"glyphicon glyphicon-map-marker text-danger\"></span>&nbsp;Propagation\n" +
+    "    </a>\n" +
+    "  </span>\n" +
+    "</small>"
+  );
+
+
   $templateCache.put('app/scripts/components/post/creator/template.html',
-    "<div class=\"post-creator text-center\" style=\"max-width: 500px;margin-left:auto;margin-right:auto;\">\n" +
-    "  <form name=\"newPostFrom\">\n" +
-    "    <textarea placeholder=\"Spread something to the people near you\" \n" +
+    "<div class=\"post-creator text-center\">\n" +
+    "  <form name=\"newPostForm\" novalidate>\n" +
+    "    <textarea placeholder=\"Share something with the people near you...\" \n" +
     "              class=\"form-control\" \n" +
     "              ng-model=\"post.postable.content\"\n" +
     "              name=\"content\"\n" +
@@ -74,6 +95,49 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <br>\n" +
     "    <input type=\"button\" class=\"btn btn-info btn-sm\" value=\"Spread it\" ng-disabled=\"newPostForm.$invalid\" ng-click=\"createPost()\"/>\n" +
     "  </form>\n" +
+    "</div>"
+  );
+
+
+  $templateCache.put('app/scripts/components/post/creator_modal/template.html',
+    "<div class=\"modal-body\">\n" +
+    "  <br>\n" +
+    "  <span ms-post-creator></span>\n" +
+    "</div>"
+  );
+
+
+  $templateCache.put('app/scripts/components/post/renderer/template.html',
+    "<div class=\"post-renderer\">\n" +
+    "  <div class=\"ms-card-complex\">\n" +
+    "    <div class=\"optional-header\">\n" +
+    "      <div class=\"ms-list-item\">\n" +
+    "        <div class=\"list-avatar\">\n" +
+    "          <img ng-src=\"{{currentUser.profile_picture}}\"/>\n" +
+    "        </div>\n" +
+    "        <div class=\"list-content\">\n" +
+    "          <div class=\"primary\">\n" +
+    "            <h4 class=\"header\">\n" +
+    "              <strong>\n" +
+    "                <span ng-bind=\"currentUser.name\"></span>\n" +
+    "              </strong>\n" +
+    "            </h4>\n" +
+    "          </div>\n" +
+    "          <div class=\"secondary\">\n" +
+    "            <small class=\"text-muted\">2 days ago</small>\n" +
+    "          </div>\n" +
+    "        </div>  \n" +
+    "      </div>\n" +
+    "      <div class=\"clearfix\"></div>\n" +
+    "    </div>\n" +
+    "    <div class=\"rich-media\"></div>\n" +
+    "    <div class=\"supporting-text\">\n" +
+    "      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut ipsum sagittis, sollicitudin elit quis, imperdiet quam. Nam consequat\n" +
+    "    </div>\n" +
+    "    <div class=\"actions\">\n" +
+    "      <span ms-post-actions post=\"{}\"></span>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
     "</div>"
   );
 
@@ -131,20 +195,22 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/pages/current_location/template.html',
-    "<div class=\"text-center\">\n" +
-    "  <div class=\"slider-section section-top\">\n" +
-    "    <div class=\"container\">\n" +
-    "      <div ms-locator-slider></div>\n" +
-    "      <br>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
-    "  <div class=\"map-section\">\n" +
-    "    <div class=\"container\">\n" +
-    "      <div class=\"ms-card\">\n" +
-    "        <div ms-locator-map></div>\n" +
+    "<div class=\"container\">\n" +
+    "  <div class=\"text-center\">\n" +
+    "    <div class=\"slider-section\">\n" +
+    "      <div>\n" +
+    "        <div ms-locator-slider></div>\n" +
+    "        <br>\n" +
     "      </div>\n" +
-    "      <br>\n" +
-    "      <div ms-locator label=\"'Refresh'\" btn-class=\"'danger'\"></div>\n" +
+    "    </div>\n" +
+    "    <div class=\"map-section\">\n" +
+    "      <div>\n" +
+    "        <div class=\"ms-card\">\n" +
+    "          <div ms-locator-map></div>\n" +
+    "        </div>\n" +
+    "        <br>\n" +
+    "        <div ms-locator label=\"'Refresh'\" btn-class=\"'danger'\"></div>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>"
@@ -152,7 +218,31 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/pages/home/template.html',
-    "<div ms-post-creator></div>"
+    "<div class=\"container\">\n" +
+    "  <div style=\"max-width:450px;margin-left:auto;margin-right:auto;\">\n" +
+    "    <div ms-post-renderer post=\"{}\" style=\"\"></div><br>\n" +
+    "    <div class=\"ms-card-complex\">\n" +
+    "      <div class=\"optional-header\">\n" +
+    "        <div class=\"ms-list-item\">\n" +
+    "          <div class=\"list-avatar\">\n" +
+    "            <span class=\"glyphicon glyphicon-comment glyphicon-avatar\"></span>\n" +
+    "          </div>\n" +
+    "          <div class=\"list-content\">\n" +
+    "            <div class=\"primary\">\n" +
+    "              <h4 class=\"header\">\n" +
+    "                Comments\n" +
+    "              </h4>\n" +
+    "            </div>\n" +
+    "            <div class=\"secondary\">\n" +
+    "              <small>300</small>\n" +
+    "            </div>\n" +
+    "          </div>  \n" +
+    "        </div>\n" +
+    "        <div class=\"clearfix\"></div>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</div>"
   );
 
 

@@ -1,8 +1,59 @@
 .ms-card {
   @include ms-border-radius(3px);
   background: white;
-  @include ms-box-shadow(0px, 3px, 3px, rgba(0,0,0,0.1)); 
+  @include ms-box-shadow(0px, 3px, 6px, rgba(0,0,0,0.3)); 
   padding: 15px;
+  overflow: hidden;
+}
+.ms-card-complex {
+  @extend .ms-card;
+  padding: 0px;
+  .optional-header {
+    padding: 15px;
+  }
+  .rich-media {
+    background: #333;
+    min-height: 200px;
+    margin-bottom: 15px;
+  }
+  .supporting-text {
+    padding: 15px;
+    padding-top: 0px;
+  }
+  .actions {
+    border-top: 1px solid lightgray;
+    padding: 15px;
+    a {
+      font-weight: bold;
+      color: #333;
+      text-transform: uppercase;
+      &:hover, &:focus, &:active {
+        color: rgb(21,21,21);
+      }
+    }
+  }
+}
+.ms-list-item {
+  .list-avatar {
+    @extend .ms-thumbnail;
+    float: left;
+    margin-right: 15px;
+    .glyphicon-avatar {
+      font-size: 22px;
+      line-height: 1.7;
+      text-align: center;
+      left: 17px;
+    }
+  }
+  .list-content {
+    padding-left: 65px;
+    .primary {
+      .header {
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+    }
+  }
 }
 #bg-backdrop {
   position:fixed;
@@ -22,9 +73,17 @@
     width: 100%;
   }
 }
-.section-top {
-  padding-top: 70px !important;
-  margin-top: -70px !important;
+.ms-fab {
+  width: 50px;
+  height: 50px;
+  min-height: 50px !important;
+  min-width: 50px !important;
+  line-height: 2.5;
+  @include ms-border-radius(1000px);
+  text-align: center;
+  .glyphicon {
+    left: -2px;
+  }
 }
 .rainbow-dash {
   width: 100%;
