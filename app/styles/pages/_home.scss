@@ -1,2 +1,10 @@
 body#page-home {
+  .actions-card {
+    .optional-header {
+      color: white;
+      .secondary {
+        opacity: 0.7;
+      }
+    }
+  }
 } 

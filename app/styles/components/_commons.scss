@@ -14,18 +14,16 @@
   .rich-media {
     background: #333;
     min-height: 200px;
-    margin-bottom: 15px;
   }
   .supporting-text {
     padding: 15px;
-    padding-top: 0px;
   }
   .actions {
-    border-top: 1px solid lightgray;
     padding: 15px;
     a {
       font-weight: bold;
       color: #333;
+      opacity: 0.7;
       text-transform: uppercase;
       &:hover, &:focus, &:active {
         color: rgb(21,21,21);
@@ -38,11 +36,15 @@
     @extend .ms-thumbnail;
     float: left;
     margin-right: 15px;
-    .glyphicon-avatar {
+  }
+  .glyphicon-avatar {
+    @extend .list-avatar;
+    border: 2px solid;
+    .glyphicon {
       font-size: 22px;
-      line-height: 1.7;
+      line-height: 2;
       text-align: center;
-      left: 17px;
+      left: 12px;
     }
   }
   .list-content {

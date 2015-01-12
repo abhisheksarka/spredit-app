@@ -1,17 +1,17 @@
 <small>
-  <span>
-    <a>
-      <span class="glyphicon glyphicon-comment text-success"></span>&nbsp;Comments
+  <span class="text-muted">
+    <a ng-click="setSelectedAction('comments')">
+      <span class="glyphicon glyphicon-comment"></span>&nbsp;Comments
       &nbsp;&nbsp;
     </a>
-    <a>
-      <span class="glyphicon glyphicon-send text-warning"></span>&nbsp;Spreads
+    <a ng-click="setSelectedAction('spreads')">
+      <span class="glyphicon glyphicon-send"></span>&nbsp;Spreads
       &nbsp;&nbsp;
     </a>
   </span>
   <span class="pull-right">
-    <a>
-      <span class="glyphicon glyphicon-map-marker text-danger"></span>&nbsp;Propagation
+    <a ng-click="setSelectedAction('propagation')">
+      <span class="glyphicon glyphicon-map-marker"></span>&nbsp;Propagation
     </a>
   </span>
 </small>

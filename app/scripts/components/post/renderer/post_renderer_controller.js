@@ -1,9 +1,10 @@
 (function(){
   function Controller($scope, Session, Post){
+    
     function init() {
       $scope.currentUser = Session.currentUser;
     };
-  
+
     init();
   };
 

@@ -3,7 +3,8 @@
   app.directive('msPostRenderer', [function(){
     return{
       scope: {
-        post: "=" 
+        post: '=',
+        selectedAction: '=' 
       },
       replace: true,
       controllerAs: 'postRendererCtrl',

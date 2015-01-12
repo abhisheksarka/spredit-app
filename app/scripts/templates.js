@@ -1,6 +1,11 @@
 angular.module('ms').run(['$templateCache', function($templateCache) {
   'use strict';
 
+  $templateCache.put('app/scripts/components/comment/list/template.html',
+    ""
+  );
+
+
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
     "  <button class=\"btn btn-info fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
@@ -64,19 +69,19 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/post/actions/template.html',
     "<small>\n" +
-    "  <span>\n" +
-    "    <a>\n" +
-    "      <span class=\"glyphicon glyphicon-comment text-success\"></span>&nbsp;Comments\n" +
+    "  <span class=\"text-muted\">\n" +
+    "    <a ng-click=\"setSelectedAction('comments')\">\n" +
+    "      <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;Comments\n" +
     "      &nbsp;&nbsp;\n" +
     "    </a>\n" +
-    "    <a>\n" +
-    "      <span class=\"glyphicon glyphicon-send text-warning\"></span>&nbsp;Spreads\n" +
+    "    <a ng-click=\"setSelectedAction('spreads')\">\n" +
+    "      <span class=\"glyphicon glyphicon-send\"></span>&nbsp;Spreads\n" +
     "      &nbsp;&nbsp;\n" +
     "    </a>\n" +
     "  </span>\n" +
     "  <span class=\"pull-right\">\n" +
-    "    <a>\n" +
-    "      <span class=\"glyphicon glyphicon-map-marker text-danger\"></span>&nbsp;Propagation\n" +
+    "    <a ng-click=\"setSelectedAction('propagation')\">\n" +
+    "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;Propagation\n" +
     "    </a>\n" +
     "  </span>\n" +
     "</small>"
@@ -130,12 +135,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </div>\n" +
     "      <div class=\"clearfix\"></div>\n" +
     "    </div>\n" +
-    "    <div class=\"rich-media\"></div>\n" +
+    "    <!-- <div class=\"rich-media\"></div> -->\n" +
     "    <div class=\"supporting-text\">\n" +
     "      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut ipsum sagittis, sollicitudin elit quis, imperdiet quam. Nam consequat\n" +
     "    </div>\n" +
     "    <div class=\"actions\">\n" +
-    "      <span ms-post-actions post=\"{}\"></span>\n" +
+    "      <span ms-post-actions post=\"{}\" selected-action=\"selectedAction\"></span>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>"
@@ -220,17 +225,16 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/pages/home/template.html',
     "<div class=\"container\">\n" +
     "  <div style=\"max-width:450px;margin-left:auto;margin-right:auto;\">\n" +
-    "    <div ms-post-renderer post=\"{}\" style=\"\"></div><br>\n" +
-    "    <div class=\"ms-card-complex\">\n" +
-    "      <div class=\"optional-header\">\n" +
+    "    <div ms-post-renderer post=\"{}\" selected-action=\"selectedAction\"></div><br>\n" +
+    "    <div class=\"ms-card-complex actions-card\">\n" +
+    "      <div class=\"optional-header {{currentMapping.background}}\">\n" +
     "        <div class=\"ms-list-item\">\n" +
-    "          <div class=\"list-avatar\">\n" +
-    "            <span class=\"glyphicon glyphicon-comment glyphicon-avatar\"></span>\n" +
+    "          <div class=\"glyphicon-avatar\">\n" +
+    "            <span class=\"glyphicon {{currentMapping.glyphicon}}\"></span>\n" +
     "          </div>\n" +
     "          <div class=\"list-content\">\n" +
     "            <div class=\"primary\">\n" +
-    "              <h4 class=\"header\">\n" +
-    "                Comments\n" +
+    "              <h4 class=\"header\" ng-bind=\"currentMapping.label\">\n" +
     "              </h4>\n" +
     "            </div>\n" +
     "            <div class=\"secondary\">\n" +
@@ -239,6 +243,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          </div>  \n" +
     "        </div>\n" +
     "        <div class=\"clearfix\"></div>\n" +
+    "      </div>\n" +
+    "      <div class=\"supporting-text\">\n" +
+    "        <br>\n" +
+    "        <br>\n" +
+    "        <br>\n" +
+    "        <br>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +

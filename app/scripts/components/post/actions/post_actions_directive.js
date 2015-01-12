@@ -3,7 +3,8 @@
   app.directive('msPostActions', [function(){
     return{
       scope: {
-        post: "=" 
+        post: '=',
+        selectedAction: '=' 
       },
       replace: true,
       controllerAs: 'postActionsCtrl',
