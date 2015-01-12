@@ -17,6 +17,10 @@
   }
   .supporting-text {
     padding: 15px;
+    hr {
+      margin-bottom: -15px;
+      margin-top: 15px;
+    }
   }
   .actions {
     padding: 15px;

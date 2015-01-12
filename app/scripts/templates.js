@@ -135,9 +135,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </div>\n" +
     "      <div class=\"clearfix\"></div>\n" +
     "    </div>\n" +
-    "    <!-- <div class=\"rich-media\"></div> -->\n" +
+    "    <div class=\"rich-media\">\n" +
+    "      <img src=\"http://1.bp.blogspot.com/-lLQhXV_NTBk/Tak2X0AmrkI/AAAAAAAAAL0/1kFfM1tT-_I/s1600/1214620933187.jpg\" width=\"100%\"/>\n" +
+    "    </div>\n" +
     "    <div class=\"supporting-text\">\n" +
     "      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut ipsum sagittis, sollicitudin elit quis, imperdiet quam. Nam consequat\n" +
+    "      <hr>\n" +
     "    </div>\n" +
     "    <div class=\"actions\">\n" +
     "      <span ms-post-actions post=\"{}\" selected-action=\"selectedAction\"></span>\n" +
@@ -214,7 +217,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          <div ms-locator-map></div>\n" +
     "        </div>\n" +
     "        <br>\n" +
-    "        <div ms-locator label=\"'Refresh'\" btn-class=\"'danger'\"></div>\n" +
+    "        <div ms-locator label=\"'Refresh'\" btn-class=\"'info'\"></div>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
@@ -225,7 +228,16 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/pages/home/template.html',
     "<div class=\"container\">\n" +
     "  <div style=\"max-width:450px;margin-left:auto;margin-right:auto;\">\n" +
-    "    <div ms-post-renderer post=\"{}\" selected-action=\"selectedAction\"></div><br>\n" +
+    "    <div ms-post-renderer post=\"{}\" selected-action=\"selectedAction\"></div>\n" +
+    "    <!-- <div class=\"text-center\">\n" +
+    "      <span class=\"ms-fab btn btn-danger\">\n" +
+    "        <span class=\"glyphicon glyphicon-lock\"></span>\n" +
+    "      </span>\n" +
+    "      <span class=\"ms-fab btn btn-success\">\n" +
+    "        <span class=\"glyphicon glyphicon-send\"></span>\n" +
+    "      </span>\n" +
+    "    </div> -->\n" +
+    "    <br>\n" +
     "    <div class=\"ms-card-complex actions-card\">\n" +
     "      <div class=\"optional-header {{currentMapping.background}}\">\n" +
     "        <div class=\"ms-list-item\">\n" +

@@ -6,5 +6,14 @@ body#page-home {
         opacity: 0.7;
       }
     }
+    .optional-header.bg-comments {
+      background: $brand-amber;
+    }
+    .optional-header.bg-spreads {
+      background: $brand-light-blue;
+    }
+    .optional-header.bg-propagation {
+      background: $brand-red;
+    }
   }
 } 

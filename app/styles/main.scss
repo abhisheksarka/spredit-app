@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700,300,400);
 @import url(http://fonts.googleapis.com/css?family=Nunito:700);
+
+@import './lib/variables';
 @import './themes/bootswatch/_variables';
 
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
@@ -8,7 +10,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "../bower_components/jQuery.mmenu/src/scss/addons/jquery.mmenu.header";
 @import './themes/bootswatch/_bootswatch';
 
-@import './lib/variables';
 @import './lib/mixins';
 @import './lib/overrides';
 

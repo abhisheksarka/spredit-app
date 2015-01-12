@@ -11,17 +11,17 @@
         comments: {
           label: 'Comments',
           glyphicon: 'glyphicon-comment',
-          background: 'bg-primary'
+          background: 'bg-comments'
         },
         spreads: {
           label: 'Spreads',
           glyphicon: 'glyphicon-send',
-          background: 'bg-warning'
+          background: 'bg-spreads'
         },
         propagation: {
           label: 'Propagation',
           glyphicon: 'glyphicon-map-marker',
-          background: 'bg-danger'
+          background: 'bg-propagation'
         }
       };
     }
