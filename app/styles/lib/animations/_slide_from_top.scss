@@ -1,0 +1,39 @@
+@-webkit-keyframes ms-slide-from-top {
+  from  {
+    height: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  to  { }
+}
+
+@-o-keyframes ms-slide-from-top {
+  from  {
+    height: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  to  { }
+}
+
+@-moz-keyframes ms-slide-from-top {
+  from  {
+    height: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  to  { }
+}
+
+@keyframes ms-slide-from-top {
+  from  {
+    height: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  to  { }
+}
+
+.ms-animation-slide-from-top {
+  @include ms-animation(ms-slide-from-top 300ms);
+}

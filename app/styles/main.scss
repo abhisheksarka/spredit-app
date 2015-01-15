@@ -13,6 +13,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import './lib/mixins';
 @import './lib/overrides';
 
+@import './lib/animations/zoom_out';
+@import './lib/animations/zoom_in';
+@import './lib/animations/slide_from_top';
+
 @import './components/commons';
 @import './components/locator_slider';
 @import './components/spinner';

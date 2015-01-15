@@ -1,7 +1,9 @@
 body#page-home {
   .actions-card {
+    min-height: 200px;
     .optional-header {
       color: white;
+      height: 80px;
       .secondary {
         opacity: 0.7;
       }
@@ -15,5 +17,14 @@ body#page-home {
     .optional-header.bg-propagation {
       background: $brand-red;
     }
+  }
+  .bg-comments-add {
+    @extend .ms-animation-slide-from-top;
+  }
+  .bg-spreads-add{
+    @extend .ms-animation-slide-from-top;
+  }
+  .bg-propagation-add {
+    @extend .ms-animation-slide-from-top;
   }
 } 

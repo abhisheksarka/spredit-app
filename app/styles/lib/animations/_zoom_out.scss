@@ -1,0 +1,47 @@
+@-webkit-keyframes ms-zoom-out {
+  from  {
+    @include ms-transform(scale(1));
+    opacity: 1;
+  }
+  to  {
+    @include ms-transform(scale(0));
+    opacity: 0;
+  }
+}
+
+@-o-keyframes ms-zoom-out {
+  from  {
+    @include ms-transform(scale(1));
+    opacity: 1;
+  }
+  to  {
+    @include ms-transform(scale(0));
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes ms-zoom-out {
+  from  {
+    @include ms-transform(scale(1));
+    opacity: 1;
+  }
+  to  {
+    @include ms-transform(scale(0));
+    opacity: 0;
+  }
+}
+
+@keyframes ms-zoom-out {
+  from  {
+    @include ms-transform(scale(1));
+    opacity: 1;
+  }
+  to  {
+    @include ms-transform(scale(0));
+    opacity: 0;
+  }
+}
+
+.ms-animation-zoom-out {
+  @include ms-animation(ms-zoom-out 1s);
+}

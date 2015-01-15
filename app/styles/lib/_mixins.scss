@@ -10,3 +10,27 @@
   border-radius: $radius;
   background-clip: padding-box; 
 }
+
+@mixin ms-transform($transformation) {
+  -ms-transform: $transformation; 
+  -webkit-transform: $transformation; 
+  -o-transform: $transformation; 
+  -moz-transform: $transformation; 
+  transform: $transformation;
+}
+
+@mixin ms-transition($transition) {
+  -ms-transition: $transition; 
+  -webkit-transition: $transition; 
+  -o-transition: $transition; 
+  -moz-transition: $transition; 
+  transition: $transition;
+}
+
+@mixin ms-animation($animation) {
+  -ms-animation: $animation; 
+  -webkit-animation: $animation; 
+  -o-animation: $animation; 
+  -moz-animation: $animation; 
+  animation: $animation;
+}

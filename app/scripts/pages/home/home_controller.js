@@ -1,5 +1,5 @@
 (function() {
-  function Controller($scope, Session, Spread){
+  function Controller($scope, Session, Spread, $timeout){
     function init() {
       $scope.currentUser = Session.currentUser;
       $scope.masterCtrl.setBodyId('page-home');
@@ -42,6 +42,7 @@
     '$scope',
     'SessionModel',
     'SpreadModel',
+    '$timeout',
     Controller
   ]);
 }());

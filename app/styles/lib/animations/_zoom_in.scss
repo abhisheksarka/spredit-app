@@ -1,0 +1,47 @@
+@-webkit-keyframes ms-zoom-in {
+  from  {
+    @include ms-transform(scale(0.5));
+    opacity: 0;
+  }
+  to  {
+    @include ms-transform(scale(1));
+    opacity: 1;
+  }
+}
+
+@-o-keyframes ms-zoom-in {
+  from  {
+    @include ms-transform(scale(0.5));
+    opacity: 0;
+  }
+  to  {
+    @include ms-transform(scale(1));
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes ms-zoom-in {
+  from  {
+    @include ms-transform(scale(0.5));
+    opacity: 0;
+  }
+  to  {
+    @include ms-transform(scale(1));
+    opacity: 1;
+  }
+}
+
+@keyframes ms-zoom-in {
+  from  {
+    @include ms-transform(scale(0.5));
+    opacity: 0;
+  }
+  to  {
+    @include ms-transform(scale(1));
+    opacity: 1;
+  }
+}
+
+.ms-animation-zoom-in {
+  @include ms-animation(ms-zoom-in 300ms);
+}

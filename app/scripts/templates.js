@@ -243,7 +243,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/pages/home/template.html',
     "<div class=\"container\">\n" +
     "  <div ng-if=\"currentPost.id\">\n" +
-    "    <div style=\"max-width:450px;margin-left:auto;margin-right:auto;\">\n" +
+    "    <div style=\"max-width:450px;margin-left:auto;margin-right:auto;\" class=\"ms-animation-zoom-in\">\n" +
     "      <div ms-post-renderer post=\"currentPost\" selected-action=\"actions.selected\"></div>\n" +
     "      <br>\n" +
     "      <div class=\"ms-card-complex actions-card\">\n" +
