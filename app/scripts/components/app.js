@@ -5,5 +5,6 @@ angular.module('ms.components', [
   'ms.components.spinner',
   'ms.components.locator',
   'ms.components.post',
-  'ms.components.comment'
+  'ms.components.comment',
+  'ms.components.spreader'
 ]);
