@@ -118,35 +118,35 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"optional-header\">\n" +
     "      <div class=\"ms-list-item\">\n" +
     "        <div class=\"list-avatar\">\n" +
-    "          <img ng-src=\"{{currentUser.profile_picture}}\"/>\n" +
+    "          <img ng-src=\"{{post.post_publishable.profile_picture}}\"/>\n" +
     "        </div>\n" +
     "        <div class=\"list-content\">\n" +
     "          <div class=\"primary\">\n" +
     "            <h4 class=\"header\">\n" +
     "              <strong>\n" +
-    "                <span ng-bind=\"currentUser.name\"></span>\n" +
+    "                <span ng-bind=\"post.post_publishable.name\"></span>\n" +
     "              </strong>\n" +
     "            </h4>\n" +
     "          </div>\n" +
     "          <div class=\"secondary\">\n" +
-    "            <small class=\"text-muted\">2 days ago</small>\n" +
+    "            <small class=\"text-muted\" am-time-ago=\"post.created_at\"></small>\n" +
     "          </div>\n" +
     "        </div>  \n" +
     "      </div>\n" +
     "      <div class=\"clearfix\"></div>\n" +
     "    </div>\n" +
-    "    <div class=\"rich-media\">\n" +
+    "    <!-- <div class=\"rich-media\">\n" +
     "      <img src=\"https://c1.staticflickr.com/5/4140/4936354503_c99826c1e0_z.jpg\" width=\"100%\"/>\n" +
-    "    </div>\n" +
+    "    </div> -->\n" +
     "    <div class=\"supporting-text\">\n" +
-    "      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut ipsum sagittis, sollicitudin elit quis, imperdiet quam. Nam consequat\n" +
+    "      <span ng-bind=\"post.postable.content\"></span>\n" +
     "      <br>\n" +
     "      <br>\n" +
     "      <hr>\n" +
-    "      <div ms-spreader spreadable=\"{}\"></div>\n" +
+    "      <div ms-spreader spreadable=\"post\"></div>\n" +
     "    </div>\n" +
     "    <div class=\"actions\">\n" +
-    "      <span ms-post-actions post=\"{}\" selected-action=\"selectedAction\"></span>\n" +
+    "      <span ms-post-actions post=\"post\" selected-action=\"selectedAction\"></span>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>"
@@ -207,10 +207,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/spreader/template.html',
     "<div class=\"text-center spreader\">\n" +
-    "  <span class=\"ms-fab btn btn-danger\">\n" +
+    "  <span class=\"ms-fab btn btn-inverse\" ng-click=\"containIt()\" tooltip=\"Contain\" tooltip-placement=\"top\">\n" +
     "    <span class=\"glyphicon glyphicon-lock\"></span>\n" +
     "  </span>\n" +
-    "  <span class=\"ms-fab btn btn-success\">\n" +
+    "  <span class=\"ms-fab btn btn-inverse\" ng-click=\"spreadIt()\" tooltip=\"Spread\" tooltip-placement=\"top\">\n" +
     "    <span class=\"glyphicon glyphicon-send\"></span>\n" +
     "  </span>\n" +
     "</div>"
@@ -242,35 +242,38 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/pages/home/template.html',
     "<div class=\"container\">\n" +
-    "  <div style=\"max-width:450px;margin-left:auto;margin-right:auto;\">\n" +
-    "    <div ms-post-renderer post=\"{}\" selected-action=\"selectedAction\"></div>\n" +
-    "    <br>\n" +
-    "    <div class=\"ms-card-complex actions-card\">\n" +
-    "      <div class=\"optional-header {{currentMapping.background}}\">\n" +
-    "        <div class=\"ms-list-item\">\n" +
-    "          <div class=\"glyphicon-avatar\">\n" +
-    "            <span class=\"glyphicon {{currentMapping.glyphicon}}\"></span>\n" +
+    "  <div ng-if=\"currentPost.id\">\n" +
+    "    <div style=\"max-width:450px;margin-left:auto;margin-right:auto;\">\n" +
+    "      <div ms-post-renderer post=\"currentPost\" selected-action=\"actions.selected\"></div>\n" +
+    "      <br>\n" +
+    "      <div class=\"ms-card-complex actions-card\">\n" +
+    "        <div class=\"optional-header {{currentMapping.background}}\">\n" +
+    "          <div class=\"ms-list-item\">\n" +
+    "            <div class=\"glyphicon-avatar\">\n" +
+    "              <span class=\"glyphicon {{currentMapping.glyphicon}}\"></span>\n" +
+    "            </div>\n" +
+    "            <div class=\"list-content\">\n" +
+    "              <div class=\"primary\">\n" +
+    "                <h4 class=\"header\" ng-bind=\"currentMapping.label\">\n" +
+    "                </h4>\n" +
+    "              </div>\n" +
+    "              <div class=\"secondary\">\n" +
+    "                <small>300</small>\n" +
+    "              </div>\n" +
+    "            </div>  \n" +
     "          </div>\n" +
-    "          <div class=\"list-content\">\n" +
-    "            <div class=\"primary\">\n" +
-    "              <h4 class=\"header\" ng-bind=\"currentMapping.label\">\n" +
-    "              </h4>\n" +
-    "            </div>\n" +
-    "            <div class=\"secondary\">\n" +
-    "              <small>300</small>\n" +
-    "            </div>\n" +
-    "          </div>  \n" +
+    "          <div class=\"clearfix\"></div>\n" +
     "        </div>\n" +
-    "        <div class=\"clearfix\"></div>\n" +
-    "      </div>\n" +
-    "      <div class=\"supporting-text\">\n" +
-    "        <br>\n" +
-    "        <br>\n" +
-    "        <br>\n" +
-    "        <br>\n" +
+    "        <div class=\"supporting-text\">\n" +
+    "          <br>\n" +
+    "          <br>\n" +
+    "          <br>\n" +
+    "          <br>\n" +
+    "        </div>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
+    "  <br>\n" +
     "</div>"
   );
 

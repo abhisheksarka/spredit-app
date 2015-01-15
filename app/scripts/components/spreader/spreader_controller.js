@@ -9,15 +9,15 @@
         spreadable_id: $scope.spreadable.id
       });
 
-      $scope.contain = contain;
-      $scope.spread = spread;
+      $scope.containIt = containIt;
+      $scope.spreadIt = spreadIt;
     };
 
-    function spread() {
+    function spreadIt() {
       save('spread');
     };
 
-    function contain() {
+    function containIt() {
       save('contain');
     };
 

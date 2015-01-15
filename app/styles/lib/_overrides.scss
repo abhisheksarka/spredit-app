@@ -157,3 +157,15 @@ input.form-control, textarea.form-control {
 .container {
   width: 100% !important;
 }
+
+.btn-inverse {
+  background: #333;
+  color: white;
+  border: 1px solid darken(#333, 5%);
+  &:hover,
+  &:focus,
+  &:active{
+    background-color: darken(#333, 10%);
+    border-color: 1px solid darken(darken(#333, 5%), 12%);
+  }
+}

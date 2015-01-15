@@ -19,6 +19,7 @@ angular
     'ui.bootstrap',
     'ui.slider',
     'uiGmapgoogle-maps',
+    'angularMoment',
     
     // application modules
     'ms.core',

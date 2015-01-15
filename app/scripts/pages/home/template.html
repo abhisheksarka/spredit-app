@@ -1,31 +1,34 @@
 <div class="container">
-  <div style="max-width:450px;margin-left:auto;margin-right:auto;">
-    <div ms-post-renderer post="{}" selected-action="selectedAction"></div>
-    <br>
-    <div class="ms-card-complex actions-card">
-      <div class="optional-header {{currentMapping.background}}">
-        <div class="ms-list-item">
-          <div class="glyphicon-avatar">
-            <span class="glyphicon {{currentMapping.glyphicon}}"></span>
+  <div ng-if="currentPost.id">
+    <div style="max-width:450px;margin-left:auto;margin-right:auto;">
+      <div ms-post-renderer post="currentPost" selected-action="actions.selected"></div>
+      <br>
+      <div class="ms-card-complex actions-card">
+        <div class="optional-header {{currentMapping.background}}">
+          <div class="ms-list-item">
+            <div class="glyphicon-avatar">
+              <span class="glyphicon {{currentMapping.glyphicon}}"></span>
+            </div>
+            <div class="list-content">
+              <div class="primary">
+                <h4 class="header" ng-bind="currentMapping.label">
+                </h4>
+              </div>
+              <div class="secondary">
+                <small>300</small>
+              </div>
+            </div>  
           </div>
-          <div class="list-content">
-            <div class="primary">
-              <h4 class="header" ng-bind="currentMapping.label">
-              </h4>
-            </div>
-            <div class="secondary">
-              <small>300</small>
-            </div>
-          </div>  
+          <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
-      </div>
-      <div class="supporting-text">
-        <br>
-        <br>
-        <br>
-        <br>
+        <div class="supporting-text">
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
       </div>
     </div>
   </div>
+  <br>
 </div>

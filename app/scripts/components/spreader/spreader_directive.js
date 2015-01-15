@@ -4,8 +4,8 @@
     return{
       scope: {
         spreadable: '=',
-        type: '=',
-        callback: '&' 
+        type: '=?',
+        callback: '&?' 
       },
       replace: true,
       controllerAs: 'spreaderCtrl',

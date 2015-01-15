@@ -1,9 +1,15 @@
 (function() {
-  function Controller($scope, Session){
+  function Controller($scope, Session, Spread){
     function init() {
       $scope.currentUser = Session.currentUser;
       $scope.masterCtrl.setBodyId('page-home');
-      $scope.currentMapping = null;
+      $scope.spreads = Spread.query();
+      $scope.spreads.$promise.then(function(){
+        $scope.currentPost = $scope.spreads[0].spreadable;
+      });
+      $scope.actions = {
+        selected: 'comments'
+      };
     };
 
     function mappings() {
@@ -26,9 +32,7 @@
       };
     }
 
-    $scope.$watch(function(){
-      return $scope.selectedAction;
-    }, function(nv, ov) {
+    $scope.$watch('actions.selected', function(nv, ov) {
       $scope.currentMapping = mappings()[nv];
     });
 
@@ -37,6 +41,7 @@
   angular.module('ms.pages.home').controller('HomeController', [
     '$scope',
     'SessionModel',
+    'SpreadModel',
     Controller
   ]);
 }());
