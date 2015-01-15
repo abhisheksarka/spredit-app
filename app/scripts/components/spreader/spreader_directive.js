@@ -3,7 +3,9 @@
   app.directive('msSpreader', [function(){
     return{
       scope: {
-        spreadable: '=' 
+        spreadable: '=',
+        type: '=',
+        callback: '&' 
       },
       replace: true,
       controllerAs: 'spreaderCtrl',
