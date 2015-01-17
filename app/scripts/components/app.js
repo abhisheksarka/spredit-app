@@ -3,6 +3,7 @@ angular.module('ms.components', [
   'ms.components.navBar',
   'ms.components.sideNav',
   'ms.components.spinner',
+  'ms.components.animator',
   'ms.components.locator',
   'ms.components.post',
   'ms.components.comment',

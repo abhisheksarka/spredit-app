@@ -1,14 +1,26 @@
 (function() {
   function Controller($scope, $rootScope, Session, Spread, $timeout, MappingsService){
+    var currentIndex;
+
     function init() {
+      currentIndex = -1;
+      
       $scope.currentUser = Session.currentUser;
       $scope.masterCtrl.setBodyId('page-home');
       $scope.spreads = Spread.query();
       $scope.spreads.$promise.then(function(){
-        $scope.currentPost = $scope.spreads[0].spreadable;
+        nextPost();
       });
       $scope.actions = {
         selected: 'comments'
+      };
+    };
+
+    function nextPost() {
+      var c = $scope.spreads[currentIndex + 1];
+      if(c) {
+        $scope.currentPost = c.spreadable;
+        currentIndex++;
       };
     };
 
@@ -21,7 +33,7 @@
     });
 
     $scope.$on('event.spreader.action', function(event, response, type){
-      $scope.currentPost = $scope.spreads[1].spreadable;
+      nextPost();
     });
 
     init();

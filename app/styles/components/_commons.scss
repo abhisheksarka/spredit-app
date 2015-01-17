@@ -5,6 +5,11 @@
   padding: 15px;
   overflow: hidden;
 }
+.ms-master-section {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .ms-card-complex {
   @extend .ms-card;
   padding: 0px;
