@@ -7,5 +7,6 @@ angular.module('ms.components', [
   'ms.components.locator',
   'ms.components.post',
   'ms.components.comment',
-  'ms.components.spreader'
+  'ms.components.spreader',
+  'ms.components.propagation'
 ]);

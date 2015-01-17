@@ -153,6 +153,16 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('app/scripts/components/propagation/template.html',
+    "<div class=\"ms-propagation\">\n" +
+    "  <ui-gmap-google-map center=\"map.center\" zoom=\"map.zoom\" draggable=\"true\">\n" +
+    "    <!-- <ui-gmap-markers models=\"randomMarkers\" coords=\"'self'\" icon=\"'icon'\">\n" +
+    "    </ui-gmap-markers> -->\n" +
+    "  </ui-gmap-google-map>\n" +
+    "</div>"
+  );
+
+
   $templateCache.put('app/scripts/components/side_nav/template.html',
     "<nav id=\"side-nav\">\n" +
     "  <ul>\n" +
@@ -266,11 +276,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </div>\n" +
     "        <div class=\"clearfix\"></div>\n" +
     "      </div>\n" +
-    "      <div class=\"supporting-text\">\n" +
-    "        <br>\n" +
-    "        <br>\n" +
-    "        <br>\n" +
-    "        <br>\n" +
+    "      <div>\n" +
+    "        <div ng-if=\"currentMapping.label == 'Propagation'\">\n" +
+    "          <div ms-propagation post=\"currentPost\"></div>\n" +
+    "        </div>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
