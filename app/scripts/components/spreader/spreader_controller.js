@@ -1,5 +1,5 @@
 (function(){
-  function Controller($scope, Spread){
+  function Controller($scope, $rootScope, Spread){
     function init() {
       $scope.type = $scope.type || 'Post';
       $scope.callback = $scope.callback || angular.noop;
@@ -24,10 +24,14 @@
     function save(type) {
       $scope.spread.action = type;
       $scope.spread.$save().then(function(response){
-        $scope.callback({response: response});
+        broadcast(response, type);
       }, function(response, status, headers, config) {
-        $scope.callback({response: response});
+        broadcast(response, type);
       });
+    };
+
+    function broadcast(response, type) {
+      $rootScope.$broadcast('event.spreader.action', type, response);
     };
 
     init();
@@ -36,6 +40,7 @@
   angular.module('ms.components.spreader')
   .controller('SpreaderController', [
     '$scope',  
+    '$rootScope',
     'SpreadModel',
     Controller 
   ]);

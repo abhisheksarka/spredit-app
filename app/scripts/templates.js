@@ -146,7 +146,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <div ms-spreader spreadable=\"post\"></div>\n" +
     "    </div>\n" +
     "    <div class=\"actions\">\n" +
-    "      <span ms-post-actions post=\"post\" selected-action=\"selectedAction\"></span>\n" +
+    "      <span ms-post-actions post=\"post\" selected-action=\"selectedAction\" ></span>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>"
@@ -244,7 +244,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<div class=\"container\">\n" +
     "  <div ng-if=\"currentPost.id\">\n" +
     "    <div style=\"max-width:450px;margin-left:auto;margin-right:auto;\" class=\"ms-animation-zoom-in\">\n" +
-    "      <div ms-post-renderer post=\"currentPost\" selected-action=\"actions.selected\"></div>\n" +
+    "      <div ms-post-renderer \n" +
+    "           post=\"currentPost\" \n" +
+    "           selected-action=\"actions.selected\"></div>\n" +
     "      <br>\n" +
     "      <div class=\"ms-card-complex actions-card\">\n" +
     "        <div class=\"optional-header {{currentMapping.background}}\">\n" +

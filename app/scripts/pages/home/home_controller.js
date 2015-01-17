@@ -1,5 +1,5 @@
 (function() {
-  function Controller($scope, Session, Spread, $timeout){
+  function Controller($scope, $rootScope, Session, Spread, $timeout, MappingsService){
     function init() {
       $scope.currentUser = Session.currentUser;
       $scope.masterCtrl.setBodyId('page-home');
@@ -13,36 +13,26 @@
     };
 
     function mappings() {
-      return {
-        comments: {
-          label: 'Comments',
-          glyphicon: 'glyphicon-comment',
-          background: 'bg-comments'
-        },
-        spreads: {
-          label: 'Spreads',
-          glyphicon: 'glyphicon-send',
-          background: 'bg-spreads'
-        },
-        propagation: {
-          label: 'Propagation',
-          glyphicon: 'glyphicon-map-marker',
-          background: 'bg-propagation'
-        }
-      };
-    }
+      return MappingsService;
+    };
 
     $scope.$watch('actions.selected', function(nv, ov) {
       $scope.currentMapping = mappings()[nv];
+    });
+
+    $scope.$on('event.spreader.action', function(event, response, type){
+      $scope.currentPost = $scope.spreads[1].spreadable;
     });
 
     init();
   };
   angular.module('ms.pages.home').controller('HomeController', [
     '$scope',
+    '$rootScope',
     'SessionModel',
     'SpreadModel',
     '$timeout',
+    'HomeMappingsService',
     Controller
   ]);
 }());

@@ -5,7 +5,6 @@
       scope: {
         spreadable: '=',
         type: '=?',
-        callback: '&?' 
       },
       replace: true,
       controllerAs: 'spreaderCtrl',
