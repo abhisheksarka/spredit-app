@@ -1,20 +1,11 @@
 (function(){
-  function Controller($scope, $location, Location, Session, StateHandler, MapStyles){
+  function Controller($scope, $location, Location, Session, StateHandler, MapConfig){
     function init() {
       $scope.location = Session.currentUser.location;  
       $scope.map = {
         center: { },
         zoom: 10,
-        options: {
-          scrollwheel: false,
-          panControl: false,
-          mapTypeControl: false,
-          scaleControl: false,
-          rotateControl: false,
-          streetViewControl: false,
-          zoomControl: false,
-          styles: MapStyles.paleDawn
-        },
+        options: MapConfig.default,
         refresh: false
       };   
       setCoords();
@@ -48,7 +39,7 @@
     'LocationModel', 
     'SessionModel',
     'StateHandlerService',
-    'MapStylesService',
+    'MapConfigService',
     Controller 
   ]);
 }());

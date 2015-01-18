@@ -1,5 +1,5 @@
 (function(){
-  function Controller($scope, Location, MapStyles){
+  function Controller($scope, Location, MapConfig){
     function init() { 
       $scope.locations = Location.query({
         locatable_type: 'Post',
@@ -11,16 +11,7 @@
         bounds: { },
         center: { },
         init: false,
-        options: {
-          scrollwheel: false,
-          panControl: false,
-          mapTypeControl: false,
-          scaleControl: false,
-          rotateControl: false,
-          streetViewControl: false,
-          zoomControl: false,
-          styles: MapStyles.paleDawn
-        }
+        options: MapConfig.default
       };
     };
 
@@ -38,7 +29,7 @@
   .controller('PropagationController', [
     '$scope', 
     'LocationModel', 
-    'MapStylesService',
+    'MapConfigService',
     Controller 
   ]);
 }());
