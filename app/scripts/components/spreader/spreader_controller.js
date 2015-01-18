@@ -35,8 +35,10 @@
     function broadcast(response, type) {
       $rootScope.$broadcast('event.spreader.action', type, response);
     };
-
-    init();
+    
+    $scope.$watch('spreadable.id', function(nv, ov){
+      init();
+    });
   };
 
   angular.module('ms.components.spreader')

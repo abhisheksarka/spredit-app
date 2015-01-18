@@ -260,7 +260,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div ng-if=\"loadState.isComplete && !currentPost.id\" class=\"text-center\">\n" +
     "      <img src=\"images/no_posts.png\"/>\n" +
     "      <h3 class=\"text-muted\">\n" +
-    "        Nothing posts to show right now\n" +
+    "        No posts to show right now\n" +
     "      </h3>\n" +
     "    </div>\n" +
     "    <div ng-if=\"currentPost.id\" \n" +
