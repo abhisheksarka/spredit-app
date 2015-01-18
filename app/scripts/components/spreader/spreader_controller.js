@@ -1,14 +1,13 @@
 (function(){
-  function Controller($scope, $rootScope, Spread){
+  function Controller($scope, $rootScope, Spread, StateHandler){
     function init() {
       $scope.type = $scope.type || 'Post';
       $scope.callback = $scope.callback || angular.noop;
-
       $scope.spread = new Spread({
         spreadable_type: $scope.type,
         spreadable_id: $scope.spreadable.id
       });
-
+      $scope.requestState = StateHandler.getInstance();
       $scope.containIt = containIt;
       $scope.spreadIt = spreadIt;
     };
@@ -22,11 +21,14 @@
     };
 
     function save(type) {
+      $scope.requestState.initiate();
       $scope.spread.action = type;
       $scope.spread.$save().then(function(response){
         broadcast(response, type);
+        $scope.requestState.success();
       }, function(response, status, headers, config) {
         broadcast(response, type);
+        $scope.requestState.error();
       });
     };
 
@@ -42,6 +44,7 @@
     '$scope',  
     '$rootScope',
     'SpreadModel',
+    'StateHandlerService',
     Controller 
   ]);
 }());

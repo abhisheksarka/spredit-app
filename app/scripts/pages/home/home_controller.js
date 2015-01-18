@@ -1,5 +1,5 @@
 (function() {
-  function Controller($scope, $rootScope, Session, Spread, $timeout, MappingsService){
+  function Controller($scope, $rootScope, Session, Spread, $timeout, MappingsService, StateHandler, PostCreatorModalService){
     var currentIndex;
 
     function init() {
@@ -8,12 +8,20 @@
       $scope.currentUser = Session.currentUser;
       $scope.masterCtrl.setBodyId('page-home');
       $scope.spreads = Spread.query();
+      $scope.loadState = StateHandler.getInstance();
+      $scope.loadState.initiate();
       $scope.spreads.$promise.then(function(){
         nextPost();
+        $scope.loadState.success();
       });
       $scope.actions = {
         selected: 'comments'
       };
+      $scope.openPostCreator = openPostCreator;
+    };
+
+    function openPostCreator() {
+      PostCreatorModalService.open();
     };
 
     function nextPost() {
@@ -21,7 +29,9 @@
       if(c) {
         $scope.currentPost = c.spreadable;
         currentIndex++;
-      };
+      } else {
+        $scope.currentPost = null;
+      }
     };
 
     function mappings() {
@@ -45,6 +55,8 @@
     'SpreadModel',
     '$timeout',
     'HomeMappingsService',
+    'StateHandlerService',
+    'PostCreatorModalService',
     Controller
   ]);
 }());

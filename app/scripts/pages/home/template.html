@@ -1,31 +1,38 @@
 <div class="container">
-  <div class="ms-master-section" 
-       ng-if="currentPost.id" 
-       ms-animator="ms-animation-zoom-in" 
-       on-change-in="{{currentPost.id}}">
-    <div ms-post-renderer post="currentPost" selected-action="actions.selected"></div>
-    <br>
-    <div class="ms-card-complex actions-card">
-      <div class="optional-header {{currentMapping.background}}">
-        <div class="ms-list-item">
-          <div class="glyphicon-avatar">
-            <span class="glyphicon {{currentMapping.glyphicon}}"></span>
+  <div class="ms-master-section">
+    <div ng-if="loadState.isComplete && !currentPost.id" class="text-center">
+      <img src="images/no_posts.png"/>
+      <h3 class="text-muted">
+        Nothing posts to show right now
+      </h3>
+    </div>
+    <div ng-if="currentPost.id" 
+         ms-animator="ms-animation-zoom-in" 
+         on-change-in="{{currentPost.id}}">
+      <div ms-post-renderer post="currentPost" selected-action="actions.selected"></div>
+      <br>
+      <div class="ms-card-complex actions-card">
+        <div class="optional-header {{currentMapping.background}}">
+          <div class="ms-list-item">
+            <div class="glyphicon-avatar">
+              <span class="glyphicon {{currentMapping.glyphicon}}"></span>
+            </div>
+            <div class="list-content">
+              <div class="primary">
+                <h4 class="header" ng-bind="currentMapping.label">
+                </h4>
+              </div>
+              <div class="secondary">
+                <small>300</small>
+              </div>
+            </div>  
           </div>
-          <div class="list-content">
-            <div class="primary">
-              <h4 class="header" ng-bind="currentMapping.label">
-              </h4>
-            </div>
-            <div class="secondary">
-              <small>300</small>
-            </div>
-          </div>  
+          <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
-      </div>
-      <div>
-        <div ng-if="currentMapping.label == 'Propagation'">
-          <div ms-propagation post="currentPost"></div>
+        <div>
+          <div ng-if="currentMapping.label == 'Propagation'">
+            <div ms-propagation post="currentPost"></div>
+          </div>
         </div>
       </div>
     </div>

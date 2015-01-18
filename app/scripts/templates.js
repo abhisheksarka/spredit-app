@@ -216,11 +216,16 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/spreader/template.html',
     "<div class=\"text-center spreader\">\n" +
-    "  <span class=\"ms-fab btn btn-inverse\" ng-click=\"containIt()\">\n" +
-    "    <span class=\"glyphicon glyphicon-lock\"></span>\n" +
+    "  <span ng-if=\"requestState.isWorking\" class=\"text-muted\">\n" +
+    "    <strong>Working...</strong>\n" +
     "  </span>\n" +
-    "  <span class=\"ms-fab btn btn-inverse\" ng-click=\"spreadIt()\">\n" +
-    "    <span class=\"glyphicon glyphicon-send\"></span>\n" +
+    "  <span ng-if=\"!requestState.isWorking\">\n" +
+    "    <span class=\"ms-fab btn btn-inverse\" ng-click=\"containIt()\">\n" +
+    "      <span class=\"glyphicon glyphicon-lock\"></span>\n" +
+    "    </span>\n" +
+    "    <span class=\"ms-fab btn btn-inverse\" ng-click=\"spreadIt()\">\n" +
+    "      <span class=\"glyphicon glyphicon-send\"></span>\n" +
+    "    </span>\n" +
     "  </span>\n" +
     "</div>"
   );
@@ -251,33 +256,40 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/pages/home/template.html',
     "<div class=\"container\">\n" +
-    "  <div class=\"ms-master-section\" \n" +
-    "       ng-if=\"currentPost.id\" \n" +
-    "       ms-animator=\"ms-animation-zoom-in\" \n" +
-    "       on-change-in=\"{{currentPost.id}}\">\n" +
-    "    <div ms-post-renderer post=\"currentPost\" selected-action=\"actions.selected\"></div>\n" +
-    "    <br>\n" +
-    "    <div class=\"ms-card-complex actions-card\">\n" +
-    "      <div class=\"optional-header {{currentMapping.background}}\">\n" +
-    "        <div class=\"ms-list-item\">\n" +
-    "          <div class=\"glyphicon-avatar\">\n" +
-    "            <span class=\"glyphicon {{currentMapping.glyphicon}}\"></span>\n" +
+    "  <div class=\"ms-master-section\">\n" +
+    "    <div ng-if=\"loadState.isComplete && !currentPost.id\" class=\"text-center\">\n" +
+    "      <img src=\"images/no_posts.png\"/>\n" +
+    "      <h3 class=\"text-muted\">\n" +
+    "        Nothing posts to show right now\n" +
+    "      </h3>\n" +
+    "    </div>\n" +
+    "    <div ng-if=\"currentPost.id\" \n" +
+    "         ms-animator=\"ms-animation-zoom-in\" \n" +
+    "         on-change-in=\"{{currentPost.id}}\">\n" +
+    "      <div ms-post-renderer post=\"currentPost\" selected-action=\"actions.selected\"></div>\n" +
+    "      <br>\n" +
+    "      <div class=\"ms-card-complex actions-card\">\n" +
+    "        <div class=\"optional-header {{currentMapping.background}}\">\n" +
+    "          <div class=\"ms-list-item\">\n" +
+    "            <div class=\"glyphicon-avatar\">\n" +
+    "              <span class=\"glyphicon {{currentMapping.glyphicon}}\"></span>\n" +
+    "            </div>\n" +
+    "            <div class=\"list-content\">\n" +
+    "              <div class=\"primary\">\n" +
+    "                <h4 class=\"header\" ng-bind=\"currentMapping.label\">\n" +
+    "                </h4>\n" +
+    "              </div>\n" +
+    "              <div class=\"secondary\">\n" +
+    "                <small>300</small>\n" +
+    "              </div>\n" +
+    "            </div>  \n" +
     "          </div>\n" +
-    "          <div class=\"list-content\">\n" +
-    "            <div class=\"primary\">\n" +
-    "              <h4 class=\"header\" ng-bind=\"currentMapping.label\">\n" +
-    "              </h4>\n" +
-    "            </div>\n" +
-    "            <div class=\"secondary\">\n" +
-    "              <small>300</small>\n" +
-    "            </div>\n" +
-    "          </div>  \n" +
+    "          <div class=\"clearfix\"></div>\n" +
     "        </div>\n" +
-    "        <div class=\"clearfix\"></div>\n" +
-    "      </div>\n" +
-    "      <div>\n" +
-    "        <div ng-if=\"currentMapping.label == 'Propagation'\">\n" +
-    "          <div ms-propagation post=\"currentPost\"></div>\n" +
+    "        <div>\n" +
+    "          <div ng-if=\"currentMapping.label == 'Propagation'\">\n" +
+    "            <div ms-propagation post=\"currentPost\"></div>\n" +
+    "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
     "    </div>\n" +
