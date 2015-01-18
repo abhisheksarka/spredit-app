@@ -14,7 +14,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/components/locator/map/template.html',
-    "<ui-gmap-google-map center='map.center' zoom='map.zoom' draggable=\"map.draggable\" options=\"map.options\" refresh=\"map.refresh\">\n" +
+    "<ui-gmap-google-map center='map.center' zoom='map.zoom' options=\"map.options\" refresh=\"map.refresh\">\n" +
     "  <ui-gmap-marker coords=\"location\" idkey=\"location.id\">\n" +
     "  </ui-gmap-marker>\n" +
     "</ui-gmap-google-map>"
@@ -154,10 +154,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/components/propagation/template.html',
-    "<div class=\"ms-propagation\">\n" +
-    "  <ui-gmap-google-map center=\"map.center\" zoom=\"map.zoom\" draggable=\"true\">\n" +
-    "    <!-- <ui-gmap-markers models=\"randomMarkers\" coords=\"'self'\" icon=\"'icon'\">\n" +
-    "    </ui-gmap-markers> -->\n" +
+    "<div class=\"ms-propagation\" ng-if=\"map.init\">\n" +
+    "  <ui-gmap-google-map center=\"map.center\" zoom=\"map.zoom\" bounds=\"map.bounds\" options=\"map.options\">\n" +
+    "    <ui-gmap-markers models=\"locations\" coords=\"'self'\" fit=\"true\"></ui-gmap-markers>\n" +
     "  </ui-gmap-google-map>\n" +
     "</div>"
   );

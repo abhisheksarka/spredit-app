@@ -1,6 +1,5 @@
-<div class="ms-propagation">
-  <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true">
-    <!-- <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'">
-    </ui-gmap-markers> -->
+<div class="ms-propagation" ng-if="map.init">
+  <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds" options="map.options">
+    <ui-gmap-markers models="locations" coords="'self'" fit="true"></ui-gmap-markers>
   </ui-gmap-google-map>
 </div>

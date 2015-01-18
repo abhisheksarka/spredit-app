@@ -1,5 +1,5 @@
 (function(){
-  function Controller($scope, Location){
+  function Controller($scope, Location, MapStyles){
     function init() { 
       $scope.locations = Location.query({
         locatable_type: 'Post',
@@ -7,18 +7,29 @@
       });
       $scope.locations.$promise.then(setMap);
       $scope.map = {
-        zoom: 10,
+        zoom: 4,
+        bounds: { },
+        center: { },
+        init: false,
         options: {
-          scrollwheel: false
+          scrollwheel: false,
+          panControl: false,
+          mapTypeControl: false,
+          scaleControl: false,
+          rotateControl: false,
+          streetViewControl: false,
+          zoomControl: false,
+          styles: MapStyles.paleDawn
         }
       };
     };
 
     function setMap() {
-      $scope.map.center = $scope.locations[0]; 
+      $scope.map.center = angular.copy($scope.locations[0]); 
+      $scope.map.init = true;
     };
 
-    $scope.$watch('post.id', function(){
+    $scope.$watch('post.id', function() {
       init();
     });
   };
@@ -27,6 +38,7 @@
   .controller('PropagationController', [
     '$scope', 
     'LocationModel', 
+    'MapStylesService',
     Controller 
   ]);
 }());
