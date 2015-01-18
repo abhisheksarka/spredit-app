@@ -2,8 +2,8 @@
   function Controller($scope, Location, MapConfig){
     function init() { 
       $scope.locations = Location.query({
-        locatable_type: 'Post',
-        locatable_id: $scope.post.id
+        locatable_type: 'Propagation',
+        locatable_id: $scope.post.propagation.id
       });
       $scope.locations.$promise.then(setMap);
       $scope.map = {
