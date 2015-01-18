@@ -228,7 +228,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/pages/current_location/template.html',
     "<div class=\"container\">\n" +
-    "  <div class=\"text-center\">\n" +
+    "  <div class=\"text-center ms-master-section\">\n" +
     "    <div class=\"slider-section\">\n" +
     "      <div>\n" +
     "        <div ms-locator-slider></div>\n" +
