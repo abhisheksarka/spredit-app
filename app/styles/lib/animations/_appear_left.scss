@@ -1,0 +1,55 @@
+@-webkit-keyframes ms-appear-left {
+  from  {
+    width: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow: hidden;
+  }
+  to  {
+    overflow: auto; 
+    width: 200px;
+  }
+}
+
+@-o-keyframes ms-appear-left {
+  from  {
+    width: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow: hidden;
+  }
+  to  {
+    overflow: auto;
+    width: 200px; 
+  }
+}
+
+@-moz-keyframes ms-appear-left {
+  from  {
+    width: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow: hidden;
+  }
+  to  {
+    overflow: auto; 
+    width: 200px;
+  }
+}
+
+@keyframes ms-appear-left {
+  from  {
+    width: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow: hidden;
+  }
+  to  {
+    overflow: auto; 
+    width: 200px;
+  }
+}
+
+.ms-animation-appear-left {
+  @include ms-animation(ms-appear-left 300ms);
+}
