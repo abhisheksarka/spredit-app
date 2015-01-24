@@ -1,9 +1,22 @@
 (function(){
-  function Controller($scope, Session, Comment){
+  function Controller($scope, Session, Comment, StateHandler){
     function init() {
+      $scope.requestState = StateHandler.getInstance();
+      $scope.comments = [];
+      loadComments();
+    };
+
+    function loadComments() {
+      var r = $scope.requestState;
+      r.initiate();
       $scope.comments = Comment.query({
         commentable_type: 'Post',
         commentable_id: $scope.commentable.id
+      });
+      $scope.comments.$promise.then(function(){
+        r.success();
+      }, function(){
+        r.error();
       });
     };
 
@@ -17,6 +30,7 @@
     '$scope',  
     'SessionModel',
     'CommentModel',
+    'StateHandlerService',
     Controller 
   ]);
 }());

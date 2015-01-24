@@ -1,5 +1,14 @@
 <div class="comment-lister">
-  <div class="ms-list">
+  <div class="text-center">
+    <div ng-if="comments.length == 0 && requestState.isComplete">
+      <small class="text-muted">Nothing to show here...</small>
+    </div>
+    <div ng-if="requestState.isWorking">
+      <div ms-spinner></div>
+      <p><small class="text-muted">Loading...</small></p>
+    </div>
+  </div>
+  <div class="ms-list" ng-if="comments.length > 0 && !requestState.isWorking">
     <div class="ms-list-item" ng-repeat="comment in comments">
       <div class="list-avatar">
         <img ng-src="{{comment.comment_publishable.profile_picture}}"/>
