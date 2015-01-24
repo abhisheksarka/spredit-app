@@ -108,3 +108,31 @@
   }
 }
 .angular-google-map-container { height: 400px; }
+
+.ms-list {
+  .ms-list-item {
+    .list-avatar {
+    
+    }
+    .glyphicon-avatar {
+      
+    }
+    .list-content {
+      .primary {
+        margin-bottom: 5px;
+        .header {
+          font-size: 16px;
+          font-weight: 600;
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
+      }
+      .secondary {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        color: $brand-text-secondary;
+        border-bottom: 1px solid #ecf0f1;
+      }
+    }
+  }
+}

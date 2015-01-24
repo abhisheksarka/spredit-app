@@ -1,6 +1,6 @@
 (function(){
   var app = angular.module('ms.components.comment.creator');
-  app.directive('msPostCreator', [function(){
+  app.directive('msCommentCreator', [function(){
     return{
       scope: {
         commentable: "=" 

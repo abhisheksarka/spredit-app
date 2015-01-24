@@ -1,8 +1,47 @@
 angular.module('ms').run(['$templateCache', function($templateCache) {
   'use strict';
 
-  $templateCache.put('app/scripts/components/comment/list/template.html',
-    ""
+  $templateCache.put('app/scripts/components/comment/creator/template.html',
+    "<div class=\"comment-creator\">\n" +
+    "  <div class=\"ms-list-item\">\n" +
+    "    <div class=\"list-content\">\n" +
+    "      <div class=\"primary\">\n" +
+    "        <form name=\"newCommentForm\" novalidate>\n" +
+    "          <textarea placeholder=\"Share your views on this\" \n" +
+    "                    class=\"form-control\" \n" +
+    "                    ng-model=\"comment.content\"\n" +
+    "                    name=\"content\"\n" +
+    "                    ng-required=\"true\">\n" +
+    "          </textarea>\n" +
+    "        </form>  \n" +
+    "      </div>\n" +
+    "    </div>  \n" +
+    "  </div>\n" +
+    "</div>"
+  );
+
+
+  $templateCache.put('app/scripts/components/comment/lister/template.html',
+    "<div class=\"comment-lister\">\n" +
+    "  <div class=\"ms-list\">\n" +
+    "    <div class=\"ms-list-item\" ng-repeat=\"comment in comments\">\n" +
+    "      <div class=\"list-avatar\">\n" +
+    "        <img ng-src=\"{{comment.comment_publishable.profile_picture}}\"/>\n" +
+    "      </div>\n" +
+    "      <div class=\"list-content\">\n" +
+    "        <div class=\"primary\">\n" +
+    "          <h4 class=\"header\">\n" +
+    "            <span ng-bind=\"comment.comment_publishable.name\"></span>\n" +
+    "          </h4>\n" +
+    "        </div>\n" +
+    "        <div class=\"secondary\">\n" +
+    "          <small ng-bind=\"comment.content\" class=\"text-muted\"></small>\n" +
+    "        </div>\n" +
+    "        <div class=\"clearfix\">\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</div>"
   );
 
 
@@ -286,9 +325,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          </div>\n" +
     "          <div class=\"clearfix\"></div>\n" +
     "        </div>\n" +
-    "        <div>\n" +
-    "          <div ng-if=\"currentMapping.label == 'Propagation'\">\n" +
+    "        <div ng-if=\"currentMapping\">\n" +
+    "          <div ng-if=\"actions.selected == 'propagation'\">\n" +
     "            <div ms-propagation post=\"currentPost\"></div>\n" +
+    "          </div>\n" +
+    "          <div ng-if=\"actions.selected == 'comments'\" class=\"supporting-text\">\n" +
+    "            <div ms-comment-lister commentable=\"currentPost\"></div>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +

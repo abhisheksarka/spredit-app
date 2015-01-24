@@ -1,6 +1,6 @@
 body#page-home {
   .actions-card {
-    min-height: 200px;
+    min-height: 350px;
     .optional-header {
       color: white;
       height: 80px;
@@ -9,13 +9,13 @@ body#page-home {
       }
     }
     .optional-header.bg-comments {
-      background: $brand-amber;
+      background: $brand-deep-purple;
     }
     .optional-header.bg-spreads {
-      background: $brand-light-blue;
+      background: $brand-red;
     }
     .optional-header.bg-propagation {
-      background: $brand-red;
+      background: $brand-green;
     }
   }
   .bg-comments-add {

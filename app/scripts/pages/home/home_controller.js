@@ -15,7 +15,7 @@
         $scope.loadState.success();
       });
       $scope.actions = {
-        selected: 'comments'
+        selected: ''
       };
       $scope.openPostCreator = openPostCreator;
     };
