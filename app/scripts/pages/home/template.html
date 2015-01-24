@@ -23,7 +23,23 @@
                 </h4>
               </div>
               <div class="secondary">
-                <small>300</small>
+                <div ng-if="actions.selected == 'propagation'">
+                  <small>
+                    This information has travelled a total distance of <span ng-bind="currentPost.total_propagation"></span> KM
+                  </small>
+                </div>
+                <div ng-if="actions.selected == 'comments'">
+                  <small>
+                    <span ng-bind="currentPost.comments_count"></span>
+                    <span ng-if="currentPost.comments_count == 1">
+                      person
+                    </span>
+                    <span ng-if="currentPost.comments_count != 1">
+                      people
+                    </span>  
+                    have commented on this
+                  </small>
+                </div>
               </div>
             </div>  
           </div>
@@ -35,9 +51,6 @@
           </div>
           <div ng-if="actions.selected == 'comments'" class="supporting-text">
             <div ms-comment-lister commentable="currentPost"></div>
-          </div>
-          <div ng-if="actions.selected == 'spreads'" class="supporting-text">
-            <div ms-spread-lister spreadable="currentPost"></div>
           </div>
         </div>
       </div>

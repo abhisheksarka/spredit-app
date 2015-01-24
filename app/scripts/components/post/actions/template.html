@@ -1,17 +1,14 @@
 <small>
   <span class="text-muted">
     <a ng-click="setSelectedAction('comments')">
-      <span class="glyphicon glyphicon-comment"></span>&nbsp;Comments
+      <span class="glyphicon glyphicon-comment"></span>&nbsp;COMMENTS(<span ng-bind="post.comments_count"></span>)
       &nbsp;&nbsp;
     </a>
-    <a ng-click="setSelectedAction('spreads')">
-      <span class="glyphicon glyphicon-send"></span>&nbsp;Spreads
-      &nbsp;&nbsp;
+    <a ng-click="setSelectedAction('propagation')">
+      <span class="glyphicon glyphicon-map-marker"></span>&nbsp;PROPAGATION(<span ng-bind="post.total_propagation"></span> KM)
     </a>
   </span>
-  <span class="pull-right">
-    <a ng-click="setSelectedAction('propagation')">
-      <span class="glyphicon glyphicon-map-marker"></span>&nbsp;Propagation
-    </a>
+  <span class="pull-right text-muted">
+    <span class="glyphicon glyphicon-send"></span>&nbsp;SPREADS(<span ng-bind="post.spreads_count"></span>)
   </span>
 </small>

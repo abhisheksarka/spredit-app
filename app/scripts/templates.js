@@ -111,18 +111,15 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<small>\n" +
     "  <span class=\"text-muted\">\n" +
     "    <a ng-click=\"setSelectedAction('comments')\">\n" +
-    "      <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;Comments\n" +
+    "      <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;COMMENTS(<span ng-bind=\"post.comments_count\"></span>)\n" +
     "      &nbsp;&nbsp;\n" +
     "    </a>\n" +
-    "    <a ng-click=\"setSelectedAction('spreads')\">\n" +
-    "      <span class=\"glyphicon glyphicon-send\"></span>&nbsp;Spreads\n" +
-    "      &nbsp;&nbsp;\n" +
+    "    <a ng-click=\"setSelectedAction('propagation')\">\n" +
+    "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;PROPAGATION(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
     "    </a>\n" +
     "  </span>\n" +
-    "  <span class=\"pull-right\">\n" +
-    "    <a ng-click=\"setSelectedAction('propagation')\">\n" +
-    "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;Propagation\n" +
-    "    </a>\n" +
+    "  <span class=\"pull-right text-muted\">\n" +
+    "    <span class=\"glyphicon glyphicon-send\"></span>&nbsp;SPREADS(<span ng-bind=\"post.spreads_count\"></span>)\n" +
     "  </span>\n" +
     "</small>"
   );
@@ -341,7 +338,23 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "                </h4>\n" +
     "              </div>\n" +
     "              <div class=\"secondary\">\n" +
-    "                <small>300</small>\n" +
+    "                <div ng-if=\"actions.selected == 'propagation'\">\n" +
+    "                  <small>\n" +
+    "                    This information has travelled a total distance of <span ng-bind=\"currentPost.total_propagation\"></span> KM\n" +
+    "                  </small>\n" +
+    "                </div>\n" +
+    "                <div ng-if=\"actions.selected == 'comments'\">\n" +
+    "                  <small>\n" +
+    "                    <span ng-bind=\"currentPost.comments_count\"></span>\n" +
+    "                    <span ng-if=\"currentPost.comments_count == 1\">\n" +
+    "                      person\n" +
+    "                    </span>\n" +
+    "                    <span ng-if=\"currentPost.comments_count != 1\">\n" +
+    "                      people\n" +
+    "                    </span>  \n" +
+    "                    have commented on this\n" +
+    "                  </small>\n" +
+    "                </div>\n" +
     "              </div>\n" +
     "            </div>  \n" +
     "          </div>\n" +
@@ -353,9 +366,6 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          </div>\n" +
     "          <div ng-if=\"actions.selected == 'comments'\" class=\"supporting-text\">\n" +
     "            <div ms-comment-lister commentable=\"currentPost\"></div>\n" +
-    "          </div>\n" +
-    "          <div ng-if=\"actions.selected == 'spreads'\" class=\"supporting-text\">\n" +
-    "            <div ms-spread-lister spreadable=\"currentPost\"></div>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
