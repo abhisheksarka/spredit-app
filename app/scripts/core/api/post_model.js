@@ -1,7 +1,7 @@
 (function(){
   function factory($resource) {
     var Resource = $resource(
-                    ms.apiFor('/posts'),
+                    ms.apiFor('/posts/:id'),
                     { id: '@id' }
                   ),
         proto = Resource.prototype;

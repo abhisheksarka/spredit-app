@@ -21,6 +21,8 @@
     };
 
     function save(type) {
+      if($scope.requestState.isWorking) return;
+      
       $scope.requestState.initiate();
       $scope.spread.action = type;
       $scope.spread.$save().then(function(response){
@@ -41,8 +43,8 @@
     });
   };
 
-  angular.module('ms.components.spreader')
-  .controller('SpreaderController', [
+  angular.module('ms.components.spread.creator')
+  .controller('SpreadCreatorController', [
     '$scope',  
     '$rootScope',
     'SpreadModel',

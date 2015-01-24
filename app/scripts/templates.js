@@ -183,7 +183,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <br>\n" +
     "      <br>\n" +
     "      <hr>\n" +
-    "      <div ms-spreader spreadable=\"post\"></div>\n" +
+    "      <div ms-spread-creator spreadable=\"post\"></div>\n" +
     "    </div>\n" +
     "    <div class=\"actions\">\n" +
     "      <span ms-post-actions post=\"post\" selected-action=\"selectedAction\" ></span>\n" +
@@ -254,19 +254,40 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   );
 
 
-  $templateCache.put('app/scripts/components/spreader/template.html',
+  $templateCache.put('app/scripts/components/spread/creator/template.html',
     "<div class=\"text-center spreader\">\n" +
-    "  <span ng-if=\"requestState.isWorking\" class=\"text-muted\">\n" +
-    "    <strong>Working...</strong>\n" +
-    "  </span>\n" +
-    "  <span ng-if=\"!requestState.isWorking\">\n" +
-    "    <span class=\"ms-fab btn btn-inverse\" ng-click=\"containIt()\">\n" +
+    "  <span>\n" +
+    "    <span class=\"ms-fab btn btn-inverse\" ng-click=\"containIt()\" ng-class=\"{'disabled': requestState.isWorking}\">\n" +
     "      <span class=\"glyphicon glyphicon-lock\"></span>\n" +
     "    </span>\n" +
-    "    <span class=\"ms-fab btn btn-inverse\" ng-click=\"spreadIt()\">\n" +
+    "    <span class=\"ms-fab btn btn-inverse\" ng-click=\"spreadIt()\" ng-class=\"{'disabled': requestState.isWorking}\">\n" +
     "      <span class=\"glyphicon glyphicon-send\"></span>\n" +
     "    </span>\n" +
     "  </span>\n" +
+    "</div>"
+  );
+
+
+  $templateCache.put('app/scripts/components/spread/lister/template.html',
+    "<div class=\"spread-lister\">\n" +
+    "  <div class=\"ms-list\">\n" +
+    "    <div class=\"ms-list-item\" ng-repeat=\"spread in spreads\">\n" +
+    "      <div class=\"list-avatar\">\n" +
+    "        <img ng-src=\"{{spread.spread_publishable.profile_picture}}\"/>\n" +
+    "      </div>\n" +
+    "      <div class=\"list-content\">\n" +
+    "        <div class=\"primary\">\n" +
+    "          <h4 class=\"header\">\n" +
+    "            <span ng-bind=\"spread.spread_publishable.name\"></span>\n" +
+    "          </h4>\n" +
+    "        </div>\n" +
+    "        <div class=\"secondary\">\n" +
+    "          <small class=\"text-muted\" am-time-ago=\"spread.created_at\"></small>\n" +
+    "        </div>\n" +
+    "        <div class=\"clearfix\">\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
     "</div>"
   );
 
@@ -332,6 +353,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          </div>\n" +
     "          <div ng-if=\"actions.selected == 'comments'\" class=\"supporting-text\">\n" +
     "            <div ms-comment-lister commentable=\"currentPost\"></div>\n" +
+    "          </div>\n" +
+    "          <div ng-if=\"actions.selected == 'spreads'\" class=\"supporting-text\">\n" +
+    "            <div ms-spread-lister spreadable=\"currentPost\"></div>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +

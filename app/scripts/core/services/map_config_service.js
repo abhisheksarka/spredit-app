@@ -8,7 +8,7 @@
         scaleControl: false,
         rotateControl: false,
         streetViewControl: false,
-        zoomControl: false,
+        zoomControl: true,
         styles: MapStyles.paleDawn
       }
     }

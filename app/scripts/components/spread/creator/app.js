@@ -1,0 +1,1 @@
+angular.module('ms.components.spread.creator', [ ]);

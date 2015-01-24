@@ -1,8 +1,11 @@
 (function(){
   function factory($resource) {
     var Resource = $resource(
-                    ms.apiFor('/spreads'),
-                    { id: '@id' }
+                    ms.apiFor('/spreads/:id'),
+                    { id: '@id' },
+                    {
+                      publishers: { method: 'GET', isArray: true, url: ms.apiFor('/spreads/publishers') }
+                    }
                   ),
         proto = Resource.prototype;
 
