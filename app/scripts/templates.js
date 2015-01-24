@@ -32,6 +32,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        <div class=\"primary\">\n" +
     "          <h4 class=\"header\">\n" +
     "            <span ng-bind=\"comment.comment_publishable.name\"></span>\n" +
+    "            <small class=\"text-muted pull-right\" am-time-ago=\"comment.created_at\"></small>\n" +
     "          </h4>\n" +
     "        </div>\n" +
     "        <div class=\"secondary\">\n" +

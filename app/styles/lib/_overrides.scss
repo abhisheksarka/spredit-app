@@ -169,3 +169,6 @@ input.form-control, textarea.form-control {
     border-color: 1px solid darken(darken(#333, 5%), 12%);
   }
 }
+.text-muted {
+  color: $brand-text-secondary !important; 
+}
