@@ -6,10 +6,10 @@
         glyphicon: 'glyphicon-comment',
         background: 'bg-comments'
       },
-      spreads: {
-        label: 'Spreads',
-        glyphicon: 'glyphicon-send',
-        background: 'bg-spreads'
+      statistics: {
+        label: 'Statistics',
+        glyphicon: 'glyphicon-list-alt',
+        background: 'bg-statistics'
       },
       propagation: {
         label: 'Propagation',

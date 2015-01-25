@@ -128,7 +128,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </a>\n" +
     "  </span>\n" +
     "  <span class=\"pull-right text-muted\">\n" +
-    "    <span class=\"glyphicon glyphicon-send\"></span>&nbsp;SPREADS(<span ng-bind=\"post.spreads_count\"></span>)\n" +
+    "    <a ng-click=\"setSelectedAction('statistics')\">\n" +
+    "      <span class=\"glyphicon glyphicon-list-alt\"></span>&nbsp;MORE\n" +
+    "    </a>\n" +
     "  </span>\n" +
     "</small>"
   );
