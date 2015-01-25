@@ -20,6 +20,7 @@ angular
     'ui.slider',
     'uiGmapgoogle-maps',
     'angularMoment',
+    'angularFileUpload',
     
     // application modules
     'ms.core',

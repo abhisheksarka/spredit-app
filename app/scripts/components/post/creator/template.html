@@ -2,10 +2,19 @@
   <form name="newPostForm" novalidate>
     <textarea placeholder="Share something with the people near you..." 
               class="form-control" 
-              ng-model="post.postable.content"
+              ng-model="post.content"
               name="content"
               ng-required="true">
     </textarea>
+    <div class="photo-uploader">
+      <span class="glyphicon glyphicon-ring-wrap glyphicon-camera" 
+            ng-file-select ng-model="photos" 
+            ng-class="{'hide': uploadState.isWorking}">
+      </span> 
+      <span class="glyphicon glyphicon-ring-wrap ms-animation-border-rotate" 
+            ng-class="{'hide': !uploadState.isWorking}">
+      </span> 
+    </div>
     <br>
     <input type="button" class="btn btn-info btn-sm" value="Spread it" ng-disabled="newPostForm.$invalid" ng-click="createPost()"/>
   </form>

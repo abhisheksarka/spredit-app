@@ -141,10 +141,19 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <form name=\"newPostForm\" novalidate>\n" +
     "    <textarea placeholder=\"Share something with the people near you...\" \n" +
     "              class=\"form-control\" \n" +
-    "              ng-model=\"post.postable.content\"\n" +
+    "              ng-model=\"post.content\"\n" +
     "              name=\"content\"\n" +
     "              ng-required=\"true\">\n" +
     "    </textarea>\n" +
+    "    <div class=\"photo-uploader\">\n" +
+    "      <span class=\"glyphicon glyphicon-ring-wrap glyphicon-camera\" \n" +
+    "            ng-file-select ng-model=\"photos\" \n" +
+    "            ng-class=\"{'hide': uploadState.isWorking}\">\n" +
+    "      </span> \n" +
+    "      <span class=\"glyphicon glyphicon-ring-wrap ms-animation-border-rotate\" \n" +
+    "            ng-class=\"{'hide': !uploadState.isWorking}\">\n" +
+    "      </span> \n" +
+    "    </div>\n" +
     "    <br>\n" +
     "    <input type=\"button\" class=\"btn btn-info btn-sm\" value=\"Spread it\" ng-disabled=\"newPostForm.$invalid\" ng-click=\"createPost()\"/>\n" +
     "  </form>\n" +
@@ -188,7 +197,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <img src=\"https://c1.staticflickr.com/5/4140/4936354503_c99826c1e0_z.jpg\" width=\"100%\"/>\n" +
     "    </div> -->\n" +
     "    <div class=\"supporting-text\">\n" +
-    "      <span ng-bind=\"post.postable.content\"></span>\n" +
+    "      <span ng-bind=\"post.content\"></span>\n" +
     "      <br>\n" +
     "      <br>\n" +
     "      <hr>\n" +

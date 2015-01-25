@@ -1,0 +1,47 @@
+@-webkit-keyframes ms-border-rotate {
+  from  {
+    border-right-color: transparent;
+    @include ms-transform(rotate(0deg));
+  }
+  to  {
+    border-right-color: transparent;
+    @include ms-transform(rotate(360deg)); 
+  }
+}
+
+@-o-keyframes ms-border-rotate {
+  from  {
+    border-right-color: transparent;
+    @include ms-transform(rotate(0deg));
+  }
+  to  {
+    border-right-color: transparent;
+    @include ms-transform(rotate(360deg)); 
+  }
+}
+
+@-moz-keyframes ms-border-rotate {
+  from  {
+    border-right-color: transparent;
+    @include ms-transform(rotate(0deg));
+  }
+  to  {
+    border-right-color: transparent;
+    @include ms-transform(rotate(360deg)); 
+  }
+}
+
+@keyframes ms-border-rotate {
+  from  {
+    border-right-color: transparent;
+    @include ms-transform(rotate(0deg));
+  }
+  to  {
+    border-right-color: transparent;
+    @include ms-transform(rotate(360deg)); 
+  }
+}
+
+.ms-animation-border-rotate {
+  @include ms-animation(ms-border-rotate 0.8s infinite linear);
+}

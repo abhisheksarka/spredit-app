@@ -1,7 +1,21 @@
 .post-creator{
   form {
     .photo-uploader {
-      
+      margin-top: 15px;
+      font-size: 24px;
+      .ms-animation-border-rotate.glyphicon{
+        height: 46px;
+        width: 46px;
+      }
+      .glyphicon {
+        opacity: 0.5;
+        &:active, &:focus, &:hover {
+          opacity: 0.8;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
     textarea {
       
