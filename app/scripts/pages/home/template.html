@@ -23,6 +23,11 @@
                 </h4>
               </div>
               <div class="secondary">
+                <div ng-if="actions.selected == 'statistics'">
+                  <small>
+                    View the performance of this post in detail
+                  </small>
+                </div>
                 <div ng-if="actions.selected == 'propagation'">
                   <small>
                     This information has travelled a total distance of <span ng-bind="currentPost.total_propagation"></span> KM
@@ -51,6 +56,9 @@
           </div>
           <div ng-if="actions.selected == 'comments'" class="supporting-text">
             <div ms-comment-lister commentable="currentPost"></div>
+          </div>
+          <div ng-if="actions.selected == 'statistics'" class="supporting-text">
+            <div ms-statistics post="currentPost"></div>
           </div>
         </div>
       </div>

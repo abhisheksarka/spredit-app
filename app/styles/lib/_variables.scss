@@ -26,6 +26,7 @@ $brand-blue-grey: #607D8B;
 $brand-black: #000000;
 $brand-white: #FFFFFF;
 
-$brand-text-secondary: lighter(black, 54%);
-$brand-text-hint: lighter(black, 26%);
+$brand-text-secondary: lighten(black, 54%);
+$brand-text-hint: lighten(black, 26%);
+$brand-line-color: #ecf0f1;
 

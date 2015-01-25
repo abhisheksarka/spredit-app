@@ -7,7 +7,7 @@
         background: 'bg-comments'
       },
       statistics: {
-        label: 'Statistics',
+        label: 'More',
         glyphicon: 'glyphicon-list-alt',
         background: 'bg-statistics'
       },

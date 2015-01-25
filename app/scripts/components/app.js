@@ -8,5 +8,7 @@ angular.module('ms.components', [
   'ms.components.post',
   'ms.components.comment',
   'ms.components.spread',
-  'ms.components.propagation'
+  'ms.components.propagation',
+  'ms.components.view',
+  'ms.components.statistics'
 ]);

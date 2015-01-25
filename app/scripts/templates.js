@@ -163,6 +163,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/post/renderer/template.html',
     "<div class=\"post-renderer\">\n" +
     "  <div class=\"ms-card-complex\">\n" +
+    "    <span ms-view-recorder viewable=\"post\" viewable-type=\"'Post'\"></span>\n" +
     "    <div class=\"optional-header\">\n" +
     "      <div class=\"ms-list-item\">\n" +
     "        <div class=\"list-avatar\">\n" +
@@ -300,6 +301,27 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('app/scripts/components/statistics/template.html',
+    "<div class=\"statistics\">\n" +
+    "  <img src=\"../images/analytics.png\" class=\"icon\"/>\n" +
+    "  <div class=\"listing\">\n" +
+    "    <div class=\"listing-section\">\n" +
+    "      <span class=\"value\" ng-bind=\"post.view_count\"></span>&nbsp;\n" +
+    "      <small class=\"text-muted\">VIEWS</small>\n" +
+    "    </div>\n" +
+    "    <div class=\"listing-section\">\n" +
+    "      <span class=\"value\" ng-bind=\"post.spreads_count\"></span>&nbsp;\n" +
+    "      <small class=\"text-muted\">SPREADS</small>\n" +
+    "    </div>\n" +
+    "    <div class=\"listing-section\">\n" +
+    "      <span class=\"value\" ng-bind=\"post.contains_count\"></span>&nbsp;\n" +
+    "      <small class=\"text-muted\">CONTAINS</small>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</div>"
+  );
+
+
   $templateCache.put('app/scripts/pages/current_location/template.html',
     "<div class=\"container\">\n" +
     "  <div class=\"text-center ms-master-section\">\n" +
@@ -349,6 +371,11 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "                </h4>\n" +
     "              </div>\n" +
     "              <div class=\"secondary\">\n" +
+    "                <div ng-if=\"actions.selected == 'statistics'\">\n" +
+    "                  <small>\n" +
+    "                    View the performance of this post in detail\n" +
+    "                  </small>\n" +
+    "                </div>\n" +
     "                <div ng-if=\"actions.selected == 'propagation'\">\n" +
     "                  <small>\n" +
     "                    This information has travelled a total distance of <span ng-bind=\"currentPost.total_propagation\"></span> KM\n" +
@@ -377,6 +404,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          </div>\n" +
     "          <div ng-if=\"actions.selected == 'comments'\" class=\"supporting-text\">\n" +
     "            <div ms-comment-lister commentable=\"currentPost\"></div>\n" +
+    "          </div>\n" +
+    "          <div ng-if=\"actions.selected == 'statistics'\" class=\"supporting-text\">\n" +
+    "            <div ms-statistics post=\"currentPost\"></div>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +

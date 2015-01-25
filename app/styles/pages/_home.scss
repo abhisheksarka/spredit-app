@@ -12,7 +12,7 @@ body#page-home {
       background: $brand-deep-purple;
     }
     .optional-header.bg-statistics {
-      background: $brand-green;
+      background: $brand-indigo;
     }
     .optional-header.bg-propagation {
       background: $brand-red;
@@ -21,7 +21,7 @@ body#page-home {
   .bg-comments-add {
     @extend .ms-animation-slide-from-top;
   }
-  .bg-spreads-add{
+  .bg-statistics-add{
     @extend .ms-animation-slide-from-top;
   }
   .bg-propagation-add {

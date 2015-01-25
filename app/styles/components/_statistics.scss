@@ -1,0 +1,20 @@
+.statistics {
+  .icon {
+    height: 60px;
+    width: 60px;
+    opacity: 0.5;
+    border-bottom: 2px solid $brand-teal;
+  }
+  .listing {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    .listing-section {
+      border-bottom: 1px solid $brand-line-color;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      .value {
+        font-size: 24px;
+      }
+    }
+  }
+}
