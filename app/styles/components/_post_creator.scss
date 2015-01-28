@@ -1,24 +1,15 @@
 .post-creator{
   form {
-    .photo-uploader {
-      margin-top: 15px;
-      font-size: 24px;
-      .ms-animation-border-rotate.glyphicon{
-        height: 46px;
-        width: 46px;
-      }
-      .glyphicon {
-        opacity: 0.5;
-        &:active, &:focus, &:hover {
-          opacity: 0.8;
-        }
-        &:hover {
-          cursor: pointer;
-        }
-      }
-    }
-    textarea {
-      
-    }
+  }
+}
+.post-creator-modal {
+  .post-photo-uploader {
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .modal-dialog {
+    max-width: 450px;
+    margin-top: 100px;
   }
 }

@@ -4,7 +4,8 @@
       open: function() { 
         return $modal.open({
           controller: 'PostCreatorModalController',
-          templateUrl: 'app/scripts/components/post/creator_modal/template.html'
+          templateUrl: 'app/scripts/components/post/creator_modal/template.html',
+          windowClass: 'post-creator-modal'
         });
       }
     }  

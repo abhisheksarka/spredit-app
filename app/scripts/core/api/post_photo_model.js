@@ -14,9 +14,12 @@
         method: 'POST',
         file: self.photo,
         fileFormDataName: 'post_photo[photo]'
+      })
+      .then(function(response){
+        angular.extend(self, response.data);
       });
-    };    
-    
+    };
+
     return Resource;
   };
 

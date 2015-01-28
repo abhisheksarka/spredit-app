@@ -139,21 +139,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/post/creator/template.html',
     "<div class=\"post-creator text-center\">\n" +
     "  <form name=\"newPostForm\" novalidate>\n" +
+    "    <div ms-post-photo-uploader></div>\n" +
     "    <textarea placeholder=\"Share something with the people near you...\" \n" +
     "              class=\"form-control\" \n" +
     "              ng-model=\"post.content\"\n" +
-    "              name=\"content\"\n" +
-    "              ng-required=\"true\">\n" +
+    "              name=\"content\">\n" +
     "    </textarea>\n" +
-    "    <div class=\"photo-uploader\">\n" +
-    "      <span class=\"glyphicon glyphicon-ring-wrap glyphicon-camera\" \n" +
-    "            ng-file-select ng-model=\"photos\" \n" +
-    "            ng-class=\"{'hide': uploadState.isWorking}\">\n" +
-    "      </span> \n" +
-    "      <span class=\"glyphicon glyphicon-ring-wrap ms-animation-border-rotate\" \n" +
-    "            ng-class=\"{'hide': !uploadState.isWorking}\">\n" +
-    "      </span> \n" +
-    "    </div>\n" +
     "    <br>\n" +
     "    <input type=\"button\" class=\"btn btn-info btn-sm\" value=\"Spread it\" ng-disabled=\"newPostForm.$invalid\" ng-click=\"createPost()\"/>\n" +
     "  </form>\n" +
@@ -165,6 +156,21 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<div class=\"modal-body\">\n" +
     "  <br>\n" +
     "  <span ms-post-creator></span>\n" +
+    "</div>"
+  );
+
+
+  $templateCache.put('app/scripts/components/post/photo_uploader/template.html',
+    "<div class=\"post-photo-uploader\">\n" +
+    "  <span> <!-- ng-class=\"{'hide': postPhoto.id}\" -->\n" +
+    "    <span class=\"glyphicon glyphicon-ring-wrap glyphicon-camera\" \n" +
+    "          ng-file-select ng-model=\"photos\" \n" +
+    "          ng-class=\"{'hide': states.uploading.isWorking}\">\n" +
+    "    </span> \n" +
+    "    <span class=\"glyphicon glyphicon-ring-wrap ms-animation-border-rotate\" \n" +
+    "          ng-class=\"{'hide': !states.uploading.isWorking}\">\n" +
+    "    </span>\n" +
+    "  </span>    \n" +
     "</div>"
   );
 

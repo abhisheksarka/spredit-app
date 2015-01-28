@@ -1,0 +1,11 @@
+<div class="post-photo-uploader">
+  <span> <!-- ng-class="{'hide': postPhoto.id}" -->
+    <span class="glyphicon glyphicon-ring-wrap glyphicon-camera" 
+          ng-file-select ng-model="photos" 
+          ng-class="{'hide': states.uploading.isWorking}">
+    </span> 
+    <span class="glyphicon glyphicon-ring-wrap ms-animation-border-rotate" 
+          ng-class="{'hide': !states.uploading.isWorking}">
+    </span>
+  </span>    
+</div>
