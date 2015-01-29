@@ -3,11 +3,21 @@
     
     function init() {
       pristinePost();
+      $scope.createPost = createPost;
     };
 
     function pristinePost() {
       $scope.post = new Post();
       $scope.postable = { };
+      $scope.refresh = true;
+    };
+
+    function createPost() {
+      $scope.post.$deriveAndSave($scope.postable).then(afterSuccessfulSave);
+    };
+
+    function afterSuccessfulSave() {
+      pristinePost();
     };
 
 

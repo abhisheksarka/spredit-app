@@ -139,7 +139,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/post/creator/template.html',
     "<div class=\"post-creator text-center\">\n" +
     "  <form name=\"newPostForm\" novalidate>\n" +
-    "    <div ms-post-photo-uploader></div>\n" +
+    "    <div ms-post-photo-uploader postable-object=\"postable\" postable-refresh=\"refresh\"></div>\n" +
     "    <textarea placeholder=\"Share something with the people near you...\" \n" +
     "              class=\"form-control\" \n" +
     "              ng-model=\"post.content\"\n" +

@@ -6,7 +6,6 @@
         destroying: StateHandler.getInstance()
       };
       $scope.destroyUpload = destroyUpload;
-      setPristine();
     };
 
     // Initialize empty objects
@@ -15,7 +14,7 @@
     // on itself
     function setPristine() {
       $scope.postPhoto = new PostPhoto();
-      $scope.postable = { };
+      $scope.postableObject = { };
     };
 
     // When a photo is uploaded automatically save it
@@ -25,7 +24,7 @@
       if(!u.isWorking && nv && nv[0]) {
         u.initiate();
         $scope.postPhoto.photo = nv[0];
-        $scope.postPhoto.$save().then(u.success, u.error);
+        $scope.postPhoto.$save().then(afterUpload, u.error);
       }
     };
 
@@ -34,8 +33,8 @@
     // was added
     function afterUpload() {
       $scope.states.uploading.success();
-      $scope.postable.postable_id = $scope.postPhoto.id;
-      $scope.postable.postable_type = Post.POST_TYPES.photo.name;
+      $scope.postableObject.id = $scope.postPhoto.id;
+      $scope.postableObject.type = Post.POST_TYPES.photo.name;
     };
 
     // below methods are for destroying the upload
@@ -54,12 +53,13 @@
     function refresh(nv, ov) {
       if(nv) {
         setPristine();
+        $scope.postableRefresh = false;
       }
     };
 
     $scope.$watch('photos', onUpload);
-    $scope.$watch('refresh', refresh);
-  
+    $scope.$watch('postableRefresh', refresh);
+
     init();
   };
 

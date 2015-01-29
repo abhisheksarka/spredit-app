@@ -12,8 +12,18 @@
       text: { postableResource: PostText, name: 'PostText' }
     };
     
-    proto.$dervieAndSave = function(postable, postableType) {
-             
+    proto.$deriveAndSave = function(postable) {
+      self = this;
+      debugger;
+      if(postable.id) {
+        self._setPostable(postable);
+      };
+      return self.$save();        
+    };
+
+    proto._setPostable = function(postable) {
+      this.postable_id = postable.id;
+      this.postable_type = postable.type;
     };
 
     return Resource;

@@ -4,7 +4,8 @@
     return{
       scope: {
         postPhoto: '=?',
-        postable: '='
+        postableObject: '=',
+        postableRefresh: '='
       },
       replace: true,
       controllerAs: 'postPhotoUploaderCtrl',
