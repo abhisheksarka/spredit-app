@@ -3,7 +3,8 @@
   app.directive('msPostPhotoUploader', [function(){
     return{
       scope: {
-        postPhoto: '=?'
+        postPhoto: '=?',
+        postable: '='
       },
       replace: true,
       controllerAs: 'postPhotoUploaderCtrl',

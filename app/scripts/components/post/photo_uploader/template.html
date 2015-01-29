@@ -1,5 +1,5 @@
 <div class="post-photo-uploader">
-  <span> <!-- ng-class="{'hide': postPhoto.id}" -->
+  <div ng-class="{'hide': postPhoto.id}" > 
     <span class="glyphicon glyphicon-ring-wrap glyphicon-camera" 
           ng-file-select ng-model="photos" 
           ng-class="{'hide': states.uploading.isWorking}">
@@ -7,5 +7,19 @@
     <span class="glyphicon glyphicon-ring-wrap ms-animation-border-rotate" 
           ng-class="{'hide': !states.uploading.isWorking}">
     </span>
-  </span>    
+  </div>
+  <div ng-if="postPhoto.id">
+    <div class="preview">
+      <img ng-src="{{postPhoto.photo.url}}"/>
+      <div class="delete-upload">
+        <span class="glyphicon glyphicon-ring-wrap glyphicon-remove"   
+              ng-class="{'hide': states.destroying.isWorking}"
+              ng-click="destroyUpload()">
+        </span> 
+        <span class="glyphicon glyphicon-ring-wrap ms-animation-border-rotate" 
+              ng-class="{'hide': !states.destroying.isWorking}">
+        </span>
+      </div>
+    </div>
+  </div>    
 </div>

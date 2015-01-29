@@ -7,12 +7,9 @@
 
     function pristinePost() {
       $scope.post = new Post();
+      $scope.postable = { };
     };
 
-    function setPostable(id, type) {
-      $scope.post.postable_id = id;
-      $scope.post.postable_type = type;
-    };
 
     // end of image upload and previews
     

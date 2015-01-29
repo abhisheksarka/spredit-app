@@ -162,7 +162,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/post/photo_uploader/template.html',
     "<div class=\"post-photo-uploader\">\n" +
-    "  <span> <!-- ng-class=\"{'hide': postPhoto.id}\" -->\n" +
+    "  <div ng-class=\"{'hide': postPhoto.id}\" > \n" +
     "    <span class=\"glyphicon glyphicon-ring-wrap glyphicon-camera\" \n" +
     "          ng-file-select ng-model=\"photos\" \n" +
     "          ng-class=\"{'hide': states.uploading.isWorking}\">\n" +
@@ -170,7 +170,21 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <span class=\"glyphicon glyphicon-ring-wrap ms-animation-border-rotate\" \n" +
     "          ng-class=\"{'hide': !states.uploading.isWorking}\">\n" +
     "    </span>\n" +
-    "  </span>    \n" +
+    "  </div>\n" +
+    "  <div ng-if=\"postPhoto.id\">\n" +
+    "    <div class=\"preview\">\n" +
+    "      <img ng-src=\"{{postPhoto.photo.url}}\"/>\n" +
+    "      <div class=\"delete-upload\">\n" +
+    "        <span class=\"glyphicon glyphicon-ring-wrap glyphicon-remove\"   \n" +
+    "              ng-class=\"{'hide': states.destroying.isWorking}\"\n" +
+    "              ng-click=\"destroyUpload()\">\n" +
+    "        </span> \n" +
+    "        <span class=\"glyphicon glyphicon-ring-wrap ms-animation-border-rotate\" \n" +
+    "              ng-class=\"{'hide': !states.destroying.isWorking}\">\n" +
+    "        </span>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </div>    \n" +
     "</div>"
   );
 
