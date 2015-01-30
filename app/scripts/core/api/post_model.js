@@ -14,7 +14,6 @@
     
     proto.$deriveAndSave = function(postable) {
       self = this;
-      debugger;
       if(postable.id) {
         self._setPostable(postable);
       };
