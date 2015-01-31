@@ -213,9 +213,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </div>\n" +
     "      <div class=\"clearfix\"></div>\n" +
     "    </div>\n" +
-    "    <!-- <div class=\"rich-media\">\n" +
-    "      <img src=\"https://c1.staticflickr.com/5/4140/4936354503_c99826c1e0_z.jpg\" width=\"100%\"/>\n" +
-    "    </div> -->\n" +
+    "    <div class=\"rich-media\" ng-if=\"post.postable_type=='PostPhoto'\">\n" +
+    "      <img ng-src=\"{{post.postable.photo.url}}\" width=\"100%\"/>\n" +
+    "    </div>\n" +
     "    <div class=\"supporting-text\">\n" +
     "      <span ng-bind=\"post.content\"></span>\n" +
     "      <br>\n" +

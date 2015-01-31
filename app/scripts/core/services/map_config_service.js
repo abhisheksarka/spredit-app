@@ -9,6 +9,7 @@
         rotateControl: false,
         streetViewControl: false,
         zoomControl: true,
+        maxZoom: 18,
         styles: MapStyles.paleDawn
       }
     }
