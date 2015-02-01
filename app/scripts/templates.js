@@ -217,7 +217,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <img ng-src=\"{{post.postable.photo.url}}\" width=\"100%\"/>\n" +
     "    </div>\n" +
     "    <div class=\"supporting-text\">\n" +
-    "      <span ng-bind=\"post.content\"></span>\n" +
+    "      <span ms-linkify=\"post.content\"></span>\n" +
     "      <br>\n" +
     "      <br>\n" +
     "      <hr>\n" +
