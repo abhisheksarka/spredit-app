@@ -4,15 +4,15 @@
     <div class="optional-header">
       <div class="ms-list-item">
         <div class="list-avatar">
-          <img ng-src="{{post.post_publishable.profile_picture}}"/>
+          <img src="../images/marker_green_40.png"/>
         </div>
         <div class="list-content">
           <div class="primary">
-            <h4 class="header">
+            <h5 class="header">
               <strong>
-                <span ng-bind="post.post_publishable.name"></span>
+                <span ng-bind="post.display_address"></span>
               </strong>
-            </h4>
+            </h5>
           </div>
           <div class="secondary">
             <small class="text-muted" am-time-ago="post.created_at"></small>

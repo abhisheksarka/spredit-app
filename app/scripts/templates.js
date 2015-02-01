@@ -196,15 +196,15 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"optional-header\">\n" +
     "      <div class=\"ms-list-item\">\n" +
     "        <div class=\"list-avatar\">\n" +
-    "          <img ng-src=\"{{post.post_publishable.profile_picture}}\"/>\n" +
+    "          <img src=\"../images/marker_green_40.png\"/>\n" +
     "        </div>\n" +
     "        <div class=\"list-content\">\n" +
     "          <div class=\"primary\">\n" +
-    "            <h4 class=\"header\">\n" +
+    "            <h5 class=\"header\">\n" +
     "              <strong>\n" +
-    "                <span ng-bind=\"post.post_publishable.name\"></span>\n" +
+    "                <span ng-bind=\"post.display_address\"></span>\n" +
     "              </strong>\n" +
-    "            </h4>\n" +
+    "            </h5>\n" +
     "          </div>\n" +
     "          <div class=\"secondary\">\n" +
     "            <small class=\"text-muted\" am-time-ago=\"post.created_at\"></small>\n" +
@@ -234,7 +234,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/propagation/template.html',
     "<div class=\"ms-propagation\" ng-if=\"map.init\">\n" +
     "  <ui-gmap-google-map center=\"map.center\" zoom=\"map.zoom\" bounds=\"map.bounds\" options=\"map.options\">\n" +
-    "    <ui-gmap-markers models=\"locations\" coords=\"'self'\" fit=\"true\"></ui-gmap-markers>\n" +
+    "    <ui-gmap-markers models=\"locations\" coords=\"'self'\" fit=\"true\" icon=\"'iconUrl'\"></ui-gmap-markers>\n" +
     "  </ui-gmap-google-map>\n" +
     "</div>"
   );

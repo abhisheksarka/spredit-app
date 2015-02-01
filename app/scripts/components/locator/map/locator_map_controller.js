@@ -5,7 +5,7 @@
       $scope.map = {
         center: { },
         zoom: 10,
-        options: MapConfig.default,
+        options: MapConfig.default(),
         refresh: false
       };   
       setCoords();
