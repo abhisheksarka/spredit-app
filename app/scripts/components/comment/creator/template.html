@@ -1,16 +1,13 @@
 <div class="comment-creator">
-  <div class="ms-list-item">
-    <div class="list-content">
-      <div class="primary">
-        <form name="newCommentForm" novalidate>
-          <textarea placeholder="Share your views on this" 
-                    class="form-control" 
-                    ng-model="comment.content"
-                    name="content"
-                    ng-required="true">
-          </textarea>
-        </form>  
-      </div>
-    </div>  
-  </div>
+    <form name="newCommentForm" novalidate>
+      <textarea placeholder="Add a comment..." 
+                class="form-control" 
+                ng-model="comment.content"
+                name="content"
+                ng-focus="focusStyle={height:'auto'};focused=true"
+                ng-style="focusStyle"
+                ng-required="true">
+      </textarea><br>
+      <button class="btn btn-default btn-sm" ng-if="focused" ng-disabled="newCommentForm.$invalid">Post</button>
+    </form>  
 </div>

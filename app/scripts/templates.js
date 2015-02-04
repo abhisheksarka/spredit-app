@@ -3,20 +3,17 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/comment/creator/template.html',
     "<div class=\"comment-creator\">\n" +
-    "  <div class=\"ms-list-item\">\n" +
-    "    <div class=\"list-content\">\n" +
-    "      <div class=\"primary\">\n" +
-    "        <form name=\"newCommentForm\" novalidate>\n" +
-    "          <textarea placeholder=\"Share your views on this\" \n" +
-    "                    class=\"form-control\" \n" +
-    "                    ng-model=\"comment.content\"\n" +
-    "                    name=\"content\"\n" +
-    "                    ng-required=\"true\">\n" +
-    "          </textarea>\n" +
-    "        </form>  \n" +
-    "      </div>\n" +
-    "    </div>  \n" +
-    "  </div>\n" +
+    "    <form name=\"newCommentForm\" novalidate>\n" +
+    "      <textarea placeholder=\"Add a comment...\" \n" +
+    "                class=\"form-control\" \n" +
+    "                ng-model=\"comment.content\"\n" +
+    "                name=\"content\"\n" +
+    "                ng-focus=\"focusStyle={height:'auto'};focused=true\"\n" +
+    "                ng-style=\"focusStyle\"\n" +
+    "                ng-required=\"true\">\n" +
+    "      </textarea><br>\n" +
+    "      <button class=\"btn btn-default btn-sm\" ng-if=\"focused\" ng-disabled=\"newCommentForm.$invalid\">Post</button>\n" +
+    "    </form>  \n" +
     "</div>"
   );
 
@@ -24,9 +21,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/comment/lister/template.html',
     "<div class=\"comment-lister\">\n" +
     "  <div class=\"text-center\">\n" +
-    "    <div ng-if=\"comments.length == 0 && requestState.isComplete\">\n" +
+    "    <!-- <div ng-if=\"comments.length == 0 && requestState.isComplete\">\n" +
     "      <small class=\"text-muted\">Nothing to show here...</small>\n" +
-    "    </div>\n" +
+    "    </div> -->\n" +
     "    <div ng-if=\"requestState.isWorking\">\n" +
     "      <div ms-spinner></div>\n" +
     "      <p><small class=\"text-muted\">Loading...</small></p>\n" +
@@ -432,6 +429,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "            <div ms-propagation post=\"currentPost\"></div>\n" +
     "          </div>\n" +
     "          <div ng-if=\"actions.selected == 'comments'\" class=\"supporting-text\">\n" +
+    "            <div ms-comment-creator commentable=\"currentPost\"></div><br>\n" +
     "            <div ms-comment-lister commentable=\"currentPost\"></div>\n" +
     "          </div>\n" +
     "          <div ng-if=\"actions.selected == 'statistics'\" class=\"supporting-text\">\n" +
