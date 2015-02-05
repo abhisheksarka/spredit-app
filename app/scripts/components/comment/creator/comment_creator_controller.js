@@ -15,10 +15,13 @@
 
     function createComment() {
       $scope.state.initiate();
-      $scope.comment.$save().then(function() {
-        $scope.state.success();
-        pristineComment();
-      }, $scope.state.error);
+      $scope.comment.$save().then(afterSave, $scope.state.error);
+    };
+
+    function afterSave() {
+      $scope.commentable.comments.unshift($scope.comment);
+      $scope.state.success();
+      pristineComment();
     };
 
     $scope.$watch('commentable.id', function(nv) {

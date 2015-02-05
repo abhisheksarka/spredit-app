@@ -35,8 +35,8 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <p><small class=\"text-muted\">Loading...</small></p>\n" +
     "    </div>\n" +
     "  </div>\n" +
-    "  <div class=\"ms-list\" ng-if=\"comments.length > 0 && !requestState.isWorking\">\n" +
-    "    <div class=\"ms-list-item\" ng-repeat=\"comment in comments\">\n" +
+    "  <div class=\"ms-list\" ng-if=\"commentable.comments.length > 0 && !requestState.isWorking\">\n" +
+    "    <div class=\"ms-list-item\" ng-repeat=\"comment in commentable.comments\">\n" +
     "      <div class=\"list-avatar\">\n" +
     "        <img ng-src=\"{{comment.comment_publishable.profile_picture}}\"/>\n" +
     "      </div>\n" +

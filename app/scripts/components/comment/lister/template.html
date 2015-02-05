@@ -8,8 +8,8 @@
       <p><small class="text-muted">Loading...</small></p>
     </div>
   </div>
-  <div class="ms-list" ng-if="comments.length > 0 && !requestState.isWorking">
-    <div class="ms-list-item" ng-repeat="comment in comments">
+  <div class="ms-list" ng-if="commentable.comments.length > 0 && !requestState.isWorking">
+    <div class="ms-list-item" ng-repeat="comment in commentable.comments">
       <div class="list-avatar">
         <img ng-src="{{comment.comment_publishable.profile_picture}}"/>
       </div>
