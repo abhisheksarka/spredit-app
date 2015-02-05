@@ -12,7 +12,13 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "                ng-style=\"focusStyle\"\n" +
     "                ng-required=\"true\">\n" +
     "      </textarea><br>\n" +
-    "      <button class=\"btn btn-default btn-sm\" ng-if=\"focused\" ng-disabled=\"newCommentForm.$invalid\">Post</button>\n" +
+    "      <button class=\"btn btn-default btn-sm\" \n" +
+    "              ng-if=\"focused\" \n" +
+    "              ng-disabled=\"newCommentForm.$invalid || state.isWorking\" \n" +
+    "              ng-click=\"createComment()\">\n" +
+    "              <span ng-if=\"state.isWorking\">Please wait...</span>\n" +
+    "              <span ng-if=\"!state.isWorking\">Comment</span>\n" +
+    "      </button>\n" +
     "    </form>  \n" +
     "</div>"
   );
@@ -429,7 +435,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "            <div ms-propagation post=\"currentPost\"></div>\n" +
     "          </div>\n" +
     "          <div ng-if=\"actions.selected == 'comments'\" class=\"supporting-text\">\n" +
-    "            <div ms-comment-creator commentable=\"currentPost\"></div><br>\n" +
+    "            <div ms-comment-creator commentable=\"currentPost\" commentable-type=\"'Post'\"></div><br>\n" +
     "            <div ms-comment-lister commentable=\"currentPost\"></div>\n" +
     "          </div>\n" +
     "          <div ng-if=\"actions.selected == 'statistics'\" class=\"supporting-text\">\n" +

@@ -3,7 +3,8 @@
   app.directive('msCommentCreator', [function(){
     return{
       scope: {
-        commentable: "=" 
+        commentable: '=',
+        commentableType: '=' 
       },
       replace: true,
       controllerAs: 'commentCreatorCtrl',

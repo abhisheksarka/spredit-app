@@ -1,11 +1,31 @@
 (function(){
-  function Controller($scope, Session, Comment){
+  function Controller($scope, Session, Comment, StateHandler){
     function init() {
-      $scope.currentUser = Session.currentUser;
-      
+      pristineComment();
+      $scope.state = StateHandler.getInstance();
+      $scope.createComment = createComment;
     };
-  
-    init();
+
+    function pristineComment() {
+      $scope.comment = new Comment({
+        commentable_type: $scope.commentableType,
+        commentable_id: $scope.commentable.id
+      });
+    };
+
+    function createComment() {
+      $scope.state.initiate();
+      $scope.comment.$save().then(function() {
+        $scope.state.success();
+        pristineComment();
+      }, $scope.state.error);
+    };
+
+    $scope.$watch('commentable.id', function(nv) {
+      if(nv) {
+        init();
+      }
+    });
   };
 
   angular.module('ms.components.comment.creator')
@@ -13,6 +33,7 @@
     '$scope',  
     'SessionModel',
     'CommentModel',
+    'StateHandlerService',
     Controller 
   ]);
 }());

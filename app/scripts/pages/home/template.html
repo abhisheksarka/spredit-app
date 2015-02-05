@@ -55,7 +55,7 @@
             <div ms-propagation post="currentPost"></div>
           </div>
           <div ng-if="actions.selected == 'comments'" class="supporting-text">
-            <div ms-comment-creator commentable="currentPost"></div><br>
+            <div ms-comment-creator commentable="currentPost" commentable-type="'Post'"></div><br>
             <div ms-comment-lister commentable="currentPost"></div>
           </div>
           <div ng-if="actions.selected == 'statistics'" class="supporting-text">

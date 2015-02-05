@@ -8,6 +8,12 @@
                 ng-style="focusStyle"
                 ng-required="true">
       </textarea><br>
-      <button class="btn btn-default btn-sm" ng-if="focused" ng-disabled="newCommentForm.$invalid">Post</button>
+      <button class="btn btn-default btn-sm" 
+              ng-if="focused" 
+              ng-disabled="newCommentForm.$invalid || state.isWorking" 
+              ng-click="createComment()">
+              <span ng-if="state.isWorking">Please wait...</span>
+              <span ng-if="!state.isWorking">Comment</span>
+      </button>
     </form>  
 </div>
