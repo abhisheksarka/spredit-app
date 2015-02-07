@@ -452,22 +452,23 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/pages/index/template.html',
     "<div id=\"bg-backdrop\"></div>\n" +
-    "<div class=\"row\">\n" +
-    "  <div class=\"col-md-12 text-center\">\n" +
-    "    <div class=\"logo logo-40\">\n" +
-    "      <span class=\"glyphicon glyphicon-send glyphicon-ring-wrap\"></span>\n" +
+    "<div class=\"container\">\n" +
+    "  <div class=\"row\">\n" +
+    "    <div class=\"col-md-12 text-center\">\n" +
+    "      <div class=\"logo logo-40\">\n" +
+    "        <span class=\"glyphicon glyphicon-send glyphicon-ring-wrap\"></span>\n" +
+    "      </div>\n" +
+    "      <h1 class=\"brand-name\">Spredit</h1>\n" +
+    "      <h3 class=\"brand-tagline\">\n" +
+    "        The new way to spread information <br>around the world..<br>\n" +
+    "      </h3>\n" +
+    "      <br><br>\n" +
+    "      <span ms-fb-log-in \n" +
+    "            data-connected=\"connected(response)\" \n" +
+    "            data-unauthorized=\"unauthorized(response)\" \n" +
+    "            data-unknown=\"unknown(response)\"></span>\n" +
+    "      <p class=\"quote\"></p>  \n" +
     "    </div>\n" +
-    "    <h1 class=\"brand-name\">Spredit</h1>\n" +
-    "    <h3 class=\"brand-tagline\">\n" +
-    "      The new way to spread information <br>around the world..<br>\n" +
-    "    </h3>\n" +
-    "    <br><br>\n" +
-    "    <span ms-fb-log-in \n" +
-    "      data-connected=\"connected(response)\" \n" +
-    "      data-unauthorized=\"unauthorized(response)\" \n" +
-    "      data-unknown=\"unknown(response)\"></span>\n" +
-    "\n" +
-    "    <p class=\"quote\"></p>  \n" +
     "  </div>\n" +
     "</div>\n"
   );
