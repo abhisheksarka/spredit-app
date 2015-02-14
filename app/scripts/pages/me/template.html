@@ -1,0 +1,23 @@
+<div class="profile-cover">
+  <div class="container">
+    <div class="ms-thumbnail">
+      <img ng-src="{{currentUser.profile_picture_medium}}"/>
+    </div>
+    <h3 class="user-name">
+      <span ng-bind="currentUser.name"></span>
+    </h3>
+    <p ng-bind="currentUser.email" class="text-muted-7"></p>
+    <p>
+      <strong ng-bind="currentUser.location.address" class="text-muted-5"></strong>
+    </p>
+  </div>
+</div>
+<br>
+<div>
+  <div class="container">
+    <tabset justified="true">
+      <tab heading="Posts"></tab>
+      <tab heading="Activity Log"></tab>
+    </tabset>
+  </div>
+</div>

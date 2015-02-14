@@ -253,7 +253,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </a>\n" +
     "    </li> \n" +
     "    <li>\n" +
-    "      <a class=\"link-major\">\n" +
+    "      <a class=\"link-major\" href=\"/#me\">\n" +
     "        <span class=\"glyphicon glyphicon-user\"></span> \n" +
     "        <span>Me</span>\n" +
     "      </a>\n" +
@@ -500,6 +500,33 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  </div>\n" +
     "  <br>\n" +
     "</div>"
+  );
+
+
+  $templateCache.put('app/scripts/pages/me/template.html',
+    "<div class=\"profile-cover\">\n" +
+    "  <div class=\"container\">\n" +
+    "    <div class=\"ms-thumbnail\">\n" +
+    "      <img ng-src=\"{{currentUser.profile_picture_medium}}\"/>\n" +
+    "    </div>\n" +
+    "    <h3 class=\"user-name\">\n" +
+    "      <span ng-bind=\"currentUser.name\"></span>\n" +
+    "    </h3>\n" +
+    "    <p ng-bind=\"currentUser.email\" class=\"text-muted-7\"></p>\n" +
+    "    <p>\n" +
+    "      <strong ng-bind=\"currentUser.location.address\" class=\"text-muted-5\"></strong>\n" +
+    "    </p>\n" +
+    "  </div>\n" +
+    "</div>\n" +
+    "<br>\n" +
+    "<div>\n" +
+    "  <div class=\"container\">\n" +
+    "    <tabset justified=\"true\">\n" +
+    "      <tab heading=\"Posts\"></tab>\n" +
+    "      <tab heading=\"Activity Log\"></tab>\n" +
+    "    </tabset>\n" +
+    "  </div>\n" +
+    "</div>\n"
   );
 
 }]);

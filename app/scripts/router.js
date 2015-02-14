@@ -18,6 +18,10 @@ angular.module('ms')
     templateUrl: 'app/scripts/pages/current_location/template.html',
     controller: 'CurrentLocationController'
   })
+  .when('/me', {
+    templateUrl: 'app/scripts/pages/me/template.html',
+    controller: 'MeController'
+  })
   .otherwise({
     redirectTo: '/',
   });

@@ -171,3 +171,33 @@ input.form-control, textarea.form-control {
 .text-muted {
   color: $brand-text-secondary !important; 
 }
+
+ul.nav.nav-tabs {
+  text-transform: uppercase;
+  li {
+    a {
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      &:hover {
+        background: transparent;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+      }
+    }
+  }
+  li.active {
+    a {
+      border: none !important;
+      border-bottom: 2px solid !important;
+      background: transparent;
+      border-radius: 0px;
+      &:hover {
+        border-bottom: 2px solid;
+        border-radius: 0px;
+        background: transparent;
+      }
+    }
+  }
+}
