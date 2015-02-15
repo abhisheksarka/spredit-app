@@ -513,6 +513,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <span ng-bind=\"currentUser.name\"></span>\n" +
     "    </h3>\n" +
     "    <p ng-bind=\"currentUser.email\" class=\"text-muted-7\"></p>\n" +
+    "    <br>\n" +
     "    <p>\n" +
     "      <strong ng-bind=\"currentUser.location.address\" class=\"text-muted-5\"></strong>\n" +
     "    </p>\n" +

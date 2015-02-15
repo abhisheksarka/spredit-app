@@ -2,7 +2,10 @@
   function factory($resource, PostPhoto, PostText) {
     var Resource = $resource(
                     ms.apiFor('/posts/:id'),
-                    { id: '@id' }
+                    { id: '@id' },
+                    { 
+                      mine: { method: 'GET', url: ms.apiFor('/posts/mine'), isArray: true }  
+                    }
                   ),
         proto = Resource.prototype,
         res = Resource;
