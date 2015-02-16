@@ -16,13 +16,18 @@
 <br>
 <div>
   <div class="container">
-    <tabset justified="true">
-      <tab heading="Posts">
-        
-      </tab>
-      <tab heading="Activity Log">
-        
-      </tab>
-    </tabset>
+    <div class="ms-master-section">
+      <tabset justified="true">
+        <tab heading="Posts">
+          <div ng-repeat="post in myPosts">
+            <br>
+            <div ms-post-renderer post="post"></div>
+          </div>
+        </tab>
+        <tab heading="Activity Log">
+          
+        </tab>
+      </tabset>
+    </div>
   </div>
 </div>

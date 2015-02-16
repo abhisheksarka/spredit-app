@@ -522,10 +522,19 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<br>\n" +
     "<div>\n" +
     "  <div class=\"container\">\n" +
-    "    <tabset justified=\"true\">\n" +
-    "      <tab heading=\"Posts\"></tab>\n" +
-    "      <tab heading=\"Activity Log\"></tab>\n" +
-    "    </tabset>\n" +
+    "    <div class=\"ms-master-section\">\n" +
+    "      <tabset justified=\"true\">\n" +
+    "        <tab heading=\"Posts\">\n" +
+    "          <div ng-repeat=\"post in myPosts\">\n" +
+    "            <br>\n" +
+    "            <div ms-post-renderer post=\"post\"></div>\n" +
+    "          </div>\n" +
+    "        </tab>\n" +
+    "        <tab heading=\"Activity Log\">\n" +
+    "          \n" +
+    "        </tab>\n" +
+    "      </tabset>\n" +
+    "    </div>\n" +
     "  </div>\n" +
     "</div>\n"
   );
