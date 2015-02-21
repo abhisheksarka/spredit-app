@@ -101,7 +101,7 @@
   background: rgb(251,251,251);
   color: gray;
   opacity: 1;
-  @include ms-box-shadow(0px, 2px, 5px, rgba(0, 0, 0, 0.26), inset);  
+  @include ms-box-shadow(0px, 2px, 8px, rgba(0, 0, 0, 0.26), inset);  
 }
 
 .rainbow-dash {

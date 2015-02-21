@@ -1,5 +1,5 @@
 (function(){
-  function Controller($scope, $rootScope, Spread, StateHandler){
+  function Controller($scope, $rootScope, Spread, StateHandler, Session){
     function init() {
       $scope.type = $scope.type || 'Post';
       $scope.callback = $scope.callback || angular.noop;
@@ -7,9 +7,11 @@
         spreadable_type: $scope.type,
         spreadable_id: $scope.spreadable.id
       });
+      
       $scope.requestState = StateHandler.getInstance();
       $scope.containIt = containIt;
       $scope.spreadIt = spreadIt;
+      $scope.currentUser = Session.currentUser;
     };
 
     function spreadIt() {
@@ -49,6 +51,7 @@
     '$rootScope',
     'SpreadModel',
     'StateHandlerService',
+    'SessionModel',
     Controller 
   ]);
 }());

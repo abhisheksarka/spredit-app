@@ -224,7 +224,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <br>\n" +
     "      <br>\n" +
     "      <hr>\n" +
-    "      <div ms-spread-creator spreadable=\"post\"></div>\n" +
+    "      <div ms-spread-creator spreadable=\"post\" resource-owner=\"'post_publishable'\"></div>\n" +
     "    </div>\n" +
     "    <div class=\"actions\">\n" +
     "      <span ms-post-actions post=\"post\" selected-action=\"selectedAction\" ></span>\n" +
@@ -298,10 +298,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/spread/creator/template.html',
     "<div class=\"text-center spreader\">\n" +
     "  <span>\n" +
-    "    <span class=\"ms-fab btn btn-inverse\" ng-click=\"containIt()\" ng-class=\"{'disabled': requestState.isWorking}\">\n" +
+    "    <span class=\"ms-fab btn btn-inverse\" ng-click=\"containIt()\" ng-class=\"{'disabled': requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}\">\n" +
     "      <span class=\"glyphicon glyphicon-lock\"></span>\n" +
     "    </span>\n" +
-    "    <span class=\"ms-fab btn btn-inverse\" ng-click=\"spreadIt()\" ng-class=\"{'disabled': requestState.isWorking}\">\n" +
+    "    <span class=\"ms-fab btn btn-inverse\" ng-click=\"spreadIt()\" ng-class=\"{'disabled': requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}\">\n" +
     "      <span class=\"glyphicon glyphicon-send\"></span>\n" +
     "    </span>\n" +
     "  </span>\n" +
