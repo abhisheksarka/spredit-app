@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default" role="navigation" data-ng-if="display">
-  <div class="container">
+  <div class="container" data-ng-if="signedIn">
     <ul class="nav navbar-nav">
       <li class="visible-xs visible-sm">
         <a ng-click="toggleSideNav()">
@@ -9,6 +9,20 @@
       <li class="hidden-xs hidden-sm">
         <a ng-click="openPostCreator()">
           <span class="glyphicon glyphicon-send"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="container" data-ng-if="!signedIn">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="https://www.facebook.com/pages/Spredit/849011651809054" target="_blank">
+          <span class="fa fa-facebook"></span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <span class="fa fa-twitter"></span>
         </a>
       </li>
     </ul>

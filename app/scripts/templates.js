@@ -60,7 +60,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
-    "  <button class=\"btn btn-info fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
+    "  <button class=\"btn btn-inverse fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
     "</span>"
   );
 
@@ -101,7 +101,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/nav_bar/template.html',
     "<nav class=\"navbar navbar-default\" role=\"navigation\" data-ng-if=\"display\">\n" +
-    "  <div class=\"container\">\n" +
+    "  <div class=\"container\" data-ng-if=\"signedIn\">\n" +
     "    <ul class=\"nav navbar-nav\">\n" +
     "      <li class=\"visible-xs visible-sm\">\n" +
     "        <a ng-click=\"toggleSideNav()\">\n" +
@@ -111,6 +111,20 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <li class=\"hidden-xs hidden-sm\">\n" +
     "        <a ng-click=\"openPostCreator()\">\n" +
     "          <span class=\"glyphicon glyphicon-send\"></span>\n" +
+    "        </a>\n" +
+    "      </li>\n" +
+    "    </ul>\n" +
+    "  </div>\n" +
+    "  <div class=\"container\" data-ng-if=\"!signedIn\">\n" +
+    "    <ul class=\"nav navbar-nav\">\n" +
+    "      <li>\n" +
+    "        <a href=\"https://www.facebook.com/pages/Spredit/849011651809054\" target=\"_blank\">\n" +
+    "          <span class=\"fa fa-facebook\"></span>\n" +
+    "        </a>\n" +
+    "      </li>\n" +
+    "      <li>\n" +
+    "        <a>\n" +
+    "          <span class=\"fa fa-twitter\"></span>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
@@ -451,26 +465,37 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/pages/index/template.html',
-    "<div id=\"bg-backdrop\"></div>\n" +
-    "<div class=\"container\">\n" +
-    "  <div class=\"row\">\n" +
-    "    <div class=\"col-md-12 text-center\">\n" +
-    "      <div class=\"logo logo-40\">\n" +
-    "        <span class=\"glyphicon glyphicon-send glyphicon-ring-wrap\"></span>\n" +
+    "<!-- <div id=\"bg-backdrop\"></div> -->\n" +
+    "<div ms-auto-height offset=\"60\" min-height=\"600\" class=\"main-section\">\n" +
+    "  <div class=\"container\">\n" +
+    "    <div class=\"row\">\n" +
+    "      <div class=\"col-md-12 text-center\">\n" +
+    "        <div class=\"logo logo-25\">\n" +
+    "          <span class=\"glyphicon glyphicon-send glyphicon-ring-wrap\"></span> \n" +
+    "        </div>\n" +
+    "        <h1 class=\"brand-name\">\n" +
+    "          spredit\n" +
+    "        </h1>\n" +
+    "        <h3 class=\"brand-tagline\">\n" +
+    "          <strong>The new way to spread information, around the world...</strong><br>\n" +
+    "        </h3>\n" +
     "      </div>\n" +
-    "      <h1 class=\"brand-name\">Spredit</h1>\n" +
-    "      <h3 class=\"brand-tagline\">\n" +
-    "        The new way to spread information <br>around the world..<br>\n" +
-    "      </h3>\n" +
-    "      <br><br>\n" +
-    "      <span ms-fb-log-in \n" +
-    "            data-connected=\"connected(response)\" \n" +
-    "            data-unauthorized=\"unauthorized(response)\" \n" +
-    "            data-unknown=\"unknown(response)\"></span>\n" +
-    "      <p class=\"quote\"></p>  \n" +
     "    </div>\n" +
     "  </div>\n" +
-    "</div>\n"
+    "  <div class=\"container\">\n" +
+    "    <div class=\"row\">\n" +
+    "      <div class=\"col-md-12 text-center sign-in-section\">\n" +
+    "        <span ms-fb-log-in \n" +
+    "              data-connected=\"connected(response)\" \n" +
+    "              data-unauthorized=\"unauthorized(response)\" \n" +
+    "              data-unknown=\"unknown(response)\"></span>\n" +
+    "      </div>\n" +
+    "      <!-- <div class=\"col-md-12\" style=\"height: 500px; background: rgb(245,245,245); color: #333\">\n" +
+    "        <h2>A network that revolves around information <br>not your friends, followers or connections</h2>\n" +
+    "      </div> -->\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</div>"
   );
 
 

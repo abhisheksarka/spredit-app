@@ -8,6 +8,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery.ui.slider.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/jQuery.mmenu/src/css/extensions/jquery.mmenu.widescreen.css" media="all and (min-width: 992px)" />
     <!-- bower:css -->
     <!-- endbower -->
@@ -26,7 +27,7 @@
 
       <!-- Add your site or application content here -->
       <div data-ng-if="masterCtrl.config.APP_INIT">
-        <div ms-nav-bar display="masterCtrl.currentSession && masterCtrl.isLocationPresent"></div>
+        <div ms-nav-bar signed-in="masterCtrl.currentSession && masterCtrl.isLocationPresent" display="true"></div>
         <div>  
           <div data-ng-view></div>
         </div>
@@ -104,6 +105,7 @@
 
         <script src="scripts/core/directives/app.js"></script>
         <script src="scripts/core/directives/linkify.js"></script>
+        <script src="scripts/core/directives/auto_height.js"></script>
 
         <script src="scripts/core/api/app.js"></script>
         <script src="scripts/core/api/init_model.js"></script>

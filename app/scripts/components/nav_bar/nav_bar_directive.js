@@ -3,7 +3,8 @@
   app.directive('msNavBar', [function(){
     return{
       scope: {
-        display: "=" 
+        display: '=',
+        signedIn: '=' 
       },
       replace: true,
       controllerAs: 'navBarCtrl',
