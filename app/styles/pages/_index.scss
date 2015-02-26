@@ -10,7 +10,7 @@ body#page-index {
     margin-bottom: 0px !important;
     @include ms-box-shadow(0px, 0px, 10px, rgba(0,0,0,0.5));
     a {
-      color: #333 !important;
+      color: $brand-info !important;
     }
   }
   .logo{
@@ -20,9 +20,8 @@ body#page-index {
     .glyphicon-ring-wrap {
       padding: 18px;
       border: none;
-      background: $brand-red;
+      background: #333;
       @include ms-box-shadow(0px, 0px, 10px, rgba(0,0,0,0.5));
-      border: 1px solid darken($brand-red, 10%);
     }
   }
   .brand-name { 
@@ -52,6 +51,9 @@ body#page-index {
   }
   .main-section {
     background: rgba(0,0,0,0.4);
+  }
+  .second-section {
+    background: $$brand-light-green
   }
   .sign-in-section {
     background: rgba(0,0,0,0.6);

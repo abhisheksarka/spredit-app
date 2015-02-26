@@ -495,6 +495,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </div> -->\n" +
     "    </div>\n" +
     "  </div>\n" +
+    "</div>\n" +
+    "<div ms-auto-height class=\"second-section\">\n" +
+    "  \n" +
     "</div>"
   );
 
