@@ -349,20 +349,23 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/statistics/template.html',
     "<div class=\"statistics\">\n" +
-    "  <img src=\"../images/analytics.png\" class=\"icon\"/>\n" +
     "  <div class=\"listing\">\n" +
     "    <div class=\"listing-section\">\n" +
     "      <span class=\"value\" ng-bind=\"post.view_count\"></span>&nbsp;\n" +
+    "      <br>\n" +
     "      <small class=\"text-muted\">VIEWS</small>\n" +
     "    </div>\n" +
     "    <div class=\"listing-section\">\n" +
-    "      <span class=\"value\" ng-bind=\"post.spreads_count\"></span>&nbsp;\n" +
+    "      <span class=\"value\" ng-bind=\"post.spreads_count\"></span>\n" +
+    "      <br>\n" +
     "      <small class=\"text-muted\">SPREADS</small>\n" +
     "    </div>\n" +
     "    <div class=\"listing-section\">\n" +
     "      <span class=\"value\" ng-bind=\"post.contains_count\"></span>&nbsp;\n" +
+    "      <br>\n" +
     "      <small class=\"text-muted\">CONTAINS</small>\n" +
     "    </div>\n" +
+    "    <div class=\"clearfix\"></div>\n" +
     "  </div>\n" +
     "</div>"
   );

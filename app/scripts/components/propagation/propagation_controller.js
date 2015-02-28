@@ -11,7 +11,7 @@
         bounds: { },
         center: { },
         init: false,
-        options: MapConfig.default('grayScale')
+        options: MapConfig.default('light')
       };
     };
 
