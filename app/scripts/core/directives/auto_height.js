@@ -13,11 +13,15 @@
           if(height < minHeight) {
             height = minHeight;
           };
+          $scope.msAutoHeight = height;
           height = height + 'px';
           $element.css({ height: height });
         };
         
-        angular.element($window).resize(setHeight);
+        angular.element($window).resize(function() {
+          setHeight();
+          $scope.$apply();
+        });
         setHeight();
       }
     }; 

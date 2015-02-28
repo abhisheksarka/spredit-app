@@ -1,9 +1,12 @@
 <!-- <div id="bg-backdrop"></div> -->
-<div ms-auto-height offset="60" min-height="600" class="main-section">
+<div ms-section-scroll="[]">
+  
+</div>
+<div ms-auto-height="sectionHeight" offset="60" min-height="600" class="section" id="main-section">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <div class="logo logo-25">
+        <div class="logo logo-25 ms-animation-zoom-in">
           <span class="glyphicon glyphicon-send glyphicon-ring-wrap"></span> 
         </div>
         <h1 class="brand-name">
@@ -17,7 +20,7 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-12 text-center sign-in-section">
+      <div class="col-md-12 text-center" id="sign-in-section">
         <span ms-fb-log-in 
               data-connected="connected(response)" 
               data-unauthorized="unauthorized(response)" 
@@ -29,6 +32,51 @@
     </div>
   </div>
 </div>
-<div ms-auto-height class="second-section">
-  
+<div class="section" style="height: {{sectionHeight + 60}}px; overflow: hidden;" id="second-section">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="section-heading">How it works</h1>
+      </div>
+    </div>
+    <div class="row desc-section">
+      <div class="col-md-3 text-center">
+        <span class="glyphicon glyphicon-camera desc-icon"></span>
+        <br>
+        <span class="desc-text">
+          Publish a link, photo or any information you want
+        </span>
+      </div>
+      <div class="col-md-3">
+        <span class="glyphicon glyphicon-map-marker desc-icon"></span>
+        <br>
+        <span class="desc-text">It instantly propagates to the people around you</span>
+      </div>
+      <div class="col-md-3">
+        <span class="glyphicon glyphicon-eye-open desc-icon"></span>
+        <br>
+        <span class="desc-text">Anyone who sees your post can choose to spread it further or contain it</span>
+      </div>
+      <div class="col-md-3">
+        <span class="glyphicon glyphicon-globe desc-icon"></span>
+        <br>
+        <span class="desc-text">That's it, interesting information keeps on propagating thus, reaching out to 1000's of people instantly</span>
+      </div>
+    </div>
+  </div>
+  <div class="row desc-section">
+    <div class="col-md-12">
+      <img src="../images/intro-product.png"/>
+    </div>
+  </div>
 </div>
+<!-- <div class="section" style="height: {{sectionHeight + 60}}px" id="third-section">
+  <div class="container">
+    
+  </div>
+</div>
+<div class="section" style="height: {{sectionHeight + 60}}px" id="fourth-section">
+  <div class="container">
+    
+  </div>
+</div> -->

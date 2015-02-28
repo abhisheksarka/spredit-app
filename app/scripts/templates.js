@@ -466,11 +466,14 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/pages/index/template.html',
     "<!-- <div id=\"bg-backdrop\"></div> -->\n" +
-    "<div ms-auto-height offset=\"60\" min-height=\"600\" class=\"main-section\">\n" +
+    "<div ms-section-scroll=\"[]\">\n" +
+    "  \n" +
+    "</div>\n" +
+    "<div ms-auto-height=\"sectionHeight\" offset=\"60\" min-height=\"600\" class=\"section\" id=\"main-section\">\n" +
     "  <div class=\"container\">\n" +
     "    <div class=\"row\">\n" +
     "      <div class=\"col-md-12 text-center\">\n" +
-    "        <div class=\"logo logo-25\">\n" +
+    "        <div class=\"logo logo-25 ms-animation-zoom-in\">\n" +
     "          <span class=\"glyphicon glyphicon-send glyphicon-ring-wrap\"></span> \n" +
     "        </div>\n" +
     "        <h1 class=\"brand-name\">\n" +
@@ -484,7 +487,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  </div>\n" +
     "  <div class=\"container\">\n" +
     "    <div class=\"row\">\n" +
-    "      <div class=\"col-md-12 text-center sign-in-section\">\n" +
+    "      <div class=\"col-md-12 text-center\" id=\"sign-in-section\">\n" +
     "        <span ms-fb-log-in \n" +
     "              data-connected=\"connected(response)\" \n" +
     "              data-unauthorized=\"unauthorized(response)\" \n" +
@@ -496,9 +499,54 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n" +
-    "<div ms-auto-height class=\"second-section\">\n" +
-    "  \n" +
-    "</div>"
+    "<div class=\"section\" style=\"height: {{sectionHeight + 60}}px; overflow: hidden;\" id=\"second-section\">\n" +
+    "  <div class=\"container text-center\">\n" +
+    "    <div class=\"row\">\n" +
+    "      <div class=\"col-md-12\">\n" +
+    "        <h1 class=\"section-heading\">How it works</h1>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"row desc-section\">\n" +
+    "      <div class=\"col-md-3 text-center\">\n" +
+    "        <span class=\"glyphicon glyphicon-camera desc-icon\"></span>\n" +
+    "        <br>\n" +
+    "        <span class=\"desc-text\">\n" +
+    "          Publish a link, photo or any information you want\n" +
+    "        </span>\n" +
+    "      </div>\n" +
+    "      <div class=\"col-md-3\">\n" +
+    "        <span class=\"glyphicon glyphicon-map-marker desc-icon\"></span>\n" +
+    "        <br>\n" +
+    "        <span class=\"desc-text\">It instantly propagates to the people around you</span>\n" +
+    "      </div>\n" +
+    "      <div class=\"col-md-3\">\n" +
+    "        <span class=\"glyphicon glyphicon-eye-open desc-icon\"></span>\n" +
+    "        <br>\n" +
+    "        <span class=\"desc-text\">Anyone who sees your post can choose to spread it further or contain it</span>\n" +
+    "      </div>\n" +
+    "      <div class=\"col-md-3\">\n" +
+    "        <span class=\"glyphicon glyphicon-globe desc-icon\"></span>\n" +
+    "        <br>\n" +
+    "        <span class=\"desc-text\">That's it, interesting information keeps on propagating thus, reaching out to 1000's of people instantly</span>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "  <div class=\"row desc-section\">\n" +
+    "    <div class=\"col-md-12\">\n" +
+    "      <img src=\"../images/intro-product.png\"/>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</div>\n" +
+    "<!-- <div class=\"section\" style=\"height: {{sectionHeight + 60}}px\" id=\"third-section\">\n" +
+    "  <div class=\"container\">\n" +
+    "    \n" +
+    "  </div>\n" +
+    "</div>\n" +
+    "<div class=\"section\" style=\"height: {{sectionHeight + 60}}px\" id=\"fourth-section\">\n" +
+    "  <div class=\"container\">\n" +
+    "    \n" +
+    "  </div>\n" +
+    "</div> -->"
   );
 
 
