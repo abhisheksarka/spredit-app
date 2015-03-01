@@ -1,5 +1,5 @@
 (function() {
-  function Factory($timeout) {
+  function Factory($timeout, StateHandler) {
 
     function Service(ResourceClass, action) {
       this.page = 1;
@@ -7,6 +7,7 @@
       this.action = action;
       this.requestQueue = [ ];
       this.requestCount = 0;
+      this.state = StateHandler.getInstance();
     };
     
     Service.prototype.on = function(dataSet) {
@@ -30,13 +31,15 @@
 
     Service.prototype._dataFetch = function() {
       var self = this;
+      self.state.initiate();
 
       self.ResourceClass[self.action]({
         page: self.page
       }).$promise.then(function(response){ 
         self._afterResolution(response);
+        self.state.success();
       }, function() {
-        // handle error callback
+        self.state.error();
       });
     };
   
@@ -103,6 +106,7 @@
   angular.module('ms.core.services')
   .factory('PaginatorService', [ 
     '$timeout',
+    'StateHandlerService',
     Factory
   ]);
 }());
