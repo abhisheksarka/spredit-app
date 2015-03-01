@@ -19,6 +19,8 @@
     <div class="ms-master-section">
       <tabset justified="true">
         <tab heading="Posts">
+          <div ms-infinite-scroll="paginationFn()">
+          </div>
           <div ng-repeat="post in myPosts">
             <br>
             <div ms-post-renderer post="post"></div>

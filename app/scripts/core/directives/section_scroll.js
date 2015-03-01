@@ -12,7 +12,7 @@
     }; 
   };
   angular
-  .module('ms.core.services')
+  .module('ms.core.directives')
   .directive('msSectionScroll', [
     '$window',
     Directive
