@@ -1,44 +1,56 @@
 (function() {
   function Factory($timeout, StateHandler) {
 
+    var proto;
+
     function Service(ResourceClass) {
       this.page = 1;
       this.ResourceClass = ResourceClass;
       this.requestQueue = [ ];
       this.requestCount = 0;
       this.state = StateHandler.getInstance();
+      this.isComplete = false;
     };
-    
-    Service.prototype.requestTo = function(action) {
+    proto = Service.prototype;
+
+    proto.requestTo = function(action) {
       this.action = action;
       return this;
     };
 
-    Service.prototype.withParams = function(params) {
+    proto.withParams = function(params) {
       this.params = params;
       return this;
     };
 
-    Service.prototype.pushTo = function(dataSet) {
+    proto.pushTo = function(dataSet) {
       this.dataSet = dataSet;
       return this;
     };
 
-    Service.prototype.paginate = function() {
-      var self = this; 
-      self._queuePush();
+    proto.uniq = function(property) {
+      this.uniqProperty = property;
+      return this;
+    };
 
+    proto.paginate = function() {
+      var self = this; 
+      if(self.isComplete) {
+        return self;
+      };
+      
+      self._queuePush();
       // this condition will prevent uncessary fetches unless the previous
       // fetch is complete
       if(self.requestQueue.length == 1) { 
         $timeout(function(){
           self._dataFetch();
-        }, 0); 
+        }, 0, true); 
       };
       return self;
     };
 
-    Service.prototype._dataFetch = function() {
+    proto._dataFetch = function() {
       var self = this,
           p = { page: self.page };
       self.state.initiate();
@@ -49,13 +61,12 @@
 
       self.ResourceClass[self.action](p).$promise.then(function(response){ 
         self._afterResolution(response);
-        self.state.success();
       }, function() {
         self.state.error();
       });
     };
   
-    Service.prototype._afterResolution = function(response) {
+    proto._afterResolution = function(response) {
       var self = this;
       // push data
       self._dataPush(response);
@@ -64,6 +75,7 @@
       // remove the first element from request queue
       self._queueShift();
 
+      self.state.success();
       // if more calls are pending and previous response wasn't empty
       if(self.requestQueue.length > 0 && self._isValidResponse(response)) {
         self._dataFetch();
@@ -72,10 +84,14 @@
         // so no use executing the other requests
         // so empty the queue
         self.requestQueue = [ ];
-      }
+      };
+
+      if(!self._isValidResponse(response)) {
+        self.isComplete = true;
+      };
     };
 
-    Service.prototype._setNextPage = function(response) {
+    proto._setNextPage = function(response) {
       var self = this;
       if(self._isValidResponse(response)) {
         self.page = self.page + 1;
@@ -83,16 +99,32 @@
     };
 
     // pushes data into the array using the response
-    Service.prototype._dataPush = function(response) {
+    proto._dataPush = function(response) {
       var self = this;
 
       angular.forEach(response, function(res){
-        self.dataSet.push(res);
+        if(!self._dataExists(res)) {
+          self.dataSet.push(res);
+        };
       });
     };
 
+    proto._dataExists = function(data) {
+      var self = this,
+          found = false;
+      if(!self.uniqProperty) {
+        return false;
+      };
+      angular.forEach(self.dataSet, function(d){
+        if(data[self.uniqProperty] == d[self.uniqProperty]) {
+          found = true;
+        };
+      });
+      return found;
+    };
+
     // maintains a queue to store the number of pagination requests
-    Service.prototype._queuePush = function() {
+    proto._queuePush = function() {
       var self = this;
       self.requestCount++;
 
@@ -102,11 +134,11 @@
     };
 
     // when a pagination request is complete clear the first one
-    Service.prototype._queueShift = function() {
+    proto._queueShift = function() {
       this.requestQueue.shift();
     };
 
-    Service.prototype._isValidResponse = function(response) {
+    proto._isValidResponse = function(response) {
       return (response && response.length > 0);
     }
     return {

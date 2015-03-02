@@ -1,23 +1,19 @@
 (function(){
-  function Controller($scope, Session, Comment, StateHandler){
+  function Controller($scope, Session, Comment){
     function init() {
-      $scope.requestState = StateHandler.getInstance();
       $scope.commentable.comments = [];
-      loadComments();
+      $scope.Comment = Comment;
+      $scope.paginator = {
+        control: { }
+      };
+      setParams();
     };
 
-    function loadComments() {
-      var r = $scope.requestState;
-      r.initiate();
-      $scope.commentable.comments = Comment.query({
+    function setParams() {
+      $scope.commentParams = {
         commentable_type: 'Post',
         commentable_id: $scope.commentable.id
-      });
-      $scope.commentable.comments.$promise.then(function(){
-        r.success();
-      }, function(){
-        r.error();
-      });
+      };
     };
 
     $scope.$watch('commentable.id', function(nv) {
@@ -30,7 +26,6 @@
     '$scope',  
     'SessionModel',
     'CommentModel',
-    'StateHandlerService',
     Controller 
   ]);
 }());

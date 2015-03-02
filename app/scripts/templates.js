@@ -25,17 +25,16 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/components/comment/lister/template.html',
-    "<div class=\"comment-lister\">\n" +
-    "  <div class=\"text-center\">\n" +
-    "    <!-- <div ng-if=\"comments.length == 0 && requestState.isComplete\">\n" +
-    "      <small class=\"text-muted\">Nothing to show here...</small>\n" +
-    "    </div> -->\n" +
-    "    <div ng-if=\"requestState.isWorking\">\n" +
-    "      <div ms-spinner></div>\n" +
-    "      <p><small class=\"text-muted\">Loading...</small></p>\n" +
-    "    </div>\n" +
+    "<div class=\"comment-lister\" ng-if=\"commentable.id\">\n" +
+    "  <div ms-infinite-scroll \n" +
+    "       resource=\"Comment\" \n" +
+    "       request-to=\"'query'\"  \n" +
+    "       with-params=\"commentParams\"\n" +
+    "       push-to=\"commentable.comments\"\n" +
+    "       paginator=\"paginator\"\n" +
+    "       uniq=\"'id'\">\n" +
     "  </div>\n" +
-    "  <div class=\"ms-list\" ng-if=\"commentable.comments.length > 0 && !requestState.isWorking\">\n" +
+    "  <div class=\"ms-list\" ng-if=\"commentable.comments.length > 0\">\n" +
     "    <div class=\"ms-list-item\" ng-repeat=\"comment in commentable.comments\">\n" +
     "      <div class=\"list-avatar\">\n" +
     "        <img ng-src=\"{{comment.comment_publishable.profile_picture}}\"/>\n" +
@@ -50,8 +49,17 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        <div class=\"secondary\">\n" +
     "          <small ng-bind=\"comment.content\" class=\"text-muted\"></small>\n" +
     "        </div>\n" +
-    "        <div class=\"clearfix\">\n" +
+    "        <div class=\"clearfix\"></div>\n" +
     "      </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "  <div class=\"text-center\">\n" +
+    "    <!-- <div ng-if=\"comments.length == 0 && requestState.isComplete\">\n" +
+    "      <small class=\"text-muted\">Nothing to show here...</small>\n" +
+    "    </div> -->\n" +
+    "    <div ng-if=\"paginator.state.isWorking\">\n" +
+    "      <div ms-spinner></div>\n" +
+    "      <p><small class=\"text-muted\">Loading...</small></p>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>"
