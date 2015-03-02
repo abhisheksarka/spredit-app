@@ -604,6 +604,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"ms-master-section\">\n" +
     "      <tabset justified=\"true\">\n" +
     "        <tab heading=\"Posts\">\n" +
+    "          <div ms-infinite-scroll model=\"Post\" action=\"'mine'\" set=\"myPosts\"></div>\n" +
     "          <div ng-repeat=\"post in myPosts\">\n" +
     "            <br>\n" +
     "            <div ms-post-renderer post=\"post\"></div>\n" +

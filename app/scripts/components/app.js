@@ -10,5 +10,6 @@ angular.module('ms.components', [
   'ms.components.spread',
   'ms.components.propagation',
   'ms.components.view',
-  'ms.components.statistics'
+  'ms.components.statistics',
+  'ms.components.infiniteScroll'
 ]);

@@ -4,24 +4,10 @@
 
     function init() {
       $scope.masterCtrl.setBodyId('page-me');
+      $scope.Post = Post;
       $scope.myPosts = [ ];
-      $scope.paginationFn = Paginator.getInstance(Post, 'mine').on($scope.myPosts).paginate;
+      $scope.activities = [ ];
       $scope.currentUser = Session.currentUser;
-      $scope.states = {
-        posts: StateHandler.getInstance(),
-        activities: StateHandler.getInstance()
-      }; 
-      loadMyPosts();
-    };
-
-    function loadMyPosts() {
-      var ps = $scope.states.posts;
-      ps.initiate();
-      $scope.paginationFn();
-    };
-
-    function loadActivity() {
-
     };
     
     init();
