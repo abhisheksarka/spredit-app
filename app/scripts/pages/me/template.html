@@ -19,7 +19,7 @@
     <div class="ms-master-section">
       <tabset justified="true">
         <tab heading="Posts">
-          <div ms-infinite-scroll model="Post" action="'mine'" set="myPosts"></div>
+          <div ms-infinite-scroll resource="Post" request-to="'mine'" push-to="myPosts"></div>
           <div ng-repeat="post in myPosts">
             <br>
             <div ms-post-renderer post="post"></div>

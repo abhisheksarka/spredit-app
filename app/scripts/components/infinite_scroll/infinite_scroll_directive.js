@@ -2,9 +2,10 @@
   function Directive($window, _, Paginator){
     return{
       scope: {
-        model: '=',
-        action: '=',
-        set: '=',
+        resource: '=',
+        requestTo: '=',
+        withParams: '=?',
+        pushTo: '=',
         debounceWait: '=?'
       },
       link: function($scope, $element, $attributes) {
@@ -12,7 +13,11 @@
             w = angular.element($window),
             debounceWait = parseInt($attributes.debounceWait || 100);
 
-        $scope.paginator = Paginator.getInstance($scope.model, $scope.action).on($scope.set);
+        $scope.paginator = Paginator.getInstance($scope.resource)
+                          .requestTo($scope.requestTo)
+                          .withParams($scope.withParams)
+                          .pushTo($scope.pushTo);
+                          
         // send the first request
         $scope.paginator.paginate();
 

@@ -1,16 +1,25 @@
 (function() {
   function Factory($timeout, StateHandler) {
 
-    function Service(ResourceClass, action) {
+    function Service(ResourceClass) {
       this.page = 1;
       this.ResourceClass = ResourceClass;
-      this.action = action;
       this.requestQueue = [ ];
       this.requestCount = 0;
       this.state = StateHandler.getInstance();
     };
     
-    Service.prototype.on = function(dataSet) {
+    Service.prototype.requestTo = function(action) {
+      this.action = action;
+      return this;
+    };
+
+    Service.prototype.withParams = function(params) {
+      this.params = params;
+      return this;
+    };
+
+    Service.prototype.pushTo = function(dataSet) {
       this.dataSet = dataSet;
       return this;
     };
@@ -30,12 +39,15 @@
     };
 
     Service.prototype._dataFetch = function() {
-      var self = this;
+      var self = this,
+          p = { page: self.page };
       self.state.initiate();
 
-      self.ResourceClass[self.action]({
-        page: self.page
-      }).$promise.then(function(response){ 
+      if(self.params) {
+        angular.extend(p, self.params);
+      };
+
+      self.ResourceClass[self.action](p).$promise.then(function(response){ 
         self._afterResolution(response);
         self.state.success();
       }, function() {
@@ -98,8 +110,8 @@
       return (response && response.length > 0);
     }
     return {
-      getInstance: function(ResourceClass, action) {
-        return new Service(ResourceClass, action);
+      getInstance: function(ResourceClass) {
+        return new Service(ResourceClass);
       }
     }
   };
