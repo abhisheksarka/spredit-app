@@ -2,14 +2,14 @@
   <div class="ms-master-section">
     <div ng-if="loadState.isComplete && !currentPost.id" class="text-center">
       <img src="images/no_posts.png"/>
-      <h3 class="text-muted">
+      <h4 class="text-muted">
         No posts to show right now
-      </h3>
+      </h4>
     </div>
     <div ng-if="currentPost.id" 
          ms-animator="ms-animation-zoom-in" 
          on-change-in="{{currentPost.id}}">
-      <div ms-post-renderer post="currentPost" selected-action="actions.selected"></div>
+      <div ms-post-renderer post="currentPost" selected-action="actions.selected" record-view="true"></div>
       <br>
       <div class="ms-card-complex actions-card">
         <div class="optional-header {{currentMapping.background}}">

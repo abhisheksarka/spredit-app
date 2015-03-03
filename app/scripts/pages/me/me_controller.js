@@ -5,9 +5,33 @@
     function init() {
       $scope.masterCtrl.setBodyId('page-me');
       $scope.Post = Post;
-      $scope.myPosts = [ ];
-      $scope.activities = [ ];
       $scope.currentUser = Session.currentUser;
+      $scope.tabs = {
+        myPosts: {
+          value: 1,
+          clearFn: initActivities
+        },
+        activities: {
+          value: 2,
+          clearFn: initPosts
+        }
+      };
+      $scope.setActive = setActive;
+      initPosts();
+      initActivities();
+    };
+
+    function setActive(tab) {
+      tab.clearFn();
+      $scope.tabs.active = tab;
+    };
+
+    function initPosts() {
+      $scope.myPosts = [ ];
+    };
+
+    function initActivities() {
+      $scope.activities = [ ];
     };
     
     init();

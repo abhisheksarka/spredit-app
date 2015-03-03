@@ -4,7 +4,8 @@
     return{
       scope: {
         post: '=',
-        selectedAction: '=?'
+        selectedAction: '=?',
+        recordView: '=?'
       },
       replace: true,
       controllerAs: 'postRendererCtrl',

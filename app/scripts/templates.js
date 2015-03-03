@@ -59,7 +59,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div> -->\n" +
     "    <div ng-if=\"paginator.state.isWorking\">\n" +
     "      <div ms-spinner></div>\n" +
-    "      <p><small class=\"text-muted\">Loading...</small></p>\n" +
+    "      <p><small class=\"text-muted\">Please wait</small></p>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>"
@@ -217,7 +217,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/post/renderer/template.html',
     "<div class=\"post-renderer\">\n" +
     "  <div class=\"ms-card-complex\">\n" +
-    "    <span ms-view-recorder viewable=\"post\" viewable-type=\"'Post'\"></span>\n" +
+    "    <span ng-if=\"recordView\">\n" +
+    "      <span ms-view-recorder viewable=\"post\" viewable-type=\"'Post'\"></span>\n" +
+    "    </span>\n" +
     "    <div class=\"optional-header\">\n" +
     "      <div class=\"ms-list-item\">\n" +
     "        <div class=\"list-avatar\">\n" +
@@ -407,14 +409,14 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <div class=\"ms-master-section\">\n" +
     "    <div ng-if=\"loadState.isComplete && !currentPost.id\" class=\"text-center\">\n" +
     "      <img src=\"images/no_posts.png\"/>\n" +
-    "      <h3 class=\"text-muted\">\n" +
+    "      <h4 class=\"text-muted\">\n" +
     "        No posts to show right now\n" +
-    "      </h3>\n" +
+    "      </h4>\n" +
     "    </div>\n" +
     "    <div ng-if=\"currentPost.id\" \n" +
     "         ms-animator=\"ms-animation-zoom-in\" \n" +
     "         on-change-in=\"{{currentPost.id}}\">\n" +
-    "      <div ms-post-renderer post=\"currentPost\" selected-action=\"actions.selected\"></div>\n" +
+    "      <div ms-post-renderer post=\"currentPost\" selected-action=\"actions.selected\" record-view=\"true\"></div>\n" +
     "      <br>\n" +
     "      <div class=\"ms-card-complex actions-card\">\n" +
     "        <div class=\"optional-header {{currentMapping.background}}\">\n" +
@@ -538,7 +540,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <div class=\"col-md-3\">\n" +
     "        <span class=\"glyphicon glyphicon-globe desc-icon\"></span>\n" +
     "        <br>\n" +
-    "        <span class=\"desc-text\">That's it, interesting information keeps on propagating thus, reaching out to 1000's of people instantly</span>\n" +
+    "        <span class=\"desc-text\">That's it, interesting information keeps on propagating while boring information will be contained</span>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
@@ -611,15 +613,32 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <div class=\"container\">\n" +
     "    <div class=\"ms-master-section\">\n" +
     "      <tabset justified=\"true\">\n" +
-    "        <tab heading=\"Posts\">\n" +
-    "          <div ms-infinite-scroll resource=\"Post\" request-to=\"'mine'\" push-to=\"myPosts\"></div>\n" +
-    "          <div ng-repeat=\"post in myPosts\">\n" +
-    "            <br>\n" +
-    "            <div ms-post-renderer post=\"post\"></div>\n" +
+    "        <tab heading=\"Posts\" select=\"setActive(tabs.myPosts)\">\n" +
+    "          <div ng-if=\"tabs.active == tabs.myPosts\">\n" +
+    "            <div ms-infinite-scroll resource=\"Post\" request-to=\"'mine'\" push-to=\"myPosts\" paginator=\"paginator\"></div>\n" +
+    "            <div ng-repeat=\"post in myPosts\">\n" +
+    "              <br>\n" +
+    "              <div ms-post-renderer post=\"post\" record-view=\"false\"></div>\n" +
+    "            </div>\n" +
+    "            <div class=\"text-center\">\n" +
+    "              <br>\n" +
+    "              <div ng-if=\"paginator.isComplete && myPosts.length==0\">\n" +
+    "                <img src=\"images/no_posts.png\"/>\n" +
+    "                <h4 class=\"text-muted\">\n" +
+    "                  No posts to show right now\n" +
+    "                </h4>\n" +
+    "              </div>\n" +
+    "              <div ng-if=\"paginator.state.isWorking\">\n" +
+    "                <div ms-spinner></div>\n" +
+    "                <p><small class=\"text-muted\">Please wait</small></p>\n" +
+    "              </div>\n" +
+    "            </div>\n" +
     "          </div>\n" +
     "        </tab>\n" +
-    "        <tab heading=\"Activity Log\">\n" +
-    "          \n" +
+    "        <tab heading=\"Activity Log\" select=\"setActive(tabs.activities)\">\n" +
+    "          <div ng-if=\"tabs.active == tabs.activities\">\n" +
+    "            \n" +
+    "          </div>\n" +
     "        </tab>\n" +
     "      </tabset>\n" +
     "    </div>\n" +

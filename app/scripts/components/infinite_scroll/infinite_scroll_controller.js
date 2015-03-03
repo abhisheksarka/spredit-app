@@ -14,6 +14,17 @@
         .uniq($scope.uniq);
     };
 
+    $scope.$on('$destroy', function() {
+      $scope.paginator = null;
+      $scope.resource = null;
+      $scope.requestTo = null;
+      $scope.withParams = null;
+      $scope.pushTo = null;
+      $scope.debounceWait = null;
+      $scope.uniq = null;
+      $scope.paginator = null;
+    });
+
     init();
   };
 

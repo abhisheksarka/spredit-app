@@ -7,7 +7,6 @@
         withParams: '=?',
         pushTo: '=',
         debounceWait: '=?',
-        control: '=?',
         uniq: '=?',
         paginator: '=?'
       },
