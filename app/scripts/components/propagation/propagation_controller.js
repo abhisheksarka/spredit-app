@@ -27,9 +27,9 @@
 
     function setIcons() {
       angular.forEach($scope.locations, function(l) {
-        l.iconUrl = '../images/marker_red_40.png';
+        l.iconUrl = '../images/marker_red_50.png';
       });
-      $scope.locations[0].iconUrl = '../images/marker_green_40.png';
+      $scope.locations[0].iconUrl = '../images/marker_green_50.png';
     };
 
     $scope.$watch('post.id', function() {
