@@ -1,4 +1,9 @@
 body#page-me {
+  ul.nav-tabs {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .profile-cover {
     text-align: center;
     padding-top: 95px;
