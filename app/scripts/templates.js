@@ -142,7 +142,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/components/post/actions/template.html',
-    "<small>\n" +
+    "<small class=\"post-actions\">\n" +
     "  <span class=\"text-muted\">\n" +
     "    <a ng-click=\"setSelectedAction('comments')\">\n" +
     "      <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;COMMENTS(<span ng-bind=\"post.comments_count\"></span>)\n" +
@@ -154,7 +154,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  </span>\n" +
     "  <span class=\"pull-right text-muted\">\n" +
     "    <a ng-click=\"setSelectedAction('statistics')\">\n" +
-    "      <span class=\"glyphicon glyphicon-list-alt\"></span>&nbsp;MORE\n" +
+    "      <h2 class=\"spread-value\" ng-bind=\"post.spreads_count | displayNumber\"></h2>\n" +
     "    </a>\n" +
     "  </span>\n" +
     "</small>"

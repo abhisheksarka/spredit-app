@@ -1,4 +1,4 @@
-<small>
+<small class="post-actions">
   <span class="text-muted">
     <a ng-click="setSelectedAction('comments')">
       <span class="glyphicon glyphicon-comment"></span>&nbsp;COMMENTS(<span ng-bind="post.comments_count"></span>)
@@ -10,7 +10,7 @@
   </span>
   <span class="pull-right text-muted">
     <a ng-click="setSelectedAction('statistics')">
-      <span class="glyphicon glyphicon-list-alt"></span>&nbsp;MORE
+      <h2 class="spread-value" ng-bind="post.spreads_count | displayNumber"></h2>
     </a>
   </span>
 </small>
