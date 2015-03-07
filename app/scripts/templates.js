@@ -2,14 +2,23 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('app/scripts/components/activity/renderer/template.html',
-    "<div class=\"activity-renderer\">\n" +
+    "<div class=\"activity-renderer ms-card\">\n" +
     "  <div class=\"message text-muted\">\n" +
     "    <span>\n" +
-    "      <strong>You commented on this</strong>\n" +
+    "      <span class=\"glyphicon {{mappings[activity.action].iconClass}}\"></span>\n" +
+    "      &nbsp;\n" +
+    "      <strong>\n" +
+    "        <span ng-bind=\"mappings[activity.action].label\"></span>\n" +
+    "      </strong>\n" +
     "    </span>\n" +
     "    <span class=\"pull-right\">\n" +
-    "      <span class=\"glyphicon glyphicon-comment\"></span>\n" +
+    "      <small class=\"text-muted pull-right\" am-time-ago=\"activity.created_at\"></small>\n" +
     "    </span>\n" +
+    "    <br>\n" +
+    "    <hr>\n" +
+    "  </div>\n" +
+    "  <div ng-if=\"activity.targetable_type == 'Post'\">\n" +
+    "    <div ms-post-renderer post=\"activity.targetable\" record-view=\"false\"></div>  \n" +
     "  </div>\n" +
     "</div>"
   );
@@ -90,8 +99,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/flash/template.html',
     "<div class=\"ms-flash\">\n" +
     "  <div ng-repeat=\"message in messages\">\n" +
-    "    <div class=\"message ms-animation-fade-in\" ng-if=\"$index <= 3\">\n" +
-    "\n" +
+    "    <div class=\"message ms-animation-fade-in\">\n" +
     "      <span class=\"glyphicon {{iconMapping[flashType].iconClass}} {{iconMapping[flashType].colorClass}}\">\n" +
     "      </span>&nbsp;\n" +
     "      <span ng-bind=\"message\"></span>\n" +
@@ -654,7 +662,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "              <div ng-if=\"myPostsPaginator.isComplete && myPosts.length==0\">\n" +
     "                <img src=\"images/no_posts.png\"/>\n" +
     "                <h4 class=\"text-muted\">\n" +
-    "                  No posts to show right now\n" +
+    "                  No posts to show right now.\n" +
     "                </h4>\n" +
     "              </div>\n" +
     "              <div ng-if=\"myPostsPaginator.state.isWorking\">\n" +
@@ -666,9 +674,25 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </tab>\n" +
     "        <tab heading=\"Activity Log\" select=\"setActive(tabs.activities)\">\n" +
     "          <div ng-if=\"tabs.active == tabs.activities\">\n" +
-    "            <div ms-infinite-scroll resource=\"Activity\" request-to=\"'query'\" push-to=\"activities\" paginator=\"activitiesPaginator\">\n" +
+    "            <div ms-infinite-scroll resource=\"Activity\" request-to=\"'query'\" push-to=\"myActivities\" paginator=\"myActivitiesPaginator\">\n" +
     "            </div>\n" +
-    "            <div ms-activity-renderer></div>\n" +
+    "            <div ng-repeat=\"activity in myActivities\">\n" +
+    "              <br>\n" +
+    "              <div ms-activity-renderer activity=\"activity\"></div>\n" +
+    "            </div>\n" +
+    "            <div class=\"text-center\">\n" +
+    "              <br>\n" +
+    "              <div ng-if=\"myActivitiesPaginator.isComplete && myActivities.length==0\">\n" +
+    "                <img src=\"images/no_posts.png\"/>\n" +
+    "                <h4 class=\"text-muted\">\n" +
+    "                  You do not have any activities.\n" +
+    "                </h4>\n" +
+    "              </div>\n" +
+    "              <div ng-if=\"myActivitiesPaginator.state.isWorking\">\n" +
+    "                <div ms-spinner></div>\n" +
+    "                <p><small class=\"text-muted\">Please wait</small></p>\n" +
+    "              </div>\n" +
+    "            </div>\n" +
     "          </div>\n" +
     "        </tab>\n" +
     "      </tabset>\n" +

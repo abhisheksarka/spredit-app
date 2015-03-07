@@ -33,7 +33,7 @@
     };
 
     function initActivities() {
-      $scope.activities = [ ];
+      $scope.myActivities = [ ];
     };
     
     init();

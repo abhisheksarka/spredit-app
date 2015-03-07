@@ -1,10 +1,19 @@
-<div class="activity-renderer">
+<div class="activity-renderer ms-card">
   <div class="message text-muted">
     <span>
-      <strong>You commented on this</strong>
+      <span class="glyphicon {{mappings[activity.action].iconClass}}"></span>
+      &nbsp;
+      <strong>
+        <span ng-bind="mappings[activity.action].label"></span>
+      </strong>
     </span>
     <span class="pull-right">
-      <span class="glyphicon glyphicon-comment"></span>
+      <small class="text-muted pull-right" am-time-ago="activity.created_at"></small>
     </span>
+    <br>
+    <hr>
+  </div>
+  <div ng-if="activity.targetable_type == 'Post'">
+    <div ms-post-renderer post="activity.targetable" record-view="false"></div>  
   </div>
 </div>

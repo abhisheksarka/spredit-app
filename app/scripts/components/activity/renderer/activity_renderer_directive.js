@@ -3,7 +3,7 @@
   app.directive('msActivityRenderer', [function(){
     return{
       scope: {
-         
+        activity: '=' 
       },
       replace: true,
       controllerAs: 'activityRendererCtrl',

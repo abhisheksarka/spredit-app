@@ -19,7 +19,7 @@
     };
 
     function containIt() {
-      save('contain');
+      save('contained');
     };
 
     function save(type) {

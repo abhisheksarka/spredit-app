@@ -30,7 +30,7 @@
               <div ng-if="myPostsPaginator.isComplete && myPosts.length==0">
                 <img src="images/no_posts.png"/>
                 <h4 class="text-muted">
-                  No posts to show right now
+                  No posts to show right now.
                 </h4>
               </div>
               <div ng-if="myPostsPaginator.state.isWorking">
@@ -42,9 +42,25 @@
         </tab>
         <tab heading="Activity Log" select="setActive(tabs.activities)">
           <div ng-if="tabs.active == tabs.activities">
-            <div ms-infinite-scroll resource="Activity" request-to="'query'" push-to="activities" paginator="activitiesPaginator">
+            <div ms-infinite-scroll resource="Activity" request-to="'query'" push-to="myActivities" paginator="myActivitiesPaginator">
             </div>
-            <div ms-activity-renderer></div>
+            <div ng-repeat="activity in myActivities">
+              <br>
+              <div ms-activity-renderer activity="activity"></div>
+            </div>
+            <div class="text-center">
+              <br>
+              <div ng-if="myActivitiesPaginator.isComplete && myActivities.length==0">
+                <img src="images/no_posts.png"/>
+                <h4 class="text-muted">
+                  You do not have any activities.
+                </h4>
+              </div>
+              <div ng-if="myActivitiesPaginator.state.isWorking">
+                <div ms-spinner></div>
+                <p><small class="text-muted">Please wait</small></p>
+              </div>
+            </div>
           </div>
         </tab>
       </tabset>
