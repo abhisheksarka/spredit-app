@@ -18,6 +18,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import './lib/animations/slide_from_top';
 @import './lib/animations/appear_left';
 @import './lib/animations/border_rotate';
+@import './lib/animations/fade_in';
 
 @import './components/commons';
 @import './components/locator_slider';
@@ -31,6 +32,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import './components/statistics';
 @import './components/post_photo_uploader';
 @import './components/comment_creator';
+@import './components/flash';
 
 @import './pages/index';
 @import './pages/location_prompt';

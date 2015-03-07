@@ -11,5 +11,7 @@ angular.module('ms.components', [
   'ms.components.propagation',
   'ms.components.view',
   'ms.components.statistics',
-  'ms.components.infiniteScroll'
+  'ms.components.infiniteScroll',
+  'ms.components.activity',
+  'ms.components.flash'
 ]);

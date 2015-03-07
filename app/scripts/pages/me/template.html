@@ -20,20 +20,20 @@
       <tabset justified="true">
         <tab heading="Posts" select="setActive(tabs.myPosts)">
           <div ng-if="tabs.active == tabs.myPosts">
-            <div ms-infinite-scroll resource="Post" request-to="'mine'" push-to="myPosts" paginator="paginator"></div>
+            <div ms-infinite-scroll resource="Post" request-to="'mine'" push-to="myPosts" paginator="myPostsPaginator"></div>
             <div ng-repeat="post in myPosts">
               <br>
               <div ms-post-renderer post="post" record-view="false"></div>
             </div>
             <div class="text-center">
               <br>
-              <div ng-if="paginator.isComplete && myPosts.length==0">
+              <div ng-if="myPostsPaginator.isComplete && myPosts.length==0">
                 <img src="images/no_posts.png"/>
                 <h4 class="text-muted">
                   No posts to show right now
                 </h4>
               </div>
-              <div ng-if="paginator.state.isWorking">
+              <div ng-if="myPostsPaginator.state.isWorking">
                 <div ms-spinner></div>
                 <p><small class="text-muted">Please wait</small></p>
               </div>
@@ -42,7 +42,9 @@
         </tab>
         <tab heading="Activity Log" select="setActive(tabs.activities)">
           <div ng-if="tabs.active == tabs.activities">
-            
+            <div ms-infinite-scroll resource="Activity" request-to="'query'" push-to="activities" paginator="activitiesPaginator">
+            </div>
+            <div ms-activity-renderer></div>
           </div>
         </tab>
       </tabset>

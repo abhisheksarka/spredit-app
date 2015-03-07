@@ -18,6 +18,7 @@
     <!-- endbuild -->
   </head>
   <body ng-app="ms" data-ng-controller="MasterController" id="{{masterCtrl.bodyId}}">
+    <div ms-flash></div>
     <div ms-side-nav data-ng-if="masterCtrl.currentSession && masterCtrl.isLocationPresent"></div>
     <div>
       <div id="fb-root"></div>
@@ -125,6 +126,7 @@
         <script src="scripts/core/api/comment_model.js"></script>
         <script src="scripts/core/api/spread_model.js"></script>
         <script src="scripts/core/api/view_model.js"></script>
+        <script src="scripts/core/api/activity_model.js"></script>
         <script src="scripts/core/app.js"></script>
 
         <script src="scripts/components/animator/app.js"></script>
@@ -133,6 +135,10 @@
         <script src="scripts/components/spinner/app.js"></script>
         <script src="scripts/components/spinner/spinner_controller.js"></script>
         <script src="scripts/components/spinner/spinner_directive.js"></script>
+
+        <script src="scripts/components/flash/app.js"></script>
+        <script src="scripts/components/flash/flash_controller.js"></script>
+        <script src="scripts/components/flash/flash_directive.js"></script>
 
         <script src="scripts/components/infinite_scroll/app.js"></script>
         <script src="scripts/components/infinite_scroll/infinite_scroll_directive.js"></script>
@@ -211,6 +217,11 @@
         <script src="scripts/components/statistics/app.js"></script>
         <script src="scripts/components/statistics/statistics_controller.js"></script>
         <script src="scripts/components/statistics/statistics_directive.js"></script>
+
+        <script src="scripts/components/activity/renderer/app.js"></script>
+        <script src="scripts/components/activity/renderer/activity_renderer_controller.js"></script>
+        <script src="scripts/components/activity/renderer/activity_renderer_directive.js"></script>
+        <script src="scripts/components/activity/app.js"></script>
 
         <script src="scripts/components/app.js"></script>
 

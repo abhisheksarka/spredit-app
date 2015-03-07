@@ -1,10 +1,12 @@
 (function() {
-  function Controller($scope, Session, Post, StateHandler, Paginator){
+  function Controller($scope, Session, Post, Activity){
     var postsPaginator;
 
     function init() {
       $scope.masterCtrl.setBodyId('page-me');
       $scope.Post = Post;
+      $scope.Activity = Activity;
+
       $scope.currentUser = Session.currentUser;
       $scope.tabs = {
         myPosts: {
@@ -40,8 +42,7 @@
     '$scope',
     'SessionModel',
     'PostModel',
-    'StateHandlerService',
-    'PaginatorService',
+    'ActivityModel',
     Controller
   ]);
 }());

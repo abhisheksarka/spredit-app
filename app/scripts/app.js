@@ -29,7 +29,7 @@ angular
   ]);
 
 (function() {
-  function addTokenToHeader($injector) {
+  function addTokenToHeader($injector, $rootScope, _) {
     return {
       request: function(config) {
         try {
@@ -38,12 +38,19 @@ angular
         return config;
       },
       response: function(res) {
+        var e = res.data.errors;
+        if(e) {
+          $rootScope.$broadcast('ms.events.flash', {
+            message: _.values(e)[0],
+            type: 'danger' 
+          });
+        };
         return res;
       }
     };  
   };
   angular.module('ms')
   .config(['$httpProvider', function($httpProvider) {
-    $httpProvider.interceptors.push(['$injector', addTokenToHeader]);
+    $httpProvider.interceptors.push(['$injector', '$rootScope', 'UnderscoreService' ,addTokenToHeader]);
   }]);
 }());

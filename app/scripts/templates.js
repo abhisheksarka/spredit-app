@@ -1,6 +1,20 @@
 angular.module('ms').run(['$templateCache', function($templateCache) {
   'use strict';
 
+  $templateCache.put('app/scripts/components/activity/renderer/template.html',
+    "<div class=\"activity-renderer\">\n" +
+    "  <div class=\"message text-muted\">\n" +
+    "    <span>\n" +
+    "      <strong>You commented on this</strong>\n" +
+    "    </span>\n" +
+    "    <span class=\"pull-right\">\n" +
+    "      <span class=\"glyphicon glyphicon-comment\"></span>\n" +
+    "    </span>\n" +
+    "  </div>\n" +
+    "</div>"
+  );
+
+
   $templateCache.put('app/scripts/components/comment/creator/template.html',
     "<div class=\"comment-creator\">\n" +
     "    <form name=\"newCommentForm\" novalidate>\n" +
@@ -70,6 +84,21 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<span>\n" +
     "  <button class=\"btn btn-inverse fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
     "</span>"
+  );
+
+
+  $templateCache.put('app/scripts/components/flash/template.html',
+    "<div class=\"ms-flash\">\n" +
+    "  <div ng-repeat=\"message in messages\">\n" +
+    "    <div class=\"message ms-animation-fade-in\" ng-if=\"$index <= 3\">\n" +
+    "\n" +
+    "      <span class=\"glyphicon {{iconMapping[flashType].iconClass}} {{iconMapping[flashType].colorClass}}\">\n" +
+    "      </span>&nbsp;\n" +
+    "      <span ng-bind=\"message\"></span>\n" +
+    "    </div>\n" +
+    "    <div class=\"clearfix\"></div>\n" +
+    "  </div>\n" +
+    "</div>"
   );
 
 
@@ -615,20 +644,20 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <tabset justified=\"true\">\n" +
     "        <tab heading=\"Posts\" select=\"setActive(tabs.myPosts)\">\n" +
     "          <div ng-if=\"tabs.active == tabs.myPosts\">\n" +
-    "            <div ms-infinite-scroll resource=\"Post\" request-to=\"'mine'\" push-to=\"myPosts\" paginator=\"paginator\"></div>\n" +
+    "            <div ms-infinite-scroll resource=\"Post\" request-to=\"'mine'\" push-to=\"myPosts\" paginator=\"myPostsPaginator\"></div>\n" +
     "            <div ng-repeat=\"post in myPosts\">\n" +
     "              <br>\n" +
     "              <div ms-post-renderer post=\"post\" record-view=\"false\"></div>\n" +
     "            </div>\n" +
     "            <div class=\"text-center\">\n" +
     "              <br>\n" +
-    "              <div ng-if=\"paginator.isComplete && myPosts.length==0\">\n" +
+    "              <div ng-if=\"myPostsPaginator.isComplete && myPosts.length==0\">\n" +
     "                <img src=\"images/no_posts.png\"/>\n" +
     "                <h4 class=\"text-muted\">\n" +
     "                  No posts to show right now\n" +
     "                </h4>\n" +
     "              </div>\n" +
-    "              <div ng-if=\"paginator.state.isWorking\">\n" +
+    "              <div ng-if=\"myPostsPaginator.state.isWorking\">\n" +
     "                <div ms-spinner></div>\n" +
     "                <p><small class=\"text-muted\">Please wait</small></p>\n" +
     "              </div>\n" +
@@ -637,7 +666,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </tab>\n" +
     "        <tab heading=\"Activity Log\" select=\"setActive(tabs.activities)\">\n" +
     "          <div ng-if=\"tabs.active == tabs.activities\">\n" +
-    "            \n" +
+    "            <div ms-infinite-scroll resource=\"Activity\" request-to=\"'query'\" push-to=\"activities\" paginator=\"activitiesPaginator\">\n" +
+    "            </div>\n" +
+    "            <div ms-activity-renderer></div>\n" +
     "          </div>\n" +
     "        </tab>\n" +
     "      </tabset>\n" +
