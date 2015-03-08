@@ -2,8 +2,8 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('app/scripts/components/activity/renderer/template.html',
-    "<div class=\"activity-renderer ms-card\">\n" +
-    "  <div class=\"message text-muted\">\n" +
+    "<div class=\"activity-renderer ms-card-complex\">\n" +
+    "  <div class=\"optional-header message text-muted\">\n" +
     "    <span>\n" +
     "      <span class=\"glyphicon {{mappings[activity.action].iconClass}}\"></span>\n" +
     "      &nbsp;\n" +
