@@ -1,5 +1,8 @@
 .activity-renderer.ms-card-complex {
   padding: 0px;  
+  .message.optional-header {
+    padding-bottom: 0px;
+  }
   .ms-card-complex {
     @include ms-box-shadow(0px, 0px, 0px, rgba(0,0,0,0));
   }
