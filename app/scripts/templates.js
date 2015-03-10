@@ -110,6 +110,20 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('app/scripts/components/full_image/modal_template.html',
+    "<div class=\"modal-body\">\n" +
+    "  <img ng-src=\"{{imageUrl}}\" width=\"100%\"/>      \n" +
+    "</div>"
+  );
+
+
+  $templateCache.put('app/scripts/components/full_image/template.html',
+    "<button class=\"btn btn-inverse btn-sm action\" ng-click=\"openModal()\">\n" +
+    "  <span class=\"glyphicon glyphicon-eye-open\"></span>&nbsp;View photo\n" +
+    "</button>"
+  );
+
+
   $templateCache.put('app/scripts/components/locator/map/template.html',
     "<ui-gmap-google-map center='map.center' zoom='map.zoom' options=\"map.options\" refresh=\"map.refresh\">\n" +
     "  <ui-gmap-marker coords=\"location\" idkey=\"location.id\">\n" +
@@ -175,6 +189,23 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </ul>\n" +
     "  </div>\n" +
     "</nav>"
+  );
+
+
+  $templateCache.put('app/scripts/components/notification/renderer/template.html',
+    "<div class=\"notification-renderer ms-card-complex\">\n" +
+    "  <div class=\"optional-header message\">\n" +
+    "    <span ng-if=\"notification.action == 'spread'\">\n" +
+    "      <span ng-bind=\"mappings.spread.label\"></span>\n" +
+    "    </span>\n" +
+    "    <span class=\"pull-right\">\n" +
+    "      <small class=\"text-muted pull-right\" am-time-ago=\"activity.created_at\"></small>\n" +
+    "    </span>\n" +
+    "  </div>\n" +
+    "  <div class=\"rich-media\" ng-if=\"notification.targetable_type == 'Post'\">\n" +
+    "    <div ms-propagation post=\"notification.targetable\"></div>\n" +
+    "  </div> \n" +
+    "</div>"
   );
 
 
@@ -279,6 +310,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "    <div class=\"rich-media\" ng-if=\"post.postable_type=='PostPhoto'\">\n" +
     "      <img ng-src=\"{{post.postable.photo.url}}\" width=\"100%\"/>\n" +
+    "      <div class=\"rich-media-actions\">\n" +
+    "        <span ms-full-image=\"post.postable.photo.url\"></span>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "    <div class=\"supporting-text\">\n" +
     "      <span ms-linkify=\"post.content\"></span>\n" +
@@ -320,7 +354,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </a>\n" +
     "    </li>\n" +
     "    <li>\n" +
-    "      <a class=\"link-major\">\n" +
+    "      <a class=\"link-major\" href=\"/#notifications\">\n" +
     "        <span class=\"glyphicon glyphicon-globe\"></span> \n" +
     "        <span>Notifications</span>\n" +
     "      </a>\n" +
@@ -696,6 +730,37 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          </div>\n" +
     "        </tab>\n" +
     "      </tabset>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('app/scripts/pages/notifications/template.html',
+    "<div class=\"container\">\n" +
+    "  <div class=\"ms-master-section\">\n" +
+    "    <div ms-infinite-scroll \n" +
+    "         resource=\"Activity\" \n" +
+    "         request-to=\"'notifications'\" \n" +
+    "         push-to=\"notifications\" \n" +
+    "         paginator=\"notificationsPaginator\">\n" +
+    "    </div>\n" +
+    "    <div ng-repeat=\"notification in notifications\">\n" +
+    "      <br>\n" +
+    "      <div ms-notification-renderer notification=\"notification\"></div>\n" +
+    "    </div>\n" +
+    "    <div class=\"text-center\">\n" +
+    "      <br>\n" +
+    "      <div ng-if=\"notificationsPaginator.isComplete && notifications.length == 0\">\n" +
+    "        <img src=\"images/no_posts.png\"/>\n" +
+    "        <h4 class=\"text-muted\">\n" +
+    "          You do not have any new notifications.\n" +
+    "        </h4>\n" +
+    "      </div>\n" +
+    "      <div ng-if=\"notificationsPaginator.state.isWorking\">\n" +
+    "        <div ms-spinner></div>\n" +
+    "        <p><small class=\"text-muted\">Please wait</small></p>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n"

@@ -1,0 +1,1 @@
+angular.module('ms.components.notification.renderer', [ ]);

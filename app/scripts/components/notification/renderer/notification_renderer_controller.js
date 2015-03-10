@@ -1,13 +1,15 @@
 (function(){
   function Controller($scope, Session, Activity){
+    
     function init() {
-      $scope.mappings = Activity.activityMappings;
+      $scope.mappings = Activity.notificationMappings;
     };
+
     init();
   };
 
-  angular.module('ms.components.activity.renderer')
-  .controller('ActivityRendererController', [
+  angular.module('ms.components.notification.renderer')
+  .controller('NotificationRendererController', [
     '$scope',  
     'SessionModel',
     'ActivityModel',

@@ -13,5 +13,7 @@ angular.module('ms.components', [
   'ms.components.statistics',
   'ms.components.infiniteScroll',
   'ms.components.activity',
-  'ms.components.flash'
+  'ms.components.flash',
+  'ms.components.notification',
+  'ms.components.fullImage'
 ]);

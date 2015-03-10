@@ -22,6 +22,10 @@ angular.module('ms')
     templateUrl: 'app/scripts/pages/me/template.html',
     controller: 'MeController'
   })
+  .when('/notifications', {
+    templateUrl: 'app/scripts/pages/notifications/template.html',
+    controller: 'NotificationsController'
+  })
   .otherwise({
     redirectTo: '/',
   });

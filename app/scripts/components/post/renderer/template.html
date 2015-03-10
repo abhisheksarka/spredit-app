@@ -25,6 +25,9 @@
     </div>
     <div class="rich-media" ng-if="post.postable_type=='PostPhoto'">
       <img ng-src="{{post.postable.photo.url}}" width="100%"/>
+      <div class="rich-media-actions">
+        <span ms-full-image="post.postable.photo.url"></span>
+      </div>
     </div>
     <div class="supporting-text">
       <span ms-linkify="post.content"></span>

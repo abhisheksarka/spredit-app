@@ -1,0 +1,13 @@
+<div class="notification-renderer ms-card-complex">
+  <div class="optional-header message">
+    <span ng-if="notification.action == 'spread'">
+      <span ng-bind="mappings.spread.label"></span>
+    </span>
+    <span class="pull-right">
+      <small class="text-muted pull-right" am-time-ago="activity.created_at"></small>
+    </span>
+  </div>
+  <div class="rich-media" ng-if="notification.targetable_type == 'Post'">
+    <div ms-propagation post="notification.targetable"></div>
+  </div> 
+</div>
