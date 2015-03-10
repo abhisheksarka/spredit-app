@@ -1,4 +1,4 @@
-<div class="activity-renderer ms-card-complex">
+<div class="activity-renderer">
   <div class="optional-header message text-muted">
     <span>
       <span class="glyphicon {{mappings[activity.action].iconClass}}"></span>
@@ -10,8 +10,6 @@
     <span class="pull-right">
       <small class="text-muted pull-right" am-time-ago="activity.created_at"></small>
     </span>
-    <br>
-    <hr>
   </div>
   <div ng-if="activity.targetable_type == 'Post'">
     <div ms-post-renderer post="activity.targetable" record-view="false"></div>  

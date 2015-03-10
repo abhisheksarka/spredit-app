@@ -2,7 +2,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('app/scripts/components/activity/renderer/template.html',
-    "<div class=\"activity-renderer ms-card-complex\">\n" +
+    "<div class=\"activity-renderer\">\n" +
     "  <div class=\"optional-header message text-muted\">\n" +
     "    <span>\n" +
     "      <span class=\"glyphicon {{mappings[activity.action].iconClass}}\"></span>\n" +
@@ -14,8 +14,6 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <span class=\"pull-right\">\n" +
     "      <small class=\"text-muted pull-right\" am-time-ago=\"activity.created_at\"></small>\n" +
     "    </span>\n" +
-    "    <br>\n" +
-    "    <hr>\n" +
     "  </div>\n" +
     "  <div ng-if=\"activity.targetable_type == 'Post'\">\n" +
     "    <div ms-post-renderer post=\"activity.targetable\" record-view=\"false\"></div>  \n" +
