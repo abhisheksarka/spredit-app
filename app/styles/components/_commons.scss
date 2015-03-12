@@ -1,9 +1,15 @@
 .ms-card {
-  @include ms-border-radius(3px);
+  @include ms-border-radius(0px);
   background: white;
-  @include ms-box-shadow(0px, 0px, 1px, rgba(0,0,0,0.3)); 
+  @include ms-box-shadow(0px, 0px, 0px, rgba(0,0,0,0.3)); 
   padding: 15px;
   overflow: hidden;
+}
+.ms-shadow-depth-20 {
+  @include ms-box-shadow(0px, 0px, 20px, rgba(0,0,0,0.3));
+}
+.ms-shadow-depth-10 {
+  @include ms-box-shadow(0px, 0px, 10px, rgba(0,0,0,0.3));
 }
 .ms-master-section {
   max-width: 600px;
@@ -44,7 +50,6 @@
   .actions {
     padding: 15px;
     a {
-      font-weight: bold;
       color: #333;
       opacity: 0.7;
       text-transform: uppercase;
@@ -68,6 +73,11 @@
       line-height: 2;
       text-align: center;
       left: 12px;
+    }
+  }
+  .glyphicon-avatar.ms-fab {
+    .glyphicon {
+      left: 0px;
     }
   }
   .list-content {

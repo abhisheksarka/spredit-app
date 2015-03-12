@@ -29,12 +29,15 @@
 
     Resource.notificationMappings =  {
       spread: {
-        label: 'Your post is spreading.'
+        label: 'Your post was spread...',
+        iconClass: 'glyphicon-send' 
       },
-      commented: {
-        label: 'has commented on your post'
+      contained: {
+        label: 'Your post was contained...',
+        iconClass: 'glyphicon-lock'
       }
     };
+    
     return Resource;
   };
 

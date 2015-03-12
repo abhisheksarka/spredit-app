@@ -1,5 +1,17 @@
-.notification-renderer.ms-card-complex {
-  .rich-media {
-    max-height: 200px;
+.notification-renderer {
+  .optional-header {
+    .ms-list-item {
+      .list-content {
+        .header {
+          line-height: 2.8;
+        }
+      }
+    }
+  }
+  .supporting-text {
+    .lead {
+      top: 2px;
+      position: relative;
+    }
   }
 }

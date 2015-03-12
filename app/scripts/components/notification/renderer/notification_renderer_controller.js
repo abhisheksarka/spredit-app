@@ -1,8 +1,9 @@
 (function(){
-  function Controller($scope, Session, Activity){
+  function Controller($scope, Session, ActionMappings, NotificationMessages){
     
     function init() {
-      $scope.mappings = Activity.notificationMappings;
+      $scope.mappings = ActionMappings;
+      $scope.messages = NotificationMessages;
     };
 
     init();
@@ -12,7 +13,8 @@
   .controller('NotificationRendererController', [
     '$scope',  
     'SessionModel',
-    'ActivityModel',
+    'ActionMappingService',
+    'NotificationMessagesService',
     Controller 
   ]);
 }());

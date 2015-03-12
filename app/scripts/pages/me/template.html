@@ -1,4 +1,4 @@
-<div class="profile-cover">
+<!-- <div class="profile-cover">
   <div class="container">
     <div class="ms-thumbnail">
       <img ng-src="{{currentUser.profile_picture_medium}}"/>
@@ -13,10 +13,35 @@
     </p>
   </div>
 </div>
-<br>
+<br> -->
 <div>
   <div class="container">
     <div class="ms-master-section">
+      <div class="ms-card-complex user-info ms-shadow-depth-20">
+        <div class="optional-header">
+          <div class="ms-list-item">
+            <div class="list-avatar">
+              <img ng-src="{{currentUser.profile_picture_medium}}"/>
+            </div>
+            <div class="list-content">
+              <div class="primary">
+                <h5 class="header">
+                  <strong>
+                    <span ng-bind="currentUser.name"></span>
+                  </strong>
+                </h5>
+              </div>
+              <div class="secondary">
+                <small class="text-muted" ng-bind="currentUser.email"></small>
+              </div>
+            </div>
+          </div>  
+        </div>
+        <div class="supporting-text">
+          <span ng-bind="currentUser.location.address" class="text-muted"></span>
+          <br>
+        </div>
+      </div>
       <tabset justified="true">
         <tab heading="Posts" select="setActive(tabs.myPosts)">
           <div ng-if="tabs.active == tabs.myPosts">
