@@ -1,5 +1,5 @@
 (function() {
-  function Controller($scope, $rootScope, Session, Post, $timeout, MappingsService, StateHandler, PostCreatorModalService){
+  function Controller($scope, $rootScope, Session, Post, $timeout, StateHandler, PostCreatorModalService){
     var currentIndex;
 
     function init() {
@@ -33,14 +33,6 @@
       }
     };
 
-    function mappings() {
-      return MappingsService;
-    };
-
-    $scope.$watch('actions.selected', function(nv, ov) {
-      $scope.currentMapping = mappings()[nv];
-    });
-
     $scope.$on('event.spreader.action', function(event, response, type){
       nextPost();
     });
@@ -53,7 +45,6 @@
     'SessionModel',
     'PostModel',
     '$timeout',
-    'HomeMappingsService',
     'StateHandlerService',
     'PostCreatorModalService',
     Controller

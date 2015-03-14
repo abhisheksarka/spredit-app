@@ -259,6 +259,62 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('app/scripts/components/post/details/template.html',
+    "<div class=\"ms-card-complex actions-card\" ng-if=\"post.id\">\n" +
+    "  <div class=\"optional-header {{currentMapping.background}}\">\n" +
+    "    <div class=\"ms-list-item\">\n" +
+    "      <div class=\"glyphicon-avatar\">\n" +
+    "        <span class=\"glyphicon {{currentMapping.glyphicon}}\"></span>\n" +
+    "      </div>\n" +
+    "      <div class=\"list-content\">\n" +
+    "        <div class=\"primary\">\n" +
+    "          <h4 class=\"header\" ng-bind=\"currentMapping.label\">\n" +
+    "          </h4>\n" +
+    "        </div>\n" +
+    "        <div class=\"secondary\">\n" +
+    "          <div ng-if=\"action == 'statistics'\">\n" +
+    "            <small>\n" +
+    "              View the performance of this post in detail\n" +
+    "            </small>\n" +
+    "          </div>\n" +
+    "          <div ng-if=\"action == 'propagation'\">\n" +
+    "            <small>\n" +
+    "              This information has travelled a total distance of <span ng-bind=\"post.total_propagation\"></span> KM\n" +
+    "            </small>\n" +
+    "          </div>\n" +
+    "          <div ng-if=\"action == 'comments'\">\n" +
+    "            <small>\n" +
+    "              <span ng-bind=\"post.comments_count\"></span>\n" +
+    "              <span ng-if=\"post.comments_count == 1\">\n" +
+    "                person\n" +
+    "              </span>\n" +
+    "              <span ng-if=\"post.comments_count != 1\">\n" +
+    "                people\n" +
+    "              </span>  \n" +
+    "              have commented on this\n" +
+    "            </small>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "      </div>  \n" +
+    "    </div>\n" +
+    "    <div class=\"clearfix\"></div>\n" +
+    "  </div>\n" +
+    "  <div ng-if=\"currentMapping\">\n" +
+    "    <div ng-if=\"action == 'propagation'\">\n" +
+    "      <div ms-propagation post=\"post\"></div>\n" +
+    "    </div>\n" +
+    "    <div ng-if=\"action == 'comments'\" class=\"supporting-text\">\n" +
+    "      <div ms-comment-creator commentable=\"post\" commentable-type=\"'Post'\"></div><br>\n" +
+    "      <div ms-comment-lister commentable=\"post\"></div>\n" +
+    "    </div>\n" +
+    "    <div ng-if=\"action == 'statistics'\" class=\"supporting-text\">\n" +
+    "      <div ms-statistics post=\"post\"></div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</div>"
+  );
+
+
   $templateCache.put('app/scripts/components/post/photo_uploader/template.html',
     "<div class=\"post-photo-uploader\">\n" +
     "  <div ng-class=\"{'hide': postPhoto.id}\" > \n" +
@@ -495,57 +551,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "         on-change-in=\"{{currentPost.id}}\">\n" +
     "      <div ms-post-renderer post=\"currentPost\" selected-action=\"actions.selected\" record-view=\"true\"></div>\n" +
     "      <br>\n" +
-    "      <div class=\"ms-card-complex actions-card\">\n" +
-    "        <div class=\"optional-header {{currentMapping.background}}\">\n" +
-    "          <div class=\"ms-list-item\">\n" +
-    "            <div class=\"glyphicon-avatar\">\n" +
-    "              <span class=\"glyphicon {{currentMapping.glyphicon}}\"></span>\n" +
-    "            </div>\n" +
-    "            <div class=\"list-content\">\n" +
-    "              <div class=\"primary\">\n" +
-    "                <h4 class=\"header\" ng-bind=\"currentMapping.label\">\n" +
-    "                </h4>\n" +
-    "              </div>\n" +
-    "              <div class=\"secondary\">\n" +
-    "                <div ng-if=\"actions.selected == 'statistics'\">\n" +
-    "                  <small>\n" +
-    "                    View the performance of this post in detail\n" +
-    "                  </small>\n" +
-    "                </div>\n" +
-    "                <div ng-if=\"actions.selected == 'propagation'\">\n" +
-    "                  <small>\n" +
-    "                    This information has travelled a total distance of <span ng-bind=\"currentPost.total_propagation\"></span> KM\n" +
-    "                  </small>\n" +
-    "                </div>\n" +
-    "                <div ng-if=\"actions.selected == 'comments'\">\n" +
-    "                  <small>\n" +
-    "                    <span ng-bind=\"currentPost.comments_count\"></span>\n" +
-    "                    <span ng-if=\"currentPost.comments_count == 1\">\n" +
-    "                      person\n" +
-    "                    </span>\n" +
-    "                    <span ng-if=\"currentPost.comments_count != 1\">\n" +
-    "                      people\n" +
-    "                    </span>  \n" +
-    "                    have commented on this\n" +
-    "                  </small>\n" +
-    "                </div>\n" +
-    "              </div>\n" +
-    "            </div>  \n" +
-    "          </div>\n" +
-    "          <div class=\"clearfix\"></div>\n" +
-    "        </div>\n" +
-    "        <div ng-if=\"currentMapping\">\n" +
-    "          <div ng-if=\"actions.selected == 'propagation'\">\n" +
-    "            <div ms-propagation post=\"currentPost\"></div>\n" +
-    "          </div>\n" +
-    "          <div ng-if=\"actions.selected == 'comments'\" class=\"supporting-text\">\n" +
-    "            <div ms-comment-creator commentable=\"currentPost\" commentable-type=\"'Post'\"></div><br>\n" +
-    "            <div ms-comment-lister commentable=\"currentPost\"></div>\n" +
-    "          </div>\n" +
-    "          <div ng-if=\"actions.selected == 'statistics'\" class=\"supporting-text\">\n" +
-    "            <div ms-statistics post=\"currentPost\"></div>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
+    "      <div ms-post-details post=\"currentPost\" action=\"actions.selected\">\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
@@ -805,6 +811,16 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n"
+  );
+
+
+  $templateCache.put('app/scripts/pages/posts/show/template.html',
+    "<div>\n" +
+    "\t<div ms-post-renderer \n" +
+    "\t\t\t post=\"currentPost\" \n" +
+    "\t\t\t selected-action=\"actions.selected\" \n" +
+    "\t\t\t record-view=\"false\"></div>\n" +
+    "</div>"
   );
 
 }]);

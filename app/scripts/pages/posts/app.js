@@ -1,3 +1,3 @@
 angular.module('ms.pages.posts', [ 
- 'ms.pages.show'
+ 'ms.pages.posts.show'
 ]);
