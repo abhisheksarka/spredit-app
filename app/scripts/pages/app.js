@@ -4,5 +4,6 @@ angular.module('ms.pages', [
   'ms.pages.locationPrompt',
   'ms.pages.currentLocation',
   'ms.pages.me',
-  'ms.pages.notifications' 
+  'ms.pages.notifications',
+  'ms.pages.posts' 
 ]);

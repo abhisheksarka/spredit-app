@@ -1,22 +1,29 @@
 (function(){
   function Factory(){
     return {
-      spread: function(params) {
-        params = params || { };
+      spread: function(notification) {
+        notification = notification || { };
+        targetable = notification.targetable || { };
         return {
           label: 'Your post is spreading...',
-          desc: '<span class="text-success lead">' + params.spreads_count + '</span> people have spread your post ' + 
-                'resulting in a total propagation of <span class="text-success lead">' + params.total_propagation + '</span> km.'
+          desc: '<span class="text-success lead">' + targetable.spreads_count + '</span> people have spread your post ' + 
+                'resulting in a total propagation of <span class="text-success lead">' + targetable.total_propagation + '</span> km.'
         };
       },
-      contained: function(params) {
+      contained: function(notification) {
+        notification = notification || { };
+        targetable = notification.targetable || { };
         return {
-          label: 'Your post was contained...'
+          label: 'Your post was contained...',
+          desc: '<span class="text-danger lead">' + targetable.contains_count + '</span> people have contained your post'
         };
       },
-      commented: function(params) {
+      commented: function(notification) {
+        notification = notification || { };
+        sendable = notification.sendable || { };
         return {
-          label: ''
+          label: '<a>' + sendable.name + '</a> commented on your post...',
+          desc: ''
         }
       }
     }  

@@ -8,7 +8,7 @@
           text: 'text-success'  
         },
         contained: {
-          icon: 'glyphicon-contain',
+          icon: 'glyphicon-lock',
           btn: 'btn-danger',
           text: 'text-danger'  
         },

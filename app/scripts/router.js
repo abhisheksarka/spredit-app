@@ -26,6 +26,10 @@ angular.module('ms')
     templateUrl: 'app/scripts/pages/notifications/template.html',
     controller: 'NotificationsController'
   })
+  .when('/posts/:id', {
+    templateUrl: 'app/scripts/pages/posts/show/template.html',
+    controller: 'PostsShowController'
+  })
   .otherwise({
     redirectTo: '/',
   });

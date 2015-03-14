@@ -191,7 +191,6 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/components/notification/renderer/template.html',
-    "<div>\n" +
     "<div class=\"notification-renderer ms-card-complex\">\n" +
     "  <div class=\"optional-header\">\n" +
     "    <div class=\"ms-list-item\">\n" +
@@ -201,88 +200,17 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <div class=\"list-content\">\n" +
     "        <div class=\"primary\">\n" +
     "          <h5 class=\"header\">\n" +
-    "            <strong ng-bind=\"messages[notification.action]().label\"></strong>\n" +
+    "            <strong ng-bind-html=\"messages[notification.action](notification).label\"></strong>\n" +
     "          </h5>\n" +
     "        </div>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "  <div class=\"supporting-text text-muted\">\n" +
-    "    <span ng-bind-html=\"messages[notification.action](notification.targetable).desc\" \n" +
+    "    <span ng-bind-html=\"messages[notification.action](notification).desc\" \n" +
     "          ng-if=\"notification.targetable_type == 'Post'\">\n" +
     "    </span>\n" +
     "  </div>\n" +
-    "</div>\n" +
-    "<!-- <br>\n" +
-    "<div class=\"notification-renderer ms-card-complex\">\n" +
-    "  <div class=\"optional-header\">\n" +
-    "    <div class=\"ms-list-item\">\n" +
-    "      <div class=\"glyphicon-avatar ms-fab btn-success\">\n" +
-    "        <span class=\"glyphicon glyphicon-send\"></span>\n" +
-    "      </div>\n" +
-    "      <div class=\"list-content\">\n" +
-    "        <div class=\"primary\">\n" +
-    "          <h5 class=\"header\">\n" +
-    "            <strong>\n" +
-    "              Your post was spread\n" +
-    "            </strong>\n" +
-    "          </h5>\n" +
-    "        </div>\n" +
-    "      </div>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
-    "  <div class=\"supporting-text text-muted\">\n" +
-    "    <span class=\"lead text-success\">86</span> people spread your post resulting in a total propagation of <span class=\"lead text-success\">123.4 KM</span>.\n" +
-    "    <br>\n" +
-    "  </div>\n" +
-    "</div>\n" +
-    "<br>\n" +
-    "<div class=\"notification-renderer ms-card-complex\">\n" +
-    "  <div class=\"optional-header\">\n" +
-    "    <div class=\"ms-list-item\">\n" +
-    "      <div class=\"glyphicon-avatar ms-fab btn-danger\">\n" +
-    "        <span class=\"glyphicon glyphicon-lock\"></span>\n" +
-    "      </div>\n" +
-    "      <div class=\"list-content\">\n" +
-    "        <div class=\"primary\">\n" +
-    "          <h5 class=\"header\">\n" +
-    "            <strong>\n" +
-    "              Your post was contained\n" +
-    "            </strong>\n" +
-    "          </h5>\n" +
-    "        </div>\n" +
-    "      </div>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
-    "  <div class=\"supporting-text text-muted\">\n" +
-    "    <span class=\"lead text-danger\">31</span> people conatined your post.\n" +
-    "    <br>\n" +
-    "  </div>\n" +
-    "</div>\n" +
-    "<br>\n" +
-    "<div class=\"notification-renderer ms-card-complex\">\n" +
-    "  <div class=\"optional-header\">\n" +
-    "    <div class=\"ms-list-item\">\n" +
-    "      <div class=\"glyphicon-avatar ms-fab btn-info\">\n" +
-    "        <span class=\"glyphicon glyphicon-comment\"></span>\n" +
-    "      </div>\n" +
-    "      <div class=\"list-content\">\n" +
-    "        <div class=\"primary\">\n" +
-    "          <h5 class=\"header\">\n" +
-    "            <strong>\n" +
-    "              <a href=\"#\">Abhishek Sarkar</a> commented on your post\n" +
-    "            </strong>\n" +
-    "          </h5>\n" +
-    "        </div>\n" +
-    "      </div>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
-    "  <div class=\"supporting-text text-muted\">\n" +
-    "    <blockquote>\n" +
-    "      I think that's a pretty cool idea...\n" +
-    "    </blockquote>\n" +
-    "  </div>\n" +
-    "</div> -->\n" +
     "</div>"
   );
 
@@ -742,22 +670,6 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/pages/me/template.html',
-    "<!-- <div class=\"profile-cover\">\n" +
-    "  <div class=\"container\">\n" +
-    "    <div class=\"ms-thumbnail\">\n" +
-    "      <img ng-src=\"{{currentUser.profile_picture_medium}}\"/>\n" +
-    "    </div>\n" +
-    "    <h3 class=\"user-name\">\n" +
-    "      <span ng-bind=\"currentUser.name\"></span>\n" +
-    "    </h3>\n" +
-    "    <p ng-bind=\"currentUser.email\" class=\"text-muted-7\"></p>\n" +
-    "    <br>\n" +
-    "    <p>\n" +
-    "      <strong ng-bind=\"currentUser.location.address\" class=\"text-muted-5\"></strong>\n" +
-    "    </p>\n" +
-    "  </div>\n" +
-    "</div>\n" +
-    "<br> -->\n" +
     "<div>\n" +
     "  <div class=\"container\">\n" +
     "    <div class=\"ms-master-section\">\n" +

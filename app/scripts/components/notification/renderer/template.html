@@ -7,14 +7,14 @@
       <div class="list-content">
         <div class="primary">
           <h5 class="header">
-            <strong ng-bind="messages[notification.action]().label"></strong>
+            <strong ng-bind-html="messages[notification.action](notification).label"></strong>
           </h5>
         </div>
       </div>
     </div>
   </div>
   <div class="supporting-text text-muted">
-    <span ng-bind-html="messages[notification.action](notification.targetable).desc" 
+    <span ng-bind-html="messages[notification.action](notification).desc" 
           ng-if="notification.targetable_type == 'Post'">
     </span>
   </div>
