@@ -175,7 +175,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <ul class=\"nav navbar-nav navbar-right\">\n" +
     "      <li>\n" +
     "        <a ng-click=\"openPostCreator()\" class=\"btn-link\">\n" +
-    "          <span class=\"btn btn-sm btn-info\">Publish</span>\n" +
+    "          <span class=\"btn btn-sm btn-danger\">Publish</span>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
@@ -253,7 +253,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "              name=\"content\">\n" +
     "    </textarea>\n" +
     "    <br>\n" +
-    "    <input type=\"button\" class=\"btn btn-info btn-sm\" value=\"Spread it\" ng-disabled=\"newPostForm.$invalid\" ng-click=\"createPost()\"/>\n" +
+    "    <input type=\"button\" class=\"btn btn-inverse btn-sm\" value=\"Spread it\" ng-disabled=\"newPostForm.$invalid\" ng-click=\"createPost()\"/>\n" +
     "  </form>\n" +
     "</div>"
   );
