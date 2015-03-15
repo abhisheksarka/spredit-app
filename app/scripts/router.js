@@ -28,7 +28,14 @@ angular.module('ms')
   })
   .when('/posts/:id', {
     templateUrl: 'app/scripts/pages/posts/show/template.html',
-    controller: 'PostsShowController'
+    controller: 'PostsShowController',
+    resolve: {
+      post: ['PostModel', '$route', function(Post, $route) {
+        return Post.get({
+          id: $route.current.params.id
+        });
+      }]
+    }
   })
   .otherwise({
     redirectTo: '/',

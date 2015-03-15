@@ -200,7 +200,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <div class=\"list-content\">\n" +
     "        <div class=\"primary\">\n" +
     "          <h5 class=\"header\">\n" +
-    "            <strong ng-bind-html=\"messages[notification.action](notification).label\"></strong>\n" +
+    "            <span ng-bind-html=\"messages[notification.action](notification).label\"></span>\n" +
     "          </h5>\n" +
     "        </div>\n" +
     "      </div>\n" +
@@ -815,11 +815,17 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/pages/posts/show/template.html',
-    "<div>\n" +
-    "\t<div ms-post-renderer \n" +
-    "\t\t\t post=\"currentPost\" \n" +
-    "\t\t\t selected-action=\"actions.selected\" \n" +
-    "\t\t\t record-view=\"false\"></div>\n" +
+    "<div class=\"container\">\n" +
+    "  <div class=\"ms-master-section\">\n" +
+    "\t\t<div ng-if=\"post.id\">\n" +
+    "\t\t\t<div ms-post-renderer \n" +
+    "\t\t\t\t\t post=\"post\" \n" +
+    "\t\t\t\t\t selected-action=\"selectedAction\" \n" +
+    "\t\t\t\t\t record-view=\"false\"></div>\n" +
+    "\t\t\t<br>\n" +
+    "\t\t\t<div ms-post-details post=\"post\" action=\"selectedAction\"></div>\t\t \n" +
+    "\t\t</div>\n" +
+    "\t</div>\n" +
     "</div>"
   );
 

@@ -1,6 +1,12 @@
-<div>
-	<div ms-post-renderer 
-			 post="currentPost" 
-			 selected-action="actions.selected" 
-			 record-view="false"></div>
+<div class="container">
+  <div class="ms-master-section">
+		<div ng-if="post.id">
+			<div ms-post-renderer 
+					 post="post" 
+					 selected-action="selectedAction" 
+					 record-view="false"></div>
+			<br>
+			<div ms-post-details post="post" action="selectedAction"></div>		 
+		</div>
+	</div>
 </div>
