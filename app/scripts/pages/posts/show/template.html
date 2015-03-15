@@ -1,6 +1,19 @@
 <div class="container">
   <div class="ms-master-section">
-		<div ng-if="post.id">
+  	<div class="text-center">
+      <br>
+      <div ng-if="post.$resolved && !post.id">
+        <img src="images/no_posts.png"/>
+        <h4 class="text-muted">
+          The resource you are requesting for does not exist.
+        </h4>
+      </div>
+      <div ng-if="!post.$resolved">
+        <div ms-spinner></div>
+        <p><small class="text-muted">Please wait</small></p>
+      </div>
+    </div>
+		<div ng-if="post.$resolved && post.id">
 			<div ms-post-renderer 
 					 post="post" 
 					 selected-action="selectedAction" 

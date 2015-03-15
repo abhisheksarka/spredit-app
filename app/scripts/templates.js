@@ -817,7 +817,20 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/pages/posts/show/template.html',
     "<div class=\"container\">\n" +
     "  <div class=\"ms-master-section\">\n" +
-    "\t\t<div ng-if=\"post.id\">\n" +
+    "  \t<div class=\"text-center\">\n" +
+    "      <br>\n" +
+    "      <div ng-if=\"post.$resolved && !post.id\">\n" +
+    "        <img src=\"images/no_posts.png\"/>\n" +
+    "        <h4 class=\"text-muted\">\n" +
+    "          The resource you are requesting for does not exist.\n" +
+    "        </h4>\n" +
+    "      </div>\n" +
+    "      <div ng-if=\"!post.$resolved\">\n" +
+    "        <div ms-spinner></div>\n" +
+    "        <p><small class=\"text-muted\">Please wait</small></p>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "\t\t<div ng-if=\"post.$resolved && post.id\">\n" +
     "\t\t\t<div ms-post-renderer \n" +
     "\t\t\t\t\t post=\"post\" \n" +
     "\t\t\t\t\t selected-action=\"selectedAction\" \n" +
