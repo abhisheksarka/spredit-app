@@ -46,32 +46,53 @@ a {
 }
 nav.navbar {
   @include ms-border-radius(0px); 
-  @include ms-box-shadow(0, 0, 0px, rgba(0,0,0,0));
-  background: rgba(0,0,0,0.2);
+  @include ms-box-shadow(0, 0, 10px, rgba(0,0,0,0.3));
+  background: white;
   min-height: 60px;
   margin-bottom: 40px;
+  padding-top: 5px;
+  padding-bottom: 8px;
+  .brand-name {
+    font-family: 'Nunito', sans-serif;
+  }
+  .brand-icon {
+    color: $brand-success;
+    position: relative;
+    top: 5px;
+  }
   .navbar-nav {
     margin: 0px;
   }
   .navbar-nav > li > a {
     padding: 15px 15px;
     font-size: 22px;
-    color: white;
-    opacity: 0.8;
+    color: #333;
     &:hover {
-      opacity: 1;
-      color: white;
+      color: #333;
     } 
     &:focus {
-      opacity: 1;
-      color: white;
+      color: #333;
     }
     &:active {
-      opacity: 1;
-      color: white;
+      color: #333;
+    }
+  }
+  .navbar-nav > li > a.btn-link {
+    opacity: 1;
+    .btn {
+      @include ms-box-shadow(0, 0, 0px, rgba(0,0,0,0));
+      font-weight: bold;
+      @include ms-border-radius(300px);
     }
   }
 }
+ul.nav.navbar-nav {
+  float: left !important;
+}
+ul.nav.navbar-nav.navbar-right {
+  float: right !important;
+}
+
 .navbar-brand {
   font-size: 30px;
   font-family: 'Nunito', sans-serif !important;

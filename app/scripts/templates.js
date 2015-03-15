@@ -166,8 +166,16 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </a>\n" +
     "      </li>\n" +
     "      <li class=\"hidden-xs hidden-sm\">\n" +
-    "        <a ng-click=\"openPostCreator()\">\n" +
-    "          <span class=\"glyphicon glyphicon-send\"></span>\n" +
+    "        <a href=\"#/home\">\n" +
+    "          <span class=\"glyphicon glyphicon-send brand-icon\"></span>\n" +
+    "          <span class=\"brand-name\">spredit</span>\n" +
+    "        </a>\n" +
+    "      </li>\n" +
+    "    </ul>\n" +
+    "    <ul class=\"nav navbar-nav navbar-right\">\n" +
+    "      <li>\n" +
+    "        <a ng-click=\"openPostCreator()\" class=\"btn-link\">\n" +
+    "          <span class=\"btn btn-sm btn-info\">Publish</span>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +

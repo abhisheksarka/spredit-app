@@ -3,6 +3,12 @@
   -moz-box-shadow:$top $left $blur $color #{$inset};
   box-shadow:$top $left $blur $color #{$inset};
 }
+@mixin ms-text-shadow($top, $left, $blur, $color, $inset:"") {
+  -webkit-text-shadow:$top $left $blur $color #{$inset};
+  -moz-text-shadow:$top $left $blur $color #{$inset};
+  text-shadow:$top $left $blur $color #{$inset};
+  -ms-text-shadow:$top $left $blur $color #{$inset};
+}
 
 @mixin ms-border-radius($radius) {
   -webkit-border-radius: $radius;
