@@ -1,5 +1,5 @@
 (function(){
-  function Factory($resource, $q, $window, User){
+  function Factory($resource, $q, $window, User, $cookie){
     var Resource = $resource(
                     ms.apiFor('/sessions'),
                     { }
@@ -25,7 +25,11 @@
         // set the current user
         res.currentUser = User.getInstance(response.jw_tokenable);
 
+        // set the token in the cookie
+        $cookie.jwToken = res.currentToken.value;
+
         // resolve the promise
+
         defer.resolve(response);
       }, function(){
         defer.reject()
@@ -34,6 +38,7 @@
     };
 
     res.signOut = function() {
+      delete $cookie.jwToken;
     };
     
     res.isSignedIn = function() {
@@ -49,6 +54,7 @@
     '$q', 
     '$window', 
     'UserModel',
+    '$cookies',
     Factory
   ]);
 
