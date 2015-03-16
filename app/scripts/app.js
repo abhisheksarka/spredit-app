@@ -33,8 +33,7 @@ angular
     return {
       request: function(config) {
         try {
-          //config.headers['Jw-Token'] = $injector.get('SessionModel').currentToken.value;
-          // $cookies.put('Jw-Token', $injector.get('SessionModel').currentToken.value);
+          
         } catch(err) { };
         return config;
       },

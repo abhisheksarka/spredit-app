@@ -5,13 +5,17 @@
       $scope.connected = connected;
       $scope.unauthorized = unauthorized;
       $scope.unknown = unknown;
+      if(Session.isSignedIn()) {
+        redirectToHome();  
+      };
     };
 
     function connected(response) {
-      Session.signIn(response.authResponse)
-      .then(function(){
-        $location.path('/home');
-      });
+      Session.signIn(response.authResponse).then(redirectToHome);
+    };
+
+    function redirectToHome() {
+      $location.path('/home');
     };
     
     function unauthorized(response) {

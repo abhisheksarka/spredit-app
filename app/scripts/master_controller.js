@@ -1,5 +1,5 @@
 (function() {
-  function Controller($scope, Init, Session, Location, $q, $window, $rootScope){
+  function Controller($scope, Init, Session, Location, $q, $window, $rootScope, $cookies){
     function init(){
       // some shared states
       $scope.masterCtrl = {
@@ -22,25 +22,29 @@
         $scope.masterCtrl.currentSession = Session.isSignedIn();
         $scope.masterCtrl.isLocationPresent = new Location(l).isValid();
       }); 
-      bootstrapApp();
+      runSetUp();
     };
 
-    function bootstrapApp() {
-      return Init.get().$promise.then(onBootstrapped);
+    function runSetUp() {
+      var initPromise = Init.get().$promise.then(setFb),
+          sessionPromise = Session.current().$promise.then(setSession);
+      $q.all([initPromise, sessionPromise]).then(start);
     };
 
-    function onBootstrapped(response) {
+    function setFb(response) {
+      $window.ms.config.FB_APP_ID = response.app_id;
+      $window.ms.config.FB_PERMISSIONS_SCOPE = response.permissions_scope;
+    };
+
+    function setSession(response) {
+      if(!response.id) {
+        return;
+      };
+      Session.setAuthProperties(response);
+    }
+
+    function start() {
       $window.ms.config.APP_INIT = true;
-      setFbApiId(response.app_id); 
-      setFbPermissions(response.permissions_scope);
-    };
-
-    function setFbApiId(apiId) {
-      $window.ms.config.FB_APP_ID = apiId;
-    };
-
-    function setFbPermissions(permissions) {
-      $window.ms.config.FB_PERMISSIONS_SCOPE = permissions;
     };
 
     init();
@@ -55,6 +59,7 @@
     '$q', 
     '$window', 
     '$rootScope',
+    '$cookies',
     Controller
   ]);
 }());
