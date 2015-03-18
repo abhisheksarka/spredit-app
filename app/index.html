@@ -1,8 +1,8 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" ng-app="ms" data-ng-controller="MasterController">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title ng-bind="masterCtrl.title"></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="ms" data-ng-controller="MasterController" id="{{masterCtrl.bodyId}}">
+  <body id="{{masterCtrl.bodyId}}">
     <div ng-if="masterCtrl.config.APP_INIT">
       <div ms-flash></div>
       <div ms-side-nav data-ng-if="masterCtrl.session.currentUser.id && masterCtrl.session.currentUser.location.id"></div>

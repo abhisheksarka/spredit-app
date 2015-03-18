@@ -2,6 +2,7 @@
   function Controller($scope, Session, $location){
     function init() {
       $scope.masterCtrl.setBodyId('page-location-prompt');
+      $scope.masterCtrl.setTitle('Location Required');
       $scope.currentUser = Session.currentUser;
       $scope.redirectToHome = redirectToHome;
     };

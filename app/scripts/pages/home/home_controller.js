@@ -6,6 +6,7 @@
       currentIndex = -1;
       $scope.currentUser = Session.currentUser;
       $scope.masterCtrl.setBodyId('page-home');
+      $scope.masterCtrl.setTitle('Home');
       $scope.posts = Post.query();
       $scope.loadState = StateHandler.getInstance();
       $scope.loadState.initiate();

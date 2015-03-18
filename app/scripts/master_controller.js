@@ -8,6 +8,15 @@
         getBodyId: function() {
           return this.bodyId;
         },
+        setTitle: function(title) {
+          this.title = 'Spredit';
+          if(title) {
+            this.title = this.title + ' | ' + title;
+          };
+        },
+        getTitle: function() {
+          return this.title;
+        },
         config: $window.ms.config,
         session: Session
       };

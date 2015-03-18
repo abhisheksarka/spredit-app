@@ -4,6 +4,7 @@
 
     function init() {
       $scope.masterCtrl.setBodyId('page-notifications');
+      $scope.masterCtrl.setTitle('Notifications');
       $scope.currentUser = Session.currentUser;
       $scope.Activity = Activity;   
       initNotifications();

@@ -4,6 +4,7 @@
 
     function init() {
       $scope.masterCtrl.setBodyId('page-me');
+      $scope.masterCtrl.setTitle('Me');
       $scope.Post = Post;
       $scope.Activity = Activity;
 

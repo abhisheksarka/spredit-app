@@ -2,6 +2,8 @@
   function Controller($scope, Session, post){
     
     function init() {
+      $scope.masterCtrl.setBodyId('page-posts-show');
+      $scope.masterCtrl.setTitle('Post');
       $scope.post = post;
     };
     
