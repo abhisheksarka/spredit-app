@@ -5,9 +5,6 @@
       $scope.connected = connected;
       $scope.unauthorized = unauthorized;
       $scope.unknown = unknown;
-      if(Session.isSignedIn()) {
-        redirectToHome();  
-      };
     };
 
     function connected(response) {

@@ -32,15 +32,26 @@
     };
 
     res.signOut = function() {
-      delete $cookie.jwToken;
+      
     };
     
     res.isSignedIn = function() {
-      return res.currentUser ? true : false;
+      if($cookie.jwToken) {
+        return true;
+      };
+      res.unsetAuthProperties();
+      return false;
+    };
+
+    res.unsetAuthProperties = function() {
+      delete $cookie.jwToken;
+      res.currentToken = null;
+      res.currentUser = null;
     };
 
     res.setAuthProperties = function(response) {
       // set the current token
+      if(!response.id) { return; };
       res.currentToken = {
         id: response.id,
         value: response.value
@@ -51,7 +62,24 @@
 
       // set the token in the cookie
       $cookie.jwToken = res.currentToken.value;
-    }
+    };
+
+    res.resolveCurrentUser = function () {
+      var defered = $q.defer();
+      // if the user is already signed in 
+      // resolve the promise
+      // if not do a manual resolve
+      res.isSignedIn() ? defered.resolve() : resolve();
+      // get the current user from the server
+      // and resolve the promise
+      function resolve () {
+        res.current().$promise
+        .then(function(response) { res.setAuthProperties(response); })
+        .finally(function() { res.isSignedIn() ? defered.resolve() : defered.reject(); });
+      };
+
+      return defered.promise;
+    };
 
     return res;
   };

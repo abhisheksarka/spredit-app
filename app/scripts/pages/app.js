@@ -6,4 +6,4 @@ angular.module('ms.pages', [
   'ms.pages.me',
   'ms.pages.notifications',
   'ms.pages.posts' 
-]);
+])

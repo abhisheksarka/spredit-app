@@ -1,0 +1,28 @@
+.post-details {
+  min-height: 150px;
+  .optional-header {
+    color: white;
+    height: 80px;
+    .secondary {
+      opacity: 0.7;
+    }
+  }
+  .optional-header.bg-comments {
+    background: $brand-blue-grey;
+  }
+  .optional-header.bg-statistics {
+    background: $brand-blue-grey;
+  }
+  .optional-header.bg-propagation {
+    background: $brand-blue-grey;
+  }
+  .bg-comments-add {
+    @extend .ms-animation-slide-from-top;
+  }
+  .bg-statistics-add{
+    @extend .ms-animation-slide-from-top;
+  }
+  .bg-propagation-add {
+    @extend .ms-animation-slide-from-top;
+  }
+}

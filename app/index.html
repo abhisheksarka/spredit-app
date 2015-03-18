@@ -18,24 +18,24 @@
     <!-- endbuild -->
   </head>
   <body ng-app="ms" data-ng-controller="MasterController" id="{{masterCtrl.bodyId}}">
-    <div ms-flash></div>
-    <div ms-side-nav data-ng-if="masterCtrl.currentSession && masterCtrl.isLocationPresent"></div>
-    <div>
-      <div id="fb-root"></div>
-      <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-      <![endif]-->
+    <div ng-if="masterCtrl.config.APP_INIT">
+      <div ms-flash></div>
+      <div ms-side-nav data-ng-if="masterCtrl.session.currentUser.id && masterCtrl.session.currentUser.location.id"></div>
+      <div>
+        <!--[if lt IE 7]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
-      <!-- Add your site or application content here -->
-      <div data-ng-if="masterCtrl.config.APP_INIT">
-        <div ms-nav-bar signed-in="masterCtrl.currentSession && masterCtrl.isLocationPresent" display="true"></div>
-        <div>  
-          <div data-ng-view></div>
+        <!-- Add your site or application content here -->
+        <div>
+          <div ms-nav-bar signed-in="masterCtrl.session.currentUser.id && masterCtrl.session.currentUser.location.id" display="true"></div>
+          <div>  
+            <div data-ng-view></div>
+          </div>
         </div>
       </div>
     </div>
-    
-
+    <div id="fb-root"></div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

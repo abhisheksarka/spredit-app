@@ -268,7 +268,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/components/post/details/template.html',
-    "<div class=\"ms-card-complex actions-card\" ng-if=\"post.id\">\n" +
+    "<div class=\"ms-card-complex post-details\" ng-if=\"post.id\">\n" +
     "  <div class=\"optional-header {{currentMapping.background}}\">\n" +
     "    <div class=\"ms-list-item\">\n" +
     "      <div class=\"glyphicon-avatar\">\n" +
