@@ -29,7 +29,7 @@ angular
   ]);
 
 (function() {
-  function addTokenToHeader($injector, $rootScope, _, $cookies, $location) {
+  function addTokenToHeader($injector, $rootScope, _, $cookies, $window) {
     return {
       request: function(config) {
         return config;
@@ -43,6 +43,7 @@ angular
         var code = response.code,
             body = response.body,
             messages = response.messages;
+            
         // show validation messages
         if(code == 1300) {
           $rootScope.$broadcast('ms.events.flash', {
@@ -50,14 +51,16 @@ angular
             type: 'danger' 
           });
         };
-        // // if it is session check request
-        // // and the object is not available
-        // // it means no session does not exist
-        // if(response.session_check && !response.jw_tokenable) {
-        //   var Session = $injector.get('SessionModel');
-        //   Session.unsetAuthProperties();
-        //   $location.path('/');
-        // };
+        // when session is no more valid
+        if(code == 1200) {
+          refresh();
+        };
+
+        function refresh() {
+          var Session = $injector.get('SessionModel');
+          Session.unsetAuthProperties();
+          $window.location.reload();
+        };
         res.data = body;
         return res;
       }
@@ -72,7 +75,7 @@ angular
       '$rootScope', 
       'UnderscoreService' ,
       '$cookies', 
-      '$location',
+      '$window',
       addTokenToHeader
     ]);
   }])
