@@ -29,7 +29,7 @@ angular
   ]);
 
 (function() {
-  function addTokenToHeader($injector, $rootScope, _, $cookies, $window) {
+  function responseManager($injector, $rootScope, _, $cookies, $window) {
     return {
       request: function(config) {
         return config;
@@ -43,7 +43,7 @@ angular
         var code = response.code,
             body = response.body,
             messages = response.messages;
-            
+
         // show validation messages
         if(code == 1300) {
           $rootScope.$broadcast('ms.events.flash', {
@@ -76,7 +76,7 @@ angular
       'UnderscoreService' ,
       '$cookies', 
       '$window',
-      addTokenToHeader
+      responseManager
     ]);
   }])
 
