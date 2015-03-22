@@ -98,13 +98,11 @@ angular
       }());
 
       function setFb(response) {
-        console.log(response);
         $window.ms.config.FB_APP_ID = response.app_id;
         $window.ms.config.FB_PERMISSIONS_SCOPE = response.permissions_scope;
       };
 
       function setSession(response) {
-        console.log(response)
         Session.setAuthProperties(response);
       };
 
