@@ -29,19 +29,36 @@ angular
   ]);
 
 (function() {
-  function addTokenToHeader($injector, $rootScope, _, $cookies) {
+  function addTokenToHeader($injector, $rootScope, _, $cookies, $location) {
     return {
       request: function(config) {
         return config;
       },
       response: function(res) {
-        var e = res.data.errors;
-        if(e) {
+        var response = res.data;
+        if(!response.api) {
+          return res;
+        };
+
+        var code = response.code,
+            body = response.body,
+            messages = response.messages;
+        // show validation messages
+        if(code == 1300) {
           $rootScope.$broadcast('ms.events.flash', {
-            message: _.values(e)[0],
+            message: _.values(messages)[0],
             type: 'danger' 
           });
         };
+        // // if it is session check request
+        // // and the object is not available
+        // // it means no session does not exist
+        // if(response.session_check && !response.jw_tokenable) {
+        //   var Session = $injector.get('SessionModel');
+        //   Session.unsetAuthProperties();
+        //   $location.path('/');
+        // };
+        res.data = body;
         return res;
       }
     };  
@@ -50,7 +67,14 @@ angular
   .config(['$httpProvider', function($httpProvider) {
     $httpProvider
     .interceptors
-    .push(['$injector', '$rootScope', 'UnderscoreService' ,'$cookies', addTokenToHeader]);
+    .push([
+      '$injector', 
+      '$rootScope', 
+      'UnderscoreService' ,
+      '$cookies', 
+      '$location',
+      addTokenToHeader
+    ]);
   }])
 
   // when the app is initialized do all the stuff below
@@ -71,14 +95,13 @@ angular
       }());
 
       function setFb(response) {
+        console.log(response);
         $window.ms.config.FB_APP_ID = response.app_id;
         $window.ms.config.FB_PERMISSIONS_SCOPE = response.permissions_scope;
       };
 
       function setSession(response) {
-        if(!response.id) {
-          return;
-        };
+        console.log(response)
         Session.setAuthProperties(response);
       };
 

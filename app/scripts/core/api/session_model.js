@@ -32,7 +32,12 @@
     };
 
     res.signOut = function() {
-      
+      return res.delete().$promise
+      .then(function(response){
+        res.unsetAuthProperties();
+      }, function() {
+
+      });
     };
     
     res.isSignedIn = function() {
@@ -50,18 +55,18 @@
     };
 
     res.setAuthProperties = function(response) {
-      // set the current token
-      if(!response.id) { return; };
-      res.currentToken = {
-        id: response.id,
-        value: response.value
-      };
-
-      // set the current user
-      res.currentUser = User.getInstance(response.jw_tokenable);
-
-      // set the token in the cookie
-      $cookie.jwToken = res.currentToken.value;
+      if(!response.id) {  
+        res.unsetAuthProperties();
+      } else {
+        res.currentToken = {
+          id: response.id,
+          value: response.value
+        };
+        // set the current user
+        res.currentUser = User.getInstance(response.jw_tokenable);
+        // set the token in the cookie
+        $cookie.jwToken = res.currentToken.value;
+      }
     };
 
     res.resolveCurrentUser = function () {
@@ -74,8 +79,12 @@
       // and resolve the promise
       function resolve () {
         res.current().$promise
-        .then(function(response) { res.setAuthProperties(response); })
-        .finally(function() { res.isSignedIn() ? defered.resolve() : defered.reject(); });
+        .then(function(response) { 
+          res.setAuthProperties(response); 
+        })
+        .finally(function() { 
+          res.isSignedIn() ? defered.resolve() : defered.reject(); 
+        });
       };
 
       return defered.promise;

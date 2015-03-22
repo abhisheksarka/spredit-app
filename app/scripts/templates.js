@@ -442,9 +442,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </a>\n" +
     "    </li>\n" +
     "    <li>\n" +
-    "      <a class=\"link-major\">\n" +
+    "      <a class=\"link-major\" ng-click=\"signOut()\">\n" +
     "        <span class=\"glyphicon glyphicon-off\"></span> \n" +
-    "        <span>Logout</span>\n" +
+    "        <span>Sign out</span>\n" +
     "      </a>\n" +
     "    </li>   \n" +
     "  </ul>\n" +
