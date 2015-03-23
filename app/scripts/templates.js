@@ -167,7 +167,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </li>\n" +
     "      <li class=\"hidden-xs hidden-sm\">\n" +
     "        <a href=\"#/home\">\n" +
-    "          <span class=\"glyphicon glyphicon-send brand-icon\"></span>\n" +
+    "          <span class=\"fa fa-location-arrow brand-icon\"></span>\n" +
     "          <span class=\"brand-name\">spredit</span>\n" +
     "        </a>\n" +
     "      </li>\n" +
@@ -432,6 +432,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <a class=\"link-major\" href=\"/#notifications\">\n" +
     "        <span class=\"glyphicon glyphicon-globe\"></span> \n" +
     "        <span>Notifications</span>\n" +
+    "        <span class=\"notification-count\">16</span>\n" +
     "      </a>\n" +
     "    </li> \n" +
     "    <li>\n" +
@@ -583,7 +584,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"row\">\n" +
     "      <div class=\"col-md-12 text-center\">\n" +
     "        <div class=\"logo logo-25 ms-animation-zoom-in\">\n" +
-    "          <span class=\"glyphicon glyphicon-send glyphicon-ring-wrap\"></span> \n" +
+    "          <span class=\"fa fa-location-arrow glyphicon-ring-wrap\"></span> \n" +
     "        </div>\n" +
     "        <h1 class=\"brand-name\">\n" +
     "          spredit\n" +

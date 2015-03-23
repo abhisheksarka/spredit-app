@@ -2,6 +2,15 @@
 @import "jQuery.mmenu/src/scss/inc/variables";
 
 .mm-menu {
+  .notification-count {
+    margin-left: 5px;
+    background: $brand-info;
+    padding: 2px 8px;
+    border-radius: 30px;
+    font-size: 12px;
+    position: relative;
+    top: -1px;
+  }
   background: rgb(31,31,31);
   color: whitesmoke;
   display: inline-block;
