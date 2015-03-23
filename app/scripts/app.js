@@ -8,25 +8,56 @@
  *
  * Main module of the application.
  */
-angular
-  .module('ms', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'ui.bootstrap',
-    'ui.slider',
-    'uiGmapgoogle-maps',
-    'angularMoment',
-    'angularFileUpload',
-    
-    // application modules
-    'ms.core',
-    'ms.components',
-    'ms.pages'
-  ]);
+angular.module('ms', [
+  'ngAnimate',
+  'ngCookies',
+  'ngResource',
+  'ngRoute',
+  'ngSanitize',
+  'ngTouch',
+  'ui.bootstrap',
+  'ui.slider',
+  'uiGmapgoogle-maps',
+  'angularMoment',
+  'angularFileUpload',
+  
+  // application modules
+  'ms.core',
+  'ms.components',
+  'ms.pages'
+])
+ // when the app is initialized do all the stuff below
+.run([ 
+  'SessionModel', 
+  'InitModel',
+  '$window',
+  '$q',
+  '$location',
+  '$rootScope',
+  function(Session, Init, $window, $q, $location, $rootScope) { 
+    (function () {
+      $q.all([
+        Init.get().$promise.then(setFb), 
+        Session.current().$promise.then(setSession)
+      ])
+      .then(start);
+    }());
+
+    function setFb(response) {
+      $window.ms.config.FB_APP_ID = response.app_id;
+      $window.ms.config.FB_PERMISSIONS_SCOPE = response.permissions_scope;
+    };
+
+    function setSession(response) {
+      Session.setAuthProperties(response);
+    };
+
+    function start() {
+      $window.ms.config.APP_INIT = true;
+      $rootScope.$broadcast('ms.events.appInit');
+    }; 
+  }
+]);
 
 (function() {
   function responseManager($injector, $rootScope, _, $cookies, $window) {
@@ -78,38 +109,5 @@ angular
       '$window',
       responseManager
     ]);
-  }])
-
-  // when the app is initialized do all the stuff below
-  .run([ 
-    'SessionModel', 
-    'InitModel',
-    '$window',
-    '$q',
-    '$location',
-    '$rootScope',
-    function(Session, Init, $window, $q, $location, $rootScope) { 
-      (function () {
-        $q.all([
-          Init.get().$promise.then(setFb), 
-          Session.current().$promise.then(setSession)
-        ])
-        .then(start);
-      }());
-
-      function setFb(response) {
-        $window.ms.config.FB_APP_ID = response.app_id;
-        $window.ms.config.FB_PERMISSIONS_SCOPE = response.permissions_scope;
-      };
-
-      function setSession(response) {
-        Session.setAuthProperties(response);
-      };
-
-      function start() {
-        $window.ms.config.APP_INIT = true;
-        $rootScope.$broadcast('ms.events.appInit');
-      }; 
-    }
-  ]);
+  }]);
 }());
