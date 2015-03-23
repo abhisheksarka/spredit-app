@@ -1,5 +1,5 @@
 (function() {
-  function Controller($scope, Session, $location){
+  function Controller($scope, Session, $location, Activity){
     function init() {
       $scope.masterCtrl.setBodyId('page-index');
       $scope.connected = connected;
@@ -8,13 +8,17 @@
     };
 
     function connected(response) {
-      Session.signIn(response.authResponse).then(redirectToHome);
+      Session.signIn(response.authResponse).then(afterSignIn);
     };
 
+    function afterSignIn() {
+      redirectToHome();
+    };
+    
     function redirectToHome() {
       $location.path('/home');
     };
-    
+
     function unauthorized(response) {
       
     };
@@ -27,6 +31,7 @@
     '$scope',
     'SessionModel', 
     '$location',
+    'ActivityModel',
     Controller
   ]);
 }());

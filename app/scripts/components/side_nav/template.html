@@ -16,7 +16,10 @@
       <a class="link-major" href="/#notifications">
         <span class="glyphicon glyphicon-globe"></span> 
         <span>Notifications</span>
-        <span class="notification-count">16</span>
+        <span class="notification-count" 
+              ng-bind="currentUser.unread_notifications_count"
+              ng-if="currentUser.unread_notifications_count > 0">
+        </span>
       </a>
     </li> 
     <li>

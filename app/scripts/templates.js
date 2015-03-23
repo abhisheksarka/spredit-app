@@ -432,7 +432,11 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <a class=\"link-major\" href=\"/#notifications\">\n" +
     "        <span class=\"glyphicon glyphicon-globe\"></span> \n" +
     "        <span>Notifications</span>\n" +
-    "        <span class=\"notification-count\">16</span>\n" +
+    "        <span class=\"notification-count\" \n" +
+    "              ng-bind=\"currentUser.unread_notifications_count\"\n" +
+    "              ng-if=\"currentUser.unread_notifications_count > 0\">\n" +
+    "        16\n" +
+    "        </span>\n" +
     "      </a>\n" +
     "    </li> \n" +
     "    <li>\n" +

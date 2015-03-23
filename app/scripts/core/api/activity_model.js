@@ -4,15 +4,18 @@
                     ms.apiFor('/activities'),
                     { id: '@id' },
                     { 
-                      notifications: { method: 'GET', url: ms.apiFor('/activities/notifications'), isArray: true }  
+                      notifications: { method: 'GET', url: ms.apiFor('/activities/notifications'), isArray: true },
+                      unreadNotificationsCount: { method: 'GET', url: ms.apiFor('/activities/unread_notifications_count'), isArray: false }  
                     }
                   ),
-        proto = Resource.prototype;
+        res = Resource,
+        proto = res.prototype;
 
     //
     // Instance methods and class methods go here
     //
-    Resource.activityMappings = {
+
+    res.activityMappings = {
       commented: {
         label: 'You commented on this',
         iconClass: 'glyphicon-comment'
@@ -27,7 +30,7 @@
       }
     };
 
-    Resource.notificationMappings =  {
+    res.notificationMappings =  {
       spread: {
         label: 'Your post was spread...',
         iconClass: 'glyphicon-send' 
@@ -38,7 +41,7 @@
       }
     };
     
-    return Resource;
+    return res;
   };
 
   angular.module('ms.core.api')
