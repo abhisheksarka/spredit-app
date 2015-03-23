@@ -391,8 +391,13 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <hr>\n" +
     "      <div ms-spread-creator spreadable=\"post\" resource-owner=\"'post_publishable'\"></div>\n" +
     "    </div>\n" +
-    "    <div class=\"actions\">\n" +
+    "    <div class=\"actions\" ng-show=\"showAllActions\">\n" +
     "      <span ms-post-actions post=\"post\" selected-action=\"selectedAction\" ></span>\n" +
+    "    </div>\n" +
+    "    <div class=\"actions text-center\" ng-hide=\"showAllActions\">\n" +
+    "      <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">\n" +
+    "        <button class=\"btn btn-info btn-sm\">View full post</button>\n" +
+    "      </a>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>"
@@ -557,7 +562,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div ng-if=\"currentPost.id\" \n" +
     "         ms-animator=\"ms-animation-zoom-in\" \n" +
     "         on-change-in=\"{{currentPost.id}}\">\n" +
-    "      <div ms-post-renderer post=\"currentPost\" selected-action=\"actions.selected\" record-view=\"true\"></div>\n" +
+    "      <div ms-post-renderer post=\"currentPost\" selected-action=\"actions.selected\" record-view=\"true\" show-all-actions=\"true\"></div>\n" +
     "      <br>\n" +
     "      <div ms-post-details post=\"currentPost\" action=\"actions.selected\">\n" +
     "      </div>\n" +
@@ -842,7 +847,8 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "\t\t\t<div ms-post-renderer \n" +
     "\t\t\t\t\t post=\"post\" \n" +
     "\t\t\t\t\t selected-action=\"selectedAction\" \n" +
-    "\t\t\t\t\t record-view=\"false\"></div>\n" +
+    "\t\t\t\t\t record-view=\"false\" \n" +
+    "           show-all-actions=\"true\"></div>\n" +
     "\t\t\t<br>\n" +
     "\t\t\t<div ms-post-details post=\"post\" action=\"selectedAction\"></div>\t\t \n" +
     "\t\t</div>\n" +

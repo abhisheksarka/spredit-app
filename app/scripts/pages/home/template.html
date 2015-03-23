@@ -9,7 +9,7 @@
     <div ng-if="currentPost.id" 
          ms-animator="ms-animation-zoom-in" 
          on-change-in="{{currentPost.id}}">
-      <div ms-post-renderer post="currentPost" selected-action="actions.selected" record-view="true"></div>
+      <div ms-post-renderer post="currentPost" selected-action="actions.selected" record-view="true" show-all-actions="true"></div>
       <br>
       <div ms-post-details post="currentPost" action="actions.selected">
       </div>

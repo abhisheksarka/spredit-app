@@ -5,7 +5,8 @@
       scope: {
         post: '=',
         selectedAction: '=?',
-        recordView: '=?'
+        recordView: '=?',
+        showAllActions: '='
       },
       replace: true,
       controllerAs: 'postRendererCtrl',
