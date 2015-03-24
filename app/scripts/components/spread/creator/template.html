@@ -1,11 +1,11 @@
 <div class="text-center spreader">
   <span>
-    <span class="ms-fab btn btn-inverse" 
+    <span class="ms-fab btn btn-inverse contain" 
     			ng-click="containIt()" 
     			ng-class="{'disabled': isDisabled || requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}">
       <span class="glyphicon glyphicon-remove"></span>
     </span>
-    <span class="ms-fab btn btn-inverse" 
+    <span class="ms-fab btn btn-inverse spread" 
     			ng-click="spreadIt()" 
     			ng-class="{'disabled': isDisabled || requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}">
       <span class="glyphicon glyphicon-ok"></span>

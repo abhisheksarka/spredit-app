@@ -1,0 +1,17 @@
+.spreader {
+	.btn {
+		&:hover {
+			@include ms-transform(scale(1.1));
+		}
+	}
+	.btn.spread {
+		&:hover {
+			@extend .btn-success;
+		}
+	}
+	.btn.contain {
+		&:hover {
+			@extend .btn-danger;
+		}	
+	}
+}

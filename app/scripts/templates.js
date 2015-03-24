@@ -482,12 +482,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/spread/creator/template.html',
     "<div class=\"text-center spreader\">\n" +
     "  <span>\n" +
-    "    <span class=\"ms-fab btn btn-inverse\" \n" +
+    "    <span class=\"ms-fab btn btn-inverse contain\" \n" +
     "    \t\t\tng-click=\"containIt()\" \n" +
     "    \t\t\tng-class=\"{'disabled': isDisabled || requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}\">\n" +
     "      <span class=\"glyphicon glyphicon-remove\"></span>\n" +
     "    </span>\n" +
-    "    <span class=\"ms-fab btn btn-inverse\" \n" +
+    "    <span class=\"ms-fab btn btn-inverse spread\" \n" +
     "    \t\t\tng-click=\"spreadIt()\" \n" +
     "    \t\t\tng-class=\"{'disabled': isDisabled || requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}\">\n" +
     "      <span class=\"glyphicon glyphicon-ok\"></span>\n" +
