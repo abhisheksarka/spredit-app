@@ -435,7 +435,6 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        <span class=\"notification-count\" \n" +
     "              ng-bind=\"currentUser.unread_notifications_count\"\n" +
     "              ng-if=\"currentUser.unread_notifications_count > 0\">\n" +
-    "        16\n" +
     "        </span>\n" +
     "      </a>\n" +
     "    </li> \n" +

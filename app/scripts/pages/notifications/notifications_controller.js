@@ -13,23 +13,21 @@
     function initNotifications() {
       $scope.notifications = [ ];
     };
-    // when the first pagination request is complete, we know that the user has view the first
-    // set of notifications, so we mark all notificaitions as read
-    $scope.$watch('notificationsPaginator.isComplete', function(nv, ov){
-      if(nv) {
-        var p = $scope.notificationsPaginator;
-        if(p.page == 1) {
-          Activity
-          .markAllAsRead()
-          .$promise
-          .then(function(){
-            Session.currentUser.unread_notifications_count = 0;
-          });
-        };
-      }
-    });
-    
+
+    function clearNotifications() {
+      var c = Session.currentUser;
+      if(c.unread_notifications_count == 0) {
+        return;
+      };
+      Activity.markAllAsRead()
+      .$promise
+      .then(function(){
+        c.unread_notifications_count = 0;
+      }); 
+    };
+
     init();
+    clearNotifications();
   };
   angular.module('ms.pages.notifications').controller('NotificationsController', [
     '$scope',
