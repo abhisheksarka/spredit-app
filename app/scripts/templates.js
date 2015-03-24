@@ -16,7 +16,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </span>\n" +
     "  </div>\n" +
     "  <div ng-if=\"activity.targetable_type == 'Post'\">\n" +
-    "    <div ms-post-renderer post=\"activity.targetable\" record-view=\"false\"></div>  \n" +
+    "    <div ms-post-renderer post=\"activity.targetable\" record-view=\"false\" spreader-disabled=\"true\"></div>  \n" +
     "  </div>\n" +
     "</div>"
   );
@@ -386,10 +386,20 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "    <div class=\"supporting-text\">\n" +
     "      <span ms-linkify=\"post.content\"></span>\n" +
-    "      <br>\n" +
-    "      <br>\n" +
-    "      <hr>\n" +
-    "      <div ms-spread-creator spreadable=\"post\" resource-owner=\"'post_publishable'\"></div>\n" +
+    "      <span ng-if=\"post.content\">\n" +
+    "        <br><br><hr>\n" +
+    "        <div ms-spread-creator \n" +
+    "            spreadable=\"post\" \n" +
+    "            resource-owner=\"'post_publishable'\" \n" +
+    "            is-disabled=\"spreaderDisabled\"></div>\n" +
+    "      </span>\n" +
+    "      <span ng-if=\"!post.content\">\n" +
+    "        <div ms-spread-creator \n" +
+    "             spreadable=\"post\" \n" +
+    "             resource-owner=\"'post_publishable'\" \n" +
+    "             class=\"post-with-only-photo\" \n" +
+    "             is-disabled=\"spreaderDisabled\"></div>\n" +
+    "      </span>\n" +
     "    </div>\n" +
     "    <div class=\"actions\" ng-show=\"showAllActions\">\n" +
     "      <span ms-post-actions post=\"post\" selected-action=\"selectedAction\" ></span>\n" +
@@ -472,11 +482,15 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/spread/creator/template.html',
     "<div class=\"text-center spreader\">\n" +
     "  <span>\n" +
-    "    <span class=\"ms-fab btn btn-inverse\" ng-click=\"containIt()\" ng-class=\"{'disabled': requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}\">\n" +
-    "      <span class=\"glyphicon glyphicon-lock\"></span>\n" +
+    "    <span class=\"ms-fab btn btn-inverse\" \n" +
+    "    \t\t\tng-click=\"containIt()\" \n" +
+    "    \t\t\tng-class=\"{'disabled': isDisabled || requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}\">\n" +
+    "      <span class=\"glyphicon glyphicon-remove\"></span>\n" +
     "    </span>\n" +
-    "    <span class=\"ms-fab btn btn-inverse\" ng-click=\"spreadIt()\" ng-class=\"{'disabled': requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}\">\n" +
-    "      <span class=\"glyphicon glyphicon-send\"></span>\n" +
+    "    <span class=\"ms-fab btn btn-inverse\" \n" +
+    "    \t\t\tng-click=\"spreadIt()\" \n" +
+    "    \t\t\tng-class=\"{'disabled': isDisabled || requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}\">\n" +
+    "      <span class=\"glyphicon glyphicon-ok\"></span>\n" +
     "    </span>\n" +
     "  </span>\n" +
     "</div>"
@@ -727,7 +741,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "            <div ms-infinite-scroll resource=\"Post\" request-to=\"'mine'\" push-to=\"myPosts\" paginator=\"myPostsPaginator\"></div>\n" +
     "            <div ng-repeat=\"post in myPosts\">\n" +
     "              <br>\n" +
-    "              <div ms-post-renderer post=\"post\" record-view=\"false\"></div>\n" +
+    "              <div ms-post-renderer post=\"post\" record-view=\"false\" spreader-disabled=\"true\"></div>\n" +
     "            </div>\n" +
     "            <div class=\"text-center\">\n" +
     "              <br>\n" +

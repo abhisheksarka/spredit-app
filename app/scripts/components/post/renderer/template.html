@@ -31,10 +31,20 @@
     </div>
     <div class="supporting-text">
       <span ms-linkify="post.content"></span>
-      <br>
-      <br>
-      <hr>
-      <div ms-spread-creator spreadable="post" resource-owner="'post_publishable'"></div>
+      <span ng-if="post.content">
+        <br><br><hr>
+        <div ms-spread-creator 
+            spreadable="post" 
+            resource-owner="'post_publishable'" 
+            is-disabled="spreaderDisabled"></div>
+      </span>
+      <span ng-if="!post.content">
+        <div ms-spread-creator 
+             spreadable="post" 
+             resource-owner="'post_publishable'" 
+             class="post-with-only-photo" 
+             is-disabled="spreaderDisabled"></div>
+      </span>
     </div>
     <div class="actions" ng-show="showAllActions">
       <span ms-post-actions post="post" selected-action="selectedAction" ></span>

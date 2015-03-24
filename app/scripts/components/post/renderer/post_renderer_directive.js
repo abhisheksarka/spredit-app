@@ -6,7 +6,8 @@
         post: '=',
         selectedAction: '=?',
         recordView: '=?',
-        showAllActions: '='
+        showAllActions: '=',
+        spreaderDisabled: '=?'
       },
       replace: true,
       controllerAs: 'postRendererCtrl',

@@ -5,7 +5,8 @@
       scope: {
         spreadable: '=',
         type: '=?',
-        resourceOwner: '=?'
+        resourceOwner: '=?',
+        isDisabled: '='
       },
       replace: true,
       controllerAs: 'spreadCreatorCtrl',
