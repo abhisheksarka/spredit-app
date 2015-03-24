@@ -5,7 +5,8 @@
                     { id: '@id' },
                     { 
                       notifications: { method: 'GET', url: ms.apiFor('/activities/notifications'), isArray: true },
-                      unreadNotificationsCount: { method: 'GET', url: ms.apiFor('/activities/unread_notifications_count'), isArray: false }  
+                      unreadNotificationsCount: { method: 'GET', url: ms.apiFor('/activities/unread_notifications_count'), isArray: false },
+                      markAllAsRead: { method: 'PUT', url: ms.apiFor('/activities/mark_all_as_read'), isArray: false }  
                     }
                   ),
         res = Resource,

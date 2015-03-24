@@ -13,6 +13,17 @@
     function initNotifications() {
       $scope.notifications = [ ];
     };
+    // when the first pagination request is complete, we know that the user has view the first
+    // set of notifications, so we mark all notificaitions as read
+    $scope.$watch('notificationsPaginator.isComplete', function(nv, ov){
+      if(nv) {
+        if($scope.notificationsPaginator.page == 1) {
+          Activity.markAllAsRead().then(function(){
+            Session.currentUser.unread_notifications_count = 0;
+          });
+        };
+      }
+    });
     
     init();
   };
