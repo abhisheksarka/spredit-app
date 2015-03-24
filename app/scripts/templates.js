@@ -69,6 +69,16 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </div>\n" +
     "        <div class=\"secondary\">\n" +
     "          <small ng-bind=\"comment.content\" class=\"text-muted\"></small>\n" +
+    "          <br>\n" +
+    "          <div class=\"list-actions\">\n" +
+    "            <small>\n" +
+    "              <span class=\"fa fa-thumbs-up\"></span>\n" +
+    "              <span>10</span>\n" +
+    "              &nbsp;\n" +
+    "              <span class=\"fa fa-thumbs-down\"></span>\n" +
+    "              <span>35</span>\n" +
+    "            </small>\n" +
+    "          </div>\n" +
     "        </div>\n" +
     "        <div class=\"clearfix\"></div>\n" +
     "      </div>\n" +
