@@ -17,8 +17,12 @@
     // set of notifications, so we mark all notificaitions as read
     $scope.$watch('notificationsPaginator.isComplete', function(nv, ov){
       if(nv) {
-        if($scope.notificationsPaginator.page == 1) {
-          Activity.markAllAsRead().then(function(){
+        var p = $scope.notificationsPaginator;
+        if(p.page == 1) {
+          Activity
+          .markAllAsRead()
+          .$promise
+          .then(function(){
             Session.currentUser.unread_notifications_count = 0;
           });
         };
