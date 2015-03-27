@@ -1,0 +1,18 @@
+.comment-actions {
+	span.fa {
+		&:hover {
+			@include ms-transform(scale(1.5));
+			cursor: pointer;
+		}
+	}
+	span.fa.fa-thumbs-down {
+		&:hover {
+			color: $brand-danger;
+		}
+	}
+	span.fa.fa-thumbs-up {
+		&:hover {
+			color: $brand-success;
+		}
+	}
+}
