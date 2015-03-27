@@ -8,32 +8,8 @@
        uniq="'id'">
   </div>
   <div class="ms-list" ng-if="commentable.comments.length > 0">
-    <div class="ms-list-item" ng-repeat="comment in commentable.comments">
-      <div class="list-avatar">
-        <img ng-src="{{comment.comment_publishable.profile_picture}}"/>
-      </div>
-      <div class="list-content">
-        <div class="primary">
-          <h4 class="header">
-            <span ng-bind="comment.comment_publishable.name"></span>
-            <small class="text-muted pull-right" am-time-ago="comment.created_at"></small>
-          </h4>
-        </div>
-        <div class="secondary">
-          <small ng-bind="comment.content" class="text-muted"></small>
-          <br>
-          <div class="list-actions">
-            <small>
-              <span class="fa fa-thumbs-up"></span>
-              <span>10</span>
-              &nbsp;
-              <span class="fa fa-thumbs-down"></span>
-              <span>35</span>
-            </small>
-          </div>
-        </div>
-        <div class="clearfix"></div>
-      </div>
+    <div ng-repeat="comment in commentable.comments">
+      <div ms-comment-renderer comment="comment"></div>
     </div>
   </div>
   <div class="text-center">
