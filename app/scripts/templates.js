@@ -22,6 +22,17 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('app/scripts/components/comment/actions/template.html',
+    "<small class=\"comment-actions\">\n" +
+    "  <span class=\"fa fa-thumbs-up\"></span>\n" +
+    "  <span>10</span>\n" +
+    "  &nbsp;\n" +
+    "  <span class=\"fa fa-thumbs-down\"></span>\n" +
+    "  <span>35</span>\n" +
+    "</small>"
+  );
+
+
   $templateCache.put('app/scripts/components/comment/creator/template.html',
     "<div class=\"comment-creator\">\n" +
     "    <form name=\"newCommentForm\" novalidate>\n" +
@@ -56,32 +67,8 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "       uniq=\"'id'\">\n" +
     "  </div>\n" +
     "  <div class=\"ms-list\" ng-if=\"commentable.comments.length > 0\">\n" +
-    "    <div class=\"ms-list-item\" ng-repeat=\"comment in commentable.comments\">\n" +
-    "      <div class=\"list-avatar\">\n" +
-    "        <img ng-src=\"{{comment.comment_publishable.profile_picture}}\"/>\n" +
-    "      </div>\n" +
-    "      <div class=\"list-content\">\n" +
-    "        <div class=\"primary\">\n" +
-    "          <h4 class=\"header\">\n" +
-    "            <span ng-bind=\"comment.comment_publishable.name\"></span>\n" +
-    "            <small class=\"text-muted pull-right\" am-time-ago=\"comment.created_at\"></small>\n" +
-    "          </h4>\n" +
-    "        </div>\n" +
-    "        <div class=\"secondary\">\n" +
-    "          <small ng-bind=\"comment.content\" class=\"text-muted\"></small>\n" +
-    "          <br>\n" +
-    "          <div class=\"list-actions\">\n" +
-    "            <small>\n" +
-    "              <span class=\"fa fa-thumbs-up\"></span>\n" +
-    "              <span>10</span>\n" +
-    "              &nbsp;\n" +
-    "              <span class=\"fa fa-thumbs-down\"></span>\n" +
-    "              <span>35</span>\n" +
-    "            </small>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"clearfix\"></div>\n" +
-    "      </div>\n" +
+    "    <div ng-repeat=\"comment in commentable.comments\">\n" +
+    "      <div ms-comment-renderer comment=\"comment\"></div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "  <div class=\"text-center\">\n" +
@@ -92,6 +79,31 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <div ms-spinner></div>\n" +
     "      <p><small class=\"text-muted\">Please wait</small></p>\n" +
     "    </div>\n" +
+    "  </div>\n" +
+    "</div>"
+  );
+
+
+  $templateCache.put('app/scripts/components/comment/renderer/template.html',
+    "<div class=\"ms-list-item comment-renderer\">\n" +
+    "  <div class=\"list-avatar\">\n" +
+    "    <img ng-src=\"{{comment.comment_publishable.profile_picture}}\"/>\n" +
+    "  </div>\n" +
+    "  <div class=\"list-content\">\n" +
+    "    <div class=\"primary\">\n" +
+    "      <h4 class=\"header\">\n" +
+    "        <span ng-bind=\"comment.comment_publishable.name\"></span>\n" +
+    "        <small class=\"text-muted pull-right\" am-time-ago=\"comment.created_at\"></small>\n" +
+    "      </h4>\n" +
+    "    </div>\n" +
+    "    <div class=\"secondary\">\n" +
+    "      <small ng-bind=\"comment.content\" class=\"text-muted\"></small>\n" +
+    "      <br>\n" +
+    "      <div class=\"list-actions\">\n" +
+    "        <div ms-comment-actions comment=\"comment\"></div>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"clearfix\"></div>\n" +
     "  </div>\n" +
     "</div>"
   );
