@@ -579,14 +579,40 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/pages/current_location/template.html',
     "<div class=\"container\">\n" +
-    "  <div class=\"text-center ms-master-section\">\n" +
-    "    <div class=\"slider-section\">\n" +
+    "  <div class=\"ms-master-section\">\n" +
+    "    <div class=\"ms-card-complex user-info ms-shadow-depth-20\">\n" +
+    "      <div class=\"optional-header\">\n" +
+    "        <div class=\"ms-list-item\">\n" +
+    "          <div class=\"glyphicon-avatar\">\n" +
+    "            <span class=\"glyphicon glyphicon-map-marker\"></span>\n" +
+    "          </div>\n" +
+    "          <div class=\"list-content\">\n" +
+    "            <div class=\"primary\">\n" +
+    "              <h5 class=\"header\">\n" +
+    "                <strong>\n" +
+    "                  Current Location\n" +
+    "                </strong>\n" +
+    "              </h5>\n" +
+    "            </div>\n" +
+    "            <div class=\"secondary\">\n" +
+    "              ...\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    "        </div>  \n" +
+    "      </div>\n" +
+    "      <div class=\"supporting-text text-muted\">\n" +
+    "        Drag the slider to set the radius based on which information will be fetched from around you.\n" +
+    "        <br>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "    <br>\n" +
+    "    <div class=\"slider-section text-center\">\n" +
     "      <div>\n" +
     "        <div ms-locator-slider></div>\n" +
     "        <br>\n" +
     "      </div>\n" +
     "    </div>\n" +
-    "    <div class=\"map-section\">\n" +
+    "    <div class=\"map-section text-center\">\n" +
     "      <div>\n" +
     "        <div class=\"ms-card\">\n" +
     "          <div ms-locator-map></div>\n" +
