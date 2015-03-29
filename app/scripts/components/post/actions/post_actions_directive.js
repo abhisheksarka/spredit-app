@@ -4,7 +4,8 @@
     return{
       scope: {
         post: '=',
-        selectedAction: '=' 
+        selectedAction: '=',
+        linkify: '=' 
       },
       replace: true,
       controllerAs: 'postActionsCtrl',

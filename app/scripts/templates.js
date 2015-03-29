@@ -16,7 +16,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </span>\n" +
     "  </div>\n" +
     "  <div ng-if=\"activity.targetable_type == 'Post'\">\n" +
-    "    <div ms-post-renderer post=\"activity.targetable\" record-view=\"false\" spreader-disabled=\"true\"></div>  \n" +
+    "    <div ms-post-renderer post=\"activity.targetable\" record-view=\"false\" spreader-disabled=\"true\" linkify-post-actions=\"true\"></div>  \n" +
     "  </div>\n" +
     "</div>"
   );
@@ -253,7 +253,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/post/actions/template.html',
     "<small class=\"post-actions\">\n" +
-    "  <span class=\"text-muted\">\n" +
+    "  <span class=\"text-muted\" ng-if=\"!linkify\">\n" +
     "    <a ng-click=\"setSelectedAction('comments')\">\n" +
     "      <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;COMMENTS(<span ng-bind=\"post.comments_count\"></span>)\n" +
     "      &nbsp;&nbsp;\n" +
@@ -261,11 +261,25 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <a ng-click=\"setSelectedAction('propagation')\">\n" +
     "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;PROPAGATION(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
     "    </a>\n" +
+    "    <span class=\"pull-right text-muted\">\n" +
+    "      <a ng-click=\"setSelectedAction('statistics')\">\n" +
+    "        <h2 class=\"spread-value\" ng-bind=\"post.spreads_count | displayNumber\"></h2>\n" +
+    "      </a>\n" +
+    "    </span>\n" +
     "  </span>\n" +
-    "  <span class=\"pull-right text-muted\">\n" +
-    "    <a ng-click=\"setSelectedAction('statistics')\">\n" +
-    "      <h2 class=\"spread-value\" ng-bind=\"post.spreads_count | displayNumber\"></h2>\n" +
+    "  <span class=\"text-muted\" ng-if=\"linkify\">\n" +
+    "    <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">\n" +
+    "      <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;COMMENTS(<span ng-bind=\"post.comments_count\"></span>)\n" +
+    "      &nbsp;&nbsp;\n" +
     "    </a>\n" +
+    "    <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">\n" +
+    "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;PROPAGATION(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
+    "    </a>\n" +
+    "    <span class=\"pull-right text-muted\">\n" +
+    "      <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">\n" +
+    "        <h2 class=\"spread-value\" ng-bind=\"post.spreads_count | displayNumber\"></h2>\n" +
+    "      </a>\n" +
+    "    </span>\n" +
     "  </span>\n" +
     "</small>"
   );
@@ -429,13 +443,8 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "             is-disabled=\"spreaderDisabled\"></div>\n" +
     "      </span>\n" +
     "    </div>\n" +
-    "    <div class=\"actions\" ng-show=\"showAllActions\">\n" +
-    "      <span ms-post-actions post=\"post\" selected-action=\"selectedAction\" ></span>\n" +
-    "    </div>\n" +
-    "    <div class=\"actions text-center\" ng-hide=\"showAllActions\">\n" +
-    "      <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">\n" +
-    "        <button class=\"btn btn-info btn-sm\">View full post</button>\n" +
-    "      </a>\n" +
+    "    <div class=\"actions\">\n" +
+    "      <span ms-post-actions post=\"post\" selected-action=\"selectedAction\" linkify=\"linkifyPostActions\"></span>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>"
@@ -807,7 +816,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "            <div ms-infinite-scroll resource=\"Post\" request-to=\"'mine'\" push-to=\"myPosts\" paginator=\"myPostsPaginator\"></div>\n" +
     "            <div ng-repeat=\"post in myPosts\">\n" +
     "              <br>\n" +
-    "              <div ms-post-renderer post=\"post\" record-view=\"false\" spreader-disabled=\"true\"></div>\n" +
+    "              <div ms-post-renderer post=\"post\" record-view=\"false\" spreader-disabled=\"true\" linkify-post-actions=\"true\"></div>\n" +
     "            </div>\n" +
     "            <div class=\"text-center\">\n" +
     "              <br>\n" +

@@ -32,7 +32,7 @@
             <div ms-infinite-scroll resource="Post" request-to="'mine'" push-to="myPosts" paginator="myPostsPaginator"></div>
             <div ng-repeat="post in myPosts">
               <br>
-              <div ms-post-renderer post="post" record-view="false" spreader-disabled="true"></div>
+              <div ms-post-renderer post="post" record-view="false" spreader-disabled="true" linkify-post-actions="true"></div>
             </div>
             <div class="text-center">
               <br>
