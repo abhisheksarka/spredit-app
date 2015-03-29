@@ -210,7 +210,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </a>\n" +
     "      </li>\n" +
     "      <li>\n" +
-    "        <a>\n" +
+    "        <a href=\"https://www.twitter.com/spreditapp\" target=\"_blank\">\n" +
     "          <span class=\"fa fa-twitter\"></span>\n" +
     "        </a>\n" +
     "      </li>\n" +
@@ -483,7 +483,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </a>\n" +
     "    </li>  \n" +
     "    <li>\n" +
-    "      <a class=\"link-major\">\n" +
+    "      <a class=\"link-major\" href=\"https://www.facebook.com/pages/Spredit/849011651809054\" target=\"_blank\">\n" +
     "        <span class=\"ms-fab btn btn-primary glyphicon\">\n" +
     "          <span class=\"fa fa-facebook\"></span> \n" +
     "        </span>\n" +
@@ -491,7 +491,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </a>\n" +
     "    </li>\n" +
     "    <li>\n" +
-    "      <a class=\"link-major\">\n" +
+    "      <a class=\"link-major\" href=\"https://www.twitter.com/spreditapp\" target=\"_blank\">\n" +
     "        <span class=\"ms-fab btn btn-info glyphicon\">\n" +
     "          <span class=\"fa fa-twitter\"></span> \n" +
     "        </span>\n" +
