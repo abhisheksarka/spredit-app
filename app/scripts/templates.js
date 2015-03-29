@@ -24,10 +24,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/comment/actions/template.html',
     "<small class=\"comment-actions\">\n" +
-    "  <span class=\"fa fa-thumbs-up\"></span>\n" +
+    "  <span class=\"fa fa-thumbs-up\" ng-click=\"vote(true)\"></span>\n" +
     "  <span>10</span>\n" +
     "  &nbsp;\n" +
-    "  <span class=\"fa fa-thumbs-down\"></span>\n" +
+    "  <span class=\"fa fa-thumbs-down\" ng-click=\"vote(false)\"></span>\n" +
     "  <span>35</span>\n" +
     "</small>"
   );
@@ -477,17 +477,27 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </a>\n" +
     "    </li> \n" +
     "    <li>\n" +
-    "      <a class=\"link-major\">\n" +
-    "        <span class=\"glyphicon glyphicon-cog\"></span> \n" +
-    "        <span>Settings</span>\n" +
-    "      </a>\n" +
-    "    </li>\n" +
-    "    <li>\n" +
     "      <a class=\"link-major\" ng-click=\"signOut()\">\n" +
     "        <span class=\"glyphicon glyphicon-off\"></span> \n" +
     "        <span>Sign out</span>\n" +
     "      </a>\n" +
-    "    </li>   \n" +
+    "    </li>  \n" +
+    "    <li>\n" +
+    "      <a class=\"link-major\">\n" +
+    "        <span class=\"ms-fab btn btn-primary glyphicon\">\n" +
+    "          <span class=\"fa fa-facebook\"></span> \n" +
+    "        </span>\n" +
+    "        <span>Like us on Facebook</span>\n" +
+    "      </a>\n" +
+    "    </li>\n" +
+    "    <li>\n" +
+    "      <a class=\"link-major\">\n" +
+    "        <span class=\"ms-fab btn btn-info glyphicon\">\n" +
+    "          <span class=\"fa fa-twitter\"></span> \n" +
+    "        </span>\n" +
+    "        <span>Follow us on Twitter</span>\n" +
+    "      </a>\n" +
+    "    </li> \n" +
     "  </ul>\n" +
     "</nav>"
   );
