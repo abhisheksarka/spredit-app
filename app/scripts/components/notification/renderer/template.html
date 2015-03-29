@@ -1,13 +1,13 @@
 <div class="notification-renderer ms-card-complex">
   <div class="optional-header">
     <div class="ms-list-item">
-      <div class="glyphicon-avatar ms-fab {{mappings.elementClasses[notification.action].btn}}">
+      <!-- <div class="glyphicon-avatar ms-fab {{mappings.elementClasses[notification.action].btn}}">
         <span class="glyphicon {{mappings.elementClasses[notification.action].icon}}"></span>
-      </div>
-      <div class="list-content">
+      </div> -->
+      <div class="">
         <div class="primary">
           <h5 class="header">
-            <span ng-bind-html="messages[notification.action](notification).label"></span>
+            <strong><span ng-bind-html="messages[notification.action](notification).label"></span></strong>
           </h5>
         </div>
       </div>

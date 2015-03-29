@@ -180,6 +180,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/nav_bar/template.html',
     "<nav class=\"navbar navbar-default\" role=\"navigation\" data-ng-if=\"display\">\n" +
+    "  <div class=\"rainbow-dash\">\n" +
+    "    <div class=\"color-section bg-info\"></div>\n" +
+    "    <div class=\"color-section bg-danger\"></div>\n" +
+    "    <div class=\"color-section bg-success\"></div>\n" +
+    "    <div class=\"color-section bg-warning\"></div>\n" +
+    "  </div>\n" +
     "  <div class=\"container\" data-ng-if=\"signedIn\">\n" +
     "    <ul class=\"nav navbar-nav\">\n" +
     "      <li class=\"visible-xs visible-sm\">\n" +
@@ -224,13 +230,13 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<div class=\"notification-renderer ms-card-complex\">\n" +
     "  <div class=\"optional-header\">\n" +
     "    <div class=\"ms-list-item\">\n" +
-    "      <div class=\"glyphicon-avatar ms-fab {{mappings.elementClasses[notification.action].btn}}\">\n" +
+    "      <!-- <div class=\"glyphicon-avatar ms-fab {{mappings.elementClasses[notification.action].btn}}\">\n" +
     "        <span class=\"glyphicon {{mappings.elementClasses[notification.action].icon}}\"></span>\n" +
-    "      </div>\n" +
-    "      <div class=\"list-content\">\n" +
+    "      </div> -->\n" +
+    "      <div class=\"\">\n" +
     "        <div class=\"primary\">\n" +
     "          <h5 class=\"header\">\n" +
-    "            <span ng-bind-html=\"messages[notification.action](notification).label\"></span>\n" +
+    "            <strong><span ng-bind-html=\"messages[notification.action](notification).label\"></span></strong>\n" +
     "          </h5>\n" +
     "        </div>\n" +
     "      </div>\n" +
@@ -557,7 +563,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<div class=\"statistics\">\n" +
     "  <div class=\"listing\">\n" +
     "    <div class=\"listing-section\">\n" +
-    "      <span class=\"value\" ng-bind=\"post.view_count\"></span>&nbsp;\n" +
+    "      <span class=\"value\" ng-bind=\"post.views_count\"></span>&nbsp;\n" +
     "      <br>\n" +
     "      <small class=\"text-muted\">VIEWS</small>\n" +
     "    </div>\n" +
@@ -659,7 +665,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"row\">\n" +
     "      <div class=\"col-md-12 text-center\">\n" +
     "        <div class=\"logo logo-25 ms-animation-zoom-in\">\n" +
-    "          <span class=\"fa fa-location-arrow glyphicon-ring-wrap\"></span> \n" +
+    "          <span class=\"btn btn-inverse ms-fab\">\n" +
+    "            <span class=\"fa fa-location-arrow\"></span>\n" +
+    "          </span> \n" +
     "        </div>\n" +
     "        <h1 class=\"brand-name\">\n" +
     "          spredit\n" +
