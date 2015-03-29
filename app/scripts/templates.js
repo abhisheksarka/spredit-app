@@ -98,10 +98,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "    <div class=\"secondary\">\n" +
     "      <small ng-bind=\"comment.content\" class=\"text-muted\"></small>\n" +
-    "      <br>\n" +
+    "      <!-- <br>\n" +
     "      <div class=\"list-actions\">\n" +
     "        <div ms-comment-actions comment=\"comment\"></div>\n" +
-    "      </div>\n" +
+    "      </div -->\n" +
     "    </div>\n" +
     "    <div class=\"clearfix\"></div>\n" +
     "  </div>\n" +
