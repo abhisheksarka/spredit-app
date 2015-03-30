@@ -11,7 +11,7 @@ body#page-index {
     }
   }
   .logo{
-    top: -33px;
+    top: -27px;
     margin-bottom: 100px;
     position: relative;
     .glyphicon-ring-wrap {
@@ -55,6 +55,7 @@ body#page-index {
   }
   #main-section {
     background-image: url('../images/landing_page_cover.jpg');
+    background-size: 100%;
     position: relative;
     .layer {
       position: absolute;
@@ -62,7 +63,7 @@ body#page-index {
       right: 0px;
       top: 0px;
       bottom: 0px;
-      background-color: rgba(0,0,0,0.6);
+      background-color: rgba(0,0,0,0.8);
     }
   }
   #second-section {
