@@ -6,15 +6,21 @@
       },
       link: function($scope, $element, $attributes) {
         var offset = parseInt($attributes.offset || 0),
-            minHeight = parseInt($attributes.minHeight || 99999);
+            minHeight = parseInt($attributes.minHeight || 99999),
+            responsive = $attributes.responsive;
 
         function setHeight() {
+          
           var height = ($window.innerHeight - offset);
           if(height < minHeight) {
             height = minHeight;
           };
           $scope.msAutoHeight = height;
           height = height + 'px';
+
+          if (!window.matchMedia('(min-width: 992px)').matches && responsive) {
+            height = "auto"; 
+          };
           $element.css({ height: height });
         };
         

@@ -670,6 +670,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  \n" +
     "</div>\n" +
     "<div ms-auto-height=\"sectionHeight\" offset=\"60\" min-height=\"600\" class=\"section\" id=\"main-section\">\n" +
+    "  <div class=\"layer\"></div>\n" +
     "  <div class=\"container\">\n" +
     "    <div class=\"row\">\n" +
     "      <div class=\"col-md-12 text-center\">\n" +
@@ -695,47 +696,48 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "              data-unauthorized=\"unauthorized(response)\" \n" +
     "              data-unknown=\"unknown(response)\"></span>\n" +
     "      </div>\n" +
-    "      <!-- <div class=\"col-md-12\" style=\"height: 500px; background: rgb(245,245,245); color: #333\">\n" +
-    "        <h2>A network that revolves around information <br>not your friends, followers or connections</h2>\n" +
-    "      </div> -->\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n" +
-    "<div class=\"section\" style=\"height: {{sectionHeight + 60}}px; overflow: hidden;\" id=\"second-section\">\n" +
-    "  <div class=\"container text-center\">\n" +
-    "    <div class=\"row\">\n" +
-    "      <div class=\"col-md-12\">\n" +
-    "        <h1 class=\"section-heading\">How it works</h1>\n" +
-    "      </div>\n" +
-    "    </div>\n" +
-    "    <div class=\"row desc-section\">\n" +
-    "      <div class=\"col-md-3 text-center\">\n" +
-    "        <span class=\"glyphicon glyphicon-camera desc-icon\"></span>\n" +
-    "        <br>\n" +
-    "        <span class=\"desc-text\">\n" +
-    "          Publish a link, photo or any information you want\n" +
-    "        </span>\n" +
-    "      </div>\n" +
-    "      <div class=\"col-md-3\">\n" +
-    "        <span class=\"glyphicon glyphicon-map-marker desc-icon\"></span>\n" +
-    "        <br>\n" +
-    "        <span class=\"desc-text\">It instantly propagates to the people around you</span>\n" +
-    "      </div>\n" +
-    "      <div class=\"col-md-3\">\n" +
-    "        <span class=\"glyphicon glyphicon-eye-open desc-icon\"></span>\n" +
-    "        <br>\n" +
-    "        <span class=\"desc-text\">Anyone who sees your post can choose to spread it further or contain it</span>\n" +
-    "      </div>\n" +
-    "      <div class=\"col-md-3\">\n" +
-    "        <span class=\"glyphicon glyphicon-globe desc-icon\"></span>\n" +
-    "        <br>\n" +
-    "        <span class=\"desc-text\">That's it, interesting information keeps on propagating while boring information will be contained</span>\n" +
-    "      </div>\n" +
+    "<div class=\"section\" ms-auto-height=\"sectionHeight\" offset=\"60\" min-height=\"600\" id=\"second-section\" responsive=\"true\">\n" +
+    "  <div class=\"top\">\n" +
+    "    <div class=\"container text-center\">\n" +
+    "      <h1>\n" +
+    "        <strong>How it works...</strong><br>\n" +
+    "        <span class=\"fa fa-cogs\"></span>\n" +
+    "      </h1>\n" +
+    "      <h3 class=\"text-muted-7\">Having an audience in thousands and possibly in millions is easier than you think</h3>\n" +
     "    </div>\n" +
     "  </div>\n" +
-    "  <div class=\"row desc-section\">\n" +
-    "    <div class=\"col-md-12\">\n" +
-    "      <img src=\"../images/intro-product.png\"/>\n" +
+    "  <div class=\"container text-center\">\n" +
+    "    <div class=\"row\">\n" +
+    "      <div class=\"col-md-4\">\n" +
+    "        <span class=\"desc-icon bg-danger\">\n" +
+    "          <span class=\"fa fa-bullhorn\"></span>\n" +
+    "        </span>\n" +
+    "        <h3><strong>Publish</strong></h3>\n" +
+    "        <p class=\"text-muted\">\n" +
+    "          Publish a photo, video, link, ask a question or any form of information you want.\n" +
+    "        </p>\n" +
+    "      </div>\n" +
+    "      <div class=\"col-md-4\">\n" +
+    "        <span class=\"desc-icon bg-danger\">\n" +
+    "          <span class=\"fa fa-map-marker\"></span>\n" +
+    "        </span>\n" +
+    "        <h3><strong>Propagate</strong></h3>\n" +
+    "        <p class=\"text-muted\">\n" +
+    "          It instantely propagates to all the people around you based on your location.\n" +
+    "        </p>\n" +
+    "      </div>\n" +
+    "      <div class=\"col-md-4\">\n" +
+    "        <span class=\"desc-icon bg-danger\">\n" +
+    "          <span class=\"fa fa-location-arrow\"></span>\n" +
+    "        </span>\n" +
+    "        <h3><strong>Spread</strong></h3>\n" +
+    "        <p class=\"text-muted\">\n" +
+    "          Every person who views your post can choose to spread it further or contain it.\n" +
+    "        </p>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n" +
