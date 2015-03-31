@@ -3,36 +3,53 @@ body#page-index {
   padding-left: 0px !important;
   color: white;
   nav.navbar {
-    background: white;
-    margin-bottom: 0px !important;
-    @include ms-box-shadow(0px, 0px, 10px, rgba(0,0,0,0.5));
+    .rainbow-dash {
+      opacity: 0;
+    }
+    background: transparent !important;
+    margin-bottom: -107px !important;
+    @include ms-box-shadow(0px, 0px, 0px, rgba(0,0,0,0.5));
+    z-index: 2;
+    position: relative;
     a {
-      color: $brand-info !important;
+      color: white !important;
+      opacity: 0.6;
+      font-size: 16px;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
   .logo{
-    top: -27px;
-    margin-bottom: 100px;
+    top: 150px;
+    margin-bottom: 70px;
+    font-size: 50px;
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    height: 100px;
+    width: 100px;
+    line-height: 1.2;
     position: relative;
-    .glyphicon-ring-wrap {
-      padding: 18px;
-      border: none;
-      background: #333;
-      @include ms-box-shadow(0px, 0px, 10px, rgba(0,0,0,0.5));
+    .fa {
+      color: rgba(255,255,255,0.4);
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+      -webkit-text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+      -moz-text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+      -ms-text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
     }
   }
   .brand-name { 
     margin-top: 180px;
     font-size: 70px;
     margin-bottom: 10px;
-    font-weight: 400;
+    font-weight: 300;
     .glyphicon {
       font-size: 54px;
     }
   }
   .brand-tagline {
     opacity: 0.6;
-    font-weight: 400;
+    font-weight: 300;
     margin-bottom: 10px;
   }
   img.brand-responsive{
@@ -54,7 +71,7 @@ body#page-index {
     }
   }
   #main-section {
-    background-image: url('../images/landing_page_cover.jpg');
+    background-image: url('../images/landing_page_cover_blurred.jpg');
     background-size: 100%;
     position: relative;
     .layer {
@@ -63,13 +80,13 @@ body#page-index {
       right: 0px;
       top: 0px;
       bottom: 0px;
-      background-color: rgba(0,0,0,0.8);
+      background-color: rgba(0,0,0,0.6);
     }
   }
   #second-section {
     background: white;
     .top {
-      background: $brand-amber;
+      background: $brand-teal;
       color: white !important;
       padding-top: 50px;
       padding-bottom: 50px;
@@ -81,6 +98,7 @@ body#page-index {
         margin-top: 10px;
       }
       &:hover {
+        background: $brand-green;
       }
     }
   }
@@ -96,7 +114,7 @@ body#page-index {
     color: #333;
   }
   #sign-in-section {
-    background: rgba(0,0,0,0.6);
+    background: rgba(255,255,255,0.1);
     padding: 25px;
     position: absolute;
     bottom: 0px;

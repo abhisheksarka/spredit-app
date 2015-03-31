@@ -212,12 +212,24 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <ul class=\"nav navbar-nav\">\n" +
     "      <li>\n" +
     "        <a href=\"https://www.facebook.com/pages/Spredit/849011651809054\" target=\"_blank\">\n" +
-    "          <span class=\"fa fa-facebook\"></span>\n" +
+    "          <span class=\"fa fa-facebook\"></span> Like\n" +
     "        </a>\n" +
     "      </li>\n" +
     "      <li>\n" +
     "        <a href=\"https://www.twitter.com/spreditapp\" target=\"_blank\">\n" +
-    "          <span class=\"fa fa-twitter\"></span>\n" +
+    "          <span class=\"fa fa-twitter\"></span> Follow\n" +
+    "        </a>\n" +
+    "      </li>\n" +
+    "    </ul>\n" +
+    "    <ul class=\"nav navbar-nav navbar-right\">\n" +
+    "      <li>\n" +
+    "        <a>\n" +
+    "          How it works\n" +
+    "        </a>\n" +
+    "      </li>\n" +
+    "      <li>\n" +
+    "        <a>\n" +
+    "          Get started\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
@@ -669,21 +681,21 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<div ms-section-scroll=\"[]\">\n" +
     "  \n" +
     "</div>\n" +
-    "<div ms-auto-height=\"sectionHeight\" offset=\"60\" min-height=\"600\" class=\"section\" id=\"main-section\">\n" +
+    "<div ms-auto-height=\"sectionHeight\" offset=\"-42\" min-height=\"600\" class=\"section\" id=\"main-section\">\n" +
     "  <div class=\"layer\"></div>\n" +
     "  <div class=\"container\">\n" +
     "    <div class=\"row\">\n" +
     "      <div class=\"col-md-12 text-center\">\n" +
     "        <div class=\"logo logo-25 ms-animation-zoom-in\">\n" +
-    "          <span class=\"btn btn-inverse ms-fab\">\n" +
+    "          <span>\n" +
     "            <span class=\"fa fa-location-arrow\"></span>\n" +
     "          </span> \n" +
     "        </div>\n" +
     "        <h1 class=\"brand-name\">\n" +
-    "          spredit\n" +
+    "          Introducing Spredit\n" +
     "        </h1>\n" +
     "        <h3 class=\"brand-tagline\">\n" +
-    "          <strong>The new way to spread information, around the world...</strong><br>\n" +
+    "          The new way to spread information, <br>around the world...<br>\n" +
     "        </h3>\n" +
     "      </div>\n" +
     "    </div>\n" +
@@ -699,41 +711,41 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n" +
-    "<div class=\"section\" ms-auto-height=\"sectionHeight\" offset=\"60\" min-height=\"600\" id=\"second-section\" responsive=\"true\">\n" +
+    "<div class=\"section\" ms-auto-height=\"sectionHeight\" offset=\"0\" min-height=\"600\" id=\"second-section\" responsive=\"true\">\n" +
     "  <div class=\"top\">\n" +
     "    <div class=\"container text-center\">\n" +
     "      <h1>\n" +
-    "        <strong>How it works...</strong><br>\n" +
+    "        How it works...<br>\n" +
     "        <span class=\"fa fa-cogs\"></span>\n" +
     "      </h1>\n" +
-    "      <h3 class=\"text-muted-7\">Having an audience in thousands and possibly in millions is easier than you think</h3>\n" +
+    "      <h3 class=\"text-muted-7\">Having an audience in thousands and possibly in millions is easier than you think.</h3>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "  <div class=\"container text-center\">\n" +
     "    <div class=\"row\">\n" +
     "      <div class=\"col-md-4\">\n" +
-    "        <span class=\"desc-icon bg-danger\">\n" +
+    "        <span class=\"desc-icon bg-success\">\n" +
     "          <span class=\"fa fa-bullhorn\"></span>\n" +
     "        </span>\n" +
-    "        <h3><strong>Publish</strong></h3>\n" +
+    "        <h3>Publish</h3>\n" +
     "        <p class=\"text-muted\">\n" +
     "          Publish a photo, video, link, ask a question or any form of information you want.\n" +
     "        </p>\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4\">\n" +
-    "        <span class=\"desc-icon bg-danger\">\n" +
+    "        <span class=\"desc-icon bg-success\">\n" +
     "          <span class=\"fa fa-map-marker\"></span>\n" +
     "        </span>\n" +
-    "        <h3><strong>Propagate</strong></h3>\n" +
+    "        <h3>Propagate</h3>\n" +
     "        <p class=\"text-muted\">\n" +
     "          It instantely propagates to all the people around you based on your location.\n" +
     "        </p>\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4\">\n" +
-    "        <span class=\"desc-icon bg-danger\">\n" +
+    "        <span class=\"desc-icon bg-success\">\n" +
     "          <span class=\"fa fa-location-arrow\"></span>\n" +
     "        </span>\n" +
-    "        <h3><strong>Spread</strong></h3>\n" +
+    "        <h3>Spread</h3>\n" +
     "        <p class=\"text-muted\">\n" +
     "          Every person who views your post can choose to spread it further or contain it.\n" +
     "        </p>\n" +
