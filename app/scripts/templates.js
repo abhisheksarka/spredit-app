@@ -753,14 +753,20 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n" +
-    "<!-- <div class=\"section\" style=\"height: {{sectionHeight + 60}}px\" id=\"third-section\">\n" +
-    "  <div class=\"container\">\n" +
-    "    \n" +
+    "<!-- <div class=\"section\" ms-auto-height=\"sectionHeight\" offset=\"0\" min-height=\"600\" id=\"third-section\" responsive=\"true\">\n" +
+    "  <div class=\"top\">\n" +
+    "    <div class=\"container text-center\">\n" +
+    "      <h1>\n" +
+    "        Get Started...<br>\n" +
+    "        <span class=\"fa fa-user\"></span>\n" +
+    "      </h1>\n" +
+    "      <h3 class=\"text-muted-7\">It's a one click sign up. We promise!</h3>\n" +
+    "    </div>\n" +
     "  </div>\n" +
-    "</div>\n" +
-    "<div class=\"section\" style=\"height: {{sectionHeight + 60}}px\" id=\"fourth-section\">\n" +
-    "  <div class=\"container\">\n" +
-    "    \n" +
+    "  <div class=\"container text-center\">\n" +
+    "    <div class=\"row\">\n" +
+    "      \n" +
+    "    </div>\n" +
     "  </div>\n" +
     "</div> -->"
   );

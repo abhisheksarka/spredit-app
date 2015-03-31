@@ -69,6 +69,18 @@ body#page-index {
       font-size: 3.6em;
       margin-bottom: 50px;
     }
+    .top {
+      color: white !important;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      margin-bottom: 30px;
+      @include ms-transition(background 1s);
+      .fa {
+        font-size: 70px;
+        opacity: 0.6;
+        margin-top: 10px;
+      }
+    }
   }
   #main-section {
     background-image: url('../images/landing_page_cover_blurred.jpg');
@@ -87,23 +99,19 @@ body#page-index {
     background: white;
     .top {
       background: $brand-teal;
-      color: white !important;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      margin-bottom: 30px;
-      @include ms-transition(background 1s);
-      .fa-cogs {
-        font-size: 70px;
-        opacity: 0.6;
-        margin-top: 10px;
-      }
       &:hover {
         background: $brand-green;
       }
     }
   }
   #third-section {
-    background: $brand-indigo;
+    background: white;
+    .top {
+      background: $brand-indigo;
+      &:hover {
+        background: $brand-blue;
+      }
+    }
   }
   #fourth-section {
     background: $brand-blue;
