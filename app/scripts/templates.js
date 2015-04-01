@@ -679,7 +679,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<div ms-section-scroll=\"[]\">\n" +
     "  \n" +
     "</div>\n" +
-    "<div ms-auto-height=\"sectionHeight\" offset=\"-20\" min-height=\"600\" class=\"section\" id=\"main-section\">\n" +
+    "<div ms-auto-height=\"sectionHeight\" offset=\"-40\" min-height=\"600\" class=\"section\" id=\"main-section\">\n" +
     "  <div class=\"layer\"></div>\n" +
     "  <div class=\"container\">\n" +
     "    <div class=\"row\">\n" +
