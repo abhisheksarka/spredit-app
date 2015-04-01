@@ -54,11 +54,14 @@ nav.navbar {
   padding-bottom: 8px;
   .brand-name {
     font-family: 'Lato', sans-serif;
+    font-weight: 800;
+    top: 4px;
+    position: relative;
   }
   .brand-icon {
     color: $brand-success;
     position: relative;
-    top: 1px;
+    top: 5px;
   }
   .navbar-nav {
     margin: 0px;
