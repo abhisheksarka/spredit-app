@@ -692,10 +692,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          </span> \n" +
     "        </div>\n" +
     "        <h1 class=\"brand-name\">\n" +
-    "          Introducing Spredit\n" +
+    "          Spredit\n" +
     "        </h1>\n" +
     "        <h3 class=\"brand-tagline\">\n" +
-    "          The new way to spread information, <br>around the world...<br>\n" +
+    "          <strong>The new way to spread information, <br>around the world...<br></strong>\n" +
     "        </h3>\n" +
     "      </div>\n" +
     "    </div>\n" +
