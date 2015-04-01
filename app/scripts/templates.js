@@ -675,7 +675,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/pages/index/template.html',
-    "<div id=\"bg-backdrop\"></div> -->\n" +
+    "<div id=\"bg-backdrop\"></div>\n" +
     "<div ms-section-scroll=\"[]\">\n" +
     "  \n" +
     "</div>\n" +

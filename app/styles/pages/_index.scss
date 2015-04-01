@@ -95,6 +95,9 @@ body#page-index {
   #main-section {
     background-image: url('../images/landing_page_cover_blurred.jpg');
     background-size: 100%;
+    @media all and (max-width: $screen-md) {
+      background-size: auto;
+    }
     position: relative;
     .layer {
       position: absolute;
