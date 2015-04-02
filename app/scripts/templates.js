@@ -225,11 +225,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <!-- <li>\n" +
     "        <div class=\"fb-share-button\" data-href=\"https://developers.facebook.com/docs/plugins/\" data-layout=\"button_count\"></div>\n" +
     "      </li>\n" +
+    "      -->\n" +
     "      <li>\n" +
     "        <a>\n" +
-    "          Get started\n" +
+    "          How it works\n" +
     "        </a>\n" +
-    "      </li> -->\n" +
+    "      </li>\n" +
     "    </ul>\n" +
     "  </div>\n" +
     "</nav>"
