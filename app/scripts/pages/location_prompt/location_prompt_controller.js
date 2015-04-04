@@ -5,10 +5,13 @@
       $scope.masterCtrl.setTitle('Location Required');
       $scope.currentUser = Session.currentUser;
       $scope.redirectToHome = redirectToHome;
+      redirectToHome();
     };
 
     function redirectToHome() {
-      $location.path('/');
+      if ($scope.currentUser.location.isValid()) {
+        $location.path('/home');
+      };
     };
     
     init();

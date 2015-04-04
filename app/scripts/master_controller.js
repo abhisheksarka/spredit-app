@@ -17,8 +17,17 @@
         getTitle: function() {
           return this.title;
         },
+        checkLocation: checkLocation,
         config: $window.ms.config,
         session: Session
+      };
+    };
+
+    function checkLocation() {
+      var u = Session.currentUser || { },
+          l = u.location || new Location({ });
+      if(!l.isValid()) {
+        $location.path('/location_prompt');
       };
     };
 

@@ -3,6 +3,7 @@
     var currentIndex;
 
     function init() {
+      $scope.masterCtrl.checkLocation();
       currentIndex = -1;
       $scope.currentUser = Session.currentUser;
       $scope.masterCtrl.setBodyId('page-home');

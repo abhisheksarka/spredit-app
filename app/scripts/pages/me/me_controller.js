@@ -3,6 +3,7 @@
     var postsPaginator;
 
     function init() {
+      $scope.masterCtrl.checkLocation();
       $scope.masterCtrl.setBodyId('page-me');
       $scope.masterCtrl.setTitle('Me');
       $scope.Post = Post;

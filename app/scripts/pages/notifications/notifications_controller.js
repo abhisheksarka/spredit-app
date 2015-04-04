@@ -3,6 +3,7 @@
     var postsPaginator;
 
     function init() {
+      $scope.masterCtrl.checkLocation();
       $scope.masterCtrl.setBodyId('page-notifications');
       $scope.masterCtrl.setTitle('Notifications');
       $scope.currentUser = Session.currentUser;
