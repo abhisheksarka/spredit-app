@@ -73,10 +73,11 @@ angular.module('ms', [
 
         var code = response.code,
             body = response.body,
-            messages = response.messages;
+            messages = response.messages,
+            meta = response.meta || { };
 
         // show validation messages
-        if(code == 1300) {
+        if(code == 1300 && !meta.noErrorFlash) {
           $rootScope.$broadcast('ms.events.flash', {
             message: _.values(messages)[0],
             type: 'danger' 

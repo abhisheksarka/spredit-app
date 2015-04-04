@@ -3,7 +3,10 @@
     function init() {
       new View({
         viewable_type: $scope.viewableType,
-        viewable_id: $scope.viewable.id
+        viewable_id: $scope.viewable.id,
+        meta: {
+          noErrorFlash: true
+        }
       }).$save();
     };
     
