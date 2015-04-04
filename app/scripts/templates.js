@@ -86,7 +86,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/comment/renderer/template.html',
     "<div class=\"ms-list-item comment-renderer\">\n" +
-    "  <div class=\"list-avatar\">\n" +
+    "  <div class=\"list-avatar profile-photo\">\n" +
     "    <img ng-src=\"{{comment.comment_publishable.profile_picture}}\"/>\n" +
     "  </div>\n" +
     "  <div class=\"list-content\">\n" +
@@ -660,6 +660,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <h4 class=\"text-muted\">\n" +
     "        No posts to show right now\n" +
     "      </h4>\n" +
+    "    </div>\n" +
+    "    <div ng-if=\"loadState.isWorking\" class=\"text-center\">\n" +
+    "      <div ms-spinner></div>\n" +
+    "      <p><small class=\"text-muted\">Please wait</small></p>\n" +
     "    </div>\n" +
     "    <div ng-if=\"currentPost.id\" \n" +
     "         ms-animator=\"ms-animation-zoom-in\" \n" +

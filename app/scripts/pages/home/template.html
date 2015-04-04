@@ -6,6 +6,10 @@
         No posts to show right now
       </h4>
     </div>
+    <div ng-if="loadState.isWorking" class="text-center">
+      <div ms-spinner></div>
+      <p><small class="text-muted">Please wait</small></p>
+    </div>
     <div ng-if="currentPost.id" 
          ms-animator="ms-animation-zoom-in" 
          on-change-in="{{currentPost.id}}">
