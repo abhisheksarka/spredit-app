@@ -8,7 +8,8 @@
       $scope.errorCallback = $scope.errorCallback || angular.noop;
 
       $scope.geolocate = geolocate;
-      $scope.reqState = StateHandler.getInstance(true);   
+      $scope.reqState = StateHandler.getInstance(true); 
+      $scope.manualSave = manualSave;  
     };
 
     function geolocate() {
@@ -17,13 +18,25 @@
       then(geolocated, notGeolocated);
     };
 
+    function manualSave() {
+      var m = $scope.t.manualLocation,
+          l = m.geometry.location;
+      $scope.reqState.initiate();
+      geolocated({
+        coords: {
+          latitude: l.lat(),
+          longitude: l.lng()
+        }
+      });
+    };
+
     function geolocated(position) {
       var c = Session.currentUser;
       angular.extend(c.location, buildParams(position.coords));
       // after geolocation is complete save or update the existing data for the user    
       c.location.$saveOrUpdate().then(function(response){
         $scope.reqState.success();
-
+        $scope.t.showManualInput = false;
         // fire the callback so the client of the directive can handle it accordingly 
         $scope.successCallback({response: response});
       }, function(response, status, headers, config){

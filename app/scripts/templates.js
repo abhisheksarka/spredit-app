@@ -173,7 +173,36 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <div data-ng-if=\"reqState.isError\">\n" +
     "    <p><small class=\"text-danger\">Bummer! Unable to geolocate you right now.</small></p>\n" +
     "  </div>\n" +
-    "  <button class=\"btn btn-{{btnClass}}\" ng-bind=\"label\" ng-click=\"geolocate()\" ng-if=\"!reqState.isWorking\"></button>\n" +
+    "  <button class=\"btn btn-{{btnClass}}\" \n" +
+    "          ng-bind=\"label\" \n" +
+    "          ng-click=\"geolocate()\" \n" +
+    "          ng-disabled=\"reqState.isWorking\"\n" +
+    "          ng-if=\"!t.showManualInput\">\n" +
+    "  </button>\n" +
+    "  <br><br>\n" +
+    "  <small>Having problems with geolocation? \n" +
+    "    <a ng-click=\"t.showManualInput=!t.showManualInput\">\n" +
+    "      Set your location manually\n" +
+    "    </a>\n" +
+    "  </small>\n" +
+    "  <form name=\"manualLocationInputForm\" ng-if=\"t.showManualInput\">\n" +
+    "    <input type=\"text\" \n" +
+    "           g-places-autocomplete \n" +
+    "           ng-model=\"t.manualLocation\" \n" +
+    "           class=\"form-control\" \n" +
+    "           ng-if=\"t.showManualInput\" \n" +
+    "           placeholder=\"Select a location\" \n" +
+    "           style=\"text-align: center\"\n" +
+    "           required=\"true\"\n" +
+    "           ng-required=\"true\"/>\n" +
+    "           <br>\n" +
+    "    <button class=\"btn btn-{{btnClass}}\"  \n" +
+    "            ng-click=\"manualSave()\" \n" +
+    "            ng-disabled=\"reqState.isWorking || manualLocationInputForm.$invalid\">\n" +
+    "            <span ng-if=\"reqState.isWorking\">Saving...</span>\n" +
+    "            <span ng-if=\"!reqState.isWorking\">Save</span>\n" +
+    "    </button>  \n" +
+    "  </form>   \n" +
     "</span>"
   );
 
@@ -794,7 +823,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <div class=\"ms-card location-box\">\n" +
     "    <img src=\"../images/map_128.png\" class=\"location-aware-icon\"/>\n" +
     "    <p>\n" +
-    "      <a href=\"#/\">Spredit</a> is a location aware app, which means to proceed furthur you need to give us permission to access your current location.\n" +
+    "      <a href=\"#/\">Spredit</a> is a location aware app, to proceed furthur you need to give us permission to access your current location.\n" +
     "    </p>\n" +
     "    <br>\n" +
     "    <span ms-locator success-callback=\"redirectToHome(response)\"></span>\n" +

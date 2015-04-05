@@ -6,5 +6,34 @@
   <div data-ng-if="reqState.isError">
     <p><small class="text-danger">Bummer! Unable to geolocate you right now.</small></p>
   </div>
-  <button class="btn btn-{{btnClass}}" ng-bind="label" ng-click="geolocate()" ng-if="!reqState.isWorking"></button>
+  <button class="btn btn-{{btnClass}}" 
+          ng-bind="label" 
+          ng-click="geolocate()" 
+          ng-disabled="reqState.isWorking"
+          ng-if="!t.showManualInput">
+  </button>
+  <br><br>
+  <small>Having problems with geolocation? 
+    <a ng-click="t.showManualInput=!t.showManualInput">
+      Set your location manually
+    </a>
+  </small>
+  <form name="manualLocationInputForm" ng-if="t.showManualInput">
+    <input type="text" 
+           g-places-autocomplete 
+           ng-model="t.manualLocation" 
+           class="form-control" 
+           ng-if="t.showManualInput" 
+           placeholder="Select a location" 
+           style="text-align: center"
+           required="true"
+           ng-required="true"/>
+           <br>
+    <button class="btn btn-{{btnClass}}"  
+            ng-click="manualSave()" 
+            ng-disabled="reqState.isWorking || manualLocationInputForm.$invalid">
+            <span ng-if="reqState.isWorking">Saving...</span>
+            <span ng-if="!reqState.isWorking">Save</span>
+    </button>  
+  </form>   
 </span>

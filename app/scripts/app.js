@@ -20,6 +20,7 @@ angular.module('ms', [
   'uiGmapgoogle-maps',
   'angularMoment',
   'angularFileUpload',
+  'google.places',
   
   // application modules
   'ms.core',
