@@ -24,9 +24,11 @@
 
     function save(type) {
       if($scope.requestState.isWorking) return;
-      
       $scope.requestState.initiate();
       $scope.spread.action = type;
+      $scope.spread.meta = {
+        errorFlash: true
+      };
       $scope.spread.$save().then(function(response){
         broadcast(response, type);
         $scope.requestState.success();

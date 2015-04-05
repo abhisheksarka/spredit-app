@@ -20,6 +20,9 @@
       if(postable.id) {
         self._setPostable(postable);
       };
+      self.meta = {
+        errorFlash: true
+      };
       return self.$save();        
     };
 

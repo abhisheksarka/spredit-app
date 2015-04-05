@@ -3,6 +3,7 @@
     
     function init() {
       pristinePost();
+      $scope.reqState = StateHandler.getInstance();
       $scope.createPost = createPost;
     };
 
@@ -13,11 +14,20 @@
     };
 
     function createPost() {
-      $scope.post.$deriveAndSave($scope.postable).then(afterSuccessfulSave);
+      $scope.reqState.initiate();
+      $scope.post
+      .$deriveAndSave($scope.postable).then(afterSuccessfulSave, afterFailedSave);
     };
 
-    function afterSuccessfulSave() {
+    function afterSuccessfulSave(response) {
       pristinePost();
+      $scope.reqState.success();
+      $scope.success({response: response});
+    };
+
+    function afterFailedSave(response) {
+      $scope.reqState.error();
+      $scope.error({response: response});
     };
 
 

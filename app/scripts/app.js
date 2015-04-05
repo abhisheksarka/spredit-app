@@ -61,7 +61,7 @@ angular.module('ms', [
 ]);
 
 (function() {
-  function responseManager($injector, $rootScope, _, $cookies, $window) {
+  function responseManager($injector, $rootScope, _, $cookies, $window, $q) {
     return {
       request: function(config) {
         return config;
@@ -76,26 +76,29 @@ angular.module('ms', [
             body = response.body,
             messages = response.messages,
             meta = response.meta || { };
+        // when some error happened      
+        if(code != 1000) {
+          if(meta.errorFlash) {
+            $rootScope.$broadcast('ms.events.flash', {
+              message: _.values(messages)[0],
+              type: 'danger' 
+            });
+          };
+          // when session is no more valid
+          if(code == 1200) {
+            refresh();
+          };
 
-        // show validation messages
-        if(code == 1300 && !meta.noErrorFlash) {
-          $rootScope.$broadcast('ms.events.flash', {
-            message: _.values(messages)[0],
-            type: 'danger' 
-          });
-        };
-        // when session is no more valid
-        if(code == 1200) {
-          refresh();
-        };
-
-        function refresh() {
-          var Session = $injector.get('SessionModel');
-          Session.unsetAuthProperties();
-          $window.location.reload();
-        };
-        res.data = body;
-        return res;
+          function refresh() {
+            var Session = $injector.get('SessionModel');
+            Session.unsetAuthProperties();
+            $window.location.reload();
+          };
+          return $q.reject(res.data);
+        } else {
+          res.data = body;
+          return res;
+        }
       }
     };  
   };
@@ -109,6 +112,7 @@ angular.module('ms', [
       'UnderscoreService' ,
       '$cookies', 
       '$window',
+      '$q',
       responseManager
     ]);
   }]);

@@ -335,7 +335,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "              name=\"content\">\n" +
     "    </textarea>\n" +
     "    <br>\n" +
-    "    <input type=\"button\" class=\"btn btn-inverse btn-sm\" value=\"Spread it\" ng-disabled=\"newPostForm.$invalid\" ng-click=\"createPost()\"/>\n" +
+    "    <button class=\"btn btn-inverse btn-sm\" ng-disabled=\"newPostForm.$invalid || reqState.isWorking\" ng-click=\"createPost()\">\n" +
+    "      <span ng-if=\"reqState.isWorking\">Publishing</span>\n" +
+    "      <span ng-if=\"!reqState.isWorking\">Publish</span>\n" +
+    "    </button>\n" +
     "  </form>\n" +
     "</div>"
   );
@@ -344,7 +347,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/post/creator_modal/template.html',
     "<div class=\"modal-body\">\n" +
     "  <br>\n" +
-    "  <span ms-post-creator></span>\n" +
+    "  <span ms-post-creator success=\"success(response)\" error=\"error(response)\"></span>\n" +
     "</div>"
   );
 
