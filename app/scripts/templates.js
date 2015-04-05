@@ -513,7 +513,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        <span class=\"ms-fab btn btn-primary glyphicon\">\n" +
     "          <span class=\"fa fa-facebook\"></span> \n" +
     "        </span>\n" +
-    "        <span>Like us on Facebook</span>\n" +
+    "        <span>Like us</span>\n" +
     "      </a>\n" +
     "    </li>\n" +
     "    <li>\n" +
@@ -521,7 +521,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        <span class=\"ms-fab btn btn-info glyphicon\">\n" +
     "          <span class=\"fa fa-twitter\"></span> \n" +
     "        </span>\n" +
-    "        <span>Follow us on Twitter</span>\n" +
+    "        <span>Follow us</span>\n" +
     "      </a>\n" +
     "    </li> \n" +
     "  </ul>\n" +

@@ -18,7 +18,7 @@
           $scope.msAutoHeight = height;
           height = height + 'px';
 
-          if (!window.matchMedia('(min-width: 992px)').matches && responsive) {
+          if (!window.matchMedia('(min-width: 768px)').matches && responsive) {
             height = "auto"; 
           };
           $element.css({ height: height });

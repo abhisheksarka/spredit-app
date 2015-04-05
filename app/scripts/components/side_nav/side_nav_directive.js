@@ -26,7 +26,7 @@
 
         angular.element(window).resize(setOpen);
         function setOpen() {
-          if (window.matchMedia('(min-width: 992px)').matches) {
+          if (window.matchMedia('(min-width: 768px)').matches) {
             if(!SideNavService.isOpen) {
               SideNavService.open();
             } 
