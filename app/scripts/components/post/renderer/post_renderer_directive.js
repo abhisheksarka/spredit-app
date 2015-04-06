@@ -8,7 +8,8 @@
         recordView: '=?',
         showAllActions: '=',
         spreaderDisabled: '=?',
-        linkifyPostActions: '=?'
+        linkifyPostActions: '=?',
+        showFullMedia: '=?'
       },
       replace: true,
       controllerAs: 'postRendererCtrl',

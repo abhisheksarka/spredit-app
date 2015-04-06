@@ -463,7 +463,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </div>\n" +
     "      <div class=\"clearfix\"></div>\n" +
     "    </div>\n" +
-    "    <div class=\"rich-media\" ng-if=\"post.postable_type=='PostPhoto'\">\n" +
+    "    <div class=\"rich-media\" ng-if=\"post.postable_type=='PostPhoto'\" ng-class=\"{'show-full-media': showFullMedia}\">\n" +
     "      <img ng-src=\"{{post.postable.photo.url}}\" width=\"100%\"/>\n" +
     "      <div class=\"rich-media-actions\">\n" +
     "        <span ms-full-image=\"post.postable.photo.url\"></span>\n" +
@@ -700,7 +700,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div ng-if=\"currentPost.id\" \n" +
     "         ms-animator=\"ms-animation-zoom-in\" \n" +
     "         on-change-in=\"{{currentPost.id}}\">\n" +
-    "      <div ms-post-renderer post=\"currentPost\" selected-action=\"actions.selected\" record-view=\"true\" show-all-actions=\"true\"></div>\n" +
+    "      <div ms-post-renderer post=\"currentPost\" \n" +
+    "           selected-action=\"actions.selected\" \n" +
+    "           record-view=\"true\" \n" +
+    "           show-all-actions=\"true\" \n" +
+    "           show-full-media=\"true\">\n" +
+    "      </div>\n" +
     "      <br>\n" +
     "      <div ms-post-details post=\"currentPost\" action=\"actions.selected\">\n" +
     "      </div>\n" +
@@ -997,7 +1002,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "\t\t\t\t\t post=\"post\" \n" +
     "\t\t\t\t\t selected-action=\"selectedAction\" \n" +
     "\t\t\t\t\t record-view=\"false\" \n" +
-    "           show-all-actions=\"true\"></div>\n" +
+    "           show-full-media=\"true\"\n" +
+    "           show-all-actions=\"true\">\n" +
+    "      </div>\n" +
     "\t\t\t<br>\n" +
     "\t\t\t<div ms-post-details post=\"post\" action=\"selectedAction\"></div>\t\t \n" +
     "\t\t</div>\n" +
