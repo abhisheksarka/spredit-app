@@ -1010,6 +1010,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "\t\t\t\t\t record-view=\"false\" \n" +
     "           full-content=\"true\"\n" +
     "           full-media=\"true\"\n" +
+    "           spreader-disabled=\"true\"\n" +
     "           show-all-actions=\"true\">\n" +
     "      </div>\n" +
     "\t\t\t<br>\n" +
