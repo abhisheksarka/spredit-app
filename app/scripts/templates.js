@@ -463,14 +463,17 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </div>\n" +
     "      <div class=\"clearfix\"></div>\n" +
     "    </div>\n" +
-    "    <div class=\"rich-media\" ng-if=\"post.postable_type=='PostPhoto'\" ng-class=\"{'show-full-media': showFullMedia}\">\n" +
+    "    <div class=\"rich-media\" ng-if=\"post.postable_type=='PostPhoto'\" ng-class=\"{'show-full-media': fullMedia}\">\n" +
     "      <img ng-src=\"{{post.postable.photo.url}}\" width=\"100%\"/>\n" +
     "      <div class=\"rich-media-actions\">\n" +
     "        <span ms-full-image=\"post.postable.photo.url\"></span>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "    <div class=\"supporting-text\">\n" +
-    "      <span ms-linkify=\"post.content\"></span>\n" +
+    "      <span>\n" +
+    "        <span ms-linkify=\"post.strippedContent\"></span>\n" +
+    "        <span ng-if=\"post.isStripped\">... <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">read more</span>\n" +
+    "      </span>\n" +
     "      <span ng-if=\"post.content\">\n" +
     "        <br><br><hr>\n" +
     "        <div ms-spread-creator \n" +
@@ -704,7 +707,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "           selected-action=\"actions.selected\" \n" +
     "           record-view=\"true\" \n" +
     "           show-all-actions=\"true\" \n" +
-    "           show-full-media=\"true\">\n" +
+    "           full-media=\"true\">\n" +
     "      </div>\n" +
     "      <br>\n" +
     "      <div ms-post-details post=\"currentPost\" action=\"actions.selected\">\n" +
@@ -1002,7 +1005,8 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "\t\t\t\t\t post=\"post\" \n" +
     "\t\t\t\t\t selected-action=\"selectedAction\" \n" +
     "\t\t\t\t\t record-view=\"false\" \n" +
-    "           show-full-media=\"true\"\n" +
+    "           full-content=\"true\"\n" +
+    "           full-media=\"true\"\n" +
     "           show-all-actions=\"true\">\n" +
     "      </div>\n" +
     "\t\t\t<br>\n" +

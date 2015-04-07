@@ -9,7 +9,8 @@
         showAllActions: '=',
         spreaderDisabled: '=?',
         linkifyPostActions: '=?',
-        showFullMedia: '=?'
+        fullMedia: '=?',
+        fullContent: '=?'
       },
       replace: true,
       controllerAs: 'postRendererCtrl',

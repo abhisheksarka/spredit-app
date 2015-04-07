@@ -23,14 +23,17 @@
       </div>
       <div class="clearfix"></div>
     </div>
-    <div class="rich-media" ng-if="post.postable_type=='PostPhoto'" ng-class="{'show-full-media': showFullMedia}">
+    <div class="rich-media" ng-if="post.postable_type=='PostPhoto'" ng-class="{'show-full-media': fullMedia}">
       <img ng-src="{{post.postable.photo.url}}" width="100%"/>
       <div class="rich-media-actions">
         <span ms-full-image="post.postable.photo.url"></span>
       </div>
     </div>
     <div class="supporting-text">
-      <span ms-linkify="post.content"></span>
+      <span>
+        <span ms-linkify="post.strippedContent"></span>
+        <span ng-if="post.isStripped">... <a ng-href="#/posts/{{post.id}}" target="_blank">read more</span>
+      </span>
       <span ng-if="post.content">
         <br><br><hr>
         <div ms-spread-creator 
