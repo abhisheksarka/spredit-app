@@ -30,9 +30,10 @@
       </div>
     </div>
     <div class="supporting-text">
+      <h2 ng-bind="post.title" ng-if="post.title" class="post-title"></h2>
       <span>
         <span ms-linkify="post.strippedContent"></span>
-        <span ng-if="post.isStripped">... <a ng-href="#/posts/{{post.id}}" target="_blank">read more</span>
+        <span ng-if="post.isStripped">... <a ng-href="#/posts/{{post.id}}" target="_blank">read more</a></span>
       </span>
       <span ng-if="post.content">
         <br><br><hr>

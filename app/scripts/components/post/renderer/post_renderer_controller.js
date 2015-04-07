@@ -15,8 +15,11 @@
       $scope.post.isStripped = true;
       $scope.post.strippedContent = c.substr(0, 255);
     };
-
-    init();
+    $scope.$watch('post.id', function(nv){
+      if(nv) {
+        init();
+      }
+    })
   };
 
   angular.module('ms.components.post.renderer')

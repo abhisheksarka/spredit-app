@@ -329,7 +329,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<div class=\"post-creator text-center\">\n" +
     "  <form name=\"newPostForm\" novalidate>\n" +
     "    <div ms-post-photo-uploader postable-object=\"postable\" postable-refresh=\"refresh\"></div>\n" +
-    "    <textarea placeholder=\"Share something with the people near you...\" \n" +
+    "    <input type=\"text\" class=\"form-control\" placeholder=\"Title(max 120 characters)...\" ng-model=\"post.title\" name=\"title\" maxlength=\"120\"/>\n" +
+    "    <br>\n" +
+    "    <textarea placeholder=\"Content...\" \n" +
     "              class=\"form-control\" \n" +
     "              ng-model=\"post.content\"\n" +
     "              name=\"content\">\n" +
@@ -470,9 +472,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </div>\n" +
     "    </div>\n" +
     "    <div class=\"supporting-text\">\n" +
+    "      <h2 ng-bind=\"post.title\" ng-if=\"post.title\" class=\"post-title\"></h2>\n" +
     "      <span>\n" +
     "        <span ms-linkify=\"post.strippedContent\"></span>\n" +
-    "        <span ng-if=\"post.isStripped\">... <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">read more</span>\n" +
+    "        <span ng-if=\"post.isStripped\">... <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">read more</a></span>\n" +
     "      </span>\n" +
     "      <span ng-if=\"post.content\">\n" +
     "        <br><br><hr>\n" +

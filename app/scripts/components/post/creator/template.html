@@ -1,7 +1,9 @@
 <div class="post-creator text-center">
   <form name="newPostForm" novalidate>
     <div ms-post-photo-uploader postable-object="postable" postable-refresh="refresh"></div>
-    <textarea placeholder="Share something with the people near you..." 
+    <input type="text" class="form-control" placeholder="Title(max 120 characters)..." ng-model="post.title" name="title" maxlength="120"/>
+    <br>
+    <textarea placeholder="Content..." 
               class="form-control" 
               ng-model="post.content"
               name="content">
