@@ -5,7 +5,8 @@
       scope: { 
         connected: "&",
         unauthorized: "&",
-        unknown: "&"
+        unknown: "&",
+        loginDisabled: '=?'
       },
       replace: true,
       templateUrl: "app/scripts/components/fb_sdk/log_in/template.html",

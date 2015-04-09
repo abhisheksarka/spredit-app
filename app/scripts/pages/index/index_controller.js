@@ -1,17 +1,20 @@
 (function() {
-  function Controller($scope, Session, $location, Activity){
+  function Controller($scope, Session, $location, Activity, StateHandler){
     function init() {
       $scope.masterCtrl.setBodyId('page-index');
       $scope.connected = connected;
       $scope.unauthorized = unauthorized;
       $scope.unknown = unknown;
+      $scope.loginState = StateHandler.getInstance();
     };
 
     function connected(response) {
-      Session.signIn(response.authResponse).then(afterSignIn);
+      $scope.loginState.initiate();
+      Session.signIn(response.authResponse).then(afterSignIn, $scope.loginState.error);
     };
 
     function afterSignIn() {
+      $scope.loginState.success();
       redirectToHome();
     };
     
@@ -20,10 +23,11 @@
     };
 
     function unauthorized(response) {
-      
+      $scope.loginState.success();
     };
 
     function unknown(response) {
+      $scope.loginState.success();
     };
     init();
   };
@@ -32,6 +36,7 @@
     'SessionModel', 
     '$location',
     'ActivityModel',
+    'StateHandlerService',
     Controller
   ]);
 }());

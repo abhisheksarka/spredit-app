@@ -111,7 +111,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
-    "  <button class=\"btn btn-info fb-sign-in\" data-ng-click=\"login()\">Sign in with facebook</button>\n" +
+    "  <button class=\"btn btn-info fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"reqState.isWorking || loginDisabled\">Sign in with facebook</button>\n" +
     "</span>"
   );
 
@@ -753,6 +753,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          Reach out to thousands and possibly millions of people in a much easier way. No connections, friends or followers.\n" +
     "        </h4>\n" +
     "        <span ms-fb-log-in \n" +
+    "              login-disabled=\"loginState.isWorking\"\n" +
     "              data-connected=\"connected(response)\" \n" +
     "              data-unauthorized=\"unauthorized(response)\" \n" +
     "              data-unknown=\"unknown(response)\"></span>\n" +
@@ -1010,7 +1011,6 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "\t\t\t\t\t record-view=\"false\" \n" +
     "           full-content=\"true\"\n" +
     "           full-media=\"true\"\n" +
-    "           spreader-disabled=\"true\"\n" +
     "           show-all-actions=\"true\">\n" +
     "      </div>\n" +
     "\t\t\t<br>\n" +
