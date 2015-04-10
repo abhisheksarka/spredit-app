@@ -35,14 +35,14 @@
         <span ms-linkify="post.strippedContent"></span>
         <span ng-if="post.isStripped">... <a ng-href="#/posts/{{post.id}}" target="_blank">read more</a></span>
       </span>
-      <span ng-if="post.content">
+      <span ng-if="post.content || post.title">
         <br><br><hr>
         <div ms-spread-creator 
             spreadable="post" 
             resource-owner="'post_publishable'" 
             is-disabled="spreaderDisabled"></div>
       </span>
-      <span ng-if="!post.content">
+      <span ng-if="!post.content && !post.title">
         <div ms-spread-creator 
              spreadable="post" 
              resource-owner="'post_publishable'" 

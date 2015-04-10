@@ -5,6 +5,7 @@
       $scope.masterCtrl.setTitle('Location Required');
       $scope.currentUser = Session.currentUser;
       $scope.redirectToHome = redirectToHome;
+      $scope.afterLocationSet = afterLocationSet;
       redirectToHome();
     };
 
@@ -12,6 +13,10 @@
       if ($scope.currentUser.location.isValid()) {
         $location.path('/home');
       };
+    };
+
+    function afterLocationSet(response) {
+      $location.path('/home');
     };
     
     init();

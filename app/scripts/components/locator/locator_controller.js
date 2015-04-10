@@ -3,6 +3,7 @@
     function init() {
       $scope.label = $scope.label || 'Share Location'; 
       $scope.btnClass = $scope.btnClass || 'info';
+      $scope.t = { };
       
       $scope.successCallback = $scope.successCallback || angular.noop;
       $scope.errorCallback = $scope.errorCallback || angular.noop;

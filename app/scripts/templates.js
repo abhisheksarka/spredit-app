@@ -477,14 +477,14 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        <span ms-linkify=\"post.strippedContent\"></span>\n" +
     "        <span ng-if=\"post.isStripped\">... <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">read more</a></span>\n" +
     "      </span>\n" +
-    "      <span ng-if=\"post.content\">\n" +
+    "      <span ng-if=\"post.content || post.title\">\n" +
     "        <br><br><hr>\n" +
     "        <div ms-spread-creator \n" +
     "            spreadable=\"post\" \n" +
     "            resource-owner=\"'post_publishable'\" \n" +
     "            is-disabled=\"spreaderDisabled\"></div>\n" +
     "      </span>\n" +
-    "      <span ng-if=\"!post.content\">\n" +
+    "      <span ng-if=\"!post.content && !post.title\">\n" +
     "        <div ms-spread-creator \n" +
     "             spreadable=\"post\" \n" +
     "             resource-owner=\"'post_publishable'\" \n" +
@@ -841,7 +841,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <a href=\"#/\">Spredit</a> is a location aware app, to proceed furthur you need to give us permission to access your current location.\n" +
     "    </p>\n" +
     "    <br>\n" +
-    "    <span ms-locator success-callback=\"redirectToHome(response)\"></span>\n" +
+    "    <span ms-locator success-callback=\"afterLocationSet(response)\"></span>\n" +
     "    <br><br>\n" +
     "  </div>\n" +
     "  <br>\n" +
