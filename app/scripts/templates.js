@@ -332,6 +332,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <input type=\"text\" class=\"form-control\" placeholder=\"Title(max 120 characters)...\" ng-model=\"post.title\" name=\"title\" maxlength=\"120\"/>\n" +
     "    <br>\n" +
     "    <textarea placeholder=\"Content...\" \n" +
+    "              msd-elastic=\"\\n\"\n" +
     "              class=\"form-control\" \n" +
     "              ng-model=\"post.content\"\n" +
     "              name=\"content\">\n" +
@@ -718,7 +719,14 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "  </div>\n" +
     "  <br>\n" +
-    "</div>"
+    "</div>\n" +
+    "<!-- <div class=\"bottom-dock\">\n" +
+    "  <div ms-spread-creator \n" +
+    "       spreadable=\"currentPost\" \n" +
+    "       resource-owner=\"'post_publishable'\" \n" +
+    "       is-disabled=\"spreaderDisabled\">\n" +
+    "  </div>\n" +
+    "</div> -->"
   );
 
 

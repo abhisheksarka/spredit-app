@@ -5,6 +5,18 @@
   padding: 15px;
   overflow: hidden;
 }
+.bottom-dock {
+  position: fixed;
+  left: 30% !important;
+  @media (max-width: 768px) {
+    left: 0px !important;
+  }
+  right: 0px;
+  bottom: 0px;
+  height: 50px;
+  background: rgba(255,255,255, 0.8);
+  border-top: 1px solid white;
+}
 .ms-shadow-depth-20 {
   @include ms-box-shadow(0px, 0px, 20px, rgba(0,0,0,0.3));
 }
@@ -41,7 +53,7 @@
     }
   }
   .rich-media.show-full-media {
-    max-height: 450px;
+    max-height: none;
   }
   .supporting-text {
     padding: 15px;

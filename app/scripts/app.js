@@ -19,6 +19,7 @@ angular.module('ms', [
   'angularMoment',
   'angularFileUpload',
   'google.places',
+  'monospaced.elastic',
   
   // application modules
   'ms.core',
