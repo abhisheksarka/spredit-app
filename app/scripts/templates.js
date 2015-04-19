@@ -401,6 +401,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <span class=\"glyphicon glyphicon-ring-wrap ms-animation-border-rotate\" \n" +
     "          ng-class=\"{'hide': !states.uploading.isWorking}\">\n" +
     "    </span>\n" +
+    "    <p class=\"text-muted\" style=\"font-size:12px;padding-bottom: 15px;\">Image format should be jpg, jpeg or png and size should be less than 5MB.</p>\n" +
     "  </div>\n" +
     "  <div ng-if=\"postPhoto.id\">\n" +
     "    <div class=\"preview\">\n" +
