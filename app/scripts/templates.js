@@ -111,7 +111,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
-    "  <button class=\"btn btn-info fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"reqState.isWorking || loginDisabled\">Sign in with facebook</button>\n" +
+    "  <button class=\"btn btn-warning fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"reqState.isWorking || loginDisabled\">Sign in with facebook</button>\n" +
     "</span>"
   );
 
@@ -253,7 +253,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <ul class=\"nav navbar-nav navbar-right\">\n" +
     "      <li>\n" +
     "        <a scroll-to=\"second-section\">\n" +
-    "          How it works\n" +
+    "          <span class=\"fa fa-cogs\"></span>&nbsp;&nbsp;How it works\n" +
+    "        </a>\n" +
+    "      </li>\n" +
+    "      <li>\n" +
+    "        <a scroll-to=\"footer\">\n" +
+    "          <span class=\"fa fa-phone\"></span>&nbsp;&nbsp;Contact\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
@@ -737,7 +742,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"row\">\n" +
     "      <div class=\"col-md-12 text-center\">\n" +
     "        <h1 class=\"brand-name\">\n" +
-    "          Spredit\n" +
+    "          Spredit <span class=\"label label-default\">beta</span>\n" +
     "        </h1>\n" +
     "        <h4 class=\"brand-tagline\">\n" +
     "          A new way to spread information<br>\n" +
@@ -780,7 +785,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <div class=\"container text-center\">\n" +
     "    <div class=\"row\">\n" +
     "      <div class=\"col-md-4\">\n" +
-    "        <span class=\"desc-icon bg-info\">\n" +
+    "        <span class=\"desc-icon bg-warning\">\n" +
     "          <span class=\"fa fa-bullhorn\"></span>\n" +
     "        </span>\n" +
     "        <h3><strong>Publish</strong></h3>\n" +
@@ -789,7 +794,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </p>\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4\">\n" +
-    "        <span class=\"desc-icon bg-info\">\n" +
+    "        <span class=\"desc-icon bg-warning\">\n" +
     "          <span class=\"fa fa-map-marker\"></span>\n" +
     "        </span>\n" +
     "        <h3><strong>Propagate</strong></h3>\n" +
@@ -798,7 +803,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </p>\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4\">\n" +
-    "        <span class=\"desc-icon bg-info\">\n" +
+    "        <span class=\"desc-icon bg-warning\">\n" +
     "          <span class=\"fa fa-location-arrow\"></span>\n" +
     "        </span>\n" +
     "        <h3><strong>Spread</strong></h3>\n" +
@@ -810,10 +815,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        <blockquote>\n" +
     "          Here, the entire world is your audience...\n" +
     "        </blockquote>\n" +
-    "        <span ms-fb-log-in \n" +
-    "              data-connected=\"connected(response)\" \n" +
-    "              data-unauthorized=\"unauthorized(response)\" \n" +
-    "              data-unknown=\"unknown(response)\"></span>\n" +
+    "        <a class=\"btn btn-warning btn-lg\" scroll-to=\"main-section\">Get Started</a>\n" +
     "        <br><br><br><br>\n" +
     "      </div>\n" +
     "    </div>\n" +
