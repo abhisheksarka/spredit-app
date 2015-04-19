@@ -26,18 +26,14 @@ body#page-index {
   .logo{
     margin-top: 90px;
     font-size: 50px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(255,255,255,0.2);
     padding: 15px;
     height: 100px;
     width: 100px;
     line-height: 1.2;
     position: relative;
     .fa {
-      color: rgba(255,255,255,0.4);
-      text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-      -webkit-text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-      -moz-text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-      -ms-text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+      color: rgba(255,255,255,1);
     }
   }
   .brand-name { 

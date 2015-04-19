@@ -20,6 +20,7 @@ angular.module('ms', [
   'angularFileUpload',
   'google.places',
   'monospaced.elastic',
+  'ngScrollTo',
   
   // application modules
   'ms.core',

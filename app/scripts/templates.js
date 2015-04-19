@@ -251,12 +251,8 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </li>\n" +
     "    </ul>\n" +
     "    <ul class=\"nav navbar-nav navbar-right\">\n" +
-    "      <!-- <li>\n" +
-    "        <div class=\"fb-share-button\" data-href=\"https://developers.facebook.com/docs/plugins/\" data-layout=\"button_count\"></div>\n" +
-    "      </li>\n" +
-    "      -->\n" +
     "      <li>\n" +
-    "        <a>\n" +
+    "        <a scroll-to=\"second-section\">\n" +
     "          How it works\n" +
     "        </a>\n" +
     "      </li>\n" +
