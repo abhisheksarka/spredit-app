@@ -10,28 +10,7 @@
           </h4>
         </div>
         <div class="secondary">
-          <div ng-if="action == 'statistics'">
-            <small>
-              View the performance of this post in detail
-            </small>
-          </div>
-          <div ng-if="action == 'propagation'">
-            <small>
-              This information has travelled a total distance of <span ng-bind="post.total_propagation"></span> KM
-            </small>
-          </div>
-          <div ng-if="action == 'comments'">
-            <small>
-              <span ng-bind="post.comments_count"></span>
-              <span ng-if="post.comments_count == 1">
-                person
-              </span>
-              <span ng-if="post.comments_count != 1">
-                people
-              </span>  
-              have commented on this
-            </small>
-          </div>
+          <small>...</small>
         </div>
       </div>  
     </div>

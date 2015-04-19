@@ -300,7 +300,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      &nbsp;&nbsp;\n" +
     "    </a>\n" +
     "    <a ng-click=\"setSelectedAction('propagation')\">\n" +
-    "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;PROPAGATION(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
+    "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;MAP(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
     "    </a>\n" +
     "    <span class=\"pull-right text-muted\">\n" +
     "      <a ng-click=\"setSelectedAction('statistics')\">\n" +
@@ -314,7 +314,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      &nbsp;&nbsp;\n" +
     "    </a>\n" +
     "    <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">\n" +
-    "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;PROPAGATION(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
+    "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;MAP(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
     "    </a>\n" +
     "    <span class=\"pull-right text-muted\">\n" +
     "      <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">\n" +
@@ -369,28 +369,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          </h4>\n" +
     "        </div>\n" +
     "        <div class=\"secondary\">\n" +
-    "          <div ng-if=\"action == 'statistics'\">\n" +
-    "            <small>\n" +
-    "              View the performance of this post in detail\n" +
-    "            </small>\n" +
-    "          </div>\n" +
-    "          <div ng-if=\"action == 'propagation'\">\n" +
-    "            <small>\n" +
-    "              This information has travelled a total distance of <span ng-bind=\"post.total_propagation\"></span> KM\n" +
-    "            </small>\n" +
-    "          </div>\n" +
-    "          <div ng-if=\"action == 'comments'\">\n" +
-    "            <small>\n" +
-    "              <span ng-bind=\"post.comments_count\"></span>\n" +
-    "              <span ng-if=\"post.comments_count == 1\">\n" +
-    "                person\n" +
-    "              </span>\n" +
-    "              <span ng-if=\"post.comments_count != 1\">\n" +
-    "                people\n" +
-    "              </span>  \n" +
-    "              have commented on this\n" +
-    "            </small>\n" +
-    "          </div>\n" +
+    "          <small>...</small>\n" +
     "        </div>\n" +
     "      </div>  \n" +
     "    </div>\n" +

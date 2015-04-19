@@ -8,12 +8,12 @@
           background: 'bg-comments'
         },
         statistics: {
-          label: 'More',
+          label: 'Stats',
           glyphicon: 'glyphicon-list-alt',
           background: 'bg-statistics'
         },
         propagation: {
-          label: 'Propagation',
+          label: 'Map',
           glyphicon: 'glyphicon-map-marker',
           background: 'bg-propagation'
         }
