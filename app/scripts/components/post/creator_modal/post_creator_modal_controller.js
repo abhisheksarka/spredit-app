@@ -14,9 +14,7 @@
       });
     };
 
-    function error() {
-      cancelModal();
-    };
+    function error() { };
 
     function cancelModal() {
       $modalInstance.dismiss('cancel');

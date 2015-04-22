@@ -81,7 +81,8 @@ angular.module('ms', [
           if(meta.errorFlash) {
             $rootScope.$broadcast('ms.events.flash', {
               message: _.values(messages)[0],
-              type: 'danger' 
+              type: 'danger',
+              timeout: 3500 
             });
           };
           // when session is no more valid
