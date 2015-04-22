@@ -470,6 +470,8 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </div>\n" +
     "      <div class=\"clearfix\"></div>\n" +
     "    </div>\n" +
+    "\n" +
+    "    <!-- rich media, can contain photo, links or videos -->\n" +
     "    <div class=\"rich-media\" ng-if=\"post.postable_type=='PostPhoto'\" ng-class=\"{'show-full-media': fullMedia}\">\n" +
     "      <a ng-href=\"{{post.postable.photo.url}}\" target=\"_blank\">\n" +
     "        <img ng-src=\"{{post.postable.photo.url}}\" width=\"100%\"/>\n" +
@@ -483,11 +485,20 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </button>\n" +
     "      </div>\n" +
     "    </div>\n" +
+    "    \n" +
+    "    <!-- supporting text holds the text content of the post -->\n" +
     "    <div class=\"supporting-text\">\n" +
     "      <h2 ng-bind=\"post.title\" ng-if=\"post.title\" class=\"post-title\"></h2>\n" +
     "      <span>\n" +
-    "        <span ms-linkify=\"post.strippedContent\"></span>\n" +
-    "        <span ng-if=\"post.isStripped\">... <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">read more</a></span>\n" +
+    "        <span ms-linkify=\"post.strippedContent\" ng-if=\"!fullContent\"></span>\n" +
+    "        <span ms-linkify=\"post.content\" ng-if=\"fullContent\"></span>\n" +
+    "        <span ng-if=\"post.isStripped\">\n" +
+    "          <span ng-if=\"!fullContent\">...</span> \n" +
+    "          <a ng-click=\"toggleFullContent()\" target=\"_blank\">\n" +
+    "            <span ng-if=\"!fullContent\">more</span>\n" +
+    "            <span ng-if=\"fullContent\"><br>...less</span>\n" +
+    "          </a>\n" +
+    "        </span>\n" +
     "      </span>\n" +
     "      <span ng-if=\"post.content || post.title\">\n" +
     "        <br><br><hr>\n" +

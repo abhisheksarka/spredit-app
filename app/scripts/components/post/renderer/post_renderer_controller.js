@@ -5,11 +5,16 @@
       $scope.currentUser = Session.currentUser;
       setStrippedContent();
       $scope.toggleFullMedia = toggleFullMedia;
+      $scope.toggleFullContent = toggleFullContent;
     };
 
     function toggleFullMedia() {
       $scope.fullMedia = !$scope.fullMedia;
     };
+
+    function toggleFullContent() {
+      $scope.fullContent = !$scope.fullContent;
+    }
 
     function setStrippedContent() {
       var c = $scope.post.content || "";

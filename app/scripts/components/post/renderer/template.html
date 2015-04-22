@@ -23,6 +23,8 @@
       </div>
       <div class="clearfix"></div>
     </div>
+
+    <!-- rich media, can contain photo, links or videos -->
     <div class="rich-media" ng-if="post.postable_type=='PostPhoto'" ng-class="{'show-full-media': fullMedia}">
       <a ng-href="{{post.postable.photo.url}}" target="_blank">
         <img ng-src="{{post.postable.photo.url}}" width="100%"/>
@@ -36,11 +38,20 @@
         </button>
       </div>
     </div>
+    
+    <!-- supporting text holds the text content of the post -->
     <div class="supporting-text">
       <h2 ng-bind="post.title" ng-if="post.title" class="post-title"></h2>
       <span>
-        <span ms-linkify="post.strippedContent"></span>
-        <span ng-if="post.isStripped">... <a ng-href="#/posts/{{post.id}}" target="_blank">read more</a></span>
+        <span ms-linkify="post.strippedContent" ng-if="!fullContent"></span>
+        <span ms-linkify="post.content" ng-if="fullContent"></span>
+        <span ng-if="post.isStripped">
+          <span ng-if="!fullContent">...</span> 
+          <a ng-click="toggleFullContent()" target="_blank">
+            <span ng-if="!fullContent">more</span>
+            <span ng-if="fullContent"><br>...less</span>
+          </a>
+        </span>
       </span>
       <span ng-if="post.content || post.title">
         <br><br><hr>
