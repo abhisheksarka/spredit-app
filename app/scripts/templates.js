@@ -122,7 +122,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
-    "  <button class=\"btn btn-warning fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"reqState.isWorking || loginDisabled\">Sign in with facebook</button>\n" +
+    "  <button class=\"btn btn-warning fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"loginDisabled\">Sign in with facebook</button>\n" +
     "</span>"
   );
 
