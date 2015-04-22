@@ -15,5 +15,6 @@ angular.module('ms.components', [
   'ms.components.activity',
   'ms.components.flash',
   'ms.components.notification',
-  'ms.components.fullImage'
+  'ms.components.fullImage',
+  'ms.components.dialog'
 ]);

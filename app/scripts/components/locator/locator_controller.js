@@ -1,5 +1,5 @@
 (function(){
-  function Controller($scope, $location, Location, Session, StateHandler){
+  function Controller($scope, $location, Location, Session, StateHandler, Dialog){
     function init() {
       $scope.label = $scope.label || 'Share Location'; 
       $scope.btnClass = $scope.btnClass || 'info';
@@ -11,6 +11,15 @@
       $scope.geolocate = geolocate;
       $scope.reqState = StateHandler.getInstance(true); 
       $scope.manualSave = manualSave;  
+      $scope.showDialog = showDialog;
+    };
+
+    function showDialog() {
+      if($scope.showInsDialog) {
+        Dialog.getInstance('app/scripts/components/locator/geolocation_ins_template.html').open(geolocate); 
+      } else {
+        geolocate();
+      };
     };
 
     function geolocate() {
@@ -72,6 +81,7 @@
     'LocationModel', 
     'SessionModel',
     'StateHandlerService',
+    'DialogService',
     Controller 
   ]);
 }());

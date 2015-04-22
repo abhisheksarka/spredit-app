@@ -109,6 +109,17 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('app/scripts/components/dialog/template.html',
+    "<div class=\"modal-body text-center\">\n" +
+    "  <br>\n" +
+    "  <div ng-bind-html=\"template\">\n" +
+    "  </div>  \n" +
+    "  <br>\n" +
+    "  <button class=\"btn btn-sm btn-default\" ng-click=\"close()\">Okay, Got it</button>\n" +
+    "</div>"
+  );
+
+
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
     "  <button class=\"btn btn-warning fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"reqState.isWorking || loginDisabled\">Sign in with facebook</button>\n" +
@@ -144,6 +155,19 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('app/scripts/components/locator/geolocation_ins_template.html',
+    "<div>\n" +
+    "  <p>\n" +
+    "    <a href=\"#/\">Spredit</a> will now attempt to find you. \n" +
+    "  </p>\n" +
+    "  <p>\n" +
+    "    You will most likely see a browser dialog asking for permission to share your location. \n" +
+    "    <strong>Make sure you click on allow.</strong>\n" +
+    "  </p>  \n" +
+    "</div>"
+  );
+
+
   $templateCache.put('app/scripts/components/locator/map/template.html',
     "<ui-gmap-google-map center='map.center' zoom='map.zoom' options=\"map.options\" refresh=\"map.refresh\">\n" +
     "  <ui-gmap-marker coords=\"location\" idkey=\"location.id\">\n" +
@@ -175,11 +199,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  </div>\n" +
     "  <button class=\"btn btn-{{btnClass}}\" \n" +
     "          ng-bind=\"label\" \n" +
-    "          ng-click=\"geolocate()\" \n" +
-    "          ng-disabled=\"reqState.isWorking\"\n" +
-    "          ng-if=\"!t.showManualInput\">\n" +
+    "          ng-click=\"showDialog()\" \n" +
+    "          ng-disabled=\"reqState.isWorking\">\n" +
     "  </button>\n" +
-    "  <br><br>\n" +
+    "  <!-- <br><br>\n" +
     "  <small>Having problems with geolocation? \n" +
     "    <a ng-click=\"t.showManualInput=!t.showManualInput\">\n" +
     "      Set your location manually\n" +
@@ -202,7 +225,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "            <span ng-if=\"reqState.isWorking\">Saving...</span>\n" +
     "            <span ng-if=\"!reqState.isWorking\">Save</span>\n" +
     "    </button>  \n" +
-    "  </form>   \n" +
+    "  </form> -->   \n" +
     "</span>"
   );
 
@@ -217,12 +240,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  </div>\n" +
     "  <div class=\"container\" data-ng-if=\"signedIn\">\n" +
     "    <ul class=\"nav navbar-nav\">\n" +
-    "      <li class=\"visible-xs visible-sm\">\n" +
+    "      <li class=\"visible-xs\">\n" +
     "        <a ng-click=\"toggleSideNav()\">\n" +
     "          <span class=\"glyphicon glyphicon-align-justify\"></span>\n" +
     "        </a>\n" +
     "      </li>\n" +
-    "      <li class=\"hidden-xs hidden-sm\">\n" +
+    "      <li class=\"hidden-xs\">\n" +
     "        <a href=\"#/home\">\n" +
     "          <span class=\"fa fa-location-arrow brand-icon\"></span>\n" +
     "          <span class=\"brand-name\">spredit</span>\n" +
@@ -827,7 +850,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <a href=\"#/\">Spredit</a> is a location aware app, to proceed furthur you need to give us permission to access your current location.\n" +
     "    </p>\n" +
     "    <br>\n" +
-    "    <span ms-locator success-callback=\"afterLocationSet(response)\"></span>\n" +
+    "    <span ms-locator success-callback=\"afterLocationSet(response)\" show-ins-dialog=\"true\"></span>\n" +
     "    <br><br>\n" +
     "  </div>\n" +
     "  <br>\n" +

@@ -6,7 +6,8 @@
         successCallback: '&',
         errorCallback: '&',
         label: '=?',
-        btnClass: '=?'
+        btnClass: '=?',
+        showInsDialog: '=?'
       },
       replace: true,
       templateUrl: 'app/scripts/components/locator/template.html',
