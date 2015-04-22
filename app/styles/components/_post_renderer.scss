@@ -5,6 +5,12 @@
   }
   .rich-media {
     margin-bottom: 15px;
+    .rich-media-actions {
+      .btn {
+        -webkit-transition: none;
+        transition: none;
+      }
+    }
   }
   .spreader {
     margin-top: -25px;

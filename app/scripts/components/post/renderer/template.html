@@ -24,9 +24,16 @@
       <div class="clearfix"></div>
     </div>
     <div class="rich-media" ng-if="post.postable_type=='PostPhoto'" ng-class="{'show-full-media': fullMedia}">
-      <img ng-src="{{post.postable.photo.url}}" width="100%"/>
-      <div class="rich-media-actions">
-        <span ms-full-image="post.postable.photo.url"></span>
+      <a ng-href="{{post.postable.photo.url}}" target="_blank">
+        <img ng-src="{{post.postable.photo.url}}" width="100%"/>
+      </a>
+      <div class="rich-media-actions text-center">
+        <button class="btn ms-fab btn-transparent" ng-click="toggleFullMedia()" ng-show="!fullMedia">
+          <span class="fa fa-angle-double-down"></span>
+        </button>
+        <button class="btn ms-fab btn-transparent" ng-click="toggleFullMedia()" ng-show="fullMedia">
+          <span class="fa fa-angle-double-up"></span>
+        </button>
       </div>
     </div>
     <div class="supporting-text">

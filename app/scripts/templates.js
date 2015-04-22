@@ -471,9 +471,16 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <div class=\"clearfix\"></div>\n" +
     "    </div>\n" +
     "    <div class=\"rich-media\" ng-if=\"post.postable_type=='PostPhoto'\" ng-class=\"{'show-full-media': fullMedia}\">\n" +
-    "      <img ng-src=\"{{post.postable.photo.url}}\" width=\"100%\"/>\n" +
-    "      <div class=\"rich-media-actions\">\n" +
-    "        <span ms-full-image=\"post.postable.photo.url\"></span>\n" +
+    "      <a ng-href=\"{{post.postable.photo.url}}\" target=\"_blank\">\n" +
+    "        <img ng-src=\"{{post.postable.photo.url}}\" width=\"100%\"/>\n" +
+    "      </a>\n" +
+    "      <div class=\"rich-media-actions text-center\">\n" +
+    "        <button class=\"btn ms-fab btn-transparent\" ng-click=\"toggleFullMedia()\" ng-show=\"!fullMedia\">\n" +
+    "          <span class=\"fa fa-angle-double-down\"></span>\n" +
+    "        </button>\n" +
+    "        <button class=\"btn ms-fab btn-transparent\" ng-click=\"toggleFullMedia()\" ng-show=\"fullMedia\">\n" +
+    "          <span class=\"fa fa-angle-double-up\"></span>\n" +
+    "        </button>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "    <div class=\"supporting-text\">\n" +

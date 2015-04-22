@@ -9,7 +9,6 @@
         showAllActions: '=',
         spreaderDisabled: '=?',
         linkifyPostActions: '=?',
-        fullMedia: '=?',
         fullContent: '=?'
       },
       replace: true,

@@ -4,6 +4,11 @@
     function init() {
       $scope.currentUser = Session.currentUser;
       setStrippedContent();
+      $scope.toggleFullMedia = toggleFullMedia;
+    };
+
+    function toggleFullMedia() {
+      $scope.fullMedia = !$scope.fullMedia;
     };
 
     function setStrippedContent() {
