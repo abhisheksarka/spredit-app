@@ -474,9 +474,14 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <!-- rich media, can contain photo, links or videos -->\n" +
     "    <div class=\"rich-media\" ng-if=\"post.postable_type=='PostPhoto'\" ng-class=\"{'show-full-media': fullMedia}\">\n" +
     "      <a ng-href=\"{{post.postable.photo.url}}\" target=\"_blank\">\n" +
-    "        <img ng-src=\"{{post.postable.photo.url}}\" width=\"100%\"/>\n" +
+    "        <img ng-src=\"{{post.postable.photo.url}}\" \n" +
+    "             width=\"100%\" \n" +
+    "             ms-img-dimensions \n" +
+    "             img-height=\"imgHeight\" \n" +
+    "             img-loaded=\"imgLoaded\"\n" +
+    "        />\n" +
     "      </a>\n" +
-    "      <div class=\"rich-media-actions text-center\">\n" +
+    "      <div class=\"rich-media-actions text-center\" ng-if=\"imgLoaded && (imgHeight > 250)\">\n" +
     "        <button class=\"btn ms-fab btn-transparent\" ng-click=\"toggleFullMedia()\" ng-show=\"!fullMedia\">\n" +
     "          <span class=\"fa fa-angle-double-down\"></span>\n" +
     "        </button>\n" +

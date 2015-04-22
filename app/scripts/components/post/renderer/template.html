@@ -27,9 +27,14 @@
     <!-- rich media, can contain photo, links or videos -->
     <div class="rich-media" ng-if="post.postable_type=='PostPhoto'" ng-class="{'show-full-media': fullMedia}">
       <a ng-href="{{post.postable.photo.url}}" target="_blank">
-        <img ng-src="{{post.postable.photo.url}}" width="100%"/>
+        <img ng-src="{{post.postable.photo.url}}" 
+             width="100%" 
+             ms-img-dimensions 
+             img-height="imgHeight" 
+             img-loaded="imgLoaded"
+        />
       </a>
-      <div class="rich-media-actions text-center">
+      <div class="rich-media-actions text-center" ng-if="imgLoaded && (imgHeight > 250)">
         <button class="btn ms-fab btn-transparent" ng-click="toggleFullMedia()" ng-show="!fullMedia">
           <span class="fa fa-angle-double-down"></span>
         </button>
