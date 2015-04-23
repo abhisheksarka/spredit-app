@@ -28,7 +28,6 @@
     <div class="rich-media" ng-if="post.postable_type=='PostPhoto'" ng-class="{'show-full-media': fullMedia}">
       <img ng-src="{{post.postable.photo.url}}" 
            width="100%" 
-           ng-click="toggleFullMedia()"
            ms-img-dimensions 
            img-height="imgHeight" 
            img-loaded="imgLoaded"
