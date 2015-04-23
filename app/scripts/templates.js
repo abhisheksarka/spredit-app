@@ -475,7 +475,6 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"rich-media\" ng-if=\"post.postable_type=='PostPhoto'\" ng-class=\"{'show-full-media': fullMedia}\">\n" +
     "      <img ng-src=\"{{post.postable.photo.url}}\" \n" +
     "           width=\"100%\" \n" +
-    "           ng-click=\"toggleFullMedia()\"\n" +
     "           ms-img-dimensions \n" +
     "           img-height=\"imgHeight\" \n" +
     "           img-loaded=\"imgLoaded\"\n" +
