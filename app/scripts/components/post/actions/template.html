@@ -14,15 +14,15 @@
     </span>
   </span>
   <span class="text-muted" ng-if="linkify">
-    <a ng-href="#/posts/{{post.id}}" target="_blank">
+    <a ng-href="#/posts/{{post.encrypted_id}}" target="_blank">
       <span class="glyphicon glyphicon-comment"></span>&nbsp;COMMENTS(<span ng-bind="post.comments_count"></span>)
       &nbsp;&nbsp;
     </a>
-    <a ng-href="#/posts/{{post.id}}" target="_blank">
+    <a ng-href="#/posts/{{post.encrypted_id}}" target="_blank">
       <span class="glyphicon glyphicon-map-marker"></span>&nbsp;MAP(<span ng-bind="post.total_propagation"></span> KM)
     </a>
     <span class="pull-right text-muted">
-      <a ng-href="#/posts/{{post.id}}" target="_blank">
+      <a ng-href="#/posts/{{post.encrypted_id}}" target="_blank">
         <h2 class="spread-value" ng-bind="post.spreads_count | displayNumber"></h2>
       </a>
     </span>

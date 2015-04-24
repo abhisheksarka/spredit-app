@@ -332,15 +332,15 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </span>\n" +
     "  </span>\n" +
     "  <span class=\"text-muted\" ng-if=\"linkify\">\n" +
-    "    <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">\n" +
+    "    <a ng-href=\"#/posts/{{post.encrypted_id}}\" target=\"_blank\">\n" +
     "      <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;COMMENTS(<span ng-bind=\"post.comments_count\"></span>)\n" +
     "      &nbsp;&nbsp;\n" +
     "    </a>\n" +
-    "    <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">\n" +
+    "    <a ng-href=\"#/posts/{{post.encrypted_id}}\" target=\"_blank\">\n" +
     "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;MAP(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
     "    </a>\n" +
     "    <span class=\"pull-right text-muted\">\n" +
-    "      <a ng-href=\"#/posts/{{post.id}}\" target=\"_blank\">\n" +
+    "      <a ng-href=\"#/posts/{{post.encrypted_id}}\" target=\"_blank\">\n" +
     "        <h2 class=\"spread-value\" ng-bind=\"post.spreads_count | displayNumber\"></h2>\n" +
     "      </a>\n" +
     "    </span>\n" +
