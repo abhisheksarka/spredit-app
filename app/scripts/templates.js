@@ -122,7 +122,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
-    "  <button class=\"btn btn-warning fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"loginDisabled\">Sign in with facebook</button>\n" +
+    "  <button class=\"btn btn-success fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"loginDisabled\">Sign in with facebook</button>\n" +
     "</span>"
   );
 
@@ -809,7 +809,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <div class=\"container text-center\">\n" +
     "    <div class=\"row\">\n" +
     "      <div class=\"col-md-4\">\n" +
-    "        <span class=\"desc-icon bg-warning\">\n" +
+    "        <span class=\"desc-icon bg-success\">\n" +
     "          <span class=\"fa fa-bullhorn\"></span>\n" +
     "        </span>\n" +
     "        <h3><strong>Publish</strong></h3>\n" +
@@ -818,7 +818,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </p>\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4\">\n" +
-    "        <span class=\"desc-icon bg-warning\">\n" +
+    "        <span class=\"desc-icon bg-success\">\n" +
     "          <span class=\"fa fa-map-marker\"></span>\n" +
     "        </span>\n" +
     "        <h3><strong>Propagate</strong></h3>\n" +
@@ -827,7 +827,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </p>\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4\">\n" +
-    "        <span class=\"desc-icon bg-warning\">\n" +
+    "        <span class=\"desc-icon bg-success\">\n" +
     "          <span class=\"fa fa-location-arrow\"></span>\n" +
     "        </span>\n" +
     "        <h3><strong>Spread</strong></h3>\n" +
@@ -839,7 +839,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        <blockquote>\n" +
     "          Here, the entire world is your audience...\n" +
     "        </blockquote>\n" +
-    "        <a class=\"btn btn-warning btn-lg\" scroll-to=\"main-section\">Get Started</a>\n" +
+    "        <a class=\"btn btn-transparent get-started\" scroll-to=\"main-section\">Get Started</a>\n" +
     "        <br><br><br><br>\n" +
     "      </div>\n" +
     "    </div>\n" +
