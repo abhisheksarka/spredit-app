@@ -480,10 +480,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "           img-loaded=\"imgLoaded\"\n" +
     "      />\n" +
     "      <div class=\"rich-media-actions text-center\" ng-if=\"imgLoaded && (imgHeight > 250)\">\n" +
-    "        <button class=\"btn ms-fab btn-transparent\" ng-click=\"toggleFullMedia()\" ng-show=\"!fullMedia\">\n" +
+    "        <button class=\"btn ms-fab fab-transparent\" ng-click=\"toggleFullMedia()\" ng-show=\"!fullMedia\">\n" +
     "          <span class=\"fa fa-angle-double-down\"></span>\n" +
     "        </button>\n" +
-    "        <button class=\"btn ms-fab btn-transparent\" ng-click=\"toggleFullMedia()\" ng-show=\"fullMedia\">\n" +
+    "        <button class=\"btn ms-fab fab-transparent\" ng-click=\"toggleFullMedia()\" ng-show=\"fullMedia\">\n" +
     "          <span class=\"fa fa-angle-double-up\"></span>\n" +
     "        </button>\n" +
     "      </div>\n" +
