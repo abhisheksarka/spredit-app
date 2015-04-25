@@ -33,6 +33,11 @@ angular.module('ms')
       currentUser: resolutions.noCurrentUser
     }
   })
+
+  .when('/policies', {
+    templateUrl: 'app/scripts/pages/policies/template.html',
+    controller: 'PoliciesController'
+  })
   
   .when('/location_prompt', {
     templateUrl: 'app/scripts/pages/location_prompt/template.html',
@@ -93,7 +98,7 @@ angular.module('ms')
   'SessionModel',
   function($location, $rootScope, Session){
     $rootScope.$on('$routeChangeStart', function(event, next) {
-      if(!Session.isSignedIn()) {
+      if(!Session.isSignedIn() && $location.path() != '/policies') {
         event.preventDefault();
         $location.path('/');
       } else {

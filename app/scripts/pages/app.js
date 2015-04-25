@@ -5,5 +5,6 @@ angular.module('ms.pages', [
   'ms.pages.currentLocation',
   'ms.pages.me',
   'ms.pages.notifications',
-  'ms.pages.posts' 
+  'ms.pages.posts',
+  'ms.pages.policies' 
 ])

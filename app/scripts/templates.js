@@ -260,6 +260,16 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </li>\n" +
     "    </ul>\n" +
     "  </div>\n" +
+    "  <div class=\"container\" data-ng-if=\"standard\">\n" +
+    "    <ul class=\"nav navbar-nav\">\n" +
+    "      <li class=\"hidden-xs\">\n" +
+    "        <a href=\"#/home\">\n" +
+    "          <span class=\"fa fa-location-arrow brand-icon\"></span>\n" +
+    "          <span class=\"brand-name\">spredit</span>\n" +
+    "        </a>\n" +
+    "      </li>\n" +
+    "    </ul>\n" +
+    "  </div>\n" +
     "  <div class=\"container\" data-ng-if=\"!signedIn\">\n" +
     "    <ul class=\"nav navbar-nav\">\n" +
     "      <li>\n" +
@@ -1015,6 +1025,68 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n"
+  );
+
+
+  $templateCache.put('app/scripts/pages/policies/template.html',
+    "<div class=\"container\">\n" +
+    "  <div class=\"text-center\">\n" +
+    "    <a href=\"/\" class=\"logo logo-25 ms-animation-zoom-in\">\n" +
+    "      <span class=\"fa fa-location-arrow\"></span>\n" +
+    "    </a> \n" +
+    "  </div>\n" +
+    "  <div class=\"ms-master-section\">\n" +
+    "    <div class=\"ms-card\" id=\"privacy-policy\">\n" +
+    "      <h4>Privacy Policy</h3>\n" +
+    "      <br>\n" +
+    "      <h5>General Introduction</h4>\n" +
+    "      <p>\n" +
+    "        These terms and conditions govern your use of our website. Please read the terms in full before you use this Website. If you do not accept these terms, please do not use this Website. Using the Website implies that you accept these terms. We do occasionally update these terms so please refer back to them in the future.\n" +
+    "        <br>\n" +
+    "        <a href=\"/\">Spredit</a> understands the importance of keeping the information about you that you entrust to us confidential and secure (\"Customer Information\"). The information we collect may include your personal information, in other words information capable of identifying you as a particular individual, such as your name, email address (“Personal Information\") and Location. We therefore make it our highest priority to ensure that we look after your Customer Information and use it responsibly. By visiting our website you accept and consent to the collection, storage and processing of your Customer Information as described in this Privacy Policy.\n" +
+    "      </p>\n" +
+    "      <br>\n" +
+    "      <h5>What personal information do we collect and how?</h5>\n" +
+    "      <p>\n" +
+    "        <a href=\"/\">Spredit</a> requires your public profile, email and list of friends. All this information is extracted from your Facebook profile using their API. Apart from that we also require your current location which is fetched using the Geolocation API which is present in every mordern browser.\n" +
+    "        These are the minimum information that we need for a user to have a good experience on out site.\n" +
+    "      </p>\n" +
+    "    </div>\n" +
+    "    <br>\n" +
+    "    <div class=\"ms-card\" id=\"location-policy\">\n" +
+    "      <h4>Location Policy</h4>\n" +
+    "      <br>\n" +
+    "      <h5>Sharing on site</h5>\n" +
+    "      <p>\n" +
+    "        We make sure that your location is safe and private. It is never shared to any other user in the site unless you manually choose to do so. All our API responses from the server are designed in such a way which does not expose a relationship between the user and his current location.\n" +
+    "      </p>\n" +
+    "      <br>\n" +
+    "      <h5>Third party services</h5>\n" +
+    "      <p>\n" +
+    "        We do have a list of highly trusted third party services with which your location history might be shared if required. This is done to enhance your browsing experience by localising and personlising the information that you see while you surf other websites. \n" +
+    "      </p>\n" +
+    "    </div>\n" +
+    "    <br>\n" +
+    "    <div class=\"ms-card\" id=\"cookie-policy\">\n" +
+    "      <h4>Cookie Policy</h4>\n" +
+    "      <br>\n" +
+    "      <p>\n" +
+    "        Every website requires cookies to operate normally on your browser. Cookies are small chunks of information stored in your system.\n" +
+    "      </p>\n" +
+    "      <h5>Session cookies " +
+    "</h5>\n" +
+    "      <p>\n" +
+    "        Used to maintain something called session state. Session cookies are required for the website to function but are not used in any way to identify you personally.\n" +
+    "      </p>\n" +
+    "      <br>\n" +
+    "      <h5>Permanent cookies " +
+    "</h5>\n" +
+    "      <p>\n" +
+    "        When you visit our website, we will assign a permanent cookie on the hard drive of your computer. You can view these by looking in the cookies directory of your browser installation. As the name implies, permanent cookies last for a long time and each time you visit our website you send us a copy of them allowing us to identify you from visit to visit.Cookies do not contain any Personal Information for example, your name, address, email address, or telephone number, but simply a unique identification number that identifies your computer to us.\n" +
+    "      </p>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</div>"
   );
 
 
