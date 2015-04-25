@@ -1073,14 +1073,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <p>\n" +
     "        Every website requires cookies to operate normally on your browser. Cookies are small chunks of information stored in your system.\n" +
     "      </p>\n" +
-    "      <h5>Session cookies " +
-    "</h5>\n" +
+    "      <h5>Session cookies</h5>\n" +
     "      <p>\n" +
     "        Used to maintain something called session state. Session cookies are required for the website to function but are not used in any way to identify you personally.\n" +
     "      </p>\n" +
     "      <br>\n" +
-    "      <h5>Permanent cookies " +
-    "</h5>\n" +
+    "      <h5>Permanent cookies</h5>\n" +
     "      <p>\n" +
     "        When you visit our website, we will assign a permanent cookie on the hard drive of your computer. You can view these by looking in the cookies directory of your browser installation. As the name implies, permanent cookies last for a long time and each time you visit our website you send us a copy of them allowing us to identify you from visit to visit.Cookies do not contain any Personal Information for example, your name, address, email address, or telephone number, but simply a unique identification number that identifies your computer to us.\n" +
     "      </p>\n" +
