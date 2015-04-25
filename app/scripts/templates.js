@@ -122,7 +122,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
-    "  <button class=\"btn btn-success fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"loginDisabled\">Sign in with facebook</button>\n" +
+    "  <button class=\"btn btn-warning fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"loginDisabled\">Sign in with facebook</button>\n" +
     "</span>"
   );
 
@@ -182,7 +182,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <span data-ng-bind=\"locationConfig.radius\"></span>\n" +
     "  </h1>\n" +
     "  <p class=\"unit text-muted\">KM</p>\n" +
-    "  <div ui-slider=\"slider.options\" min=\"5\" max=\"30\" data-ng-model=\"locationConfig.radius\"></div>\n" +
+    "  <div ui-slider=\"slider.options\" min=\"5\" max=\"15\" data-ng-model=\"locationConfig.radius\"></div>\n" +
     "  <p data-ng-bind=\"location.address\" class=\"address text-muted\"></p>\n" +
     "</div>"
   );
