@@ -26,6 +26,9 @@
       .glyphicon {
         margin-right: 15px;
       }
+      &:hover {
+        cursor: pointer;
+      }
     }
     a {
       &:hover {

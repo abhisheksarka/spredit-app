@@ -286,12 +286,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <ul class=\"nav navbar-nav navbar-right\">\n" +
     "      <li>\n" +
     "        <a scroll-to=\"second-section\">\n" +
-    "          <span class=\"fa fa-cogs\"></span>&nbsp;&nbsp;How it works\n" +
+    "          How it works\n" +
     "        </a>\n" +
     "      </li>\n" +
     "      <li>\n" +
     "        <a scroll-to=\"footer\">\n" +
-    "          <span class=\"fa fa-phone\"></span>&nbsp;&nbsp;Contact\n" +
+    "          Contact\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
@@ -577,10 +577,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </a>\n" +
     "    </li> \n" +
     "    <li>\n" +
-    "      <a class=\"link-major\" ng-click=\"signOut()\">\n" +
+    "      <span class=\"link-major\" ng-click=\"signOut()\">\n" +
     "        <span class=\"glyphicon glyphicon-off\"></span> \n" +
     "        <span>Sign out</span>\n" +
-    "      </a>\n" +
+    "      </span>\n" +
     "    </li>  \n" +
     "    <li>\n" +
     "      <a class=\"link-major\" href=\"https://www.facebook.com/pages/Spredit/849011651809054\" target=\"_blank\">\n" +
