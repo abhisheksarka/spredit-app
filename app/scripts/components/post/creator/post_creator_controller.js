@@ -5,6 +5,12 @@
       pristinePost();
       $scope.reqState = StateHandler.getInstance();
       $scope.createPost = createPost;
+      setCategories();
+    };
+
+    function setCategories() {
+      $scope.categories = Post.allCategories;
+      $scope.post.category = $scope.categories[0].value;
     };
 
     function pristinePost() {
@@ -30,9 +36,6 @@
       $scope.error({response: response});
     };
 
-
-    // end of image upload and previews
-    
     init();
   };
 

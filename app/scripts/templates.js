@@ -372,10 +372,13 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "              name=\"content\">\n" +
     "    </textarea>\n" +
     "    <br>\n" +
-    "    <button class=\"btn btn-inverse btn-sm\" ng-disabled=\"newPostForm.$invalid || reqState.isWorking\" ng-click=\"createPost()\">\n" +
+    "    <select ng-options=\"item.value as item.label for item in categories\" ng-model=\"post.category\" ng-required=\"true\" class=\"pull-left\">\n" +
+    "    </select>\n" +
+    "    <button class=\"btn btn-inverse btn-sm pull-right\" ng-disabled=\"newPostForm.$invalid || reqState.isWorking\" ng-click=\"createPost()\">\n" +
     "      <span ng-if=\"reqState.isWorking\">Publishing</span>\n" +
     "      <span ng-if=\"!reqState.isWorking\">Publish</span>\n" +
     "    </button>\n" +
+    "    <div class=\"clearfix\"></div>\n" +
     "  </form>\n" +
     "</div>"
   );

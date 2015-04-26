@@ -4,12 +4,15 @@
                     ms.apiFor('/posts/:id'),
                     { id: '@id' },
                     { 
-                      mine: { method: 'GET', url: ms.apiFor('/posts/mine'), isArray: true }  
+                      mine: { method: 'GET', url: ms.apiFor('/posts/mine'), isArray: true },
+                      categories: { method: 'GET', url: ms.apiFor('/posts/categories'), isArray: true }  
                     }
                   ),
         proto = Resource.prototype,
         res = Resource;
 
+    res.allCategories = [ ];
+    
     res.POST_TYPES = {
       photo: { postableResource: PostPhoto, name: 'PostPhoto' },
       text: { postableResource: PostText, name: 'PostText' }

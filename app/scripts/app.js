@@ -31,15 +31,18 @@ angular.module('ms', [
 .run([ 
   'SessionModel', 
   'InitModel',
+  'PostModel',
   '$window',
   '$q',
   '$location',
   '$rootScope',
-  function(Session, Init, $window, $q, $location, $rootScope) { 
+  
+  function(Session, Init, Post, $window, $q, $location, $rootScope) { 
     (function () {
       $q.all([
         Init.get().$promise.then(setFb), 
-        Session.current().$promise.then(setSession)
+        Session.current().$promise.then(setSession),
+        Post.categories().$promise.then(setPostCategories)
       ])
       .then(start);
     }());
@@ -51,6 +54,10 @@ angular.module('ms', [
 
     function setSession(response) {
       Session.setAuthProperties(response);
+    };
+
+    function setPostCategories(response) {
+      Post.allCategories = response;
     };
 
     function start() {
