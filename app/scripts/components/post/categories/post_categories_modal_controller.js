@@ -1,5 +1,5 @@
 (function(){
-  function Controller($scope, $modalInstance, Post, Session, ConfigPostCategory, StateHandler){
+  function Controller($scope, $modalInstance, Post, Session, ConfigPostCategory, StateHandler, $rootScope){
     var userCategories;
 
     function init() {
@@ -29,10 +29,7 @@
       $scope.reqState.initiate();
 
       c.$update()
-      .then(function(response){
-        $scope.reqState.success();
-        userCategories.values = response.values;
-      }, $scope.reqState.error);
+      .then(afterSave, $scope.reqState.error);
     };
 
     function getSelectedCategories() {
@@ -43,6 +40,20 @@
         };
       });
       return arr.join(',');
+    };
+
+    function afterSave(response) {
+      $scope.reqState.success();
+      userCategories.values = response.values;
+      cancelModal();
+      $rootScope.$broadcast('ms.events.flash', {
+        message: 'Settings successfully saved.',
+        type: 'success' 
+      });
+    };
+
+    function cancelModal() {
+      $modalInstance.dismiss('cancel');
     };
 
     init();
@@ -56,6 +67,7 @@
     'SessionModel',
     'ConfigPostCategoryModel',
     'StateHandlerService',
+    '$rootScope',
     Controller 
   ]);
 }());

@@ -29,6 +29,9 @@
     <!-- endbuild -->
   </head>
   <body id="{{masterCtrl.bodyId}}">
+    <div ng-if="false" id="body-loader" class="text-center text-muted" style="font-size: 70px; margin-top: 100px;">
+       <span class="fa fa-spin fa-circle-o-notch"></span> 
+    </div>
     <div ng-if="masterCtrl.config.APP_INIT">
       <div ms-flash></div>
       <div ms-side-nav data-ng-if="masterCtrl.session.currentUser.id && masterCtrl.session.currentUser.location.id"></div>
