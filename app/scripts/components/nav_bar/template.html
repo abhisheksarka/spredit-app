@@ -8,19 +8,20 @@
   <div class="container" data-ng-if="signedIn">
     <ul class="nav navbar-nav">
       <li class="visible-xs">
-        <a ng-click="toggleSideNav()">
-          <span class="glyphicon glyphicon-align-justify"></span>
+        <a ng-click="toggleSideNav()" class="toggle-side-nav">
+          <span class="fa fa-list-ul"></span>
         </a>
       </li>
       <li class="hidden-xs">
         <a href="#/home">
-          <span class="fa fa-location-arrow brand-icon"></span>
+          <span class="fa fa-share-alt brand-icon"></span>
           <span class="brand-name">spredit</span>
         </a>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
+        <span ms-post-categories></span>
         <a ng-click="openPostCreator()" class="btn-link">
           <span class="btn btn-sm btn-danger">Publish</span>
         </a>

@@ -1,6 +1,9 @@
 body#page-home {
   .ms-master-section {
     max-width: 550px;
+    .ms-card {
+      @include ms-box-shadow(0px, 2px, 6px, rgba(0,0,0,0.2));
+    }
   }
   .bottom-dock {
     .spreader {

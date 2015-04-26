@@ -28,7 +28,9 @@ a {
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
-
+.btn-rounded {
+  @include ms-border-radius(1000px);
+}
 h1, h2, h3, h4 {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -57,6 +59,9 @@ nav.navbar {
     font-weight: 800;
     top: 4px;
     position: relative;
+  }
+  .category-settings, .toggle-side-nav {
+    top: 5px;
   }
   .brand-icon {
     color: $brand-success;
@@ -161,7 +166,7 @@ input.form-control, textarea.form-control {
   opacity: 0.6;
 }
 .modal-dialog {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 .bg-success {
@@ -224,4 +229,8 @@ ul.nav.nav-tabs {
       }
     }
   }
+}
+
+nav.navbar .navbar-nav > li > a {
+  float: left;
 }

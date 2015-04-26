@@ -1,15 +1,30 @@
 <small class="post-actions">
   <span class="text-muted" ng-if="!linkify">
     <a ng-click="setSelectedAction('comments')">
-      <span class="glyphicon glyphicon-comment"></span>&nbsp;COMMENTS(<span ng-bind="post.comments_count"></span>)
+      <span class="glyphicon glyphicon-comment"></span>&nbsp;
+      <span ng-if="selectedAction=='comments'">
+        <strong>COMMENTS(<span ng-bind="post.comments_count"></span>)</strong> 
+      </span>
+      <span ng-if="!(selectedAction=='comments')">
+        COMMENTS(<span ng-bind="post.comments_count"></span>)
+      </span>
       &nbsp;&nbsp;
     </a>
     <a ng-click="setSelectedAction('propagation')">
-      <span class="glyphicon glyphicon-map-marker"></span>&nbsp;MAP(<span ng-bind="post.total_propagation"></span> KM)
+      <span class="glyphicon glyphicon-map-marker"></span>&nbsp;
+      <span ng-if="selectedAction=='propagation'">
+        <strong>MAP(<span ng-bind="post.total_propagation"></span> KM)</strong>
+      </span>
+      <span ng-if="!(selectedAction=='propagation')">
+        MAP(<span ng-bind="post.total_propagation"></span> KM)
+      </span>
     </a>
-    <span class="pull-right text-muted">
+    <span class="pull-right text-muted" ng-class="">
       <a ng-click="setSelectedAction('statistics')">
-        <h2 class="spread-value" ng-bind="post.spreads_count | displayNumber"></h2>
+        <h3 class="spread-value">
+          <strong ng-bind="post.spreads_count | displayNumber" ng-if="(selectedAction=='statistics')"></strong>
+          <span ng-bind="post.spreads_count | displayNumber" ng-if="!(selectedAction=='statistics')"></span>
+        </h3>
       </a>
     </span>
   </span>

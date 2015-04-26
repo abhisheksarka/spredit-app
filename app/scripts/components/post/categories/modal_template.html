@@ -1,0 +1,21 @@
+<div class="modal-body text-left">
+  <br>
+  <h5><strong>Select categories you want to see.</strong></h5>
+  <br>  
+  <div class="text-left list-group">
+    <div ng-repeat="category in categories">
+      <div class="checkbox">
+        <input type="checkbox" id="{{category.value}}" ng-model="category.checked">
+        <label for="{{category.value}}">
+            {{category.label}}
+        </label>
+      </div>
+    </div>
+  </div>
+  <br>
+  <button class="btn btn-sm btn-inverse" ng-click="save()" ng-disabled="reqState.isWorking">
+    <span ng-if="reqState.isWorking">Saving...</span>
+    <span ng-if="!reqState.isWorking">Save</span>
+  </button>
+  <div class="clearfix"></div>
+</div>

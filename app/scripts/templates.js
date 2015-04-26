@@ -241,19 +241,20 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <div class=\"container\" data-ng-if=\"signedIn\">\n" +
     "    <ul class=\"nav navbar-nav\">\n" +
     "      <li class=\"visible-xs\">\n" +
-    "        <a ng-click=\"toggleSideNav()\">\n" +
-    "          <span class=\"glyphicon glyphicon-align-justify\"></span>\n" +
+    "        <a ng-click=\"toggleSideNav()\" class=\"toggle-side-nav\">\n" +
+    "          <span class=\"fa fa-list-ul\"></span>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "      <li class=\"hidden-xs\">\n" +
     "        <a href=\"#/home\">\n" +
-    "          <span class=\"fa fa-location-arrow brand-icon\"></span>\n" +
+    "          <span class=\"fa fa-share-alt brand-icon\"></span>\n" +
     "          <span class=\"brand-name\">spredit</span>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
     "    <ul class=\"nav navbar-nav navbar-right\">\n" +
     "      <li>\n" +
+    "        <span ms-post-categories></span>\n" +
     "        <a ng-click=\"openPostCreator()\" class=\"btn-link\">\n" +
     "          <span class=\"btn btn-sm btn-danger\">Publish</span>\n" +
     "        </a>\n" +
@@ -329,15 +330,30 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<small class=\"post-actions\">\n" +
     "  <span class=\"text-muted\" ng-if=\"!linkify\">\n" +
     "    <a ng-click=\"setSelectedAction('comments')\">\n" +
-    "      <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;COMMENTS(<span ng-bind=\"post.comments_count\"></span>)\n" +
+    "      <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;\n" +
+    "      <span ng-if=\"selectedAction=='comments'\">\n" +
+    "        <strong>COMMENTS(<span ng-bind=\"post.comments_count\"></span>)</strong> \n" +
+    "      </span>\n" +
+    "      <span ng-if=\"!(selectedAction=='comments')\">\n" +
+    "        COMMENTS(<span ng-bind=\"post.comments_count\"></span>)\n" +
+    "      </span>\n" +
     "      &nbsp;&nbsp;\n" +
     "    </a>\n" +
     "    <a ng-click=\"setSelectedAction('propagation')\">\n" +
-    "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;MAP(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
+    "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;\n" +
+    "      <span ng-if=\"selectedAction=='propagation'\">\n" +
+    "        <strong>MAP(<span ng-bind=\"post.total_propagation\"></span> KM)</strong>\n" +
+    "      </span>\n" +
+    "      <span ng-if=\"!(selectedAction=='propagation')\">\n" +
+    "        MAP(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
+    "      </span>\n" +
     "    </a>\n" +
-    "    <span class=\"pull-right text-muted\">\n" +
+    "    <span class=\"pull-right text-muted\" ng-class=\"\">\n" +
     "      <a ng-click=\"setSelectedAction('statistics')\">\n" +
-    "        <h2 class=\"spread-value\" ng-bind=\"post.spreads_count | displayNumber\"></h2>\n" +
+    "        <h3 class=\"spread-value\">\n" +
+    "          <strong ng-bind=\"post.spreads_count | displayNumber\" ng-if=\"(selectedAction=='statistics')\"></strong>\n" +
+    "          <span ng-bind=\"post.spreads_count | displayNumber\" ng-if=\"!(selectedAction=='statistics')\"></span>\n" +
+    "        </h3>\n" +
     "      </a>\n" +
     "    </span>\n" +
     "  </span>\n" +
@@ -356,6 +372,38 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </span>\n" +
     "  </span>\n" +
     "</small>"
+  );
+
+
+  $templateCache.put('app/scripts/components/post/categories/modal_template.html',
+    "<div class=\"modal-body text-left\">\n" +
+    "  <br>\n" +
+    "  <h5><strong>Select categories you want to see.</strong></h5>\n" +
+    "  <br>  \n" +
+    "  <div class=\"text-left list-group\">\n" +
+    "    <div ng-repeat=\"category in categories\">\n" +
+    "      <div class=\"checkbox\">\n" +
+    "        <input type=\"checkbox\" id=\"{{category.value}}\" ng-model=\"category.checked\">\n" +
+    "        <label for=\"{{category.value}}\">\n" +
+    "            {{category.label}}\n" +
+    "        </label>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "  <br>\n" +
+    "  <button class=\"btn btn-sm btn-inverse\" ng-click=\"save()\" ng-disabled=\"reqState.isWorking\">\n" +
+    "    <span ng-if=\"reqState.isWorking\">Saving...</span>\n" +
+    "    <span ng-if=\"!reqState.isWorking\">Save</span>\n" +
+    "  </button>\n" +
+    "  <div class=\"clearfix\"></div>\n" +
+    "</div>"
+  );
+
+
+  $templateCache.put('app/scripts/components/post/categories/template.html',
+    "<a ng-click=\"openModal()\" class=\"category-settings\">\n" +
+    "  <span class=\"fa fa-cog\"></span>\n" +
+    "</a>"
   );
 
 
@@ -394,7 +442,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/post/details/template.html',
     "<div class=\"ms-card-complex post-details\" ng-if=\"post.id\">\n" +
-    "  <div class=\"optional-header {{currentMapping.background}}\">\n" +
+    "  <!-- <div class=\"optional-header {{currentMapping.background}}\">\n" +
     "    <div class=\"ms-list-item\">\n" +
     "      <div class=\"glyphicon-avatar\">\n" +
     "        <span class=\"glyphicon {{currentMapping.glyphicon}}\"></span>\n" +
@@ -410,7 +458,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </div>  \n" +
     "    </div>\n" +
     "    <div class=\"clearfix\"></div>\n" +
-    "  </div>\n" +
+    "  </div> -->\n" +
     "  <div ng-if=\"currentMapping\">\n" +
     "    <div ng-if=\"action == 'propagation'\">\n" +
     "      <div ms-propagation post=\"post\"></div>\n" +
@@ -786,7 +834,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </h4>\n" +
     "        <div class=\"logo logo-25 ms-animation-zoom-in\">\n" +
     "          <span>\n" +
-    "            <span class=\"fa fa-location-arrow\"></span>\n" +
+    "            <span class=\"fa fa-share-alt\"></span>\n" +
     "          </span> \n" +
     "        </div>\n" +
     "      </div>\n" +
