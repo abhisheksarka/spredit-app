@@ -711,9 +711,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <small class=\"text-muted\">VIEWS</small>\n" +
     "    </div>\n" +
     "    <div class=\"listing-section\">\n" +
-    "      <span class=\"value\" ng-bind=\"post.spreads_count\"></span>\n" +
+    "      <span class=\"value\" ng-bind=\"post.spreads_count\"></span>&nbsp;\n" +
     "      <br>\n" +
     "      <small class=\"text-muted\">SPREADS</small>\n" +
+    "      <progressbar value=\"post.spreads_count\" max=\"post.spreads_count + post.contains_count\" type=\"success\"></progressbar>\n" +
     "    </div>\n" +
     "    <div class=\"listing-section\">\n" +
     "      <span class=\"value\" ng-bind=\"post.contains_count\"></span>&nbsp;\n" +

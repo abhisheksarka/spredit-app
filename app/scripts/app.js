@@ -21,7 +21,6 @@ angular.module('ms', [
   'google.places',
   'monospaced.elastic',
   'ngScrollTo',
-  
   // application modules
   'ms.core',
   'ms.components',

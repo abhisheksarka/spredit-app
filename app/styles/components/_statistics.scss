@@ -1,4 +1,9 @@
 .statistics {
+  .progress {
+    .progress-bar {
+      opacity: 0.7;
+    }
+  }
   .icon {
     height: 60px;
     width: 60px;
@@ -9,11 +14,9 @@
     margin-top: 15px;
     margin-bottom: 15px;
     .listing-section {
-      padding-top: 15px;
       width: 33%;
       text-align: center;
       float: left;
-      padding-bottom: 15px;
       .value {
         font-size: 36px;
       }
