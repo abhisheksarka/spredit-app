@@ -41,6 +41,8 @@
     overflow: hidden;
     min-height: 230px;
     max-height: 250px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
     .rich-media-actions {
       position: absolute;
       bottom: 0px;
@@ -70,6 +72,7 @@
   }
   .actions {
     padding: 15px;
+    padding-top: 0px;
     a {
       color: #333;
       opacity: 0.7;
@@ -166,7 +169,7 @@
   background: rgb(251,251,251);
   color: gray;
   opacity: 1;
-  @include ms-box-shadow(0px, 2px, 8px, rgba(0, 0, 0, 0.26), inset);  
+  @include ms-box-shadow(0px, 2px, 8px, rgba(0, 0, 0, 0.1), inset);  
 }
 .btn.btn-transparent {
   background: transparent;

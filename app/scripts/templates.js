@@ -511,7 +511,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <span ng-if=\"recordView\">\n" +
     "      <span ms-view-recorder viewable=\"post\" viewable-type=\"'Post'\"></span>\n" +
     "    </span>\n" +
-    "    <div class=\"optional-header\">\n" +
+    "    <!-- <div class=\"optional-header\">\n" +
     "      <div class=\"ms-list-item\">\n" +
     "        <div class=\"list-avatar\">\n" +
     "          <img src=\"../images/marker_green_40.png\"/>\n" +
@@ -530,7 +530,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </div>  \n" +
     "      </div>\n" +
     "      <div class=\"clearfix\"></div>\n" +
-    "    </div>\n" +
+    "    </div> -->\n" +
     "\n" +
     "    <!-- rich media, can contain photo, links or videos -->\n" +
     "    <div class=\"rich-media\" ng-if=\"post.postable_type=='PostPhoto'\" ng-class=\"{'show-full-media': fullMedia}\">\n" +
@@ -553,7 +553,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <!-- supporting text holds the text content of the post -->\n" +
     "    <div class=\"supporting-text\">\n" +
     "      <h2 ng-bind=\"post.title\" ng-if=\"post.title\" class=\"post-title\"></h2>\n" +
-    "      <span>\n" +
+    "      <p>\n" +
     "        <span ms-linkify=\"post.strippedContent\" ng-if=\"!fullContent\"></span>\n" +
     "        <span ms-linkify=\"post.content\" ng-if=\"fullContent\"></span>\n" +
     "        <span ng-if=\"post.isStripped\">\n" +
@@ -563,9 +563,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "            <span ng-if=\"fullContent\"><br>...less</span>\n" +
     "          </a>\n" +
     "        </span>\n" +
-    "      </span>\n" +
+    "      </p>\n" +
     "      <span ng-if=\"post.content || post.title\">\n" +
-    "        <br><br><hr>\n" +
+    "        <br><hr>\n" +
     "        <div ms-spread-creator \n" +
     "            spreadable=\"post\" \n" +
     "            resource-owner=\"'post_publishable'\" \n" +
@@ -665,12 +665,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/spread/creator/template.html',
     "<div class=\"text-center spreader\">\n" +
     "  <span>\n" +
-    "    <span class=\"ms-fab btn btn-inverse contain\" \n" +
+    "    <span class=\"ms-fab btn btn-white contain\" \n" +
     "    \t\t\tng-click=\"containIt()\" \n" +
     "    \t\t\tng-class=\"{'disabled': isDisabled || requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}\">\n" +
     "      <span class=\"glyphicon glyphicon-remove\"></span>\n" +
     "    </span>\n" +
-    "    <span class=\"ms-fab btn btn-inverse spread\" \n" +
+    "    <span class=\"ms-fab btn btn-white spread\" \n" +
     "    \t\t\tng-click=\"spreadIt()\" \n" +
     "    \t\t\tng-class=\"{'disabled': isDisabled || requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}\">\n" +
     "      <span class=\"glyphicon glyphicon-ok\"></span>\n" +

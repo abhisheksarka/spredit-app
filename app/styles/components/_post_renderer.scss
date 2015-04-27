@@ -1,7 +1,7 @@
 .post-renderer {
   position: relative;
-  .supporting-text {
-    padding-top: 0px;
+  hr {
+   width: 50%;
   }
   .rich-media {
     margin-bottom: 15px;
@@ -22,5 +22,7 @@
   }
   .post-title {
     margin-top: 0px;
+    font-weight: 100;
+    opacity: 0.9;
   }
 }

@@ -3,7 +3,7 @@
     <span ng-if="recordView">
       <span ms-view-recorder viewable="post" viewable-type="'Post'"></span>
     </span>
-    <div class="optional-header">
+    <!-- <div class="optional-header">
       <div class="ms-list-item">
         <div class="list-avatar">
           <img src="../images/marker_green_40.png"/>
@@ -22,7 +22,7 @@
         </div>  
       </div>
       <div class="clearfix"></div>
-    </div>
+    </div> -->
 
     <!-- rich media, can contain photo, links or videos -->
     <div class="rich-media" ng-if="post.postable_type=='PostPhoto'" ng-class="{'show-full-media': fullMedia}">
@@ -45,7 +45,7 @@
     <!-- supporting text holds the text content of the post -->
     <div class="supporting-text">
       <h2 ng-bind="post.title" ng-if="post.title" class="post-title"></h2>
-      <span>
+      <p>
         <span ms-linkify="post.strippedContent" ng-if="!fullContent"></span>
         <span ms-linkify="post.content" ng-if="fullContent"></span>
         <span ng-if="post.isStripped">
@@ -55,9 +55,9 @@
             <span ng-if="fullContent"><br>...less</span>
           </a>
         </span>
-      </span>
+      </p>
       <span ng-if="post.content || post.title">
-        <br><br><hr>
+        <br><hr>
         <div ms-spread-creator 
             spreadable="post" 
             resource-owner="'post_publishable'" 
