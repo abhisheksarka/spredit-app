@@ -18,14 +18,12 @@
   </div> -->
   <div ng-if="currentMapping">
     <div ng-if="action == 'propagation'">
+      <div ms-statistics post="post"></div>
       <div ms-propagation post="post"></div>
     </div>
     <div ng-if="action == 'comments'" class="supporting-text">
       <div ms-comment-creator commentable="post" commentable-type="'Post'"></div><br>
       <div ms-comment-lister commentable="post"></div>
-    </div>
-    <div ng-if="action == 'statistics'" class="supporting-text">
-      <div ms-statistics post="post"></div>
     </div>
   </div>
 </div>

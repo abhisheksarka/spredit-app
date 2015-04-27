@@ -349,12 +349,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </span>\n" +
     "    </a>\n" +
     "    <span class=\"pull-right text-muted\" ng-class=\"\">\n" +
-    "      <a ng-click=\"setSelectedAction('statistics')\">\n" +
+    "      <span>\n" +
     "        <h3 class=\"spread-value\">\n" +
     "          <strong ng-bind=\"post.spreads_count | displayNumber\" ng-if=\"(selectedAction=='statistics')\"></strong>\n" +
     "          <span ng-bind=\"post.spreads_count | displayNumber\" ng-if=\"!(selectedAction=='statistics')\"></span>\n" +
     "        </h3>\n" +
-    "      </a>\n" +
+    "      </span>\n" +
     "    </span>\n" +
     "  </span>\n" +
     "  <span class=\"text-muted\" ng-if=\"linkify\">\n" +
@@ -461,14 +461,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  </div> -->\n" +
     "  <div ng-if=\"currentMapping\">\n" +
     "    <div ng-if=\"action == 'propagation'\">\n" +
+    "      <div ms-statistics post=\"post\"></div>\n" +
     "      <div ms-propagation post=\"post\"></div>\n" +
     "    </div>\n" +
     "    <div ng-if=\"action == 'comments'\" class=\"supporting-text\">\n" +
     "      <div ms-comment-creator commentable=\"post\" commentable-type=\"'Post'\"></div><br>\n" +
     "      <div ms-comment-lister commentable=\"post\"></div>\n" +
-    "    </div>\n" +
-    "    <div ng-if=\"action == 'statistics'\" class=\"supporting-text\">\n" +
-    "      <div ms-statistics post=\"post\"></div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>"

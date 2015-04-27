@@ -20,12 +20,12 @@
       </span>
     </a>
     <span class="pull-right text-muted" ng-class="">
-      <a ng-click="setSelectedAction('statistics')">
+      <span>
         <h3 class="spread-value">
           <strong ng-bind="post.spreads_count | displayNumber" ng-if="(selectedAction=='statistics')"></strong>
           <span ng-bind="post.spreads_count | displayNumber" ng-if="!(selectedAction=='statistics')"></span>
         </h3>
-      </a>
+      </span>
     </span>
   </span>
   <span class="text-muted" ng-if="linkify">
