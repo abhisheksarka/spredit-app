@@ -2,6 +2,7 @@ body#page-index {
   background-size: 100%;
   padding-left: 0px !important;
   color: white;
+  background: white;
   #bg-backdrop {
     display: none;
   }
@@ -80,6 +81,14 @@ body#page-index {
       font-size: 3.6em;
       margin-bottom: 50px;
     }
+    .layer {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      background-color: rgba(0,0,0,0.6);
+    }
     .top {
       color: white !important;
       padding-top: 50px;
@@ -100,30 +109,29 @@ body#page-index {
       background-size: auto;
     }
     position: relative;
-    .layer {
-      position: absolute;
-      left: 0px;
-      right: 0px;
-      top: 0px;
-      bottom: 0px;
-      background-color: rgba(0,0,0,0.6);
-    }
   }
   #second-section {
-    background: white;
-    .top {
-      background: #333;
-      &:hover {
-        background: #333;
+    .step{
+      padding-top: 15px;
+      padding-bottom: 50px;
+      .step-image {
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+        @include ms-border-radius(20000px);
+        @include ms-box-shadow(0px, 0px, 40px, rgba(0,0,0,0.05));
+        img{
+          width: 100%;
+        }
       }
-    }
-    blockquote {
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 60px;
-      font-size: 50px;
-      border-left: none;
-      font-weight: 100;
+      .fa {
+        font-size: 70px;
+      }
+      h4{
+        font-weight: bold;
+        @extend .text-muted;
+      }
     }
   }
   #third-section {

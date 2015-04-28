@@ -817,9 +817,6 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/pages/index/template.html',
     "<div id=\"bg-backdrop\"></div>\n" +
-    "<div ms-section-scroll=\"[]\">\n" +
-    "  \n" +
-    "</div>\n" +
     "<div ms-auto-height=\"sectionHeight\" offset=\"-40\" min-height=\"600\" class=\"section\" id=\"main-section\">\n" +
     "  <div class=\"layer\"></div>\n" +
     "  <div class=\"container\">\n" +
@@ -855,52 +852,38 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  </div>\n" +
     "</div>\n" +
     "<div class=\"section\" offset=\"0\" min-height=\"600\" id=\"second-section\" responsive=\"true\">\n" +
-    "  <div class=\"top\">\n" +
-    "    <div class=\"container text-center\">\n" +
-    "      <h1>\n" +
-    "        How it works...<br>\n" +
-    "        <span class=\"fa fa-cogs\"></span>\n" +
-    "      </h1>\n" +
-    "      <h3 class=\"text-muted-7\">\n" +
-    "        \n" +
-    "      </h3>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
-    "  <div class=\"container text-center\">\n" +
-    "    <div class=\"row\">\n" +
-    "      <div class=\"col-md-4\">\n" +
-    "        <span class=\"desc-icon bg-warning\">\n" +
-    "          <span class=\"fa fa-bullhorn\"></span>\n" +
-    "        </span>\n" +
-    "        <h3><strong>Publish</strong></h3>\n" +
-    "        <p class=\"text-muted\">\n" +
-    "          Publish a photo, video, link, ask a question or any form of information you want.\n" +
-    "        </p>\n" +
+    "  <div class=\"container\">\n" +
+    "    <div class=\"ms-master-section text-center\">\n" +
+    "      <div class=\"step\">\n" +
+    "        <div class=\"step-image\">\n" +
+    "          <img src=\"../images/step_one.png\"/>\n" +
+    "        </div>\n" +
+    "        <h4>Users on spredit are connected from the start.</h4>\n" +
+    "        <span class=\"fa fa-chevron-down\"></span>\n" +
     "      </div>\n" +
-    "      <div class=\"col-md-4\">\n" +
-    "        <span class=\"desc-icon bg-warning\">\n" +
-    "          <span class=\"fa fa-map-marker\"></span>\n" +
-    "        </span>\n" +
-    "        <h3><strong>Propagate</strong></h3>\n" +
-    "        <p class=\"text-muted\">\n" +
-    "          It instantely propagates to all the people around you based on your location.\n" +
-    "        </p>\n" +
+    "      <div class=\"step\">\n" +
+    "        <div class=\"step-image\">\n" +
+    "          <img src=\"../images/step_two.png\"/>\n" +
+    "        </div>\n" +
+    "        <h4>Information is generated from a source, and spread to nearby users instantaneously.</h4>\n" +
+    "        <span class=\"fa fa-chevron-down\"></span>\n" +
     "      </div>\n" +
-    "      <div class=\"col-md-4\">\n" +
-    "        <span class=\"desc-icon bg-warning\">\n" +
-    "          <span class=\"fa fa-location-arrow\"></span>\n" +
-    "        </span>\n" +
-    "        <h3><strong>Spread</strong></h3>\n" +
-    "        <p class=\"text-muted\">\n" +
-    "          Every person who views your post can choose to spread it further or contain it.\n" +
-    "        </p>\n" +
+    "      <div class=\"step\">\n" +
+    "        <div class=\"step-image\">\n" +
+    "          <img src=\"../images/step_three.png\"/>\n" +
+    "        </div>\n" +
+    "        <h4>Receivers of the information can choose to spread it further or contain it.</h4>\n" +
+    "        <span class=\"fa fa-chevron-down\"></span>\n" +
     "      </div>\n" +
-    "      <div class=\"col-md-12\">\n" +
-    "        <blockquote>\n" +
-    "          Here, the entire world is your audience...\n" +
-    "        </blockquote>\n" +
-    "        <a class=\"btn btn-transparent get-started\" scroll-to=\"main-section\">Get Started</a>\n" +
-    "        <br><br><br><br>\n" +
+    "      <div class=\"step\">\n" +
+    "        <div class=\"step-image\">\n" +
+    "          <img src=\"../images/step_four.png\"/>\n" +
+    "        </div>\n" +
+    "        <h4>Interesting information keeps on spreading further and wider.</h4>\n" +
+    "        <span class=\"fa fa-chevron-down\"></span>\n" +
+    "      </div>\n" +
+    "      <div class=\"step\">\n" +
+    "        <h1>Here, the entire world is your audience</h1>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
