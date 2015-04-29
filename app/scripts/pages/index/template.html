@@ -6,29 +6,11 @@
       <div class="col-md-12 text-center">
         <h1 class="brand-name">
           Spredit <span class="label label-default">beta</span>
+          <small class="brand-tagline">The new way to spread information</small>
         </h1>
-        <h4 class="brand-tagline">
-          A new way to spread information<br>
-        </h4>
-        <div class="logo logo-25 ms-animation-zoom-in">
-          <span>
-            <span class="fa fa-share-alt"></span>
-          </span> 
+        <div class="screens-image">
+          <img src="../images/screens.png"/>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center" id="sign-in-section">
-        <h4 class="short-description text-center">
-          Reach out to thousands and possibly millions of people in a much easier way. No connections, friends or followers.
-        </h4>
-        <span ms-fb-log-in 
-              login-disabled="loginState.isWorking"
-              data-connected="connected(response)" 
-              data-unauthorized="unauthorized(response)" 
-              data-unknown="unknown(response)"></span>
       </div>
     </div>
   </div>
@@ -36,76 +18,87 @@
 <div class="section" offset="0" min-height="600" id="second-section" responsive="true">
   <div class="container steps">
     <div class="text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <span ms-fb-log-in 
+              login-disabled="loginState.isWorking"
+              data-connected="connected(response)" 
+              data-unauthorized="unauthorized(response)" 
+              data-unknown="unknown(response)">
+          </span>
+          <hr>
+        </div>
+      </div>
       <div class="row step">
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <div class="step-image">
             <img src="../images/step_one.png"/>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <div>
-            <h4 class="step-text">People on spredit are connected from the start</h4>
+            <p class="step-text">People on spredit are connected from the start</p>
             <span class="fa fa-chevron-down step-next"></span>
           </div>
         </div>
       </div>
-      <!-- <div class="row">
-        <div class="col-md-12">
-          <span class="fa fa-chevron-down step-next"></span>
-        </div>
-      </div> -->
       <div class="row step">
-        <div class="col-md-6">
+        <div class="col-sm-6 hidden-xs">
           <div>
-            <h4 class="step-text">Information is generated from a source, and spreads to nearby users</h4>
+            <p class="step-text">Information is generated from a source, and spreads to nearby users</p>
             <span class="fa fa-chevron-down step-next"></span>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <div class="step-image">
             <img src="../images/step_two.png"/>
           </div>
         </div>
-      </div>
-      <!-- <div class="row">
-        <div class="col-md-12">
-          <span class="fa fa-chevron-down step-next"></span>
-        </div>
-      </div> -->
-      <div class="row step">
-        <div class="col-md-6">
-          <div class="step-image">
-            <img src="../images/step_three.png"/>
-          </div>
-        </div>
-        <div class="col-md-6">
+        <div class="col-sm-6 visible-xs">
           <div>
-            <h4 class="step-text">Receivers of the information can choose to spread it further or contain it</h4>
+            <p class="step-text">Information is generated from a source, and spreads to nearby users</p>
             <span class="fa fa-chevron-down step-next"></span>
           </div>
         </div>
       </div>
-      <!-- <div class="row">
-        <div class="col-md-12">
-          <span class="fa fa-chevron-down step-next"></span>
-        </div>
-      </div> -->
       <div class="row step">
-        <div class="col-md-6">
-          <div>
-            <h4 class="step-text">A chain reaction of any proportion can occur, possibly spanning multiple countries</h4>
+        <div class="col-sm-6">
+          <div class="step-image">
+            <img src="../images/step_three.png"/>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-6">
+          <div>
+            <p class="step-text">Receivers of the information can choose to spread it further or contain it</p>
+            <span class="fa fa-chevron-down step-next"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row step">
+        <div class="col-sm-6 hidden-xs">
+          <div>
+            <p class="step-text">A chain reaction of any proportion can occur, possibly spanning multiple countries and millions of people</p>
+          </div>
+        </div>
+        <div class="col-sm-6">
           <div class="step-image">
             <img src="../images/step_four.png"/>
+          </div>
+        </div>
+        <div class="col-sm-6 visible-xs">
+          <div>
+            <p class="step-text">A chain reaction of any proportion can occur, possibly spanning multiple countries and millions of people</p>
           </div>
         </div>
       </div>
       <div class="row step">
         <div class="col-md-12">
           <div>
-            <h1>Here, the whole world is your audience</h1>
+            <br>
+            <h1><strong>Here, the whole world is your audience</strong></h1>
+            <br>
+            <a class="get-started btn btn-transparent" scroll-to="second-section">Get Started</a>
+            <br><br>
           </div>
         </div>
       </div>

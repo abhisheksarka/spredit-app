@@ -122,7 +122,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
-    "  <button class=\"btn btn-warning fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"loginDisabled\">Sign in with facebook</button>\n" +
+    "  <button class=\"btn btn-success fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"loginDisabled\">Sign in with facebook</button>\n" +
     "</span>"
   );
 
@@ -281,18 +281,6 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <li>\n" +
     "        <a href=\"https://www.twitter.com/spreditapp\" target=\"_blank\">\n" +
     "          <span class=\"fa fa-twitter\"></span>&nbsp;&nbsp;Follow\n" +
-    "        </a>\n" +
-    "      </li>\n" +
-    "    </ul>\n" +
-    "    <ul class=\"nav navbar-nav navbar-right\">\n" +
-    "      <li>\n" +
-    "        <a scroll-to=\"second-section\">\n" +
-    "          How it works\n" +
-    "        </a>\n" +
-    "      </li>\n" +
-    "      <li>\n" +
-    "        <a scroll-to=\"footer\">\n" +
-    "          Contact\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
@@ -509,7 +497,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <span ng-if=\"recordView\">\n" +
     "      <span ms-view-recorder viewable=\"post\" viewable-type=\"'Post'\"></span>\n" +
     "    </span>\n" +
-    "    <!-- <div class=\"optional-header\">\n" +
+    "    <div class=\"optional-header\">\n" +
     "      <div class=\"ms-list-item\">\n" +
     "        <div class=\"list-avatar\">\n" +
     "          <img src=\"../images/marker_green_40.png\"/>\n" +
@@ -528,7 +516,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        </div>  \n" +
     "      </div>\n" +
     "      <div class=\"clearfix\"></div>\n" +
-    "    </div> -->\n" +
+    "    </div>\n" +
     "\n" +
     "    <!-- rich media, can contain photo, links or videos -->\n" +
     "    <div class=\"rich-media\" ng-if=\"post.postable_type=='PostPhoto'\" ng-class=\"{'show-full-media': fullMedia}\">\n" +
@@ -824,29 +812,11 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <div class=\"col-md-12 text-center\">\n" +
     "        <h1 class=\"brand-name\">\n" +
     "          Spredit <span class=\"label label-default\">beta</span>\n" +
+    "          <small class=\"brand-tagline\">The new way to spread information</small>\n" +
     "        </h1>\n" +
-    "        <h4 class=\"brand-tagline\">\n" +
-    "          A new way to spread information<br>\n" +
-    "        </h4>\n" +
-    "        <div class=\"logo logo-25 ms-animation-zoom-in\">\n" +
-    "          <span>\n" +
-    "            <span class=\"fa fa-share-alt\"></span>\n" +
-    "          </span> \n" +
+    "        <div class=\"screens-image\">\n" +
+    "          <img src=\"../images/screens.png\"/>\n" +
     "        </div>\n" +
-    "      </div>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
-    "  <div class=\"container\">\n" +
-    "    <div class=\"row\">\n" +
-    "      <div class=\"col-md-12 text-center\" id=\"sign-in-section\">\n" +
-    "        <h4 class=\"short-description text-center\">\n" +
-    "          Reach out to thousands and possibly millions of people in a much easier way. No connections, friends or followers.\n" +
-    "        </h4>\n" +
-    "        <span ms-fb-log-in \n" +
-    "              login-disabled=\"loginState.isWorking\"\n" +
-    "              data-connected=\"connected(response)\" \n" +
-    "              data-unauthorized=\"unauthorized(response)\" \n" +
-    "              data-unknown=\"unknown(response)\"></span>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
@@ -854,76 +824,87 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<div class=\"section\" offset=\"0\" min-height=\"600\" id=\"second-section\" responsive=\"true\">\n" +
     "  <div class=\"container steps\">\n" +
     "    <div class=\"text-center\">\n" +
+    "      <div class=\"row\">\n" +
+    "        <div class=\"col-md-12\">\n" +
+    "          <span ms-fb-log-in \n" +
+    "              login-disabled=\"loginState.isWorking\"\n" +
+    "              data-connected=\"connected(response)\" \n" +
+    "              data-unauthorized=\"unauthorized(response)\" \n" +
+    "              data-unknown=\"unknown(response)\">\n" +
+    "          </span>\n" +
+    "          <hr>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
     "      <div class=\"row step\">\n" +
-    "        <div class=\"col-md-6\">\n" +
+    "        <div class=\"col-sm-6\">\n" +
     "          <div class=\"step-image\">\n" +
     "            <img src=\"../images/step_one.png\"/>\n" +
     "          </div>\n" +
     "        </div>\n" +
-    "        <div class=\"col-md-6\">\n" +
+    "        <div class=\"col-sm-6\">\n" +
     "          <div>\n" +
-    "            <h4 class=\"step-text\">People on spredit are connected from the start</h4>\n" +
+    "            <p class=\"step-text\">People on spredit are connected from the start</p>\n" +
     "            <span class=\"fa fa-chevron-down step-next\"></span>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
-    "      <!-- <div class=\"row\">\n" +
-    "        <div class=\"col-md-12\">\n" +
-    "          <span class=\"fa fa-chevron-down step-next\"></span>\n" +
-    "        </div>\n" +
-    "      </div> -->\n" +
     "      <div class=\"row step\">\n" +
-    "        <div class=\"col-md-6\">\n" +
+    "        <div class=\"col-sm-6 hidden-xs\">\n" +
     "          <div>\n" +
-    "            <h4 class=\"step-text\">Information is generated from a source, and spreads to nearby users</h4>\n" +
+    "            <p class=\"step-text\">Information is generated from a source, and spreads to nearby users</p>\n" +
     "            <span class=\"fa fa-chevron-down step-next\"></span>\n" +
     "          </div>\n" +
     "        </div>\n" +
-    "        <div class=\"col-md-6\">\n" +
+    "        <div class=\"col-sm-6\">\n" +
     "          <div class=\"step-image\">\n" +
     "            <img src=\"../images/step_two.png\"/>\n" +
     "          </div>\n" +
     "        </div>\n" +
-    "      </div>\n" +
-    "      <!-- <div class=\"row\">\n" +
-    "        <div class=\"col-md-12\">\n" +
-    "          <span class=\"fa fa-chevron-down step-next\"></span>\n" +
-    "        </div>\n" +
-    "      </div> -->\n" +
-    "      <div class=\"row step\">\n" +
-    "        <div class=\"col-md-6\">\n" +
-    "          <div class=\"step-image\">\n" +
-    "            <img src=\"../images/step_three.png\"/>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"col-md-6\">\n" +
+    "        <div class=\"col-sm-6 visible-xs\">\n" +
     "          <div>\n" +
-    "            <h4 class=\"step-text\">Receivers of the information can choose to spread it further or contain it</h4>\n" +
+    "            <p class=\"step-text\">Information is generated from a source, and spreads to nearby users</p>\n" +
     "            <span class=\"fa fa-chevron-down step-next\"></span>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
-    "      <!-- <div class=\"row\">\n" +
-    "        <div class=\"col-md-12\">\n" +
-    "          <span class=\"fa fa-chevron-down step-next\"></span>\n" +
-    "        </div>\n" +
-    "      </div> -->\n" +
     "      <div class=\"row step\">\n" +
-    "        <div class=\"col-md-6\">\n" +
-    "          <div>\n" +
-    "            <h4 class=\"step-text\">A chain reaction of any proportion can occur, possibly spanning multiple countries</h4>\n" +
+    "        <div class=\"col-sm-6\">\n" +
+    "          <div class=\"step-image\">\n" +
+    "            <img src=\"../images/step_three.png\"/>\n" +
     "          </div>\n" +
     "        </div>\n" +
-    "        <div class=\"col-md-6\">\n" +
+    "        <div class=\"col-sm-6\">\n" +
+    "          <div>\n" +
+    "            <p class=\"step-text\">Receivers of the information can choose to spread it further or contain it</p>\n" +
+    "            <span class=\"fa fa-chevron-down step-next\"></span>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "      <div class=\"row step\">\n" +
+    "        <div class=\"col-sm-6 hidden-xs\">\n" +
+    "          <div>\n" +
+    "            <p class=\"step-text\">A chain reaction of any proportion can occur, possibly spanning multiple countries and millions of people</p>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"col-sm-6\">\n" +
     "          <div class=\"step-image\">\n" +
     "            <img src=\"../images/step_four.png\"/>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"col-sm-6 visible-xs\">\n" +
+    "          <div>\n" +
+    "            <p class=\"step-text\">A chain reaction of any proportion can occur, possibly spanning multiple countries and millions of people</p>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
     "      <div class=\"row step\">\n" +
     "        <div class=\"col-md-12\">\n" +
     "          <div>\n" +
-    "            <h1>Here, the whole world is your audience</h1>\n" +
+    "            <br>\n" +
+    "            <h1><strong>Here, the whole world is your audience</strong></h1>\n" +
+    "            <br>\n" +
+    "            <a class=\"get-started btn btn-transparent\" scroll-to=\"second-section\">Get Started</a>\n" +
+    "            <br><br>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
