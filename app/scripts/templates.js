@@ -863,18 +863,20 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        <div class=\"col-md-6\">\n" +
     "          <div>\n" +
     "            <h4 class=\"step-text\">People on spredit are connected from the start</h4>\n" +
+    "            <span class=\"fa fa-chevron-down step-next\"></span>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
-    "      <div class=\"row\">\n" +
+    "      <!-- <div class=\"row\">\n" +
     "        <div class=\"col-md-12\">\n" +
     "          <span class=\"fa fa-chevron-down step-next\"></span>\n" +
     "        </div>\n" +
-    "      </div>\n" +
+    "      </div> -->\n" +
     "      <div class=\"row step\">\n" +
     "        <div class=\"col-md-6\">\n" +
     "          <div>\n" +
     "            <h4 class=\"step-text\">Information is generated from a source, and spreads to nearby users</h4>\n" +
+    "            <span class=\"fa fa-chevron-down step-next\"></span>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "        <div class=\"col-md-6\">\n" +
@@ -883,11 +885,11 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
-    "      <div class=\"row\">\n" +
+    "      <!-- <div class=\"row\">\n" +
     "        <div class=\"col-md-12\">\n" +
     "          <span class=\"fa fa-chevron-down step-next\"></span>\n" +
     "        </div>\n" +
-    "      </div>\n" +
+    "      </div> -->\n" +
     "      <div class=\"row step\">\n" +
     "        <div class=\"col-md-6\">\n" +
     "          <div class=\"step-image\">\n" +
@@ -897,14 +899,15 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        <div class=\"col-md-6\">\n" +
     "          <div>\n" +
     "            <h4 class=\"step-text\">Receivers of the information can choose to spread it further or contain it</h4>\n" +
+    "            <span class=\"fa fa-chevron-down step-next\"></span>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
-    "      <div class=\"row\">\n" +
+    "      <!-- <div class=\"row\">\n" +
     "        <div class=\"col-md-12\">\n" +
     "          <span class=\"fa fa-chevron-down step-next\"></span>\n" +
     "        </div>\n" +
-    "      </div>\n" +
+    "      </div> -->\n" +
     "      <div class=\"row step\">\n" +
     "        <div class=\"col-md-6\">\n" +
     "          <div>\n" +
