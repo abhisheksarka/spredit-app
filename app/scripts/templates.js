@@ -852,38 +852,77 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  </div>\n" +
     "</div>\n" +
     "<div class=\"section\" offset=\"0\" min-height=\"600\" id=\"second-section\" responsive=\"true\">\n" +
-    "  <div class=\"container\">\n" +
-    "    <div class=\"ms-master-section text-center\">\n" +
-    "      <div class=\"step\">\n" +
-    "        <div class=\"step-image\">\n" +
-    "          <img src=\"../images/step_one.png\"/>\n" +
+    "  <div class=\"container steps\">\n" +
+    "    <div class=\"text-center\">\n" +
+    "      <div class=\"row step\">\n" +
+    "        <div class=\"col-md-6\">\n" +
+    "          <div class=\"step-image\">\n" +
+    "            <img src=\"../images/step_one.png\"/>\n" +
+    "          </div>\n" +
     "        </div>\n" +
-    "        <h4>Users on spredit are connected from the start.</h4>\n" +
-    "        <span class=\"fa fa-chevron-down\"></span>\n" +
-    "      </div>\n" +
-    "      <div class=\"step\">\n" +
-    "        <div class=\"step-image\">\n" +
-    "          <img src=\"../images/step_two.png\"/>\n" +
+    "        <div class=\"col-md-6\">\n" +
+    "          <div>\n" +
+    "            <h4 class=\"step-text\">People on spredit are connected from the start</h4>\n" +
+    "          </div>\n" +
     "        </div>\n" +
-    "        <h4>Information is generated from a source, and spread to nearby users instantaneously.</h4>\n" +
-    "        <span class=\"fa fa-chevron-down\"></span>\n" +
     "      </div>\n" +
-    "      <div class=\"step\">\n" +
-    "        <div class=\"step-image\">\n" +
-    "          <img src=\"../images/step_three.png\"/>\n" +
+    "      <div class=\"row\">\n" +
+    "        <div class=\"col-md-12\">\n" +
+    "          <span class=\"fa fa-chevron-down step-next\"></span>\n" +
     "        </div>\n" +
-    "        <h4>Receivers of the information can choose to spread it further or contain it.</h4>\n" +
-    "        <span class=\"fa fa-chevron-down\"></span>\n" +
     "      </div>\n" +
-    "      <div class=\"step\">\n" +
-    "        <div class=\"step-image\">\n" +
-    "          <img src=\"../images/step_four.png\"/>\n" +
+    "      <div class=\"row step\">\n" +
+    "        <div class=\"col-md-6\">\n" +
+    "          <div>\n" +
+    "            <h4 class=\"step-text\">Information is generated from a source, and spreads to nearby users</h4>\n" +
+    "          </div>\n" +
     "        </div>\n" +
-    "        <h4>Interesting information keeps on spreading further and wider.</h4>\n" +
-    "        <span class=\"fa fa-chevron-down\"></span>\n" +
+    "        <div class=\"col-md-6\">\n" +
+    "          <div class=\"step-image\">\n" +
+    "            <img src=\"../images/step_two.png\"/>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
     "      </div>\n" +
-    "      <div class=\"step\">\n" +
-    "        <h1>Here, the entire world is your audience</h1>\n" +
+    "      <div class=\"row\">\n" +
+    "        <div class=\"col-md-12\">\n" +
+    "          <span class=\"fa fa-chevron-down step-next\"></span>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "      <div class=\"row step\">\n" +
+    "        <div class=\"col-md-6\">\n" +
+    "          <div class=\"step-image\">\n" +
+    "            <img src=\"../images/step_three.png\"/>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"col-md-6\">\n" +
+    "          <div>\n" +
+    "            <h4 class=\"step-text\">Receivers of the information can choose to spread it further or contain it</h4>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "      <div class=\"row\">\n" +
+    "        <div class=\"col-md-12\">\n" +
+    "          <span class=\"fa fa-chevron-down step-next\"></span>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "      <div class=\"row step\">\n" +
+    "        <div class=\"col-md-6\">\n" +
+    "          <div>\n" +
+    "            <h4 class=\"step-text\">A chain reaction of any proportion can occur, possibly spanning multiple countries</h4>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"col-md-6\">\n" +
+    "          <div class=\"step-image\">\n" +
+    "            <img src=\"../images/step_four.png\"/>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "      <div class=\"row step\">\n" +
+    "        <div class=\"col-md-12\">\n" +
+    "          <div>\n" +
+    "            <h1>Here, the whole world is your audience</h1>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
