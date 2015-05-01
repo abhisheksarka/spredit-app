@@ -40,12 +40,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "                class=\"form-control\" \n" +
     "                ng-model=\"comment.content\"\n" +
     "                name=\"content\"\n" +
-    "                ng-focus=\"focusStyle={height:'auto'};focused=true\"\n" +
-    "                ng-style=\"focusStyle\"\n" +
+    "                style=\"height: auto\"\n" +
     "                ng-required=\"true\">\n" +
     "      </textarea><br>\n" +
-    "      <button class=\"btn btn-default btn-sm\" \n" +
-    "              ng-if=\"focused\" \n" +
+    "      <button class=\"btn btn-default btn-sm\"  \n" +
     "              ng-disabled=\"newCommentForm.$invalid || state.isWorking\" \n" +
     "              ng-click=\"createComment()\">\n" +
     "              <span ng-if=\"state.isWorking\">Please wait...</span>\n" +
@@ -240,14 +238,15 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  </div>\n" +
     "  <div class=\"container ms-master-section\" data-ng-if=\"signedIn\">\n" +
     "    <ul class=\"nav navbar-nav\">\n" +
-    "      <li class=\"visible-xs\">\n" +
-    "        <a ng-click=\"toggleSideNav()\" class=\"toggle-side-nav\">\n" +
-    "          <span class=\"fa fa-list-ul\"></span>\n" +
-    "        </a>\n" +
-    "      </li>\n" +
-    "      <li class=\"hidden-xs\">\n" +
+    "      <li>\n" +
     "        <a href=\"#/home\">\n" +
     "          <span class=\"fa fa-share-alt brand-icon\"></span>\n" +
+    "        </a>\n" +
+    "        <a href=\"#/me\">\n" +
+    "          <span class=\"fa fa-user brand-icon\"></span>\n" +
+    "        </a>\n" +
+    "        <a href=\"/#current_location\">\n" +
+    "          <span class=\"fa fa-map-marker brand-icon\"></span>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
@@ -302,9 +301,32 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('app/scripts/components/post/actions/modal_template.html',
+    "<div class=\"modal-body\">\n" +
+    "  <div class=\"text-center\">\n" +
+    "    <div>\n" +
+    "      <a class=\"fa fa-chevron-up close-modal-icon\" ng-click=\"close()\"></a>\n" +
+    "    </div>\n" +
+    "    <a class=\"btn btn-transparent btn-sm action-buttons\" \n" +
+    "       ng-click=\"setAction('comments')\" \n" +
+    "       ng-class=\"{'active-action': (action == 'comments')}\">\n" +
+    "      COMMENTS(<span ng-bind=\"post.comments_count\"></span>)\n" +
+    "    </a>\n" +
+    "    &nbsp;\n" +
+    "    <a class=\"btn btn-transparent btn-sm action-buttons\" \n" +
+    "       ng-click=\"setAction('propagation')\" \n" +
+    "       ng-class=\"{'active-action': (action == 'propagation')}\">\n" +
+    "      SPREAD MAP(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
+    "    </a>\n" +
+    "  </div>\n" +
+    "  <div ms-post-details post=\"post\" action=\"action\"></div>\n" +
+    "</div>"
+  );
+
+
   $templateCache.put('app/scripts/components/post/actions/template.html',
     "<small class=\"post-actions\">\n" +
-    "  <span class=\"text-muted\" ng-if=\"!linkify\">\n" +
+    "  <span class=\"text-muted\" ng-if=\"!modalify\">\n" +
     "    <a ng-click=\"setSelectedAction('comments')\">\n" +
     "      <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;\n" +
     "      <span ng-if=\"selectedAction=='comments'\">\n" +
@@ -333,16 +355,20 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </span>\n" +
     "    </span>\n" +
     "  </span>\n" +
-    "  <span class=\"text-muted\" ng-if=\"linkify\">\n" +
-    "    <a ng-href=\"#/posts/{{post.encrypted_id}}\" target=\"_blank\">\n" +
-    "      <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;COMMENTS(<span ng-bind=\"post.comments_count\"></span>)\n" +
-    "      &nbsp;&nbsp;\n" +
+    "  <span class=\"text-muted\" ng-if=\"modalify\">\n" +
+    "    <a ng-click=\"openModal(post, 'comments')\">\n" +
+    "      <strong>\n" +
+    "        <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;COMMENTS(<span ng-bind=\"post.comments_count\"></span>)\n" +
+    "        &nbsp;&nbsp;\n" +
+    "      </strong>\n" +
     "    </a>\n" +
-    "    <a ng-href=\"#/posts/{{post.encrypted_id}}\" target=\"_blank\">\n" +
-    "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;MAP(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
+    "    <a ng-click=\"openModal(post, 'propagation')\">\n" +
+    "      <strong>\n" +
+    "        <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;SPREAD MAP(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
+    "      </strong>\n" +
     "    </a>\n" +
     "    <span class=\"pull-right text-muted\">\n" +
-    "      <a ng-href=\"#/posts/{{post.encrypted_id}}\" target=\"_blank\">\n" +
+    "      <a>\n" +
     "        <h2 class=\"spread-value\" ng-bind=\"post.spreads_count | displayNumber\"></h2>\n" +
     "      </a>\n" +
     "    </span>\n" +
@@ -388,7 +414,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <form name=\"newPostForm\" novalidate>\n" +
     "    <div ms-post-photo-uploader postable-object=\"postable\" postable-refresh=\"refresh\"></div>\n" +
     "    <br>\n" +
-    "    <textarea placeholder=\"Content...\" \n" +
+    "    <textarea placeholder=\"Spread your thoughts to the people around you\" \n" +
     "              msd-elastic=\"\\n\"\n" +
     "              class=\"form-control\" \n" +
     "              ng-model=\"post.content\"\n" +
@@ -407,7 +433,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/post/creator_modal/template.html',
     "<div class=\"modal-body\">\n" +
-    "  <br>\n" +
+    "  <div class=\"text-center\">\n" +
+    "    <a class=\"fa fa-chevron-up close-modal-icon\" ng-click=\"close()\"></a>\n" +
+    "  </div>\n" +
     "  <span ms-post-creator success=\"success(response)\" error=\"error(response)\"></span>\n" +
     "</div>"
   );
@@ -525,7 +553,8 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"supporting-text\">\n" +
     "      <h2 ms-linkify=\"post.content\" ng-if=\"post.content\" class=\"post-content\"></h2>\n" +
     "      <span ng-if=\"post.content\">\n" +
-    "        <br><hr>\n" +
+    "        <br>\n" +
+    "        <hr ng-if=\"!spreaderDisabled\">\n" +
     "        <div ms-spread-creator \n" +
     "            spreadable=\"post\" \n" +
     "            resource-owner=\"'post_publishable'\" \n" +
@@ -540,7 +569,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </span>\n" +
     "    </div>\n" +
     "    <div class=\"actions\">\n" +
-    "      <span ms-post-actions post=\"post\" selected-action=\"selectedAction\" linkify=\"linkifyPostActions\" map-disabled=\"mapDisabled\"></span>\n" +
+    "      <span ms-post-actions post=\"post\" selected-action=\"selectedAction\" modalify=\"modalifyPostActions\" map-disabled=\"mapDisabled\"></span>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>"
@@ -623,7 +652,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/components/spread/creator/template.html',
-    "<div class=\"text-center spreader\">\n" +
+    "<div class=\"text-center spreader\" ng-if=\"!isDisabled\">\n" +
     "  <span>\n" +
     "    <span class=\"ms-fab btn btn-white contain\" \n" +
     "    \t\t\tng-click=\"containIt()\" \n" +
@@ -955,7 +984,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "            <div ms-infinite-scroll resource=\"Post\" request-to=\"'mine'\" push-to=\"myPosts\" paginator=\"myPostsPaginator\"></div>\n" +
     "            <div ng-repeat=\"post in myPosts\">\n" +
     "              <br>\n" +
-    "              <div ms-post-renderer post=\"post\" record-view=\"false\" spreader-disabled=\"true\" linkify-post-actions=\"true\"></div>\n" +
+    "              <div ms-post-renderer post=\"post\" record-view=\"false\" spreader-disabled=\"true\" modalify-post-actions=\"true\"></div>\n" +
     "            </div>\n" +
     "            <div class=\"text-center\">\n" +
     "              <br>\n" +

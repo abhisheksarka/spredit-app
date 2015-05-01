@@ -4,10 +4,11 @@
       $scope.currentUser = Session.currentUser;
       $scope.success = success;
       $scope.error = error;
+      $scope.close = close;
     };
     
     function success(response) {
-      cancelModal();
+      close();
       $rootScope.$broadcast('ms.events.flash', {
         message: 'Your post was successfully published.',
         type: 'success' 
@@ -16,7 +17,7 @@
 
     function error() { };
 
-    function cancelModal() {
+    function close() {
       $modalInstance.dismiss('cancel');
     };
 

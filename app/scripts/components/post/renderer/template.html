@@ -46,7 +46,8 @@
     <div class="supporting-text">
       <h2 ms-linkify="post.content" ng-if="post.content" class="post-content"></h2>
       <span ng-if="post.content">
-        <br><hr>
+        <br>
+        <hr ng-if="!spreaderDisabled">
         <div ms-spread-creator 
             spreadable="post" 
             resource-owner="'post_publishable'" 
@@ -61,7 +62,7 @@
       </span>
     </div>
     <div class="actions">
-      <span ms-post-actions post="post" selected-action="selectedAction" linkify="linkifyPostActions" map-disabled="mapDisabled"></span>
+      <span ms-post-actions post="post" selected-action="selectedAction" modalify="modalifyPostActions" map-disabled="mapDisabled"></span>
     </div>
   </div>
 </div>

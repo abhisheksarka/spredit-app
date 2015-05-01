@@ -10,4 +10,21 @@ body#page-me {
       padding-bottom: 30px;
     }
   }
+  .comment-creator {
+    textarea {
+      font-size: 24px;
+    }
+  }
+  .ms-propagation {
+    border: 1px solid lightgray;
+    @include ms-border-radius(3px);
+  }
+  .btn.active-action {
+    background: #333;
+    color: white;
+  }
+  .action-buttons {
+    @include ms-border-radius(1000px);
+    @include ms-box-shadow(0px, 0px, 0px, rgba(0,0,0,0));
+  }
 }

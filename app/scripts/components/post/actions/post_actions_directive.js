@@ -5,7 +5,7 @@
       scope: {
         post: '=',
         selectedAction: '=',
-        linkify: '=',
+        modalify: '=',
         mapDisabled: '=?' 
       },
       replace: true,

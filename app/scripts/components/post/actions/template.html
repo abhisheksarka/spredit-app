@@ -1,5 +1,5 @@
 <small class="post-actions">
-  <span class="text-muted" ng-if="!linkify">
+  <span class="text-muted" ng-if="!modalify">
     <a ng-click="setSelectedAction('comments')">
       <span class="glyphicon glyphicon-comment"></span>&nbsp;
       <span ng-if="selectedAction=='comments'">
@@ -28,16 +28,20 @@
       </span>
     </span>
   </span>
-  <span class="text-muted" ng-if="linkify">
-    <a ng-href="#/posts/{{post.encrypted_id}}" target="_blank">
-      <span class="glyphicon glyphicon-comment"></span>&nbsp;COMMENTS(<span ng-bind="post.comments_count"></span>)
-      &nbsp;&nbsp;
+  <span class="text-muted" ng-if="modalify">
+    <a ng-click="openModal(post, 'comments')">
+      <strong>
+        <span class="glyphicon glyphicon-comment"></span>&nbsp;COMMENTS(<span ng-bind="post.comments_count"></span>)
+        &nbsp;&nbsp;
+      </strong>
     </a>
-    <a ng-href="#/posts/{{post.encrypted_id}}" target="_blank">
-      <span class="glyphicon glyphicon-map-marker"></span>&nbsp;MAP(<span ng-bind="post.total_propagation"></span> KM)
+    <a ng-click="openModal(post, 'propagation')">
+      <strong>
+        <span class="glyphicon glyphicon-map-marker"></span>&nbsp;SPREAD MAP(<span ng-bind="post.total_propagation"></span> KM)
+      </strong>
     </a>
     <span class="pull-right text-muted">
-      <a ng-href="#/posts/{{post.encrypted_id}}" target="_blank">
+      <a>
         <h2 class="spread-value" ng-bind="post.spreads_count | displayNumber"></h2>
       </a>
     </span>

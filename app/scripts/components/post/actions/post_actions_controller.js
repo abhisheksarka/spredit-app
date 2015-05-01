@@ -1,10 +1,15 @@
 (function(){
-  function Controller($scope, Session){
+  function Controller($scope, Session, PostActionsModal){
     function init() {
       $scope.currentUser = Session.currentUser;
       $scope.setSelectedAction = setSelectedAction;
       setSelectedAction("comments");
+      $scope.openModal = openModal;
     };
+
+    function openModal(post, action) {
+      PostActionsModal.getInstance(post).open(action);
+    }
 
     function setSelectedAction(action) {
       $scope.selectedAction = action;
@@ -17,6 +22,7 @@
   .controller('PostActionsController', [
     '$scope',  
     'SessionModel',
+    'PostActionsModalService',
     Controller 
   ]);
 }());

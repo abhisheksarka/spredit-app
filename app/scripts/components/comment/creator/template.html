@@ -4,12 +4,10 @@
                 class="form-control" 
                 ng-model="comment.content"
                 name="content"
-                ng-focus="focusStyle={height:'auto'};focused=true"
-                ng-style="focusStyle"
+                style="height: auto"
                 ng-required="true">
       </textarea><br>
-      <button class="btn btn-default btn-sm" 
-              ng-if="focused" 
+      <button class="btn btn-default btn-sm"  
               ng-disabled="newCommentForm.$invalid || state.isWorking" 
               ng-click="createComment()">
               <span ng-if="state.isWorking">Please wait...</span>

@@ -8,7 +8,7 @@
         recordView: '=?',
         showAllActions: '=',
         spreaderDisabled: '=?',
-        linkifyPostActions: '=?',
+        modalifyPostActions: '=?',
         mapDisabled: '=?',
         fullContent: '=?'
       },
