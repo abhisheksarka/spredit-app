@@ -3,7 +3,7 @@
     function init() {
       $scope.currentUser = Session.currentUser;
       $scope.setSelectedAction = setSelectedAction;
-      setSelectedAction("propagation");
+      setSelectedAction("comments");
     };
 
     function setSelectedAction(action) {

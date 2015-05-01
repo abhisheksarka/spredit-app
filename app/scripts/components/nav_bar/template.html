@@ -5,7 +5,7 @@
     <div class="color-section bg-success"></div>
     <div class="color-section bg-warning"></div>
   </div>
-  <div class="container" data-ng-if="signedIn">
+  <div class="container ms-master-section" data-ng-if="signedIn">
     <ul class="nav navbar-nav">
       <li class="visible-xs">
         <a ng-click="toggleSideNav()" class="toggle-side-nav">
@@ -15,25 +15,13 @@
       <li class="hidden-xs">
         <a href="#/home">
           <span class="fa fa-share-alt brand-icon"></span>
-          <span class="brand-name">spredit</span>
         </a>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <span ms-post-categories></span>
         <a ng-click="openPostCreator()" class="btn-link">
           <span class="btn btn-sm btn-danger">Publish</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="container" data-ng-if="standard">
-    <ul class="nav navbar-nav">
-      <li class="hidden-xs">
-        <a href="#/home">
-          <span class="fa fa-location-arrow brand-icon"></span>
-          <span class="brand-name">spredit</span>
         </a>
       </li>
     </ul>

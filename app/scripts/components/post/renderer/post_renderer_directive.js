@@ -9,6 +9,7 @@
         showAllActions: '=',
         spreaderDisabled: '=?',
         linkifyPostActions: '=?',
+        mapDisabled: '=?',
         fullContent: '=?'
       },
       replace: true,

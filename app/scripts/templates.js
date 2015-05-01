@@ -36,7 +36,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/comment/creator/template.html',
     "<div class=\"comment-creator\">\n" +
     "    <form name=\"newCommentForm\" novalidate>\n" +
-    "      <textarea placeholder=\"Add a comment...\" \n" +
+    "      <textarea placeholder=\"What's your opinion on this?\" \n" +
     "                class=\"form-control\" \n" +
     "                ng-model=\"comment.content\"\n" +
     "                name=\"content\"\n" +
@@ -238,7 +238,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"color-section bg-success\"></div>\n" +
     "    <div class=\"color-section bg-warning\"></div>\n" +
     "  </div>\n" +
-    "  <div class=\"container\" data-ng-if=\"signedIn\">\n" +
+    "  <div class=\"container ms-master-section\" data-ng-if=\"signedIn\">\n" +
     "    <ul class=\"nav navbar-nav\">\n" +
     "      <li class=\"visible-xs\">\n" +
     "        <a ng-click=\"toggleSideNav()\" class=\"toggle-side-nav\">\n" +
@@ -248,25 +248,13 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <li class=\"hidden-xs\">\n" +
     "        <a href=\"#/home\">\n" +
     "          <span class=\"fa fa-share-alt brand-icon\"></span>\n" +
-    "          <span class=\"brand-name\">spredit</span>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
     "    <ul class=\"nav navbar-nav navbar-right\">\n" +
     "      <li>\n" +
-    "        <span ms-post-categories></span>\n" +
     "        <a ng-click=\"openPostCreator()\" class=\"btn-link\">\n" +
     "          <span class=\"btn btn-sm btn-danger\">Publish</span>\n" +
-    "        </a>\n" +
-    "      </li>\n" +
-    "    </ul>\n" +
-    "  </div>\n" +
-    "  <div class=\"container\" data-ng-if=\"standard\">\n" +
-    "    <ul class=\"nav navbar-nav\">\n" +
-    "      <li class=\"hidden-xs\">\n" +
-    "        <a href=\"#/home\">\n" +
-    "          <span class=\"fa fa-location-arrow brand-icon\"></span>\n" +
-    "          <span class=\"brand-name\">spredit</span>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
@@ -327,7 +315,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </span>\n" +
     "      &nbsp;&nbsp;\n" +
     "    </a>\n" +
-    "    <a ng-click=\"setSelectedAction('propagation')\">\n" +
+    "    <a ng-click=\"setSelectedAction('propagation')\" ng-if=\"!mapDisabled\">\n" +
     "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;\n" +
     "      <span ng-if=\"selectedAction=='propagation'\">\n" +
     "        <strong>MAP(<span ng-bind=\"post.total_propagation\"></span> KM)</strong>\n" +
@@ -399,7 +387,6 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<div class=\"post-creator text-center\">\n" +
     "  <form name=\"newPostForm\" novalidate>\n" +
     "    <div ms-post-photo-uploader postable-object=\"postable\" postable-refresh=\"refresh\"></div>\n" +
-    "    <input type=\"text\" class=\"form-control\" placeholder=\"Title(max 120 characters)...\" ng-model=\"post.title\" name=\"title\" maxlength=\"120\"/>\n" +
     "    <br>\n" +
     "    <textarea placeholder=\"Content...\" \n" +
     "              msd-elastic=\"\\n\"\n" +
@@ -408,9 +395,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "              name=\"content\">\n" +
     "    </textarea>\n" +
     "    <br>\n" +
-    "    <select ng-options=\"item.value as item.label for item in categories\" ng-model=\"post.category\" ng-required=\"true\" class=\"pull-left\">\n" +
-    "    </select>\n" +
-    "    <button class=\"btn btn-inverse btn-sm pull-right\" ng-disabled=\"newPostForm.$invalid || reqState.isWorking\" ng-click=\"createPost()\">\n" +
+    "    <button class=\"btn btn-inverse btn-sm\" ng-disabled=\"newPostForm.$invalid || reqState.isWorking\" ng-click=\"createPost()\">\n" +
     "      <span ng-if=\"reqState.isWorking\">Publishing</span>\n" +
     "      <span ng-if=\"!reqState.isWorking\">Publish</span>\n" +
     "    </button>\n" +
@@ -538,26 +523,15 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    \n" +
     "    <!-- supporting text holds the text content of the post -->\n" +
     "    <div class=\"supporting-text\">\n" +
-    "      <h2 ng-bind=\"post.title\" ng-if=\"post.title\" class=\"post-title\"></h2>\n" +
-    "      <p>\n" +
-    "        <span ms-linkify=\"post.strippedContent\" ng-if=\"!fullContent\"></span>\n" +
-    "        <span ms-linkify=\"post.content\" ng-if=\"fullContent\"></span>\n" +
-    "        <span ng-if=\"post.isStripped\">\n" +
-    "          <span ng-if=\"!fullContent\">...</span> \n" +
-    "          <a ng-click=\"toggleFullContent()\" target=\"_blank\">\n" +
-    "            <span ng-if=\"!fullContent\">more</span>\n" +
-    "            <span ng-if=\"fullContent\"><br>...less</span>\n" +
-    "          </a>\n" +
-    "        </span>\n" +
-    "      </p>\n" +
-    "      <span ng-if=\"post.content || post.title\">\n" +
+    "      <h2 ms-linkify=\"post.content\" ng-if=\"post.content\" class=\"post-content\"></h2>\n" +
+    "      <span ng-if=\"post.content\">\n" +
     "        <br><hr>\n" +
     "        <div ms-spread-creator \n" +
     "            spreadable=\"post\" \n" +
     "            resource-owner=\"'post_publishable'\" \n" +
     "            is-disabled=\"spreaderDisabled\"></div>\n" +
     "      </span>\n" +
-    "      <span ng-if=\"!post.content && !post.title\">\n" +
+    "      <span ng-if=\"!post.content\">\n" +
     "        <div ms-spread-creator \n" +
     "             spreadable=\"post\" \n" +
     "             resource-owner=\"'post_publishable'\" \n" +
@@ -566,7 +540,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </span>\n" +
     "    </div>\n" +
     "    <div class=\"actions\">\n" +
-    "      <span ms-post-actions post=\"post\" selected-action=\"selectedAction\" linkify=\"linkifyPostActions\"></span>\n" +
+    "      <span ms-post-actions post=\"post\" selected-action=\"selectedAction\" linkify=\"linkifyPostActions\" map-disabled=\"mapDisabled\"></span>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>"
@@ -784,6 +758,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "           selected-action=\"actions.selected\" \n" +
     "           record-view=\"true\" \n" +
     "           show-all-actions=\"true\" \n" +
+    "           map-disabled=\"true\"\n" +
     "           full-media=\"true\">\n" +
     "      </div>\n" +
     "      <br>\n" +

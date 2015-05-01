@@ -10,7 +10,7 @@
       </span>
       &nbsp;&nbsp;
     </a>
-    <a ng-click="setSelectedAction('propagation')">
+    <a ng-click="setSelectedAction('propagation')" ng-if="!mapDisabled">
       <span class="glyphicon glyphicon-map-marker"></span>&nbsp;
       <span ng-if="selectedAction=='propagation'">
         <strong>MAP(<span ng-bind="post.total_propagation"></span> KM)</strong>

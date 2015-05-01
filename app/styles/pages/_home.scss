@@ -1,6 +1,14 @@
 body#page-home {
   .ms-master-section {
-    max-width: 550px;
+    max-width: 700px;
+  }
+  .ms-card-complex.post-details {
+    background: transparent;
+    .comment-creator{
+      textarea {
+        font-size: 24px;
+      }
+    }
   }
   .bottom-dock {
     .spreader {

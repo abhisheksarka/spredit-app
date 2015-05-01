@@ -5,7 +5,8 @@
       scope: {
         post: '=',
         selectedAction: '=',
-        linkify: '=' 
+        linkify: '=',
+        mapDisabled: '=?' 
       },
       replace: true,
       controllerAs: 'postActionsCtrl',
