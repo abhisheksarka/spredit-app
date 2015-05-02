@@ -62,11 +62,15 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "       with-params=\"commentParams\"\n" +
     "       push-to=\"commentable.comments\"\n" +
     "       paginator=\"paginator\"\n" +
-    "       uniq=\"'id'\">\n" +
+    "       uniq=\"'id'\"\n" +
+    "       pagination-type=\"'loadMore'\">\n" +
     "  </div>\n" +
     "  <div class=\"ms-list\" ng-if=\"commentable.comments.length > 0\">\n" +
     "    <div ng-repeat=\"comment in commentable.comments\">\n" +
     "      <div ms-comment-renderer comment=\"comment\"></div>\n" +
+    "    </div>\n" +
+    "    <div class=\"text-center\" ng-if=\"!paginator.isComplete\">\n" +
+    "      <button class=\"btn btn-sm btn-transparent\" ng-click=\"paginator.paginate()\">Load more</button>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "  <div class=\"text-center\">\n" +

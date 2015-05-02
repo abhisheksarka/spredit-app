@@ -8,14 +8,21 @@
         pushTo: '=',
         debounceWait: '=?',
         uniq: '=?',
-        paginator: '=?'
+        paginator: '=?',
+        paginationType: '=?'
       },
       controller: 'InfiniteScrollController',
       link: function($scope, $element, $attributes) {
+        if($scope.paginationType == $scope.paginationTypes.LOAD_MORE) {
+          return;
+        };
         var d = angular.element(document),
             w = angular.element($window),
             debounceWait = parseInt($attributes.debounceWait || 100);  
         
+        if($attributes.containerClass) {
+          w = angular.element($attributes.containerClass);
+        };
         // on scrolling send future requests
         var onScrolled = _.debounce(function(e) {
           var yLeftToGo = d.height() - ($window.pageYOffset + $window.innerHeight);  

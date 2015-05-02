@@ -4,6 +4,10 @@
       setPaginator();
       // send the first request
       $scope.paginator.paginate();
+      $scope.paginationTypes = {
+        SCROLL: 'scroll',
+        LOAD_MORE: 'loadMore'
+      }
     };
 
     function setPaginator() {
