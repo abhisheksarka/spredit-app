@@ -2,19 +2,15 @@
   form {
     textarea {
       font-size: 24px;
+      font-weight: 100;
     }
   }
 }
-.post-creator-modal {
-  .close-modal-icon {
-    margin-bottom: 70px;
-  }
+
+.specialized.modal {
   .post-photo-uploader {
     margin-top: -20px;
     margin-left: -20px;
     margin-right: -20px;
-  }
-  .modal-dialog {
-    max-width: 650px;
   }
 }

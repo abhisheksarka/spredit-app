@@ -13,6 +13,7 @@ body#page-me {
   .comment-creator {
     textarea {
       font-size: 24px;
+      font-weight: 100;
     }
   }
   .ms-propagation {
@@ -26,5 +27,14 @@ body#page-me {
   .action-buttons {
     @include ms-border-radius(1000px);
     @include ms-box-shadow(0px, 0px, 0px, rgba(0,0,0,0));
+    opacity: 0.6;
+  }
+  .modal.default {
+    .modal-body {
+      padding: 0px;
+      .close-modal-icon {
+        display: none;
+      }
+    }
   }
 }

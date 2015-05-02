@@ -8,12 +8,25 @@
     };
 
     function openModal(post, action) {
-      PostActionsModal.getInstance(post).open(action);
+      PostActionsModal.getInstance(post, modalConfigs()[action]).open(action);
     }
 
     function setSelectedAction(action) {
       $scope.selectedAction = action;
     };
+
+    function modalConfigs() {
+      return {
+        comments: { 
+          windowClass: 'specialized',
+          backdropClass: 'specialized'
+        },
+        propagation: {
+          backdropClass: 'default',
+          windowClass: 'default'
+        }
+      };
+    }
 
     init();
   };

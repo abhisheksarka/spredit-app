@@ -3,17 +3,6 @@
     <div>
       <a class="fa fa-chevron-up close-modal-icon" ng-click="close()"></a>
     </div>
-    <a class="btn btn-transparent btn-sm action-buttons" 
-       ng-click="setAction('comments')" 
-       ng-class="{'active-action': (action == 'comments')}">
-      COMMENTS(<span ng-bind="post.comments_count"></span>)
-    </a>
-    &nbsp;
-    <a class="btn btn-transparent btn-sm action-buttons" 
-       ng-click="setAction('propagation')" 
-       ng-class="{'active-action': (action == 'propagation')}">
-      SPREAD MAP(<span ng-bind="post.total_propagation"></span> KM)
-    </a>
   </div>
   <div ms-post-details post="post" action="action"></div>
 </div>

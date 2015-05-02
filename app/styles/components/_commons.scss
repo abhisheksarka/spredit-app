@@ -254,27 +254,30 @@
   }
 }
 
-.modal-content {
-  @include ms-box-shadow(0px, 0px, 0px, rgba(0,0,0,0));
-  background: transparent !important;
-  .ms-card-complex {
-    background: transparent;
+.specialized.modal {
+  .modal-content {
+    @include ms-box-shadow(0px, 0px, 0px, rgba(0,0,0,0));
+    background: transparent !important;
+    .ms-card-complex {
+      background: transparent;
+    }
   }
-}
-.modal-dialog {
-  margin-top: 30px;
-}
-.close-modal-icon {
-  color: $brand-danger;
-  font-size: 24px;
-  margin-bottom: 15px;
-  opacity: 0.8;
-  &:hover {
-    color: $brand-danger;
-    opacity: 0.9;
+  .modal-dialog {
+    margin-top: 30px;
   }
+  .close-modal-icon {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 30px;
+    opacity: 0.6;
+    &:hover {
+      color: #333;
+      opacity: 0.9;
+    }
+  }  
 }
-.modal-backdrop.in {
+
+.specialized.modal-backdrop.in {
   background: white;
   opacity: 1;
 }

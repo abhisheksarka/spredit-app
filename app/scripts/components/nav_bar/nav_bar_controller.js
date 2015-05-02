@@ -1,5 +1,5 @@
 (function(){
-  function Controller($scope, Session, SideNavService, PostCreatorModalService){
+  function Controller($scope, Session, SideNavService, PostCreatorModal){
     
     function init() {
       $scope.toggleSideNav = toggleSideNav;
@@ -7,7 +7,10 @@
     };
 
     function openPostCreator() {
-      PostCreatorModalService.open();
+      PostCreatorModal.getInstance({
+        windowClass: 'specialized',
+        backdropClass: 'specialized'
+      }).open();
     };
 
     function toggleSideNav() {

@@ -22,7 +22,10 @@
     };
 
     function openPostCreator() {
-      PostCreatorModalService.open();
+      PostCreatorModalService.getInstance({
+        windowClass: 'specialized',
+        backdropClass: 'specialized'
+      }).open();
     };
 
     function nextPost() {

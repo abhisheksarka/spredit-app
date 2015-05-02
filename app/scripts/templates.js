@@ -16,7 +16,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </span>\n" +
     "  </div>\n" +
     "  <div ng-if=\"activity.targetable_type == 'Post'\">\n" +
-    "    <div ms-post-renderer post=\"activity.targetable\" record-view=\"false\" spreader-disabled=\"true\" linkify-post-actions=\"true\"></div>  \n" +
+    "    <div ms-post-renderer post=\"activity.targetable\" record-view=\"false\" spreader-disabled=\"true\" modalify-post-actions=\"true\"></div>  \n" +
     "  </div>\n" +
     "</div>"
   );
@@ -43,7 +43,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "                style=\"height: auto\"\n" +
     "                ng-required=\"true\">\n" +
     "      </textarea><br>\n" +
-    "      <button class=\"btn btn-default btn-sm\"  \n" +
+    "      <button class=\"btn btn-success btn-sm\"  \n" +
     "              ng-disabled=\"newCommentForm.$invalid || state.isWorking\" \n" +
     "              ng-click=\"createComment()\">\n" +
     "              <span ng-if=\"state.isWorking\">Please wait...</span>\n" +
@@ -307,17 +307,6 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div>\n" +
     "      <a class=\"fa fa-chevron-up close-modal-icon\" ng-click=\"close()\"></a>\n" +
     "    </div>\n" +
-    "    <a class=\"btn btn-transparent btn-sm action-buttons\" \n" +
-    "       ng-click=\"setAction('comments')\" \n" +
-    "       ng-class=\"{'active-action': (action == 'comments')}\">\n" +
-    "      COMMENTS(<span ng-bind=\"post.comments_count\"></span>)\n" +
-    "    </a>\n" +
-    "    &nbsp;\n" +
-    "    <a class=\"btn btn-transparent btn-sm action-buttons\" \n" +
-    "       ng-click=\"setAction('propagation')\" \n" +
-    "       ng-class=\"{'active-action': (action == 'propagation')}\">\n" +
-    "      SPREAD MAP(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
-    "    </a>\n" +
     "  </div>\n" +
     "  <div ms-post-details post=\"post\" action=\"action\"></div>\n" +
     "</div>"
@@ -773,7 +762,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div ng-if=\"loadState.isComplete && !currentPost.id\" class=\"text-center\">\n" +
     "      <img src=\"images/no_posts.png\"/>\n" +
     "      <h4 class=\"text-muted\">\n" +
-    "        No posts to show right now\n" +
+    "        Nothing more to show right now. \n" +
+    "        <br><br><br>   \n" +
+    "        Try publishing something and see it propagate across the globe.\n" +
     "      </h4>\n" +
     "    </div>\n" +
     "    <div ng-if=\"loadState.isWorking\" class=\"text-center\">\n" +

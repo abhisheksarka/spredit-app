@@ -3,8 +3,9 @@
     var res = Resource;
         proto = res.prototype;
 
-    function Resource(post) { 
+    function Resource(post, config) { 
       this.post = post;
+      this.config = config || { };
     };
 
     proto.open = function(action) {
@@ -13,6 +14,8 @@
       $modal.open({
         templateUrl: 'app/scripts/components/post/actions/modal_template.html',
         controller: 'PostActionsModalController',
+        backdropClass: self.config.backdropClass,
+        windowClass: self.config.windowClass,
         resolve: {
           action: function() {
             return action;
@@ -25,8 +28,8 @@
     };
 
     return {
-      getInstance: function(post) {
-        return new Resource(post);
+      getInstance: function(post, config) {
+        return new Resource(post, config);
       }
     };
   };
