@@ -835,13 +835,14 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"text-center\">\n" +
     "      <div class=\"row\">\n" +
     "        <div class=\"col-md-12\">\n" +
-    "          <span ms-fb-log-in \n" +
-    "              login-disabled=\"loginState.isWorking\"\n" +
-    "              data-connected=\"connected(response)\" \n" +
-    "              data-unauthorized=\"unauthorized(response)\" \n" +
-    "              data-unknown=\"unknown(response)\">\n" +
-    "          </span>\n" +
-    "          <hr>\n" +
+    "          <div class=\"log-in-container\">\n" +
+    "            <span ms-fb-log-in \n" +
+    "                login-disabled=\"loginState.isWorking\"\n" +
+    "                data-connected=\"connected(response)\" \n" +
+    "                data-unauthorized=\"unauthorized(response)\" \n" +
+    "                data-unknown=\"unknown(response)\">\n" +
+    "            </span>\n" +
+    "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
     "      <div class=\"row step\">\n" +
