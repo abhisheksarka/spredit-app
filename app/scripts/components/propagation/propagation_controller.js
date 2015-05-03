@@ -1,11 +1,14 @@
 (function(){
-  function Controller($scope, Location, MapConfig){
+  function Controller($scope, Location, MapConfig, StateHandler){
     function init() { 
+      $scope.reqState = StateHandler.getInstance();
+      $scope.reqState.initiate();      
       $scope.locations = Location.query({
         locatable_type: 'Propagation',
         locatable_id: $scope.post.propagation.id
       });
-      $scope.locations.$promise.then(afterLoad);
+
+      $scope.locations.$promise.then(afterLoad, $scope.reqState.error);
       $scope.map = {
         zoom: 4,
         bounds: { },
@@ -18,6 +21,7 @@
     function afterLoad() {
       setMap();
       setIcons();
+      $scope.reqState.success();
     };
 
     function setMap() {
@@ -41,6 +45,7 @@
     '$scope', 
     'LocationModel', 
     'MapConfigService',
+    'StateHandlerService',
     Controller 
   ]);
 }());

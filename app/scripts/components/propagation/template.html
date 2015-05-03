@@ -1,5 +1,11 @@
-<div class="ms-propagation" ng-if="map.init">
-  <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds" options="map.options">
-    <ui-gmap-markers models="locations" coords="'self'" fit="true" icon="'iconUrl'"></ui-gmap-markers>
-  </ui-gmap-google-map>
+<div class="ms-propagation">
+  <div class="text-center" ng-if="!map.init">
+    <div ms-spinner></div>
+    <p><small class="text-muted">Loading map</small></p>
+  </div>
+  <div ng-if="map.init">
+    <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds" options="map.options">
+      <ui-gmap-markers models="locations" coords="'self'" fit="true" icon="'iconUrl'"></ui-gmap-markers>
+    </ui-gmap-google-map>
+  </div>
 </div>

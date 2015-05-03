@@ -570,10 +570,16 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/components/propagation/template.html',
-    "<div class=\"ms-propagation\" ng-if=\"map.init\">\n" +
-    "  <ui-gmap-google-map center=\"map.center\" zoom=\"map.zoom\" bounds=\"map.bounds\" options=\"map.options\">\n" +
-    "    <ui-gmap-markers models=\"locations\" coords=\"'self'\" fit=\"true\" icon=\"'iconUrl'\"></ui-gmap-markers>\n" +
-    "  </ui-gmap-google-map>\n" +
+    "<div class=\"ms-propagation\">\n" +
+    "  <div class=\"text-center\" ng-if=\"!map.init\">\n" +
+    "    <div ms-spinner></div>\n" +
+    "    <p><small class=\"text-muted\">Loading map</small></p>\n" +
+    "  </div>\n" +
+    "  <div ng-if=\"map.init\">\n" +
+    "    <ui-gmap-google-map center=\"map.center\" zoom=\"map.zoom\" bounds=\"map.bounds\" options=\"map.options\">\n" +
+    "      <ui-gmap-markers models=\"locations\" coords=\"'self'\" fit=\"true\" icon=\"'iconUrl'\"></ui-gmap-markers>\n" +
+    "    </ui-gmap-google-map>\n" +
+    "  </div>\n" +
     "</div>"
   );
 
