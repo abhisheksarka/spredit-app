@@ -1,8 +1,12 @@
 body#page-me {
   ul.nav-tabs {
-    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .nav-tabs.nav {
+    li {
+      display: table-cell;
+    } 
   }
   .user-info {
     margin-bottom: 30px;
