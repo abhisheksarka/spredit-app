@@ -4,7 +4,8 @@
     return{
       scope: { 
         post: '=',
-        action: '='
+        action: '=',
+        commentsPaginationType: '='
       },
       replace: true,
       controllerAs: 'postDetailsCtrl',

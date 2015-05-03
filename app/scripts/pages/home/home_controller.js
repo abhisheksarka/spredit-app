@@ -31,8 +31,11 @@
     function nextPost() {
       var c = $scope.posts[currentIndex + 1];
       if(c) {
-        $scope.currentPost = c;
-        currentIndex++;
+        $scope.currentPost = null;
+        $timeout(function(){
+          $scope.currentPost = c;
+          currentIndex++;
+        }, 0, true); 
       } else {
         $scope.currentPost = null;
       }

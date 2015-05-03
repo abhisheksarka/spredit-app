@@ -6,14 +6,16 @@
        push-to="commentable.comments"
        paginator="paginator"
        uniq="'id'"
-       pagination-type="'loadMore'">
+       pagination-type="paginationType">
   </div>
   <div class="ms-list" ng-if="commentable.comments.length > 0">
     <div ng-repeat="comment in commentable.comments">
       <div ms-comment-renderer comment="comment"></div>
     </div>
-    <div class="text-center" ng-if="!paginator.isComplete && !paginator.state.isWorking">
-      <button class="btn btn-sm btn-transparent" ng-click="paginator.paginate()">Load more</button>
+    <div ng-if="paginationType == 'loadMore'">
+      <div class="text-center" ng-if="!paginator.isComplete && !paginator.state.isWorking">
+        <button class="btn btn-sm btn-transparent" ng-click="paginator.paginate()">Load more</button>
+      </div>
     </div>
   </div>
   <div class="text-center">

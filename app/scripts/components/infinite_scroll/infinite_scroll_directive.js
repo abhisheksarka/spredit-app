@@ -20,9 +20,6 @@
             w = angular.element($window),
             debounceWait = parseInt($attributes.debounceWait || 100);  
         
-        if($attributes.containerClass) {
-          w = angular.element($attributes.containerClass);
-        };
         // on scrolling send future requests
         var onScrolled = _.debounce(function(e) {
           var yLeftToGo = d.height() - ($window.pageYOffset + $window.innerHeight);  

@@ -1,4 +1,4 @@
-<div class="ms-card-complex post-details {{action}}" ng-if="post.id">
+<div class="ms-card-complex post-details {{action}}">
   <div ng-if="currentMapping">
     <div ng-if="action == 'propagation'">
       <div ms-statistics post="post"></div>
@@ -6,7 +6,7 @@
     </div>
     <div ng-if="action == 'comments'" class="supporting-text">
       <div ms-comment-creator commentable="post" commentable-type="'Post'"></div><br>
-      <div ms-comment-lister commentable="post"></div>
+      <div ms-comment-lister commentable="post" pagination-type="commentsPaginationType"></div>
     </div>
   </div>
 </div>

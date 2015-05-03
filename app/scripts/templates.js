@@ -63,14 +63,16 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "       push-to=\"commentable.comments\"\n" +
     "       paginator=\"paginator\"\n" +
     "       uniq=\"'id'\"\n" +
-    "       pagination-type=\"'loadMore'\">\n" +
+    "       pagination-type=\"paginationType\">\n" +
     "  </div>\n" +
     "  <div class=\"ms-list\" ng-if=\"commentable.comments.length > 0\">\n" +
     "    <div ng-repeat=\"comment in commentable.comments\">\n" +
     "      <div ms-comment-renderer comment=\"comment\"></div>\n" +
     "    </div>\n" +
-    "    <div class=\"text-center\" ng-if=\"!paginator.isComplete && !paginator.state.isWorking\">\n" +
-    "      <button class=\"btn btn-sm btn-transparent\" ng-click=\"paginator.paginate()\">Load more</button>\n" +
+    "    <div ng-if=\"paginationType == 'loadMore'\">\n" +
+    "      <div class=\"text-center\" ng-if=\"!paginator.isComplete && !paginator.state.isWorking\">\n" +
+    "        <button class=\"btn btn-sm btn-transparent\" ng-click=\"paginator.paginate()\">Load more</button>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "  <div class=\"text-center\">\n" +
@@ -315,7 +317,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <a class=\"fa fa-chevron-up close-modal-icon\" ng-click=\"close()\"></a>\n" +
     "    </div>\n" +
     "  </div>\n" +
-    "  <div ms-post-details post=\"post\" action=\"action\"></div>\n" +
+    "  <div ms-post-details post=\"post\" action=\"action\" comments-pagination-type=\"'loadMore'\"></div>\n" +
     "</div>"
   );
 
@@ -438,7 +440,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/components/post/details/template.html',
-    "<div class=\"ms-card-complex post-details {{action}}\" ng-if=\"post.id\">\n" +
+    "<div class=\"ms-card-complex post-details {{action}}\">\n" +
     "  <div ng-if=\"currentMapping\">\n" +
     "    <div ng-if=\"action == 'propagation'\">\n" +
     "      <div ms-statistics post=\"post\"></div>\n" +
@@ -446,7 +448,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "    <div ng-if=\"action == 'comments'\" class=\"supporting-text\">\n" +
     "      <div ms-comment-creator commentable=\"post\" commentable-type=\"'Post'\"></div><br>\n" +
-    "      <div ms-comment-lister commentable=\"post\"></div>\n" +
+    "      <div ms-comment-lister commentable=\"post\" pagination-type=\"commentsPaginationType\"></div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>"
@@ -788,7 +790,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div ng-if=\"currentPost.id\" \n" +
     "         ms-animator=\"ms-animation-zoom-in\" \n" +
     "         on-change-in=\"{{currentPost.id}}\">\n" +
-    "      <div ms-post-renderer post=\"currentPost\" \n" +
+    "      <div ms-post-renderer post=\"currentPost\"    \n" +
     "           selected-action=\"actions.selected\" \n" +
     "           record-view=\"true\" \n" +
     "           show-all-actions=\"true\" \n" +
@@ -796,7 +798,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "           full-media=\"true\">\n" +
     "      </div>\n" +
     "      <br>\n" +
-    "      <div ms-post-details post=\"currentPost\" action=\"actions.selected\">\n" +
+    "      <div ms-post-details post=\"currentPost\" action=\"actions.selected\" ng-if=\"currentPost.id\">\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +

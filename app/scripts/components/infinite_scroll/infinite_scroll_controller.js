@@ -28,7 +28,7 @@
       $scope.uniq = null;
       $scope.paginator = null;
     });
-
+    
     init();
   };
 

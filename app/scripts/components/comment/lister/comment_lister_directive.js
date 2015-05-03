@@ -3,7 +3,8 @@
   app.directive('msCommentLister', [function(){
     return{
       scope: {
-        commentable: "=" 
+        commentable: '=',
+        paginationType: '=' 
       },
       replace: true,
       controllerAs: 'commentListerCtrl',
