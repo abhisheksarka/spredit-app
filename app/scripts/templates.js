@@ -69,7 +69,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div ng-repeat=\"comment in commentable.comments\">\n" +
     "      <div ms-comment-renderer comment=\"comment\"></div>\n" +
     "    </div>\n" +
-    "    <div class=\"text-center\" ng-if=\"!paginator.isComplete\">\n" +
+    "    <div class=\"text-center\" ng-if=\"!paginator.isComplete && !paginator.state.isWorking\">\n" +
     "      <button class=\"btn btn-sm btn-transparent\" ng-click=\"paginator.paginate()\">Load more</button>\n" +
     "    </div>\n" +
     "  </div>\n" +
@@ -764,12 +764,30 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<div class=\"container\">\n" +
     "  <div class=\"ms-master-section\">\n" +
     "    <div ng-if=\"loadState.isComplete && !currentPost.id\" class=\"text-center\">\n" +
-    "      <img src=\"images/no_posts.png\"/>\n" +
-    "      <h4 class=\"text-muted\">\n" +
-    "        Nothing more to show right now. \n" +
-    "        <br><br><br>   \n" +
-    "        Try publishing something and see it propagate across the globe.\n" +
-    "      </h4>\n" +
+    "      <div class=\"all-caught-up\">\n" +
+    "        <h4 class=\"text-muted\">\n" +
+    "          All caught up. \n" +
+    "        </h4>\n" +
+    "      </div>\n" +
+    "      <div class=\"try-publishing\">\n" +
+    "        <p>\n" +
+    "          <a ng-click=\"openPostCreator()\">Try publishing something now</a>, and see it propagate across the world.\n" +
+    "        </p>\n" +
+    "        <img src=\"../images/globe.png\"/>\n" +
+    "      </div>\n" +
+    "      <div class=\"help-us-grow\">\n" +
+    "        <p>Help us grow ;)</p>\n" +
+    "        <a class=\"link-major\" href=\"https://www.facebook.com/spreditapp\" target=\"_blank\">\n" +
+    "          <span class=\"ms-fab btn btn-primary glyphicon\">\n" +
+    "            <span class=\"fa fa-facebook\"></span> \n" +
+    "          </span>\n" +
+    "        </a>\n" +
+    "        <a class=\"link-major\" href=\"https://www.twitter.com/spreditapp\" target=\"_blank\">\n" +
+    "          <span class=\"ms-fab btn btn-info glyphicon\">\n" +
+    "            <span class=\"fa fa-twitter\"></span> \n" +
+    "          </span>\n" +
+    "        </a>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "    <div ng-if=\"loadState.isWorking\" class=\"text-center\">\n" +
     "      <div ms-spinner></div>\n" +

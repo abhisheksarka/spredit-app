@@ -12,7 +12,7 @@
     <div ng-repeat="comment in commentable.comments">
       <div ms-comment-renderer comment="comment"></div>
     </div>
-    <div class="text-center" ng-if="!paginator.isComplete">
+    <div class="text-center" ng-if="!paginator.isComplete && !paginator.state.isWorking">
       <button class="btn btn-sm btn-transparent" ng-click="paginator.paginate()">Load more</button>
     </div>
   </div>

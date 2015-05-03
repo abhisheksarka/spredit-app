@@ -1,12 +1,30 @@
 <div class="container">
   <div class="ms-master-section">
     <div ng-if="loadState.isComplete && !currentPost.id" class="text-center">
-      <img src="images/no_posts.png"/>
-      <h4 class="text-muted">
-        Nothing more to show right now. 
-        <br><br><br>   
-        Try publishing something and see it propagate across the globe.
-      </h4>
+      <div class="all-caught-up">
+        <h4 class="text-muted">
+          All caught up. 
+        </h4>
+      </div>
+      <div class="try-publishing">
+        <p>
+          <a ng-click="openPostCreator()">Try publishing something now</a>, and see it propagate across the world.
+        </p>
+        <img src="../images/globe.png"/>
+      </div>
+      <div class="help-us-grow">
+        <p>Help us grow ;)</p>
+        <a class="link-major" href="https://www.facebook.com/spreditapp" target="_blank">
+          <span class="ms-fab btn btn-primary glyphicon">
+            <span class="fa fa-facebook"></span> 
+          </span>
+        </a>
+        <a class="link-major" href="https://www.twitter.com/spreditapp" target="_blank">
+          <span class="ms-fab btn btn-info glyphicon">
+            <span class="fa fa-twitter"></span> 
+          </span>
+        </a>
+      </div>
     </div>
     <div ng-if="loadState.isWorking" class="text-center">
       <div ms-spinner></div>
