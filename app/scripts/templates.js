@@ -243,19 +243,22 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <div class=\"container ms-master-section\" data-ng-if=\"signedIn\">\n" +
     "    <ul class=\"nav navbar-nav\">\n" +
     "      <li>\n" +
-    "        <a href=\"#/home\">\n" +
+    "        <a href=\"#/home\" tooltip=\"Home\" tooltip-placement=\"bottom\">\n" +
     "          <span class=\"fa fa-share-alt brand-icon\"></span>\n" +
     "        </a>\n" +
-    "        <a href=\"#/me\">\n" +
+    "        <a href=\"#/me\" tooltip=\"Me\" tooltip-placement=\"bottom\">\n" +
     "          <span class=\"fa fa-user brand-icon\"></span>\n" +
     "        </a>\n" +
-    "        <a href=\"/#current_location\">\n" +
+    "        <a href=\"/#current_location\" tooltip=\"Current location\" tooltip-placement=\"bottom\">\n" +
     "          <span class=\"fa fa-map-marker brand-icon\"></span>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
     "    <ul class=\"nav navbar-nav navbar-right\">\n" +
     "      <li>\n" +
+    "        <a ng-click=\"signOut()\" tooltip=\"Sign out\" tooltip-placement=\"bottom\">\n" +
+    "          <span class=\"fa fa-sign-out brand-icon\"></span>\n" +
+    "        </a>\n" +
     "        <a ng-click=\"openPostCreator()\" class=\"btn-link\">\n" +
     "          <span class=\"btn btn-sm btn-danger\">Publish</span>\n" +
     "        </a>\n" +

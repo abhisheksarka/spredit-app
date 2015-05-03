@@ -8,19 +8,22 @@
   <div class="container ms-master-section" data-ng-if="signedIn">
     <ul class="nav navbar-nav">
       <li>
-        <a href="#/home">
+        <a href="#/home" tooltip="Home" tooltip-placement="bottom">
           <span class="fa fa-share-alt brand-icon"></span>
         </a>
-        <a href="#/me">
+        <a href="#/me" tooltip="Me" tooltip-placement="bottom">
           <span class="fa fa-user brand-icon"></span>
         </a>
-        <a href="/#current_location">
+        <a href="/#current_location" tooltip="Current location" tooltip-placement="bottom">
           <span class="fa fa-map-marker brand-icon"></span>
         </a>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
+        <a ng-click="signOut()" tooltip="Sign out" tooltip-placement="bottom">
+          <span class="fa fa-sign-out brand-icon"></span>
+        </a>
         <a ng-click="openPostCreator()" class="btn-link">
           <span class="btn btn-sm btn-danger">Publish</span>
         </a>

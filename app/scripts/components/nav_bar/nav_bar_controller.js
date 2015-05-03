@@ -1,8 +1,9 @@
 (function(){
-  function Controller($scope, Session, SideNavService, PostCreatorModal){
+  function Controller($scope, Session, SideNavService, PostCreatorModal, $window, $location){
     
     function init() {
       $scope.toggleSideNav = toggleSideNav;
+      $scope.signOut = signOut;
       $scope.openPostCreator = openPostCreator;
     };
 
@@ -11,6 +12,14 @@
         windowClass: 'specialized',
         backdropClass: 'specialized'
       }).open();
+    };
+
+    function signOut() {
+      Session.signOut()
+      .then(function(){
+        $location.path('/');
+        $window.location.reload();
+      });
     };
 
     function toggleSideNav() {
@@ -26,6 +35,8 @@
     'SessionModel',
     'SideNavService',
     'PostCreatorModalService',
+    '$window',
+    '$location',
     Controller 
   ]);
 }());
