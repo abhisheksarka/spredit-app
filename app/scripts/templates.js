@@ -435,24 +435,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/components/post/details/template.html',
-    "<div class=\"ms-card-complex post-details\" ng-if=\"post.id\">\n" +
-    "  <!-- <div class=\"optional-header {{currentMapping.background}}\">\n" +
-    "    <div class=\"ms-list-item\">\n" +
-    "      <div class=\"glyphicon-avatar\">\n" +
-    "        <span class=\"glyphicon {{currentMapping.glyphicon}}\"></span>\n" +
-    "      </div>\n" +
-    "      <div class=\"list-content\">\n" +
-    "        <div class=\"primary\">\n" +
-    "          <h4 class=\"header\" ng-bind=\"currentMapping.label\">\n" +
-    "          </h4>\n" +
-    "        </div>\n" +
-    "        <div class=\"secondary\">\n" +
-    "          <small>...</small>\n" +
-    "        </div>\n" +
-    "      </div>  \n" +
-    "    </div>\n" +
-    "    <div class=\"clearfix\"></div>\n" +
-    "  </div> -->\n" +
+    "<div class=\"ms-card-complex post-details {{action}}\" ng-if=\"post.id\">\n" +
     "  <div ng-if=\"currentMapping\">\n" +
     "    <div ng-if=\"action == 'propagation'\">\n" +
     "      <div ms-statistics post=\"post\"></div>\n" +
@@ -704,7 +687,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      <span class=\"value\" ng-bind=\"post.spreads_count\"></span>&nbsp;\n" +
     "      <br>\n" +
     "      <small class=\"text-muted\">SPREADS</small>\n" +
-    "      <progressbar value=\"post.spreads_count\" max=\"post.spreads_count + post.contains_count\" type=\"info\"></progressbar>\n" +
+    "      <progressbar value=\"post.spreads_count\" max=\"post.spreads_count + post.contains_count\" type=\"success\"></progressbar>\n" +
     "    </div>\n" +
     "    <div class=\"listing-section\">\n" +
     "      <span class=\"value\" ng-bind=\"post.contains_count\"></span>&nbsp;\n" +

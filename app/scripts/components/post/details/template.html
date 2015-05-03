@@ -1,21 +1,4 @@
-<div class="ms-card-complex post-details" ng-if="post.id">
-  <!-- <div class="optional-header {{currentMapping.background}}">
-    <div class="ms-list-item">
-      <div class="glyphicon-avatar">
-        <span class="glyphicon {{currentMapping.glyphicon}}"></span>
-      </div>
-      <div class="list-content">
-        <div class="primary">
-          <h4 class="header" ng-bind="currentMapping.label">
-          </h4>
-        </div>
-        <div class="secondary">
-          <small>...</small>
-        </div>
-      </div>  
-    </div>
-    <div class="clearfix"></div>
-  </div> -->
+<div class="ms-card-complex post-details {{action}}" ng-if="post.id">
   <div ng-if="currentMapping">
     <div ng-if="action == 'propagation'">
       <div ms-statistics post="post"></div>

@@ -1,28 +1,17 @@
 .post-details {
   min-height: 150px;
-  .optional-header {
-    color: white;
-    height: 80px;
-    .secondary {
-      opacity: 0.7;
+}
+.post-details.ms-card-complex.propagation {
+  background: #333;
+  .progress {
+    height: 5px;
+  }
+  .statistics {
+    .listing {
+      .value {
+        color: white;
+        font-weight: 100;
+      }
     }
-  }
-  .optional-header.bg-comments {
-    background: $brand-brown;
-  }
-  .optional-header.bg-statistics {
-    background: $brand-brown;
-  }
-  .optional-header.bg-propagation {
-    background: $brand-brown;
-  }
-  .bg-comments-add {
-    @extend .ms-animation-slide-from-top;
-  }
-  .bg-statistics-add{
-    @extend .ms-animation-slide-from-top;
-  }
-  .bg-propagation-add {
-    @extend .ms-animation-slide-from-top;
   }
 }
