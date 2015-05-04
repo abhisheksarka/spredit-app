@@ -335,20 +335,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </span>\n" +
     "      &nbsp;&nbsp;\n" +
     "    </a>\n" +
-    "    <a ng-click=\"setSelectedAction('propagation')\" ng-if=\"!mapDisabled\">\n" +
-    "      <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;\n" +
-    "      <span ng-if=\"selectedAction=='propagation'\">\n" +
-    "        <strong>MAP(<span ng-bind=\"post.total_propagation\"></span> KM)</strong>\n" +
-    "      </span>\n" +
-    "      <span ng-if=\"!(selectedAction=='propagation')\">\n" +
-    "        MAP(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
-    "      </span>\n" +
-    "    </a>\n" +
     "    <span class=\"pull-right text-muted\" ng-class=\"\">\n" +
     "      <span>\n" +
     "        <h3 class=\"spread-value\">\n" +
-    "          <strong ng-bind=\"post.spreads_count | displayNumber\" ng-if=\"(selectedAction=='statistics')\"></strong>\n" +
-    "          <span ng-bind=\"post.spreads_count | displayNumber\" ng-if=\"!(selectedAction=='statistics')\"></span>\n" +
+    "          <span ng-bind=\"post.spreads_count | displayNumber\"></span>\n" +
     "        </h3>\n" +
     "      </span>\n" +
     "    </span>\n" +
@@ -363,12 +353,17 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <a ng-click=\"openModal(post, 'propagation')\">\n" +
     "      <strong>\n" +
     "        <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;SPREAD MAP(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
+    "        &nbsp;&nbsp;\n" +
     "      </strong>\n" +
     "    </a>\n" +
+    "    <span>\n" +
+    "        <span class=\"glyphicon glyphicon-heart\" \n" +
+    "              ng-class=\"{'text-danger': (post.life == 1 || post.life == 2), 'text-warning': (post.life == 3 || post.life == 4), 'text-success': (post.life > 4)}\">\n" +
+    "        </span>\n" +
+    "        HEALTH&nbsp;(<span ng-bind=\"post.life\"></span>)\n" +
+    "    </span>\n" +
     "    <span class=\"pull-right text-muted\">\n" +
-    "      <a>\n" +
-    "        <h2 class=\"spread-value\" ng-bind=\"post.spreads_count | displayNumber\"></h2>\n" +
-    "      </a>\n" +
+    "      <h2 class=\"spread-value\" ng-bind=\"post.spreads_count | displayNumber\"></h2>\n" +
     "    </span>\n" +
     "  </span>\n" +
     "</small>"

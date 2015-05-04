@@ -10,20 +10,10 @@
       </span>
       &nbsp;&nbsp;
     </a>
-    <a ng-click="setSelectedAction('propagation')" ng-if="!mapDisabled">
-      <span class="glyphicon glyphicon-map-marker"></span>&nbsp;
-      <span ng-if="selectedAction=='propagation'">
-        <strong>MAP(<span ng-bind="post.total_propagation"></span> KM)</strong>
-      </span>
-      <span ng-if="!(selectedAction=='propagation')">
-        MAP(<span ng-bind="post.total_propagation"></span> KM)
-      </span>
-    </a>
     <span class="pull-right text-muted" ng-class="">
       <span>
         <h3 class="spread-value">
-          <strong ng-bind="post.spreads_count | displayNumber" ng-if="(selectedAction=='statistics')"></strong>
-          <span ng-bind="post.spreads_count | displayNumber" ng-if="!(selectedAction=='statistics')"></span>
+          <span ng-bind="post.spreads_count | displayNumber"></span>
         </h3>
       </span>
     </span>
@@ -38,12 +28,17 @@
     <a ng-click="openModal(post, 'propagation')">
       <strong>
         <span class="glyphicon glyphicon-map-marker"></span>&nbsp;SPREAD MAP(<span ng-bind="post.total_propagation"></span> KM)
+        &nbsp;&nbsp;
       </strong>
     </a>
+    <span>
+        <span class="glyphicon glyphicon-heart" 
+              ng-class="{'text-danger': (post.life == 1 || post.life == 2), 'text-warning': (post.life == 3 || post.life == 4), 'text-success': (post.life > 4)}">
+        </span>
+        HEALTH&nbsp;(<span ng-bind="post.life"></span>)
+    </span>
     <span class="pull-right text-muted">
-      <a>
-        <h2 class="spread-value" ng-bind="post.spreads_count | displayNumber"></h2>
-      </a>
+      <h2 class="spread-value" ng-bind="post.spreads_count | displayNumber"></h2>
     </span>
   </span>
 </small>
