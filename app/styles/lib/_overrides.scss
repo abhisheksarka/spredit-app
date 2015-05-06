@@ -59,6 +59,13 @@ nav.navbar {
     top: 4px;
     position: relative;
   }
+  .nav-button {
+    @media (max-width: $screen-xs) {
+      text-transform: none;
+      padding: 6px 9px;
+      min-width: inherit;
+    }
+  }
   .category-settings, .toggle-side-nav {
     top: 5px;
   }

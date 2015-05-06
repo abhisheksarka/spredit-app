@@ -262,7 +262,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          <span class=\"fa fa-sign-out brand-icon\"></span>\n" +
     "        </a>\n" +
     "        <a ng-click=\"openPostCreator()\" class=\"btn-link\">\n" +
-    "          <span class=\"btn btn-sm btn-danger\">Publish</span>\n" +
+    "          <span class=\"btn btn-sm btn-danger nav-button\">Publish</span>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
