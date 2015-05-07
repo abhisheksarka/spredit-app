@@ -48,11 +48,18 @@ a {
 }
 nav.navbar {
   @include ms-border-radius(0px); 
-  @include ms-box-shadow(0, 0, 0px, rgba(0,0,0,0));
-  background: transparent;
+  @include ms-box-shadow(0, 0, 20px, rgba(0,0,0,0.1));
+  background: white;
   min-height: 60px;
   padding-top: 0px;
   padding-bottom: 8px;
+  margin-bottom: 50px;
+  .notification-indicator {
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    font-size: 12px;
+  }
   .brand-name {
     font-family: 'Lato', sans-serif;
     font-weight: 800;
@@ -185,6 +192,12 @@ input.form-control, textarea.form-control {
 }
 .bg-warning {
   background: $brand-warning;
+}
+.bg-brown {
+  background: $brand-brown;
+}
+.bg-deep-orange {
+  background: $brand-deep-orange;
 }
 
 .container {

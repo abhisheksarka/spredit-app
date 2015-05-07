@@ -1,0 +1,51 @@
+@-webkit-keyframes ms-pulsate {
+  0%  {
+    @include ms-transform(scale(1));
+  }
+  50%  {
+    @include ms-transform(scale(0.5));
+  }
+  100% {
+    @include ms-transform(scale(1));
+  }
+}
+
+@-o-keyframes ms-pulsate {
+  0%  {
+    @include ms-transform(scale(1));
+  }
+  50%  {
+    @include ms-transform(scale(0.5));
+  }
+  100% {
+    @include ms-transform(scale(1));
+  } 
+}
+
+@-moz-keyframes ms-pulsate {
+  0%  {
+    @include ms-transform(scale(1));
+  }
+  50%  {
+    @include ms-transform(scale(0.5));
+  }
+  100% {
+    @include ms-transform(scale(1));
+  } 
+}
+
+@keyframes ms-pulsate {
+  0%  {
+    @include ms-transform(scale(1));
+  }
+  50%  {
+    @include ms-transform(scale(0.5));
+  }
+  100% {
+    @include ms-transform(scale(1));
+  } 
+}
+
+.ms-animation-pulsate {
+  @include ms-animation(ms-pulsate 1s infinite linear);
+}

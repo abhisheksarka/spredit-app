@@ -237,9 +237,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/scripts/components/nav_bar/template.html',
     "<nav class=\"navbar navbar-default\" role=\"navigation\" data-ng-if=\"display\">\n" +
     "  <div class=\"rainbow-dash\">\n" +
-    "    <div class=\"color-section bg-info\"></div>\n" +
-    "    <div class=\"color-section bg-danger\"></div>\n" +
     "    <div class=\"color-section bg-success\"></div>\n" +
+    "    <div class=\"color-section bg-danger\"></div>\n" +
+    "    <div class=\"color-section bg-brown\"></div>\n" +
     "    <div class=\"color-section bg-warning\"></div>\n" +
     "  </div>\n" +
     "  <div class=\"container ms-master-section\" data-ng-if=\"signedIn\">\n" +
@@ -249,6 +249,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          <span class=\"fa fa-share-alt brand-icon\"></span>\n" +
     "        </a>\n" +
     "        <a href=\"#/me\" tooltip=\"Me\" tooltip-placement=\"bottom\">\n" +
+    "          <!-- <span class=\"fa fa-circle text-danger notification-indicator ms-animation-pulsate\"></span> -->\n" +
     "          <span class=\"fa fa-user brand-icon\"></span>\n" +
     "        </a>\n" +
     "        <a href=\"/#current_location\" tooltip=\"Current location\" tooltip-placement=\"bottom\">\n" +
