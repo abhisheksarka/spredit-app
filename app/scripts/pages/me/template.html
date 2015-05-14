@@ -72,6 +72,33 @@
             </div>
           </div>
         </tab>
+        <tab heading="Notifications" select="setActive(tabs.notifications)">
+          <div ng-if="tabs.active == tabs.notifications">
+            <div ms-infinite-scroll 
+                 resource="Post" 
+                 request-to="'withNewNotifications'" 
+                 push-to="myNotifications" 
+                 paginator="myNotificationsPaginator">
+            </div>
+            <div ng-repeat="post in myNotifications" class="row">
+              <br>
+              <div ms-notification-renderer post="post"></div>
+            </div>
+            <div class="text-center">
+              <br>
+              <div ng-if="myNotificationsPaginator.isComplete && myActivities.length==0">
+                <img src="images/no_posts.png"/>
+                <h4 class="text-muted">
+                  You do not have any new notifications.
+                </h4>
+              </div>
+              <div ng-if="myNotificationsPaginator.state.isWorking">
+                <div ms-spinner></div>
+                <p><small class="text-muted">Please wait</small></p>
+              </div>
+            </div>
+          </div>
+        </tab>
       </tabset>
     </div>
   </div>

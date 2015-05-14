@@ -49,3 +49,55 @@
 .ms-animation-pulsate {
   @include ms-animation(ms-pulsate 1s infinite linear);
 }
+
+@-webkit-keyframes ms-pulsate-fade {
+  0%  {
+    opacity: 1;
+  }
+  50%  {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes ms-pulsate-fade {
+  0%  {
+    opacity: 1;
+  }
+  50%  {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  } 
+}
+
+@-moz-keyframes ms-pulsate-fade {
+  0%  {
+    opacity: 1;
+  }
+  50%  {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  } 
+}
+
+@keyframes ms-pulsate-fade {
+  0%  {
+    opacity: 1;
+  }
+  50%  {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  } 
+}
+
+.ms-animation-pulsate-fade {
+  @include ms-animation(ms-pulsate-fade 1s infinite linear);
+}

@@ -2,6 +2,7 @@
   function Controller($scope, Session, SideNavService, PostCreatorModal, $window, $location){
     
     function init() {
+      $scope.currentUser = Session.currentUser;
       $scope.toggleSideNav = toggleSideNav;
       $scope.signOut = signOut;
       $scope.openPostCreator = openPostCreator;

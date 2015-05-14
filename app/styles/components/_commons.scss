@@ -32,7 +32,7 @@
   @extend .ms-card;
   padding: 0px;
   .optional-header {
-    padding: 15px;
+    padding: 25px;
   }
   .rich-media {
     background: #333;
@@ -61,7 +61,8 @@
     }
   }
   .supporting-text {
-    padding: 15px;
+    padding: 25px;
+    padding-top: 5px;
     word-wrap: break-word;
     hr {
       margin-bottom: -15px;
@@ -69,11 +70,10 @@
     }
   }
   .actions {
-    padding: 15px;
+    padding: 25px;
     padding-top: 0px;
     a {
       color: #333;
-      opacity: 0.7;
       text-transform: uppercase;
       &:hover, &:focus, &:active {
         color: rgb(21,21,21);
@@ -176,6 +176,15 @@
   &:hover {
     color: white;
     background: #333;
+  }
+}
+.btn.btn-transparent-inverse {
+  background: transparent;
+  border: 2px solid #fff !important;
+  color: #fff;
+  &:hover {
+    color: #333;
+    background: #fff;
   }
 }
 .rainbow-dash {

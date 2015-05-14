@@ -18,11 +18,16 @@
         activities: {
           value: 2,
           clearFn: initPosts
+        },
+        notifications: {
+          value: 3,
+          clearFn: initNotifications
         }
       };
       $scope.setActive = setActive;
       initPosts();
       initActivities();
+      initNotifications();
     };
 
     function setActive(tab) {
@@ -37,8 +42,25 @@
     function initActivities() {
       $scope.myActivities = [ ];
     };
+
+    function initNotifications() {
+      $scope.myNotifications = [ ];
+    };
+
+    function clearNotifications() {
+      // var c = $scope.currentUser;
+      // if(c.unread_notifications_count == 0) {
+      //   return;
+      // };
+      // Activity.markAllAsRead()
+      // .$promise
+      // .then(function(){
+      //   c.unread_notifications_count = 0;
+      // }); 
+    };
     
     init();
+    clearNotifications();
   };
   angular.module('ms.pages.me').controller('MeController', [
     '$scope',

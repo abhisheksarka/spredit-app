@@ -1,23 +1,12 @@
 .notification-renderer {
-  .optional-header {
-    .ms-list-item {
-      .list-content {
-        .header {
-          line-height: 2.8;
-        }
-      }
-      .glyphicon-avatar.ms-fab {
-        opacity: 0.4;
+  .notification-flash {
+    font-size: 24px;
+    .ms-card {
+      margin-bottom: 5px;
+      font-size: 14px;
+      @extend .text-muted;
+      .value {
       }
     }
-  }
-  .supporting-text {
-    .lead {
-      top: 2px;
-      position: relative;
-      color: #333;
-      font-weight: 400;
-    }
-    padding-top: 0px;
   }
 }

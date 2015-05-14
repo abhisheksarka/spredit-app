@@ -12,7 +12,9 @@
           <span class="fa fa-share-alt brand-icon"></span>
         </a>
         <a href="#/me" tooltip="Me" tooltip-placement="bottom">
-          <!-- <span class="fa fa-circle text-danger notification-indicator ms-animation-pulsate"></span> -->
+          <span class="fa fa-circle text-danger notification-indicator ms-animation-pulsate" 
+                ng-if="currentUser.unread_notifications_count > 0">
+          </span>
           <span class="fa fa-user brand-icon"></span>
         </a>
         <a href="/#current_location" tooltip="Current location" tooltip-placement="bottom">
@@ -26,7 +28,7 @@
           <span class="fa fa-sign-out brand-icon"></span>
         </a>
         <a ng-click="openPostCreator()" class="btn-link">
-          <span class="btn btn-sm btn-danger nav-button">Publish</span>
+          <span class="btn btn-sm btn-danger nav-button btn-transparent-inverse">Publish</span>
         </a>
       </li>
     </ul>

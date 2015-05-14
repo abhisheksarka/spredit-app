@@ -3,7 +3,7 @@
   app.directive('msNotificationRenderer', [function(){
     return{
       scope: {
-        notification: '=' 
+        post: '=' 
       },
       replace: true,
       controllerAs: 'notificationRendererCtrl',

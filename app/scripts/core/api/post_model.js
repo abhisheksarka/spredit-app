@@ -5,7 +5,8 @@
                     { id: '@id' },
                     { 
                       mine: { method: 'GET', url: ms.apiFor('/posts/mine'), isArray: true },
-                      categories: { method: 'GET', url: ms.apiFor('/posts/categories'), isArray: true }  
+                      categories: { method: 'GET', url: ms.apiFor('/posts/categories'), isArray: true },
+                      withNewNotifications: { method: 'GET', url: ms.apiFor('/posts/with_new_notifications'), isArray: true }   
                     }
                   ),
         proto = Resource.prototype,

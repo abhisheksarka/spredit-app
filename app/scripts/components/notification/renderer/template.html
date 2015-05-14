@@ -1,21 +1,34 @@
-<div class="notification-renderer ms-card-complex">
-  <div class="optional-header">
-    <div class="ms-list-item">
-      <!-- <div class="glyphicon-avatar ms-fab {{mappings.elementClasses[notification.action].btn}}">
-        <span class="glyphicon {{mappings.elementClasses[notification.action].icon}}"></span>
-      </div> -->
-      <div class="">
-        <div class="primary">
-          <h5 class="header">
-            <strong><span ng-bind-html="messages[notification.action](notification).label"></span></strong>
-          </h5>
-        </div>
-      </div>
+<div class="notification-renderer">
+  <div class="col-sm-12 text-center notification-flash">
+    <div class="ms-card ms-animation-pulsate-fade">
+      <span ng-if="post.new_comments_count > 0" class="icon-placeholder">
+        <span>
+          <span class="fa fa-comment"></span>
+          <strong ng-bind="post.new_comments_count" class="value text-success"></strong> new 
+          <span ng-if="post.new_comments_count > 1">comments</span>
+          <span ng-if="post.new_comments_count == 1">comment</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+      </span>
+      <span ng-if="post.new_spreads_count > 0" class="icon-placeholder">
+        <span>
+          <strong ng-bind="post.new_spreads_count" class="value text-success"></strong> new
+          <span ng-if="post.new_spreads_count > 1">spreads</span>
+          <span ng-if="post.new_spreads_count == 1">spread</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+      </span>
+      <span ng-if="post.new_contains_count > 0" class="icon-placeholder">
+        <span>
+          <strong ng-bind="post.new_contains_count" class="value text-success"></strong> new
+          <span ng-if="post.new_contains_count > 1">contains</span>
+          <span ng-if="post.new_contains_count == 1">contain</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+      </span>
     </div>
   </div>
-  <div class="supporting-text text-muted">
-    <span ng-bind-html="messages[notification.action](notification).desc" 
-          ng-if="notification.targetable_type == 'Post'">
-    </span>
+  <div class="col-sm-12">
+    <div ms-post-renderer post="post" record-view="false" spreader-disabled="true" modalify-post-actions="true"></div>
   </div>
 </div>

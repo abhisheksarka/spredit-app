@@ -1,7 +1,7 @@
 <small class="post-actions">
   <span class="text-muted" ng-if="!modalify">
     <a ng-click="setSelectedAction('comments')">
-      <span class="glyphicon glyphicon-comment"></span>&nbsp;
+      <span class="fa fa-comment"></span>&nbsp;
       <span ng-if="selectedAction=='comments'">
         <strong>COMMENTS(<span ng-bind="post.comments_count"></span>)</strong> 
       </span>
@@ -21,18 +21,18 @@
   <span class="text-muted" ng-if="modalify">
     <a ng-click="openModal(post, 'comments')">
       <strong>
-        <span class="glyphicon glyphicon-comment"></span>&nbsp;COMMENTS(<span ng-bind="post.comments_count"></span>)
+        <span class="fa fa-comment"></span>&nbsp;COMMENTS(<span ng-bind="post.comments_count"></span>)
         &nbsp;&nbsp;
       </strong>
     </a>
     <a ng-click="openModal(post, 'propagation')">
       <strong>
-        <span class="glyphicon glyphicon-map-marker"></span>&nbsp;SPREAD MAP(<span ng-bind="post.total_propagation"></span> KM)
+        <span class="fa fa-map-marker"></span>&nbsp;SPREAD MAP(<span ng-bind="post.total_propagation"></span> KM)
         &nbsp;&nbsp;
       </strong>
     </a>
     <span>
-        <span class="glyphicon glyphicon-heart" 
+        <span class="fa fa-heart" 
               ng-class="{'text-danger': (post.life == 1 || post.life == 2), 'text-warning': (post.life == 3 || post.life == 4), 'text-success': (post.life > 4)}">
         </span>
         HEALTH&nbsp;(<span ng-bind="post.life"></span>)

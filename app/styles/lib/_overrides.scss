@@ -48,8 +48,8 @@ a {
 }
 nav.navbar {
   @include ms-border-radius(0px); 
-  @include ms-box-shadow(0, 0, 20px, rgba(0,0,0,0.1));
-  background: white;
+  background: #333;
+  border-bottom: 2px solid #000;
   min-height: 60px;
   padding-top: 0px;
   padding-bottom: 8px;
@@ -86,15 +86,15 @@ nav.navbar {
   .navbar-nav > li > a {
     padding: 15px 15px;
     font-size: 22px;
-    color: #333;
+    color: #fff;
     &:hover {
-      color: #333;
+      color: #fff;
     } 
     &:focus {
-      color: #333;
+      color: #fff;
     }
     &:active {
-      color: #333;
+      color: #fff;
     }
   }
   .navbar-nav > li > a.btn-link {

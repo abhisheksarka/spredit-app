@@ -249,7 +249,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          <span class=\"fa fa-share-alt brand-icon\"></span>\n" +
     "        </a>\n" +
     "        <a href=\"#/me\" tooltip=\"Me\" tooltip-placement=\"bottom\">\n" +
-    "          <!-- <span class=\"fa fa-circle text-danger notification-indicator ms-animation-pulsate\"></span> -->\n" +
+    "          <span class=\"fa fa-circle text-danger notification-indicator ms-animation-pulsate\" \n" +
+    "                ng-if=\"currentUser.unread_notifications_count > 0\">\n" +
+    "          </span>\n" +
     "          <span class=\"fa fa-user brand-icon\"></span>\n" +
     "        </a>\n" +
     "        <a href=\"/#current_location\" tooltip=\"Current location\" tooltip-placement=\"bottom\">\n" +
@@ -263,7 +265,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          <span class=\"fa fa-sign-out brand-icon\"></span>\n" +
     "        </a>\n" +
     "        <a ng-click=\"openPostCreator()\" class=\"btn-link\">\n" +
-    "          <span class=\"btn btn-sm btn-danger nav-button\">Publish</span>\n" +
+    "          <span class=\"btn btn-sm btn-danger nav-button btn-transparent-inverse\">Publish</span>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
@@ -287,25 +289,38 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/components/notification/renderer/template.html',
-    "<div class=\"notification-renderer ms-card-complex\">\n" +
-    "  <div class=\"optional-header\">\n" +
-    "    <div class=\"ms-list-item\">\n" +
-    "      <!-- <div class=\"glyphicon-avatar ms-fab {{mappings.elementClasses[notification.action].btn}}\">\n" +
-    "        <span class=\"glyphicon {{mappings.elementClasses[notification.action].icon}}\"></span>\n" +
-    "      </div> -->\n" +
-    "      <div class=\"\">\n" +
-    "        <div class=\"primary\">\n" +
-    "          <h5 class=\"header\">\n" +
-    "            <strong><span ng-bind-html=\"messages[notification.action](notification).label\"></span></strong>\n" +
-    "          </h5>\n" +
-    "        </div>\n" +
-    "      </div>\n" +
+    "<div class=\"notification-renderer\">\n" +
+    "  <div class=\"col-sm-12 text-center notification-flash\">\n" +
+    "    <div class=\"ms-card ms-animation-pulsate-fade\">\n" +
+    "      <span ng-if=\"post.new_comments_count > 0\" class=\"icon-placeholder\">\n" +
+    "        <span>\n" +
+    "          <span class=\"fa fa-comment\"></span>\n" +
+    "          <strong ng-bind=\"post.new_comments_count\" class=\"value text-success\"></strong> new \n" +
+    "          <span ng-if=\"post.new_comments_count > 1\">comments</span>\n" +
+    "          <span ng-if=\"post.new_comments_count == 1\">comment</span>\n" +
+    "          &nbsp;&nbsp;&nbsp;&nbsp;\n" +
+    "        </span>\n" +
+    "      </span>\n" +
+    "      <span ng-if=\"post.new_spreads_count > 0\" class=\"icon-placeholder\">\n" +
+    "        <span>\n" +
+    "          <strong ng-bind=\"post.new_spreads_count\" class=\"value text-success\"></strong> new\n" +
+    "          <span ng-if=\"post.new_spreads_count > 1\">spreads</span>\n" +
+    "          <span ng-if=\"post.new_spreads_count == 1\">spread</span>\n" +
+    "          &nbsp;&nbsp;&nbsp;&nbsp;\n" +
+    "        </span>\n" +
+    "      </span>\n" +
+    "      <span ng-if=\"post.new_contains_count > 0\" class=\"icon-placeholder\">\n" +
+    "        <span>\n" +
+    "          <strong ng-bind=\"post.new_contains_count\" class=\"value text-success\"></strong> new\n" +
+    "          <span ng-if=\"post.new_contains_count > 1\">contains</span>\n" +
+    "          <span ng-if=\"post.new_contains_count == 1\">contain</span>\n" +
+    "          &nbsp;&nbsp;&nbsp;&nbsp;\n" +
+    "        </span>\n" +
+    "      </span>\n" +
     "    </div>\n" +
     "  </div>\n" +
-    "  <div class=\"supporting-text text-muted\">\n" +
-    "    <span ng-bind-html=\"messages[notification.action](notification).desc\" \n" +
-    "          ng-if=\"notification.targetable_type == 'Post'\">\n" +
-    "    </span>\n" +
+    "  <div class=\"col-sm-12\">\n" +
+    "    <div ms-post-renderer post=\"post\" record-view=\"false\" spreader-disabled=\"true\" modalify-post-actions=\"true\"></div>\n" +
     "  </div>\n" +
     "</div>"
   );
@@ -327,7 +342,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<small class=\"post-actions\">\n" +
     "  <span class=\"text-muted\" ng-if=\"!modalify\">\n" +
     "    <a ng-click=\"setSelectedAction('comments')\">\n" +
-    "      <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;\n" +
+    "      <span class=\"fa fa-comment\"></span>&nbsp;\n" +
     "      <span ng-if=\"selectedAction=='comments'\">\n" +
     "        <strong>COMMENTS(<span ng-bind=\"post.comments_count\"></span>)</strong> \n" +
     "      </span>\n" +
@@ -347,18 +362,18 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <span class=\"text-muted\" ng-if=\"modalify\">\n" +
     "    <a ng-click=\"openModal(post, 'comments')\">\n" +
     "      <strong>\n" +
-    "        <span class=\"glyphicon glyphicon-comment\"></span>&nbsp;COMMENTS(<span ng-bind=\"post.comments_count\"></span>)\n" +
+    "        <span class=\"fa fa-comment\"></span>&nbsp;COMMENTS(<span ng-bind=\"post.comments_count\"></span>)\n" +
     "        &nbsp;&nbsp;\n" +
     "      </strong>\n" +
     "    </a>\n" +
     "    <a ng-click=\"openModal(post, 'propagation')\">\n" +
     "      <strong>\n" +
-    "        <span class=\"glyphicon glyphicon-map-marker\"></span>&nbsp;SPREAD MAP(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
+    "        <span class=\"fa fa-map-marker\"></span>&nbsp;SPREAD MAP(<span ng-bind=\"post.total_propagation\"></span> KM)\n" +
     "        &nbsp;&nbsp;\n" +
     "      </strong>\n" +
     "    </a>\n" +
     "    <span>\n" +
-    "        <span class=\"glyphicon glyphicon-heart\" \n" +
+    "        <span class=\"fa fa-heart\" \n" +
     "              ng-class=\"{'text-danger': (post.life == 1 || post.life == 2), 'text-warning': (post.life == 3 || post.life == 4), 'text-success': (post.life > 4)}\">\n" +
     "        </span>\n" +
     "        HEALTH&nbsp;(<span ng-bind=\"post.life\"></span>)\n" +
@@ -1022,6 +1037,33 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "                </h4>\n" +
     "              </div>\n" +
     "              <div ng-if=\"myActivitiesPaginator.state.isWorking\">\n" +
+    "                <div ms-spinner></div>\n" +
+    "                <p><small class=\"text-muted\">Please wait</small></p>\n" +
+    "              </div>\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    "        </tab>\n" +
+    "        <tab heading=\"Notifications\" select=\"setActive(tabs.notifications)\">\n" +
+    "          <div ng-if=\"tabs.active == tabs.notifications\">\n" +
+    "            <div ms-infinite-scroll \n" +
+    "                 resource=\"Post\" \n" +
+    "                 request-to=\"'withNewNotifications'\" \n" +
+    "                 push-to=\"myNotifications\" \n" +
+    "                 paginator=\"myNotificationsPaginator\">\n" +
+    "            </div>\n" +
+    "            <div ng-repeat=\"post in myNotifications\" class=\"row\">\n" +
+    "              <br>\n" +
+    "              <div ms-notification-renderer post=\"post\"></div>\n" +
+    "            </div>\n" +
+    "            <div class=\"text-center\">\n" +
+    "              <br>\n" +
+    "              <div ng-if=\"myNotificationsPaginator.isComplete && myActivities.length==0\">\n" +
+    "                <img src=\"images/no_posts.png\"/>\n" +
+    "                <h4 class=\"text-muted\">\n" +
+    "                  You do not have any new notifications.\n" +
+    "                </h4>\n" +
+    "              </div>\n" +
+    "              <div ng-if=\"myNotificationsPaginator.state.isWorking\">\n" +
     "                <div ms-spinner></div>\n" +
     "                <p><small class=\"text-muted\">Please wait</small></p>\n" +
     "              </div>\n" +
