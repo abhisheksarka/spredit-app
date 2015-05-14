@@ -1,6 +1,6 @@
 <div class="notification-renderer">
-  <div class="col-sm-12 text-center notification-flash">
-    <div class="ms-card ms-animation-pulsate-fade">
+  <div class="col-sm-12 notification-flash">
+    <div class="ms-card">
       <span ng-if="post.new_comments_count > 0" class="icon-placeholder">
         <span>
           <span class="fa fa-comment"></span>
@@ -12,6 +12,7 @@
       </span>
       <span ng-if="post.new_spreads_count > 0" class="icon-placeholder">
         <span>
+          <span class="fa fa-check"></span>
           <strong ng-bind="post.new_spreads_count" class="value text-success"></strong> new
           <span ng-if="post.new_spreads_count > 1">spreads</span>
           <span ng-if="post.new_spreads_count == 1">spread</span>
@@ -20,6 +21,7 @@
       </span>
       <span ng-if="post.new_contains_count > 0" class="icon-placeholder">
         <span>
+          <span class="fa fa-remove"></span>
           <strong ng-bind="post.new_contains_count" class="value text-success"></strong> new
           <span ng-if="post.new_contains_count > 1">contains</span>
           <span ng-if="post.new_contains_count == 1">contain</span>

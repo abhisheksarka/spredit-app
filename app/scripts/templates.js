@@ -5,11 +5,11 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<div class=\"activity-renderer\">\n" +
     "  <div class=\"optional-header message text-muted\">\n" +
     "    <span>\n" +
-    "      <span class=\"glyphicon {{mappings[activity.action].iconClass}}\"></span>\n" +
+    "      <span class=\"fa {{mappings[activity.action].iconClass}}\"></span>\n" +
     "      &nbsp;\n" +
-    "      <strong>\n" +
+    "      <span>\n" +
     "        <span ng-bind=\"mappings[activity.action].label\"></span>\n" +
-    "      </strong>\n" +
+    "      </span>\n" +
     "    </span>\n" +
     "    <span class=\"pull-right\">\n" +
     "      <small class=\"text-muted pull-right\" am-time-ago=\"activity.created_at\"></small>\n" +
@@ -290,8 +290,8 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/notification/renderer/template.html',
     "<div class=\"notification-renderer\">\n" +
-    "  <div class=\"col-sm-12 text-center notification-flash\">\n" +
-    "    <div class=\"ms-card ms-animation-pulsate-fade\">\n" +
+    "  <div class=\"col-sm-12 notification-flash\">\n" +
+    "    <div class=\"ms-card\">\n" +
     "      <span ng-if=\"post.new_comments_count > 0\" class=\"icon-placeholder\">\n" +
     "        <span>\n" +
     "          <span class=\"fa fa-comment\"></span>\n" +
@@ -303,6 +303,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </span>\n" +
     "      <span ng-if=\"post.new_spreads_count > 0\" class=\"icon-placeholder\">\n" +
     "        <span>\n" +
+    "          <span class=\"fa fa-check\"></span>\n" +
     "          <strong ng-bind=\"post.new_spreads_count\" class=\"value text-success\"></strong> new\n" +
     "          <span ng-if=\"post.new_spreads_count > 1\">spreads</span>\n" +
     "          <span ng-if=\"post.new_spreads_count == 1\">spread</span>\n" +
@@ -311,6 +312,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </span>\n" +
     "      <span ng-if=\"post.new_contains_count > 0\" class=\"icon-placeholder\">\n" +
     "        <span>\n" +
+    "          <span class=\"fa fa-remove\"></span>\n" +
     "          <strong ng-bind=\"post.new_contains_count\" class=\"value text-success\"></strong> new\n" +
     "          <span ng-if=\"post.new_contains_count > 1\">contains</span>\n" +
     "          <span ng-if=\"post.new_contains_count == 1\">contain</span>\n" +
@@ -373,7 +375,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "      </strong>\n" +
     "    </a>\n" +
     "    <span>\n" +
-    "        <span class=\"fa fa-heart\" \n" +
+    "        <span class=\"fa fa-plus-square\" \n" +
     "              ng-class=\"{'text-danger': (post.life == 1 || post.life == 2), 'text-warning': (post.life == 3 || post.life == 4), 'text-success': (post.life > 4)}\">\n" +
     "        </span>\n" +
     "        HEALTH&nbsp;(<span ng-bind=\"post.life\"></span>)\n" +
@@ -655,12 +657,12 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <span class=\"ms-fab btn btn-white contain\" \n" +
     "    \t\t\tng-click=\"containIt()\" \n" +
     "    \t\t\tng-class=\"{'disabled': isDisabled || requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}\">\n" +
-    "      <span class=\"glyphicon glyphicon-remove\"></span>\n" +
+    "      <span class=\"fa fa-remove\"></span>\n" +
     "    </span>\n" +
     "    <span class=\"ms-fab btn btn-white spread\" \n" +
     "    \t\t\tng-click=\"spreadIt()\" \n" +
     "    \t\t\tng-class=\"{'disabled': isDisabled || requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}\">\n" +
-    "      <span class=\"glyphicon glyphicon-ok\"></span>\n" +
+    "      <span class=\"fa fa-check\"></span>\n" +
     "    </span>\n" +
     "  </span>\n" +
     "</div>"
@@ -1057,7 +1059,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "            </div>\n" +
     "            <div class=\"text-center\">\n" +
     "              <br>\n" +
-    "              <div ng-if=\"myNotificationsPaginator.isComplete && myActivities.length==0\">\n" +
+    "              <div ng-if=\"myNotificationsPaginator.isComplete && myNotifications.length==0\">\n" +
     "                <img src=\"images/no_posts.png\"/>\n" +
     "                <h4 class=\"text-muted\">\n" +
     "                  You do not have any new notifications.\n" +

@@ -19,26 +19,26 @@
     res.activityMappings = {
       commented: {
         label: 'You commented on this',
-        iconClass: 'glyphicon-comment'
+        iconClass: 'fa-comment'
       }, 
       spread: {
         label: 'You spread this',
-        iconClass: 'glyphicon-send'
+        iconClass: 'fa-check'
       },
       contained: {
         label: 'You contained this',
-        iconClass: 'glyphicon-lock'
+        iconClass: 'fa-remove'
       }
     };
 
     res.notificationMappings =  {
       spread: {
         label: 'Your post was spread...',
-        iconClass: 'glyphicon-send' 
+        iconClass: 'fa-check' 
       },
       contained: {
         label: 'Your post was contained...',
-        iconClass: 'glyphicon-lock'
+        iconClass: 'fa-remove'
       }
     };
     

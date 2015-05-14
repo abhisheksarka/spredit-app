@@ -1,11 +1,11 @@
 <div class="activity-renderer">
   <div class="optional-header message text-muted">
     <span>
-      <span class="glyphicon {{mappings[activity.action].iconClass}}"></span>
+      <span class="fa {{mappings[activity.action].iconClass}}"></span>
       &nbsp;
-      <strong>
+      <span>
         <span ng-bind="mappings[activity.action].label"></span>
-      </strong>
+      </span>
     </span>
     <span class="pull-right">
       <small class="text-muted pull-right" am-time-ago="activity.created_at"></small>
