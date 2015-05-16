@@ -72,7 +72,13 @@
             </div>
           </div>
         </tab>
-        <tab heading="Notifications" select="setActive(tabs.notifications)">
+        <tab select="setActive(tabs.notifications)" class="notifications-tab">
+          <tab-heading>
+            <span>Notifications</span>
+            <span class="fa fa-circle text-danger notification-indicator ms-animation-pulsate" 
+                  ng-if="currentUser.unread_notifications_count > 0">
+            </span>
+          </tab-heading>
           <div ng-if="tabs.active == tabs.notifications">
             <div ms-infinite-scroll 
                  resource="Post" 

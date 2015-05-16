@@ -3,6 +3,13 @@ body#page-me {
     margin-left: auto;
     margin-right: auto;
   }
+  .notifications-tab {
+    .notification-indicator {
+      font-size: 12px;
+      position: relative;
+      top: -10px;
+    }
+  }
   .nav-tabs.nav {
     li {
       display: table-cell;

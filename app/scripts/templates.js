@@ -293,19 +293,19 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <div class=\"col-sm-12 notification-flash\">\n" +
     "    <div class=\"ms-card\">\n" +
     "      <div class=\"row\">\n" +
-    "        <div class=\"col-sm-4\" ng-if=\"post.new_comments_count > 0\">\n" +
+    "        <div class=\"col-sm-4 notification-message\" ng-if=\"post.new_comments_count > 0\">\n" +
     "          <span class=\"fa fa-comment\"></span>\n" +
     "          <span ng-bind=\"post.new_comments_count\" class=\"value text-success\"></span> new \n" +
     "          <span ng-if=\"post.new_comments_count > 1\">comments</span>\n" +
     "          <span ng-if=\"post.new_comments_count == 1\">comment</span>\n" +
     "        </div>\n" +
-    "        <div class=\"col-sm-4\" ng-if=\"post.new_spreads_count > 0\">\n" +
+    "        <div class=\"col-sm-4 notification-flash\" ng-if=\"post.new_spreads_count > 0\">\n" +
     "          <span class=\"fa fa-check\"></span>\n" +
     "          <span ng-bind=\"post.new_spreads_count\" class=\"value text-success\"></span> new\n" +
     "          <span ng-if=\"post.new_spreads_count > 1\">spreads</span>\n" +
     "          <span ng-if=\"post.new_spreads_count == 1\">spread</span>\n" +
     "        </div>\n" +
-    "        <div class=\"col-sm-4\" ng-if=\"post.new_contains_count > 0\">\n" +
+    "        <div class=\"col-sm-4 notification-flash\" ng-if=\"post.new_contains_count > 0\">\n" +
     "          <span class=\"fa fa-remove\"></span>\n" +
     "          <span ng-bind=\"post.new_contains_count\" class=\"value text-success\"></span> new\n" +
     "          <span ng-if=\"post.new_contains_count > 1\">contains</span>\n" +
@@ -1038,7 +1038,13 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "            </div>\n" +
     "          </div>\n" +
     "        </tab>\n" +
-    "        <tab heading=\"Notifications\" select=\"setActive(tabs.notifications)\">\n" +
+    "        <tab select=\"setActive(tabs.notifications)\" class=\"notifications-tab\">\n" +
+    "          <tab-heading>\n" +
+    "            <span>Notifications</span>\n" +
+    "            <span class=\"fa fa-circle text-danger notification-indicator ms-animation-pulsate\" \n" +
+    "                  ng-if=\"currentUser.unread_notifications_count > 0\">\n" +
+    "            </span>\n" +
+    "          </tab-heading>\n" +
     "          <div ng-if=\"tabs.active == tabs.notifications\">\n" +
     "            <div ms-infinite-scroll \n" +
     "                 resource=\"Post\" \n" +

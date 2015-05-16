@@ -1,6 +1,5 @@
 .notification-renderer {
   .notification-flash {
-    font-size: 24px;
     .ms-card {
       margin-bottom: 5px;
       font-size: 14px;
@@ -16,8 +15,8 @@
       .value {
         color: #333;
       }
-      .notification-flash {
-        @media (min-width: $screen-xs) {
+      .notification-message {
+        @media (max-width: $screen-sm) {
           margin-bottom: 5px;
         }
       } 
