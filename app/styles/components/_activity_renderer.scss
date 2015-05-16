@@ -7,5 +7,12 @@
     padding: 15px;
     background: rgba(255, 255, 255, 0.7);
     @include ms-border-radius(4px);
+    .fa {
+      padding: 5px;
+      @include ms-border-radius(500px);
+      border: 1px solid;
+      height: 26px;
+      width: 26px;
+    }
   }
 }

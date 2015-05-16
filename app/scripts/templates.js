@@ -3,10 +3,9 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/activity/renderer/template.html',
     "<div class=\"activity-renderer\">\n" +
-    "  <div class=\"optional-header message text-muted\">\n" +
+    "  <div class=\"optional-header message\">\n" +
     "    <span>\n" +
     "      <span class=\"fa {{mappings[activity.action].iconClass}}\"></span>\n" +
-    "      &nbsp;\n" +
     "      <span>\n" +
     "        <span ng-bind=\"mappings[activity.action].label\"></span>\n" +
     "      </span>\n" +
