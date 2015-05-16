@@ -4,11 +4,23 @@
     .ms-card {
       margin-bottom: 5px;
       font-size: 14px;
-      @extend .text-muted;
+      font-weight: 100;
       background: rgba(255,255,255,0.7);
+      .fa {
+        padding: 5px;
+        @include ms-border-radius(500px);
+        border: 1px solid;
+        height: 26px;
+        width: 26px;
+      }
       .value {
         color: #333;
       }
+      .notification-flash {
+        @media (min-width: $screen-xs) {
+          margin-bottom: 5px;
+        }
+      } 
     }
   }
 }

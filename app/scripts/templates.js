@@ -292,33 +292,26 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "<div class=\"notification-renderer\">\n" +
     "  <div class=\"col-sm-12 notification-flash\">\n" +
     "    <div class=\"ms-card\">\n" +
-    "      <span ng-if=\"post.new_comments_count > 0\" class=\"icon-placeholder\">\n" +
-    "        <span>\n" +
+    "      <div class=\"row\">\n" +
+    "        <div class=\"col-sm-4\" ng-if=\"post.new_comments_count > 0\">\n" +
     "          <span class=\"fa fa-comment\"></span>\n" +
-    "          <strong ng-bind=\"post.new_comments_count\" class=\"value text-success\"></strong> new \n" +
+    "          <span ng-bind=\"post.new_comments_count\" class=\"value text-success\"></span> new \n" +
     "          <span ng-if=\"post.new_comments_count > 1\">comments</span>\n" +
     "          <span ng-if=\"post.new_comments_count == 1\">comment</span>\n" +
-    "          &nbsp;&nbsp;&nbsp;&nbsp;\n" +
-    "        </span>\n" +
-    "      </span>\n" +
-    "      <span ng-if=\"post.new_spreads_count > 0\" class=\"icon-placeholder\">\n" +
-    "        <span>\n" +
+    "        </div>\n" +
+    "        <div class=\"col-sm-4\" ng-if=\"post.new_spreads_count > 0\">\n" +
     "          <span class=\"fa fa-check\"></span>\n" +
-    "          <strong ng-bind=\"post.new_spreads_count\" class=\"value text-success\"></strong> new\n" +
+    "          <span ng-bind=\"post.new_spreads_count\" class=\"value text-success\"></span> new\n" +
     "          <span ng-if=\"post.new_spreads_count > 1\">spreads</span>\n" +
     "          <span ng-if=\"post.new_spreads_count == 1\">spread</span>\n" +
-    "          &nbsp;&nbsp;&nbsp;&nbsp;\n" +
-    "        </span>\n" +
-    "      </span>\n" +
-    "      <span ng-if=\"post.new_contains_count > 0\" class=\"icon-placeholder\">\n" +
-    "        <span>\n" +
+    "        </div>\n" +
+    "        <div class=\"col-sm-4\" ng-if=\"post.new_contains_count > 0\">\n" +
     "          <span class=\"fa fa-remove\"></span>\n" +
-    "          <strong ng-bind=\"post.new_contains_count\" class=\"value text-success\"></strong> new\n" +
+    "          <span ng-bind=\"post.new_contains_count\" class=\"value text-success\"></span> new\n" +
     "          <span ng-if=\"post.new_contains_count > 1\">contains</span>\n" +
     "          <span ng-if=\"post.new_contains_count == 1\">contain</span>\n" +
-    "          &nbsp;&nbsp;&nbsp;&nbsp;\n" +
-    "        </span>\n" +
-    "      </span>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "  <div class=\"col-sm-12\">\n" +

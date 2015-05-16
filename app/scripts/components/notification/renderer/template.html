@@ -1,33 +1,26 @@
 <div class="notification-renderer">
   <div class="col-sm-12 notification-flash">
     <div class="ms-card">
-      <span ng-if="post.new_comments_count > 0" class="icon-placeholder">
-        <span>
+      <div class="row">
+        <div class="col-sm-4 notification-message" ng-if="post.new_comments_count > 0">
           <span class="fa fa-comment"></span>
-          <strong ng-bind="post.new_comments_count" class="value text-success"></strong> new 
+          <span ng-bind="post.new_comments_count" class="value text-success"></span> new 
           <span ng-if="post.new_comments_count > 1">comments</span>
           <span ng-if="post.new_comments_count == 1">comment</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-        </span>
-      </span>
-      <span ng-if="post.new_spreads_count > 0" class="icon-placeholder">
-        <span>
+        </div>
+        <div class="col-sm-4 notification-flash" ng-if="post.new_spreads_count > 0">
           <span class="fa fa-check"></span>
-          <strong ng-bind="post.new_spreads_count" class="value text-success"></strong> new
+          <span ng-bind="post.new_spreads_count" class="value text-success"></span> new
           <span ng-if="post.new_spreads_count > 1">spreads</span>
           <span ng-if="post.new_spreads_count == 1">spread</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-        </span>
-      </span>
-      <span ng-if="post.new_contains_count > 0" class="icon-placeholder">
-        <span>
+        </div>
+        <div class="col-sm-4 notification-flash" ng-if="post.new_contains_count > 0">
           <span class="fa fa-remove"></span>
-          <strong ng-bind="post.new_contains_count" class="value text-success"></strong> new
+          <span ng-bind="post.new_contains_count" class="value text-success"></span> new
           <span ng-if="post.new_contains_count > 1">contains</span>
           <span ng-if="post.new_contains_count == 1">contain</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-        </span>
-      </span>
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-sm-12">
