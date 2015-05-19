@@ -48,19 +48,24 @@
     };
 
     function clearNotifications() {
-      // var c = $scope.currentUser;
-      // if(c.unread_notifications_count == 0) {
-      //   return;
-      // };
-      // Activity.markAllAsRead()
-      // .$promise
-      // .then(function(){
-      //   c.unread_notifications_count = 0;
-      // }); 
+      var c = $scope.currentUser;
+      if(c.unread_notifications_count == 0) {
+        return;
+      };
+      Activity.markAllAsRead()
+      .$promise
+      .then(function(){
+        c.unread_notifications_count = 0;
+      }); 
     };
-    
+
+    $scope.$watchCollection('myNotifications', function(nv, ov) {
+      if(nv.length > 0) {
+        clearNotifications();
+      };
+    });
+
     init();
-    clearNotifications();
   };
   angular.module('ms.pages.me').controller('MeController', [
     '$scope',
