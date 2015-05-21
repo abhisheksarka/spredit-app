@@ -6,12 +6,12 @@
 	}
 	.btn.spread {
 		&:hover {
-			@extend .btn-white;
+			@extend .btn-info;
 		}
 	}
 	.btn.contain {
 		&:hover {
-			@extend .btn-white;
+			@extend .btn-info;
 		}	
 	}
 }

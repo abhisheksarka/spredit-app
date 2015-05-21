@@ -20,7 +20,6 @@ a {
   border: none !important;
   @include ms-box-shadow(0px, 2px, 5px, 0, rgba(0,0,0,0.26));
   padding: 6px 20px;
-  min-width: 10em;
   text-transform: uppercase;
   &:hover {
     @include ms-box-shadow(0, 4px, 8px, 0, rgba(0, 0, 0, 0.4));
@@ -30,6 +29,57 @@ a {
 }
 .btn-rounded {
   @include ms-border-radius(1000px);
+}
+.btn-transparent {
+  background: transparent;
+  border: 1px solid #333 !important;
+  @include ms-box-shadow(0px, 0px, 0px, rgba(0,0,0,0));
+  color: #333;
+  &:hover {
+    background: #333;
+    color: white;
+    @include ms-box-shadow(0px, 0px, 0px, rgba(0,0,0,0));
+  }
+}
+.btn-transparent-info {
+  border: 1px solid $brand-info !important;
+  color: $brand-info;
+  &:hover {
+    background: $brand-info;
+    color: white;
+  }
+}
+.btn-transparent-danger {
+  border: 1px solid $brand-danger !important;
+  color: $brand-danger;
+  &:hover {
+    background: $brand-danger;
+    color: white;
+  }
+}
+.btn-transparent-success {
+  border: 1px solid $brand-success !important;
+  color: $brand-success;
+  &:hover {
+    background: $brand-success;
+    color: white;
+  }
+}
+.btn-transparent-warning {
+  border: 1px solid $brand-warning !important;
+  color: $brand-warning;
+  &:hover {
+    background: $brand-warning;
+    color: white;
+  }
+}
+.btn-transparent-primary {
+  border: 1px solid $brand-primary !important;
+  color: $brand-primary;
+  &:hover {
+    background: $brand-primary;
+    color: white;
+  }
 }
 h1, h2, h3, h4 {
   font-weight: 400;
@@ -48,8 +98,8 @@ a {
 }
 nav.navbar {
   @include ms-border-radius(0px); 
-  background: #222;
-  border-bottom: 2px solid #000;
+  @include ms-box-shadow(0px, 0px, 3px, rgba(0,0,0,0.3));
+  background: white;
   min-height: 60px;
   padding-top: 0px;
   padding-bottom: 8px;
@@ -86,19 +136,21 @@ nav.navbar {
   .navbar-nav > li > a {
     padding: 15px 15px;
     font-size: 22px;
-    color: #fff;
+    color: #adadad;
     &:hover {
-      opacity: 1;
-      color: #fff;
+      color: #333;
     } 
     &:focus {
-      opacity: 1;
-      color: #fff;
+      color: #333;
     }
     &:active {
-      opacity: 1;
-      color: #fff;
+      color: #333;
     }
+  }
+  .navbar-nav > li > a.active {
+    opacity: 1;
+    color: #333;
+    border-bottom: 2px solid #333;
   }
   .navbar-nav > li > a.btn-link {
     &:hover {
@@ -106,7 +158,6 @@ nav.navbar {
     }
     .btn {
       @include ms-box-shadow(0, 0, 0px, rgba(0,0,0,0));
-      font-weight: bold;
       @include ms-border-radius(300px);
     }
   }

@@ -6,7 +6,8 @@
     <div class="optional-header">
       <div class="ms-list-item">
         <div class="list-avatar">
-          <img src="../images/marker_green_40.png"/>
+          <img src="../images/male.png" ng-if="post.poster_gender != 'female'"/>
+          <img src="../images/female.png" ng-if="post.poster_gender == 'female'"/>
         </div>
         <div class="list-content">
           <div class="primary">

@@ -6,6 +6,7 @@
       $scope.toggleSideNav = toggleSideNav;
       $scope.signOut = signOut;
       $scope.openPostCreator = openPostCreator;
+      $scope.location = $location;
     };
 
     function openPostCreator() {

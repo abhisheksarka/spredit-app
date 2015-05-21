@@ -18,8 +18,8 @@
     function modalConfigs() {
       return {
         comments: { 
-          windowClass: 'specialized',
-          backdropClass: 'specialized'
+          windowClass: 'default',
+          backdropClass: 'default'
         },
         propagation: {
           backdropClass: 'default',

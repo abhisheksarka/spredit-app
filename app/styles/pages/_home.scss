@@ -18,6 +18,11 @@ body#page-home {
       }
     }
   }
+  .comment-creator {
+    .btn {
+      @extend .btn-transparent;
+    }
+  }
   .bottom-dock {
     .spreader {
       margin-top: -20px;

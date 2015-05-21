@@ -1,11 +1,11 @@
 <div class="text-center spreader" ng-if="!isDisabled">
   <span>
-    <span class="ms-fab btn btn-white contain" 
+    <span class="ms-fab btn btn-info contain" 
     			ng-click="containIt()" 
     			ng-class="{'disabled': isDisabled || requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}">
       <span class="fa fa-remove"></span>
     </span>
-    <span class="ms-fab btn btn-white spread" 
+    <span class="ms-fab btn btn-info spread" 
     			ng-click="spreadIt()" 
     			ng-class="{'disabled': isDisabled || requestState.isWorking || (currentUser.id == spreadable[resourceOwner].id)}">
       <span class="fa fa-check"></span>

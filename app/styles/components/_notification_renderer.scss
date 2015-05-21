@@ -3,14 +3,13 @@
     .ms-card {
       margin-bottom: 5px;
       font-size: 14px;
-      font-weight: bold;
       background: rgba(255,255,255,0.7);
       .fa {
-        padding: 5px;
+        padding: 8px;
         @include ms-border-radius(500px);
         border: 1px solid;
-        height: 26px;
-        width: 26px;
+        height: 34px;
+        width: 34px;
       }
       .value {
         color: #333;

@@ -7,13 +7,12 @@
     padding: 15px;
     background: rgba(255, 255, 255, 0.7);
     @include ms-border-radius(4px);
-    font-weight: bold;
     .fa {
-      padding: 5px;
+      padding: 8px;
       @include ms-border-radius(500px);
       border: 1px solid;
-      height: 26px;
-      width: 26px;
+      height: 34px;
+      width: 34px;
     }
   }
 }

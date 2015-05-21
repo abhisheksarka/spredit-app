@@ -4,5 +4,6 @@
   }
   .btn {
     min-width: 0em;
+    @include ms-border-radius(300px);
   }
 }
