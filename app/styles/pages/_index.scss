@@ -1,227 +1,144 @@
 body#page-index {
-  .nav {
-    li {
-      display: inline;
-    }
-  }
-  background-size: 100%;
-  padding-left: 0px !important;
-  color: white;
-  #bg-backdrop {
+  
+  nav.navbar {
     display: none;
   }
-  nav.navbar {
-    .rainbow-dash {
-      opacity: 0;
+  .fb-sign-in {
+    padding: 15px 30px;
+  }
+  /* ---STYLES FROM THEMES ----*/
+  //colors
+  $white: #ffffff;
+  $color_silver_chalice_approx: #aaaaaa;
+  $color_log_cabin_approx: #222222;
+  $color_celeste_approx: #cccccc;
+  $color_quill_gray_approx: #d3d3d3;
+  $color_mercury_approx: #e6e6e6;
+  $color_fuscous_gray_approx: #555555;
+  $color_mountain_mist_approx: #999999;
+  $color_alto_approx: #dadada;
+  $color_venus_approx: #938e8e;
+  $color_chicago_approx: #5e5e5e;
+  $color_mariner_approx: #227dd3;
+  $color_endeavour_approx: #0058ac;
+  $black: #000000;
+  $color_silver_tree_approx: #5fc18b;
+  $color_ocean_green_approx: #44a36e;
+  $white_86: rgba(255, 255, 255, 0.86);
+  $color_cloudy_79_approx: rgba(168, 162, 162, 0.79);
+  $color_iron_approx: #d8d8d8;
+  $color_malachite_approx: #03dd65;
+
+  //fonts
+  $font_0: Open Sans;
+  $font_1: sans-serif;
+
+  //urls
+  $url_0: url(../images/vendor/banner.jpg);
+  $url_1: url(../images/vendor/bg.png);
+  $url_2: url(../images/vendor/spriteimg.png);
+
+  %extend_1 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  img {
+    @extend %extend_1;
+    max-width: 100%;
+  }
+  .wrap {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .banner {
+    background: $url_0;
+    background-size: cover;
+    padding: 4em 0 11em;
+    p {
+      color: $white;
+      text-transform: uppercase;
+      font-size: 3em;
+      text-align: center;
+      padding: 1em 0 2em;
+      span {
+        font-weight: 900;
+        margin-left: 10px;
+        font-size: 1.03em;
+      }
     }
-    background: transparent !important;
-    margin-bottom: -107px !important;
-    @include ms-box-shadow(0px, 0px, 0px, rgba(0,0,0,0.5));
-    z-index: 2;
-    position: relative;
+  }
+  .logo {
+    text-align: center;
+    margin: 0 auto;
+    width: 23%;
     a {
-      color: white !important;
-      opacity: 0.6;
-      font-size: 16px;
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
-  .logo{
-    margin-top: 90px;
-    font-size: 50px;
-    border: 2px solid white;
-    padding: 15px;
-    height: 100px;
-    width: 100px;
-    line-height: 1.2;
-    position: relative;
-    .fa {
-      color: rgba(255,255,255,1);
-    }
-  }
-  .brand-name { 
-    font-size: 70px;
-    margin-top: 150px;
-    margin-bottom: 30px;
-    position: relative;
-    font-weight: 100;
-    font-family: 'Lato', sans-serif;
-    text-shadow: 0 1px 10px rgba(0,0,0,0.5);
-    -webkit-text-shadow: 0 1px 10px rgba(0,0,0,0.5);
-    -ms-text-shadow: 0 1px 10px rgba(0,0,0,0.5);
-    -moz-text-shadow: 0 1px 10px rgba(0,0,0,0.5);
-    .glyphicon {
-      font-size: 54px;
-    }
-    .label {
-      font-size: 14px;
-      top: -0.3em;
-      position: relative;
-    }
-    .brand-tagline {
-      opacity: 0.6;
       display: block;
-      font-size: 24px;
-      text-shadow: 0 1px 10px rgba(0,0,0,0.5);
-      margin-top: 15px;
-      -webkit-text-shadow: 0 1px 10px rgba(0,0,0,0.5);
-      -ms-text-shadow: 0 1px 10px rgba(0,0,0,0.5);
-      -moz-text-shadow: 0 1px 10px rgba(0,0,0,0.5);
     }
   }
-  img.brand-responsive{
-    width: 100%;
-    margin-top: 80px;
-  }
-  .btn.fb-sign-in, .btn.get-started{
-    padding: 15px 20px;
-  }
-  .quote {
-    opacity: 0.7;
-    margin-top: 130px;
-  }
-  .section {
-    position: relative;
-    .section-heading {
-      font-weight: 400;
-      margin-top: 0px;
+  @media only screen and(max-width:1280px) {
+    .logo {
+      width: 22%;
     }
-    .layer {
-      position: absolute;
-      left: 0px;
-      right: 0px;
-      top: 0px;
-      bottom: 0px;
-      background-color: rgba(0,0,0,0.6);
+    .banner p {
+      font-size: 2.7em;
     }
-    .top {
-      padding-top: 25px;
-      padding-bottom: 25px;
-      margin-bottom: 30px;
-      font-size: 3.6em;
-      @include ms-transition(background 1s);
-      .fa {
-        font-size: 70px;
-        opacity: 0.6;
-        margin-top: 10px;
+  }
+  @media only screen and(max-width:1024px) {
+    .logo {
+      width: 24%;
+    }
+    .banner {
+      padding: 3em 0 11em;
+      p {
+        font-size: 2.3em;
+        padding: 1em 0 1.8em 0;
       }
     }
   }
-  #main-section {
-    background-image: url('../images/landing_page_cover_blurred.jpg');
-    background-size: 100%;
-    @media all and (max-width: $screen-md) {
-      background-size: auto;
+  @media only screen and(max-width:768px) {
+    .logo {
+      width: 28%;
     }
-    .screens-image {
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-      overflow: hidden;
-      margin-bottom: 30px;
-      img {
-        width: 100%;
-      }
+    .wrap {
+      width: 90%;
     }
-    position: relative;
-  }
-  #second-section {
-    .steps {
-      max-width: 1000px;
-    }
-    .log-in-container {
-      margin-bottom: 30px;
-    }
-    .top {
-      background: $brand-light-blue;
-      color: white;
-    }
-    .step-next.fa {
-      font-size: 70px;
-    }
-    .container {
-      background: rgba(255,255,255,0.9);
-      @include ms-box-shadow(0px, 0px, 15px, rgba(0,0,0,0.3));
-      @include ms-border-radius(3px);
-      margin-top: -100px;
-      padding: 30px;
-    }
-    .step{
-      padding-top: 15px;
-      .step-image {
-        max-width: 350px;
-        margin-left: auto;
-        margin-right: auto;
-        overflow: hidden;
-        @include ms-border-radius(20000px);
-        @include ms-box-shadow(0px, 0px, 40px, rgba(0,0,0,0.05));
-        border: 1px solid lightgray;
-        img{
-          width: 100%;
-        }
-      }
-      .step-text {
-        position: relative;
-        margin-top: 20%;
-        border: 1px solid lightgray;
-        background: white;
-        padding: 25px;
-        @include ms-box-shadow(0px, 2px, 3px, rgba(0,0,0,0.2));
-        @include ms-border-radius(1000px);
+    .banner {
+      padding: 2em 0 11em;
+      p {
+        font-size: 2em;
       }
     }
   }
-  #third-section {
-    background: white;
-    .top {
-      background: $brand-indigo;
-      &:hover {
-        background: #333;
+  @media only screen and(max-width:640px) {
+    .logo {
+      width: 32%;
+    }
+    .banner p {
+      font-size: 1.5em;
+      padding: 1em 0 2.2em 0;
+    }
+  }
+  @media only screen and(max-width:480px) {
+    .logo {
+      width: 32%;
+    }
+  }
+  @media only screen and(max-width:320px) {
+    .logo {
+      width: 40%;
+    }
+    .banner {
+      padding: 1em 0 11em;
+      p {
+        font-size: 1.5em;
+        padding: 0.6em 0 2.8em 0;
+        font-size: 1.1em;
       }
     }
-  }
-  #fourth-section {
-    background: $brand-blue;
-  }
-  #second-section,
-  #third-section,
-  #fourth-section {
-    color: #333;
-  }
-  #sign-in-section {
-    background: rgba(255,255,255,0.1);
-    padding-top: 30px;
-    padding-bottom: 15px;
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    .short-description {
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 15px;
-      text-shadow: 0 1px 10px rgba(0,0,0,0.5);
-      -webkit-text-shadow: 0 1px 10px rgba(0,0,0,0.5);
-      -ms-text-shadow: 0 1px 10px rgba(0,0,0,0.5);
-      -moz-text-shadow: 0 1px 10px rgba(0,0,0,0.5);
-    }
-  }
-  .desc-icon {
-    padding: 30px;
-    @include ms-border-radius(1000px);
-    font-size: 26px;
-    display: inline-block;
-    height: 100px;
-    width: 100px;
-    color: white;
-    margin-bottom: 15px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .desc-text {
-    font-size: 18px;
-    opacity: 0.6;
   }
 }

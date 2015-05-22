@@ -125,7 +125,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('app/scripts/components/fb_sdk/log_in/template.html',
     "<span>\n" +
-    "  <button class=\"btn btn-success fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"loginDisabled\">Sign in with facebook</button>\n" +
+    "  <button class=\"btn btn-rounded btn-info fb-sign-in\" data-ng-click=\"login()\" ng-disabled=\"loginDisabled\">Sign in with facebook</button>\n" +
     "</span>"
   );
 
@@ -818,112 +818,18 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/scripts/pages/index/template.html',
-    "<div id=\"bg-backdrop\"></div>\n" +
-    "<div ms-auto-height=\"sectionHeight\" offset=\"-40\" min-height=\"600\" class=\"section\" id=\"main-section\">\n" +
-    "  <div class=\"layer\"></div>\n" +
-    "  <div class=\"container\">\n" +
-    "    <div class=\"row\">\n" +
-    "      <div class=\"col-md-12 text-center\">\n" +
-    "        <h1 class=\"brand-name\">\n" +
-    "          Spredit <span class=\"label label-default\">beta</span>\n" +
-    "          <small class=\"brand-tagline\">The new way to spread information</small>\n" +
-    "        </h1>\n" +
-    "        <div class=\"screens-image\">\n" +
-    "          <img src=\"../images/screens.png\"/>\n" +
-    "        </div>\n" +
-    "      </div>\n" +
+    "<div class=\"banner\">\n" +
+    "  <div class=\"wrap text-center\">\n" +
+    "    <div class=\"logo text-center\">\n" +
+    "      <a href=\"index.html\"><img src=\"../images/vendor/logo.png\"></a>\n" +
     "    </div>\n" +
-    "  </div>\n" +
-    "</div>\n" +
-    "<div class=\"section\" offset=\"0\" min-height=\"600\" id=\"second-section\" responsive=\"true\">\n" +
-    "  <div class=\"container steps\">\n" +
-    "    <div class=\"text-center\">\n" +
-    "      <div class=\"row\">\n" +
-    "        <div class=\"col-md-12\">\n" +
-    "          <div class=\"log-in-container\">\n" +
-    "            <span ms-fb-log-in \n" +
-    "                login-disabled=\"loginState.isWorking\"\n" +
-    "                data-connected=\"connected(response)\" \n" +
-    "                data-unauthorized=\"unauthorized(response)\" \n" +
-    "                data-unknown=\"unknown(response)\">\n" +
-    "            </span>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "      </div>\n" +
-    "      <div class=\"row step\">\n" +
-    "        <div class=\"col-sm-6\">\n" +
-    "          <div class=\"step-image\">\n" +
-    "            <img src=\"../images/step_one.png\"/>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"col-sm-6\">\n" +
-    "          <div>\n" +
-    "            <p class=\"step-text\">People on spredit are connected from the start</p>\n" +
-    "            <span class=\"fa fa-chevron-down step-next\"></span>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "      </div>\n" +
-    "      <div class=\"row step\">\n" +
-    "        <div class=\"col-sm-6 hidden-xs\">\n" +
-    "          <div>\n" +
-    "            <p class=\"step-text\">Information is generated from a source, and spreads to nearby users</p>\n" +
-    "            <span class=\"fa fa-chevron-down step-next\"></span>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"col-sm-6\">\n" +
-    "          <div class=\"step-image\">\n" +
-    "            <img src=\"../images/step_two.png\"/>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"col-sm-6 visible-xs\">\n" +
-    "          <div>\n" +
-    "            <p class=\"step-text\">Information is generated from a source, and spreads to nearby users</p>\n" +
-    "            <span class=\"fa fa-chevron-down step-next\"></span>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "      </div>\n" +
-    "      <div class=\"row step\">\n" +
-    "        <div class=\"col-sm-6\">\n" +
-    "          <div class=\"step-image\">\n" +
-    "            <img src=\"../images/step_three.png\"/>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"col-sm-6\">\n" +
-    "          <div>\n" +
-    "            <p class=\"step-text\">Receivers of the information can choose to spread it further or contain it</p>\n" +
-    "            <span class=\"fa fa-chevron-down step-next\"></span>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "      </div>\n" +
-    "      <div class=\"row step\">\n" +
-    "        <div class=\"col-sm-6 hidden-xs\">\n" +
-    "          <div>\n" +
-    "            <p class=\"step-text\">A chain reaction of any proportion can occur, possibly spanning multiple countries and millions of people</p>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"col-sm-6\">\n" +
-    "          <div class=\"step-image\">\n" +
-    "            <img src=\"../images/step_four.png\"/>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"col-sm-6 visible-xs\">\n" +
-    "          <div>\n" +
-    "            <p class=\"step-text\">A chain reaction of any proportion can occur, possibly spanning multiple countries and millions of people</p>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "      </div>\n" +
-    "      <div class=\"row step\">\n" +
-    "        <div class=\"col-md-12\">\n" +
-    "          <div>\n" +
-    "            <br>\n" +
-    "            <h1><strong>Here, the whole world is your audience</strong></h1>\n" +
-    "            <br>\n" +
-    "            <a class=\"get-started btn btn-transparent\" scroll-to=\"second-section\">Get Started</a>\n" +
-    "            <br><br>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "      </div>\n" +
-    "    </div>\n" +
+    "    <p>A <span style=\"text-decoration: line-through\">not so</span> different </br> <span>way to share.</span></p>\n" +
+    "    <span ms-fb-log-in \n" +
+    "          login-disabled=\"loginState.isWorking\"\n" +
+    "          data-connected=\"connected(response)\" \n" +
+    "          data-unauthorized=\"unauthorized(response)\" \n" +
+    "          data-unknown=\"unknown(response)\">\n" +
+    "    </span>\n" +
     "  </div>\n" +
     "</div>"
   );
