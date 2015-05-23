@@ -831,6 +831,58 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "          data-unknown=\"unknown(response)\">\n" +
     "    </span>\n" +
     "  </div>\n" +
+    "</div>\n" +
+    "<div class=\"ms-master-section text-center\">\n" +
+    "  <div class=\"row\">\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <h3 class=\"text-muted screen-desc\">\n" +
+    "        Post a thought, ask a question or upload a photo. \n" +
+    "      </h3>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <div class=\"screen-container\">\n" +
+    "        <img src=\"../images/screen_publish.png\"/>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-12\">\n" +
+    "      <hr>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "  <div class=\"row\">\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <div class=\"screen-container\">\n" +
+    "        <img src=\"../images/screen_home.png\"/>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <h3 class=\"text-muted screen-desc\">\n" +
+    "        It instantely propagates to the people around you. They can choose to spread it further or contain it.\n" +
+    "      </h3>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-12\">\n" +
+    "      <hr>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "  <div class=\"row\">\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <h3 class=\"text-muted screen-desc\">\n" +
+    "        See how far your post has spread and how people are responding.\n" +
+    "      </h3>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <div class=\"screen-container\">\n" +
+    "        <img src=\"../images/screen_map.png\"/>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "  <div class=\"row\">\n" +
+    "    <div class=\"col-md-12\">\n" +
+    "      <br><br>\n" +
+    "      <h1>\n" +
+    "        <strong>Here, the whole world is your audience.</strong>\n" +
+    "      </h1>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
     "</div>"
   );
 
