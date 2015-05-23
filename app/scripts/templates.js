@@ -823,7 +823,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"logo text-center\">\n" +
     "      <a href=\"index.html\"><img src=\"../images/vendor/logo.png\"></a>\n" +
     "    </div>\n" +
-    "    <p>A <span style=\"text-decoration: line-through; font-weight: 100;\">not so</span> different </br> <span>way to share.</span></p>\n" +
+    "    <p><span style=\"font-weight: 900;\">Spredit</span>, a <span style=\"text-decoration: line-through; font-weight: 100;\">not so</span> different </br> <span>way to share.</span></p>\n" +
     "    <span ms-fb-log-in \n" +
     "          login-disabled=\"loginState.isWorking\"\n" +
     "          data-connected=\"connected(response)\" \n" +
