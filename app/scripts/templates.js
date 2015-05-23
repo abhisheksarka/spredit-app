@@ -823,7 +823,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    <div class=\"logo text-center\">\n" +
     "      <a href=\"index.html\"><img src=\"../images/vendor/logo.png\"></a>\n" +
     "    </div>\n" +
-    "    <p>A <span style=\"text-decoration: line-through\">not so</span> different </br> <span>way to share.</span></p>\n" +
+    "    <p>A <span style=\"text-decoration: line-through; font-weight: 100;\">not so</span> different </br> <span>way to share.</span></p>\n" +
     "    <span ms-fb-log-in \n" +
     "          login-disabled=\"loginState.isWorking\"\n" +
     "          data-connected=\"connected(response)\" \n" +
@@ -832,51 +832,56 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "    </span>\n" +
     "  </div>\n" +
     "</div>\n" +
-    "<div class=\"ms-master-section text-center\">\n" +
+    "<div class=\"ms-master-section text-center container\">\n" +
     "  <div class=\"row\">\n" +
-    "    <div class=\"col-md-6\">\n" +
+    "    <div class=\"col-sm-6\">\n" +
     "      <h3 class=\"text-muted screen-desc\">\n" +
     "        Post a thought, ask a question or upload a photo. \n" +
     "      </h3>\n" +
     "    </div>\n" +
-    "    <div class=\"col-md-6\">\n" +
+    "    <div class=\"col-sm-6\">\n" +
     "      <div class=\"screen-container\">\n" +
     "        <img src=\"../images/screen_publish.png\"/>\n" +
     "      </div>\n" +
     "    </div>\n" +
-    "    <div class=\"col-md-12\">\n" +
+    "    <div class=\"col-sm-12\">\n" +
     "      <hr>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "  <div class=\"row\">\n" +
-    "    <div class=\"col-md-6\">\n" +
-    "      <div class=\"screen-container\">\n" +
-    "        <img src=\"../images/screen_home.png\"/>\n" +
-    "      </div>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-md-6\">\n" +
+    "    <div class=\"col-sm-6 visible-xs\">\n" +
     "      <h3 class=\"text-muted screen-desc\">\n" +
     "        It instantely propagates to the people around you. They can choose to spread it further or contain it.\n" +
     "      </h3>\n" +
     "    </div>\n" +
-    "    <div class=\"col-md-12\">\n" +
+    "    <div class=\"col-sm-6\">\n" +
+    "      <div class=\"screen-container\">\n" +
+    "        <img src=\"../images/screen_home.png\"/>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-sm-6 hidden-xs\">\n" +
+    "      <h3 class=\"text-muted screen-desc\">\n" +
+    "        It instantely propagates to the people around you. They can choose to spread it further or contain it.\n" +
+    "      </h3>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-sm-12\">\n" +
     "      <hr>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "  <div class=\"row\">\n" +
-    "    <div class=\"col-md-6\">\n" +
+    "    <div class=\"col-sm-6\">\n" +
     "      <h3 class=\"text-muted screen-desc\">\n" +
     "        See how far your post has spread and how people are responding.\n" +
     "      </h3>\n" +
     "    </div>\n" +
-    "    <div class=\"col-md-6\">\n" +
+    "    <div class=\"col-sm-6\">\n" +
     "      <div class=\"screen-container\">\n" +
     "        <img src=\"../images/screen_map.png\"/>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "  <div class=\"row\">\n" +
-    "    <div class=\"col-md-12\">\n" +
+    "    <div class=\"col-sm-12\">\n" +
     "      <br><br>\n" +
     "      <h1>\n" +
     "        <strong>Here, the whole world is your audience.</strong>\n" +

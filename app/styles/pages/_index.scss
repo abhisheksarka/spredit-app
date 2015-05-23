@@ -8,11 +8,18 @@ body#page-index {
   }
   .screen-desc {
     font-weight: 100;
-    margin-top: 35%;
-    border: 1px solid lightgray;
     padding: 30px;
     @include ms-border-radius(300px);
+    background: white;
+    border: 1px solid #333;
+    font-size: 18px;
+    color: #333 !important;
   }
+  @media (min-width: $screen-sm) {
+    .screen-desc {
+      margin-top: 35%;
+    }
+  } 
   .ms-master-section {
     max-width: 1000px;
   }
