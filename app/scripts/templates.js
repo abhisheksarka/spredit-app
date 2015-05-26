@@ -834,58 +834,29 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "</div>\n" +
     "<div class=\"ms-master-section text-center container\">\n" +
     "  <div class=\"row\">\n" +
-    "    <div class=\"col-sm-6\">\n" +
-    "      <h3 class=\"text-muted screen-desc\">\n" +
-    "        Post a thought, ask a question or upload a photo. \n" +
-    "      </h3>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-sm-6\">\n" +
-    "      <div class=\"screen-container\">\n" +
-    "        <img src=\"../images/screen_publish.png\"/>\n" +
-    "      </div>\n" +
-    "    </div>\n" +
     "    <div class=\"col-sm-12\">\n" +
-    "      <hr>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
-    "  <div class=\"row\">\n" +
-    "    <div class=\"col-sm-6 visible-xs\">\n" +
-    "      <h3 class=\"text-muted screen-desc\">\n" +
-    "        It instantely propagates to the people around you. They can choose to spread it further or contain it.\n" +
-    "      </h3>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-sm-6\">\n" +
-    "      <div class=\"screen-container\">\n" +
-    "        <img src=\"../images/screen_home.png\"/>\n" +
-    "      </div>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-sm-6 hidden-xs\">\n" +
-    "      <h3 class=\"text-muted screen-desc\">\n" +
-    "        It instantely propagates to the people around you. They can choose to spread it further or contain it.\n" +
-    "      </h3>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-sm-12\">\n" +
-    "      <hr>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
-    "  <div class=\"row\">\n" +
-    "    <div class=\"col-sm-6\">\n" +
-    "      <h3 class=\"text-muted screen-desc\">\n" +
-    "        See how far your post has spread and how people are responding.\n" +
-    "      </h3>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-sm-6\">\n" +
-    "      <div class=\"screen-container\">\n" +
-    "        <img src=\"../images/screen_map.png\"/>\n" +
-    "      </div>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
-    "  <div class=\"row\">\n" +
-    "    <div class=\"col-sm-12\">\n" +
-    "      <br><br>\n" +
-    "      <h1>\n" +
-    "        <strong>Here, the whole world is your audience.</strong>\n" +
+    "      <h1 class=\"heading\">\n" +
+    "        The Rules of Spredit\n" +
     "      </h1>\n" +
+    "      <h3 class=\"desc\">\n" +
+    "        Publish any information you want, a photo, question or whatever in the form of <i>snippets</i>.\n" +
+    "      </h3>\n" +
+    "      <h3 class=\"desc\">\n" +
+    "        It is spread to <i>people around you</i> real time.\n" +
+    "      </h3>\n" +
+    "      <h3 class=\"desc\">\n" +
+    "        Receivers of the snippet can choose to <i>spread it</i> to <i>people around them</i> or <i>contain it</i>.  \n" +
+    "      </h3>\n" +
+    "      <h3 class=\"desc\">\n" +
+    "        <i>Health</i> of a snippet increases or decreases based on how people respond to it.\n" +
+    "      </h3>\n" +
+    "      <h3 class=\"desc\">\n" +
+    "        <i>Spread maps</i> tell you how far your snippet has spread.\n" +
+    "      </h3>\n" +
+    "      <br>\n" +
+    "      <h2>\n" +
+    "        <strong>Here the whole world is your audience, so be nice :)</strong> \n" +
+    "      </h2>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>"
