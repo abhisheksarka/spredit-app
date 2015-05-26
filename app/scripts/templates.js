@@ -836,26 +836,29 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "  <div class=\"row\">\n" +
     "    <div class=\"col-sm-12\">\n" +
     "      <h1 class=\"heading\">\n" +
-    "        The Rules of Spredit\n" +
+    "        Rules of Spredit\n" +
     "      </h1>\n" +
     "      <h3 class=\"desc\">\n" +
-    "        Publish any information you want, a photo, question, link, etc in the form of <i>snippets</i>.\n" +
+    "        Publish a photo, question, link, etc in the form of <i>snippets</i>.\n" +
     "      </h3>\n" +
     "      <h3 class=\"desc\">\n" +
     "        It is spread to <i>people around you</i> real time.\n" +
     "      </h3>\n" +
     "      <h3 class=\"desc\">\n" +
-    "        Receivers of the snippet can choose to <i>spread it</i> to <i>people around them</i> or <i>contain it</i>.  \n" +
+    "        Receivers of the snippet can choose to <i>spread</i> it to <i>people around them</i> or <i>contain</i> it.  \n" +
     "      </h3>\n" +
     "      <h3 class=\"desc\">\n" +
-    "        <i>Health</i> of a snippet increases or decreases based on how people respond to it.\n" +
+    "        This is how photos, links or any snippet keeps spreading.\n" +
+    "      </h3>\n" +
+    "      <h3 class=\"desc\">\n" +
+    "        Uninteresting snippets get <i>contained</i> and are eventually killed. \n" +
     "      </h3>\n" +
     "      <h3 class=\"desc\">\n" +
     "        <i>Spread maps</i> tell you how far your snippet has spread.\n" +
     "      </h3>\n" +
     "      <br>\n" +
     "      <h2>\n" +
-    "        <strong>Here the whole world is your audience, so be nice :)</strong> \n" +
+    "        <strong>Here the whole world is your audience, be nice :)</strong> \n" +
     "      </h2>\n" +
     "    </div>\n" +
     "  </div>\n" +
