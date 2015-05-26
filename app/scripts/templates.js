@@ -839,7 +839,7 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        The Rules of Spredit\n" +
     "      </h1>\n" +
     "      <h3 class=\"desc\">\n" +
-    "        Publish any information you want, a photo, question or whatever in the form of <i>snippets</i>.\n" +
+    "        Publish any information you want, a photo, question, link, etc in the form of <i>snippets</i>.\n" +
     "      </h3>\n" +
     "      <h3 class=\"desc\">\n" +
     "        It is spread to <i>people around you</i> real time.\n" +
