@@ -842,10 +842,10 @@ angular.module('ms').run(['$templateCache', function($templateCache) {
     "        Publish a photo, question, link, etc in the form of <i>snippets</i>.\n" +
     "      </h3>\n" +
     "      <h3 class=\"desc\">\n" +
-    "        It is spread to <i>people around you</i> real time.\n" +
+    "        It is spread to <i>people near you</i> real time.\n" +
     "      </h3>\n" +
     "      <h3 class=\"desc\">\n" +
-    "        Receivers of the snippet can choose to <i>spread</i> it to <i>people around them</i> or <i>contain</i> it.  \n" +
+    "        Receivers of the snippet can choose to <i>spread</i> it to <i>people near them</i> or <i>contain</i> it.  \n" +
     "      </h3>\n" +
     "      <h3 class=\"desc\">\n" +
     "        This is how photos, links or any snippet keeps spreading.\n" +
