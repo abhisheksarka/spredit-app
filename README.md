@@ -1,4 +1,4 @@
-# Spredit(SPA, AngularJs app)
+# Spredit(SPA, AngularJs)
 This is location based information spreading(like a virus) fully functional front end SPA application. You can find the accompanying backend API repo @ https://github.com/abhisheksarka/spredit-api
 
 
